@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#c1c1c1}.cls-4{fill:rgba(0,0,0,0)}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h24v24H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="ic-round-date-range" class="cls-2">
+        <path id="Path_3555" d="M19 4h-1V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H5a1.991 1.991 0 0 0-1.99 2L3 20a2 2 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9h14zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z" class="cls-3" data-name="Path 3555"/>
+        <path id="Rectangle_3061" d="M0 0h24v24H0z" class="cls-4" data-name="Rectangle 3061"/>
+    </g>
+</svg>
