@@ -1,16 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import {layoutWithLangKey} from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
+const SecondPage = props => (
+  <div>
     <SEO title="Page two" />
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+    <Link to={props.langUri}>Go back to the homepage</Link>
+  </div>
 )
 
-export default SecondPage
+export default layoutWithLangKey(SecondPage)
