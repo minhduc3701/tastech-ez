@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import BannerImage from '../../images/feature-page/banner.jpg'
+import BannerImage from '../images/feature-page/banner.jpg'
 import { Modal } from 'reactstrap'
 
 export const Wrapper = styled.div`
