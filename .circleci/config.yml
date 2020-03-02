@@ -31,9 +31,9 @@ jobs:
           name: Build the application
           command: yarn build
           environment:
-            REACT_APP_API: https://api.dev.ezbiztrip.com
-            REACT_APP_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
-            REACT_APP_META_ROBOTS_CONTENT: noindex
+            GATSBY_API: https://api.dev.ezbiztrip.com
+            GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
+            GATSBY_META_ROBOTS_CONTENT: noindex
       - persist_to_workspace:
           root: ./
           paths:
@@ -78,9 +78,9 @@ jobs:
           name: Build the application
           command: yarn build
           environment:
-            REACT_APP_API: https://api.test.ezbiztrip.com
-            REACT_APP_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
-            REACT_APP_META_ROBOTS_CONTENT: noindex
+            GATSBY_API: https://api.test.ezbiztrip.com
+            GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
+            GATSBY_META_ROBOTS_CONTENT: noindex
       - persist_to_workspace:
           root: ./
           paths:
@@ -125,10 +125,10 @@ jobs:
           name: Build the application
           command: yarn build
           environment:
-            REACT_APP_API: https://api.demo.ezbiztrip.com
-            REACT_APP_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
-            REACT_APP_DISABLE_CHECK_WORK_EMAIL: true
-            REACT_APP_META_ROBOTS_CONTENT: noindex
+            GATSBY_API: https://api.demo.ezbiztrip.com
+            GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
+            GATSBY_DISABLE_CHECK_WORK_EMAIL: true
+            GATSBY_META_ROBOTS_CONTENT: noindex
       - persist_to_workspace:
           root: ./
           paths:
@@ -173,7 +173,7 @@ jobs:
           name: Build the application
           command: yarn build
           environment:
-            REACT_APP_DEFAULT_LANGUAGE: vi
+            GATSBY_DEFAULT_LANGUAGE: vi
       - persist_to_workspace:
           root: ./
           paths:
