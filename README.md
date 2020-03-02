@@ -1,3 +1,14 @@
+## Environment variables
+
+```
+REACT_APP_API=<your api url goes here>
+REACT_APP_CAPTCHA_V3_KEY=<your google captcha v3 site key>
+REACT_APP_GOOGLE_ANALYTICS_KEY=<your google analytics key>
+REACT_APP_DISABLE_CHECK_WORK_EMAIL=true (disable check work email for development)
+REACT_APP_DEFAULT_LANGUAGE=en|vi
+REACT_APP_META_ROBOTS_CONTENT=noindex|all (for dev|prod)
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
