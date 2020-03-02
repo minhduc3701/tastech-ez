@@ -15,7 +15,7 @@ import {
   TextWrapper,
   VideoPopup,
   VideoWrapper
-} from '../../featureStyle'
+} from '../../styles/featureStyle'
 
 import Img2 from '../../images/feature-page/2.png'
 import Img3 from '../../images/feature-page/3.png'
