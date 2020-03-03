@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import {layoutWithLangKey} from '../components/layout'
+import Image from "../components/image"
 import SEO from "../components/seo"
 import FirstFeature from '../components/HomePage/FirstFeature'
 import SecondFeature from '../components/HomePage/SecondFeature'

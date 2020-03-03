@@ -235,7 +235,7 @@ const Footer = props => {
                 </Link>
               </li>
               <li>
-                <Link to="/about-us">
+                <Link to="/about">
                   <FormattedMessage id={`components.Common.Header.aboutUs`} />
                 </Link>
               </li>
@@ -310,12 +310,12 @@ const Footer = props => {
                 </a>
               </li>
               <li>
-                <Link to="/privacy-policy">
+                <Link to="/policy">
                   <FormattedMessage id={`${scope}.privacy`} />
                 </Link>
               </li>
               <li>
-                <Link to="/terms-and-conditions">
+                <Link to="/terms">
                   <FormattedMessage id={`${scope}.terms`} />
                 </Link>
               </li>

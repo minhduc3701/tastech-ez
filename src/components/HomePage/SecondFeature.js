@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { FormattedHTMLMessage } from 'react-intl'
 
 import { Link } from 'gatsby'
-import { Title } from './style'
+import { Title } from '../../styles/indexStyle'
 import { Container } from '../../styles'
 
 import { Icon } from '@iconify/react'
