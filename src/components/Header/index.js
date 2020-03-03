@@ -351,7 +351,7 @@ const Header = props => {
       <SubNav navbar>
             <SelectLanguage langs={props.langs} />
 
-            <LoginBtn to="/app">
+            <LoginBtn href="/app">
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 
