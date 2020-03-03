@@ -59,13 +59,6 @@ const Layout = ({ children, location }) => {
               locale={langKey}
               messages={messages[langKey]}
             >
-                <Helmet
-                  title="Gatsby Default Starter"
-                  meta={[
-                    { name: 'description', content: 'Sample' },
-                    { name: 'keywords', content: 'sample, something' },
-                  ]}
-                />
                 <Header langs={langsMenu} />
                 <Content>
                   {children({langKey, defaultLangKey, homeLink})}

@@ -12,7 +12,7 @@ module.exports = {
   "components.Common.Header.goToApp": "Go to App",
   "components.Common.Header.faq": "FAQ",
   "components.Common.Header.pricing": "Pricing",
-  "components.Common.Footer.privacy": "Privacy",
+  "components.Common.Footer.privacy": "Policy",
   "components.Common.Footer.terms": "Terms",
   "components.Common.Footer.contactUs": "Contact Us",
   "components.Common.Footer.sitemap": "Sitemap",

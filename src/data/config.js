@@ -1,4 +1,4 @@
 module.exports = {
   langs: ['en', 'vi'],
-  defaultLangKey: 'en'
+  defaultLangKey: process.env.GATSBY_DEFAULT_LANGUAGE || 'en'
 }
