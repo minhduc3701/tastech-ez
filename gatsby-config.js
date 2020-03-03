@@ -2,9 +2,9 @@ const languages = require('./src/data/config')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `EzBizTrip`,
+    description: `Discover coporate travel management solutions. Travel real-time market rate search, online add expense to trip, eliminating paper and expediting expenses. EzBizTrip makes business travel much easier and better`,
+    author: `@ezbiztrip`,
     languages
   },
   plugins: [
