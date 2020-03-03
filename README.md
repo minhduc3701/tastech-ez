@@ -1,3 +1,7 @@
+## Warning
+
+Never create `src/pages/app.js` or `src/pages/app/index.js`
+
 ## Environment variables
 
 ```
