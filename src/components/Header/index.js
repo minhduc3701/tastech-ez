@@ -312,26 +312,19 @@ const flags = [
   }
 ]
 
+// to fix error:
+// error "window" is not available during server side rendering.
+if (typeof window === 'undefined') {
+  global.window = {}
+}
+
 const Header = props => {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggle = () => {
-    setMenuOpen(!menuOpen)
-  }
 
   const [stickyHeader, setStickyHeader] = useState({
     headerShow: true,
     scrollPos: 0
   })
-
-  const handleScroll = () => {
-    let boundingTop = document.body.getBoundingClientRect().top
-
-    setStickyHeader({
-      scrollPos: boundingTop,
-      headerShow: boundingTop > 0 ? true : boundingTop > stickyHeader.scrollPos
-    })
-  }
 
   const top = window.document ? window.document.body.getBoundingClientRect().top : 0
 
@@ -341,6 +334,18 @@ const Header = props => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [top])
 
+  const toggle = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const handleScroll = () => {
+    let boundingTop = document.body.getBoundingClientRect().top
+
+    setStickyHeader({
+      scrollPos: boundingTop,
+      headerShow: boundingTop > 0 ? true : boundingTop > stickyHeader.scrollPos
+    })
+  }
 
     let subNavigation = (
       <SubNav navbar>
