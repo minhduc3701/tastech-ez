@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const languages = require('./src/data/config')
 
 module.exports = {
@@ -5,6 +9,7 @@ module.exports = {
     title: `EzBizTrip`,
     description: `Discover coporate travel management solutions. Travel real-time market rate search, online add expense to trip, eliminating paper and expediting expenses. EzBizTrip makes business travel much easier and better`,
     author: `@ezbiztrip`,
+    siteUrl: process.env.GATSBY_SITE_URL,
     languages
   },
   plugins: [
@@ -30,7 +35,24 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => process.env.GATSBY_META_ROBOTS_CONTENT || 'noindex',
+        env: {
+          'all': {
+            policy: [{ userAgent: '*'}],
+          },
+          'noindex': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    },
+    `gatsby-plugin-sitemap`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
