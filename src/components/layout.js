@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Header from './header'
+import Header from './Header'
+import Footer from './Footer'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
@@ -50,7 +51,6 @@ const Layout = ({ children, location }) => {
               locale={langKey}
               messages={messages[langKey]}
             >
-              <div>
                 <Helmet
                   title="Gatsby Default Starter"
                   meta={[
@@ -62,7 +62,7 @@ const Layout = ({ children, location }) => {
                 <div>
                   {children({langKey, defaultLangKey, homeLink})}
                 </div>
-              </div>
+                <Footer />
             </IntlProvider>
           </Wrapper>
         )

@@ -6,7 +6,7 @@ import img_3 from '../../images/home-page/3.jpg'
 import styled from 'styled-components'
 import { FormattedHTMLMessage } from 'react-intl'
 
-import { Link } from 'react-router-dom'
+import { Link } from 'gatsby'
 import { Title } from './style'
 import { Container } from '../../styles'
 
