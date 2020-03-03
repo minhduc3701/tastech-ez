@@ -6,17 +6,12 @@ import companyLogo from '../../images/logo.svg'
 import SelectLanguage from '../SelectLanguage'
 
 import {
-  Nav,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu
+  Nav
 } from 'reactstrap'
 
 import { Icon } from '@iconify/react'
 import baselineClose from '@iconify/icons-ic/baseline-close'
 import baselineMoreVert from '@iconify/icons-ic/baseline-more-vert'
-import flagForVietnam from '@iconify/icons-twemoji/flag-for-vietnam'
-import flagForUnitedKingdom from '@iconify/icons-twemoji/flag-for-united-kingdom'
 
 const scope = 'components.Common.Header'
 
@@ -299,19 +294,6 @@ const Overlay = styled.div`
   z-index: 98;
 `
 
-const flags = [
-  {
-    country: 'English',
-    name: 'en',
-    image: <Icon icon={flagForUnitedKingdom} />
-  },
-  {
-    country: 'Tiếng Việt',
-    name: 'vi',
-    image: <Icon icon={flagForVietnam} />
-  }
-]
-
 // to fix error:
 // error "window" is not available during server side rendering.
 if (typeof window === 'undefined') {
@@ -406,7 +388,7 @@ const Header = props => {
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/about-us">
+                <Link activeClassName="active" to="/about">
                   <FormattedMessage id={`${scope}.aboutUs`} />
                 </Link>
               </li>

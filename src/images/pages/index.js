@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import {layoutWithLangKey} from '../components/layout'
+import Image from "../components/image"
 import SEO from "../components/seo"
 import FirstFeature from '../components/HomePage/FirstFeature'
 import SecondFeature from '../components/HomePage/SecondFeature'
@@ -56,7 +58,7 @@ const sliderSettings = {
 
 const IndexPage = props => (
   <HomeWrapper>
-        <SEO title="Corporate travel management, Business ERP system, Automate expense report" lang={props.langKey}/>
+        <SEO title="Home" lang={props.langKey}/>
 
         <Slider {...sliderSettings}>
           <SliderItem src={Banner1}>

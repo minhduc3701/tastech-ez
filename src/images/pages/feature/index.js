@@ -16,7 +16,6 @@ import {
   VideoPopup,
   VideoWrapper
 } from '../../styles/featureStyle'
-import SEO from "../../components/seo"
 
 import Img2 from '../../images/feature-page/2.png'
 import Img3 from '../../images/feature-page/3.png'
@@ -48,11 +47,8 @@ const FeaturePage = props => {
 
   return (
     <Wrapper>
-      <SEO
-        lang={props.langKey}
-        title="Expenses Management, less effort business travel booking system, ERP system"
-        description="EzBizTrip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan."
-      />
+      <SEO title="Feature" lang={props.langKey}/>
+
       <Banner>
         <Container>
           <BannerText>

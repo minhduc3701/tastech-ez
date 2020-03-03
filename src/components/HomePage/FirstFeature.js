@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap'
 
 import styled from 'styled-components'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import { Title } from './style'
+import { Title } from '../../styles/indexStyle'
 import { Container } from '../../styles'
 import { Icon } from '@iconify/react'
 import baselineFlight from '@iconify/icons-ic/baseline-flight'

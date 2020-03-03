@@ -24,6 +24,14 @@ const Wrapper = styled(Main)`
   width: 100%;
 `
 
+const Content = styled.main`
+  margin-top: 64px;
+
+  @media screen and (max-width: 1199px) {
+    margin-top: 56px;
+  }
+`
+
 const Layout = ({ children, location }) => {
   return (
     <StaticQuery
@@ -52,9 +60,9 @@ const Layout = ({ children, location }) => {
               messages={messages[langKey]}
             >
                 <Header langs={langsMenu} />
-                <div>
+                <Content>
                   {children({langKey, defaultLangKey, homeLink})}
-                </div>
+                </Content>
                 <Footer />
             </IntlProvider>
           </Wrapper>

@@ -1039,6 +1039,11 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.75.tgz#2ff57fb7ff20feac60eac00819a586665fca59d0"
   integrity sha512-kvXsJIBdvC+yZKeNwzVSt5Tn2zHAj9mvOygCbXTtRp/YfAhb3zt8L2+iX/h2DMMaEnUxz3S2s5w3CpvZjBZPzA==
 
+"@iconify/icons-raphael@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-raphael/-/icons-raphael-1.0.3.tgz#f717c70e8375d6baf6b3734d5b157fc5a6a60cef"
+  integrity sha512-EK19UO7Eu8Xnx1B+pAyBwCz4PvGUxvDloFMnDkKXUKGzoHtgqxnOI2HICvoZ/wUc8BM3+F61UA1gv2dX0QA9ng==
+
 "@iconify/icons-twemoji@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@iconify/icons-twemoji/-/icons-twemoji-1.0.7.tgz#38e4094f5ebb7796622d8620db41adb3c765dd48"
