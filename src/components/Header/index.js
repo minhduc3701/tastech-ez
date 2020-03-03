@@ -333,11 +333,13 @@ const Header = props => {
     })
   }
 
+  const top = document ? document.body.getBoundingClientRect().top : 0
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [document.body.getBoundingClientRect().top]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [top]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     let subNavigation = (
