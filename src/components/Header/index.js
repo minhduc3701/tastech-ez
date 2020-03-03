@@ -244,7 +244,7 @@ const StartBtn = styled(Link).attrs({ className: 'startBtn' })`
   }
 `
 
-const LoginBtn = styled(Link)`
+const LoginBtn = styled.a`
   display: inline-block;
   font-size: 13px;
   border: none;
@@ -344,7 +344,7 @@ const Header = props => {
       <SubNav navbar>
             <SelectLanguage langs={props.langs} />
 
-            <LoginBtn to="/login">
+            <LoginBtn to="/app">
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 
