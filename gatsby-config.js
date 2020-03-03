@@ -52,9 +52,18 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_KEY,
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+      },
+    },
   ],
 }
