@@ -312,17 +312,31 @@ const flags = [
   }
 ]
 
+// to fix error:
+// error "window" is not available during server side rendering.
+if (typeof window === 'undefined') {
+  global.window = {}
+}
+
 const Header = props => {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggle = () => {
-    setMenuOpen(!menuOpen)
-  }
 
   const [stickyHeader, setStickyHeader] = useState({
     headerShow: true,
     scrollPos: 0
   })
+
+  const top = window.document ? window.document.body.getBoundingClientRect().top : 0
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [top])
+
+  const toggle = () => {
+    setMenuOpen(!menuOpen)
+  }
 
   const handleScroll = () => {
     let boundingTop = document.body.getBoundingClientRect().top
@@ -332,13 +346,6 @@ const Header = props => {
       headerShow: boundingTop > 0 ? true : boundingTop > stickyHeader.scrollPos
     })
   }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [document.body.getBoundingClientRect().top]) // eslint-disable-line react-hooks/exhaustive-deps
-
 
     let subNavigation = (
       <SubNav navbar>

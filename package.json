@@ -38,6 +38,7 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "husky": "^4.2.3",
     "prettier": "^1.19.1"
   },
   "keywords": [

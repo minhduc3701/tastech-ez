@@ -12,14 +12,14 @@ export const resetRecaptcha = () => {
 
 class RecaptchaV3 extends React.Component {
   componentDidMount() {
-    loadReCaptcha(process.env.REACT_APP_CAPTCHA_V3_KEY)
+    loadReCaptcha(process.env.GATSBY_CAPTCHA_V3_KEY)
   }
 
   render() {
     return (
       <ReCaptcha
         ref={ref => (recaptchaInstance = ref)}
-        sitekey={process.env.REACT_APP_CAPTCHA_V3_KEY}
+        sitekey={process.env.GATSBY_CAPTCHA_V3_KEY}
         action={this.props.action}
         verifyCallback={this.props.verifyCallback}
       />

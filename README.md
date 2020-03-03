@@ -1,3 +1,14 @@
+## Environment variables
+
+```
+GATSBY_API=<your api url goes here>
+GATSBY_CAPTCHA_V3_KEY=<your google captcha v3 site key>
+GATSBY_GOOGLE_ANALYTICS_KEY=<your google analytics key>
+GATSBY_DISABLE_CHECK_WORK_EMAIL=true (disable check work email for development)
+GATSBY_DEFAULT_LANGUAGE=en|vi
+GATSBY_META_ROBOTS_CONTENT=noindex|all (for dev|prod)
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
