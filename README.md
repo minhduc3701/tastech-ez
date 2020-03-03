@@ -7,6 +7,7 @@ GATSBY_GOOGLE_ANALYTICS_KEY=<your google analytics key>
 GATSBY_DISABLE_CHECK_WORK_EMAIL=true (disable check work email for development)
 GATSBY_DEFAULT_LANGUAGE=en|vi
 GATSBY_META_ROBOTS_CONTENT=noindex|all (for dev|prod)
+GATSBY_SITE_URL=https://www.ezbiztrip.com
 ```
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
