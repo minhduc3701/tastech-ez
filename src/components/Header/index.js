@@ -339,7 +339,7 @@ const Header = props => {
     window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [top]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [top])
 
 
     let subNavigation = (
