@@ -333,7 +333,7 @@ const Header = props => {
     })
   }
 
-  const top = document ? document.body.getBoundingClientRect().top : 0
+  const top = window.document ? window.document.body.getBoundingClientRect().top : 0
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
