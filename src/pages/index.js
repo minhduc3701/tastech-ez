@@ -21,7 +21,7 @@ import { Icon } from '@iconify/react'
 import baselineChevronRight from '@iconify/icons-ic/baseline-chevron-right'
 import baselineChevronLeft from '@iconify/icons-ic/baseline-chevron-left'
 
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 const scope = 'components.HomePage'
 
 const NextArrow = sliderProps => {
@@ -54,9 +54,15 @@ const sliderSettings = {
   prevArrow: <PrevArrow />
 }
 
-const IndexPage = props => (
-  <HomeWrapper>
-        <SEO title="Corporate travel management, Business ERP system, Automate expense report" lang={props.langKey}/>
+const IndexPage = props => {
+  const { formatMessage } = props.intl
+  return (
+    <HomeWrapper>
+        <SEO
+          title={formatMessage({ id: "home.meta.title" })}
+          description={formatMessage({ id: "home.meta.description" })}
+          lang={props.langKey}
+        />
 
         <Slider {...sliderSettings}>
           <SliderItem src={Banner1}>
@@ -90,12 +96,13 @@ const IndexPage = props => (
         </Slider>
 
         <FirstFeature />
-        <SecondFeature />
+        <SecondFeature langKey={props.langKey} />
         <SectionRequestForm />
       </HomeWrapper>
 )
+}
 
-export default layoutWithLangKey(IndexPage)
+export default layoutWithLangKey(injectIntl(IndexPage))
 
 
 

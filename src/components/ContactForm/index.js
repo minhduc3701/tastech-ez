@@ -285,7 +285,7 @@ class Contact extends React.Component {
                   <SocialLinks>
                     <a
                       href={formatMessage({
-                        id: 'socialLink.facebook'
+                        id: 'link.facebook'
                       })}
                       target="_blank"
                       rel="noopener noreferrer">

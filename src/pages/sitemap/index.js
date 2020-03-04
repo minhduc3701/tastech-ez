@@ -5,6 +5,7 @@ import SEO from '../../components/seo'
 import { Link } from 'gatsby'
 
 import { Container } from '../../styles'
+import { injectIntl } from 'react-intl'
 
 import styled from 'styled-components'
 
@@ -39,10 +40,15 @@ export const Wrapper = styled.div`
 `
 
 const Sitemap = props => {
+    const { formatMessage } = props.intl
 
   return (
     <Wrapper>
-            <SEO title="Sitemap" lang={props.langKey}/>
+            <SEO
+          title={formatMessage({ id: "sitemap.meta.title" })}
+          description={formatMessage({ id: "sitemap.meta.description" })}
+          lang={props.langKey}
+        />
 
 
       <Container>
@@ -112,4 +118,4 @@ const Sitemap = props => {
   )
 }
 
-export default layoutWithLangKey(Sitemap)
+export default layoutWithLangKey(injectIntl(Sitemap))

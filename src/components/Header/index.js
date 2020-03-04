@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import companyLogo from '../../images/logo.svg'
 import SelectLanguage from '../SelectLanguage'
 
@@ -332,16 +332,17 @@ class Header extends Component {
   }
 
   render() {
+    let { langKey } = this.props
 
     let subNavigation = (
       <SubNav navbar>
             <SelectLanguage langs={this.props.langs} />
 
-            <LoginBtn href="/app">
+            <LoginBtn href={`/app?lang=${langKey}`}>
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 
-            <StartBtn to="/request-demo">
+            <StartBtn to={`/${langKey}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
@@ -357,6 +358,8 @@ class Header extends Component {
 
     let { menuOpen } = this.state
 
+    const { formatMessage } = this.props.intl
+
     return (
       <HeaderWrapper className={headerClassName}>
         <HeaderNavbar>
@@ -364,7 +367,7 @@ class Header extends Component {
             <Icon icon={baselineMoreVert} />
           </MenuToggler>
 
-          <HeaderNavBrand exact to="/">
+          <HeaderNavBrand exact to={`/${langKey}`}>
             <img src={companyLogo} alt="" />
           </HeaderNavBrand>
 
@@ -373,38 +376,42 @@ class Header extends Component {
               <Icon icon={baselineClose} />
             </span>
 
-            <StartBtn to="/request-demo">
+            <StartBtn to={`/${langKey}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
             <MainNav navbar>
               <li>
-                <Link activeClassName="active" exact to="/">
+                <Link activeClassName="active" exact to={`/${langKey}`}>
                   <FormattedMessage id={`${scope}.home`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/feature">
+                <Link activeClassName="active" to={`/${langKey}/features`}>
                   <FormattedMessage id={`${scope}.feature`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/pricing">
+                <Link activeClassName="active" to={`/${langKey}/pricing`}>
                   <FormattedMessage id={`${scope}.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/about">
+                <Link activeClassName="active" to={`/${langKey}/about`}>
                   <FormattedMessage id={`${scope}.aboutUs`} />
                 </Link>
               </li>
               <li>
-                <a href={'blogSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.blog'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`${scope}.blog`} />
                 </a>
               </li>
               <li>
-                <a href={'supportSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.support'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`${scope}.support`} />
                 </a>
               </li>
@@ -420,4 +427,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default injectIntl(Header)

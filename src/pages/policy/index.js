@@ -4,13 +4,19 @@ import { Container } from '../../styles'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 const scope = 'components.PrivacyPolicyPage'
 
 const PrivacyPolicy = props => {
+      const { formatMessage } = props.intl
+
   return (
     <Wrapper>
-            <SEO title="Privacy Policy" lang={props.langKey}/>
+            <SEO
+          title={formatMessage({ id: "policy.meta.title" })}
+          description={formatMessage({ id: "policy.meta.description" })}
+          lang={props.langKey}
+        />
 
       <Container>
         <h1 className="page-title">
@@ -394,4 +400,4 @@ const PrivacyPolicy = props => {
   )
 }
 
-export default layoutWithLangKey(PrivacyPolicy)
+export default layoutWithLangKey(injectIntl(PrivacyPolicy))

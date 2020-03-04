@@ -22,7 +22,7 @@ import Img3 from '../../images/feature-page/3.png'
 import Img4 from '../../images/feature-page/4.png'
 import Img5 from '../../images/feature-page/5.png'
 
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
@@ -45,13 +45,15 @@ const FeaturePage = props => {
     setOpenPopup(!openPopup)
   }
 
+  const { formatMessage } = props.intl
+
   return (
     <Wrapper>
       <SEO
-        lang={props.langKey}
-        title="Expenses Management, less effort business travel booking system, ERP system"
-        description="EzBizTrip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan."
-      />
+          title={formatMessage({ id: "features.meta.title" })}
+          description={formatMessage({ id: "features.meta.description" })}
+          lang={props.langKey}
+        />
       <Banner>
         <Container>
           <BannerText>
@@ -258,4 +260,4 @@ const FeaturePage = props => {
   )
 }
 
-export default layoutWithLangKey(FeaturePage)
+export default layoutWithLangKey(injectIntl(FeaturePage))

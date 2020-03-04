@@ -19,6 +19,9 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            languages {
+              langs
+            }
           }
         }
       }
@@ -70,9 +73,30 @@ function SEO({ description, lang, meta, title }) {
         {
           name: 'keywords',
           content: 'Business trip, Business travel, Add expense, E-receipts, E-bills, Personal trip, Personal travel, Quick add, Quick add expense, Trip management, Trip management solutions, EzBizTrip, Easy Business Trip, Real-time market search, combo search, Real time market rate, real time market search, Flight search, Hotel search, Flight and hotel search, add services, itinerary, business analytics, business travel analytics, business travel report, business travel policy, Add expense to business trip, E-business trip receipts, E-business trip bills, ezb, easy biz trip, ez biz trip, ezbiz trip, ezbiz travel, easy business travel, EzBizTravel, ez biz travel, travel report, travel itinerary.'
+        },
+        {
+          name: "image",
+          content: "/images/cover.jpg"
         }
       ].concat(meta)}
-    />
+    >
+  
+      {site.siteMetadata.languages.langs.map(l => {
+        let isCurrentLang = l === lang
+        let attrs =  {
+          rel: isCurrentLang ? "canonical" : "alternate",
+          href: process.env.GATSBY_SITE_URL + (isCurrentLang ? "" : `/${l}`)
+        }
+
+        if (!isCurrentLang) {
+          attrs = {...attrs, hreflang: l}
+        }
+
+        return (
+          <link {...attrs} />
+          )
+      })}
+    </Helmet>
   )
 }
 
