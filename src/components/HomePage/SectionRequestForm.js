@@ -3,6 +3,7 @@ import RequestForm from '../Common/RequestForm'
 import styled from 'styled-components'
 import bg from './../../images/home-page/4.jpg'
 import { injectIntl } from 'react-intl'
+import {navigate} from 'gatsby'
 
 import { Container } from '../../styles'
 
@@ -29,6 +30,8 @@ class SectionRequesForm extends Component {
     //     tksFlag: true
     //   }
     // })
+
+    navigate(`/request-demo?thanks=1`)
   }
   render() {
     const { formatMessage } = this.props.intl

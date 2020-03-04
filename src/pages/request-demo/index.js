@@ -3,10 +3,10 @@ import rd_bg from '../../images/rd-bg-1.jpg'
 import tks_img from '../../images/tks-letter.svg'
 import styled from 'styled-components'
 import RequestForm from '../../components/Common/RequestForm'
-import { get } from 'lodash'
 import { FormattedHTMLMessage, injectIntl } from 'react-intl'
 import { Container } from '../../styles'
 import {layoutWithLangKey} from "../../components/layout"
+import queryString from 'query-string'
 
 const scope = 'components.RequestDemo'
 
@@ -90,10 +90,9 @@ class RequestDemo extends Component {
     }
   }
   componentDidMount() {
-    // const { handle } = this.props.match.params
-    const tksFlag = get(this.props, ['location', 'state', 'tksFlag'], false)
+    const parsed = queryString.parse(this.props.location.search);
     this.setState({
-      tksFlag
+      tksFlag: parsed.thanks === '1'
     })
   }
   showResults = values => {

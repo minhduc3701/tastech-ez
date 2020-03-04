@@ -84,6 +84,7 @@ export const layoutWithLangKey = C => props => (
   <Layout {...props}>
     {({langKey, defaultLangKey, homeLink}) => (
       <C
+        {...props}
         langUri={homeLink}
         langKey={langKey}
         defaultLangKey={defaultLangKey}
