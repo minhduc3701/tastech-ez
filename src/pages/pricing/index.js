@@ -85,7 +85,7 @@ const subscriptions = [
   }
 ]
 
-const availableFrom = '2020/01/06' // MM/DD/YYYY
+const availableFrom = '2020/01/06'
 
 const PricingPlan = props => {
   const [collapse, setCollapse] = useState(false)
