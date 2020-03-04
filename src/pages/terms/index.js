@@ -1,16 +1,22 @@
 import React from 'react'
 import { Wrapper, Footer } from '../../styles/termsStyle'
 import { Container } from '../../styles'
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 
 const scope = 'components.TermsAndConditionsPage'
 
 const TermsAndConditions = props => {
+      const { formatMessage } = props.intl
+
   return (
     <Wrapper>
-            <SEO title="Terms and conditions" lang={props.langKey}/>
+           <SEO
+          title={formatMessage({ id: "terms.meta.title" })}
+          description={formatMessage({ id: "terms.meta.description" })}
+          lang={props.langKey}
+        />
 
       <Container>
         <h1 className="page-title">
@@ -180,4 +186,4 @@ const TermsAndConditions = props => {
   )
 }
 
-export default layoutWithLangKey(TermsAndConditions)
+export default layoutWithLangKey(injectIntl(TermsAndConditions))

@@ -206,13 +206,14 @@ const BottomRight = styled.div`
 
 const Footer = props => {
   const { formatMessage } = props.intl
+  let { langKey } = props
 
   return (
     <Wrapper>
       <Container>
         <FooterTop>
           <TopLeft>
-            <Link exact="true" to="/">
+            <Link exact="true" to={`/${langKey}`}>
               <img src={companyLogo} alt="" />
             </Link>
           </TopLeft>
@@ -220,32 +221,36 @@ const Footer = props => {
           <TopCenter>
             <ul>
               <li>
-                <Link exact="true" to="/">
+                <Link exact="true" to={`/${langKey}`}>
                   <FormattedMessage id={`components.Common.Header.home`} />
                 </Link>
               </li>
               <li>
-                <Link to="/feature">
+                <Link to={`/${langKey}/features`}>
                   <FormattedMessage id={`components.Common.Header.feature`} />
                 </Link>
               </li>
               <li>
-                <Link to="/pricing">
+                <Link to={`/${langKey}/pricing`}>
                   <FormattedMessage id={`components.Common.Header.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link to="/about">
+                <Link to={`/${langKey}/about`}>
                   <FormattedMessage id={`components.Common.Header.aboutUs`} />
                 </Link>
               </li>
               <li>
-                <a href={'blogSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.blog'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`components.Common.Header.blog`} />
                 </a>
               </li>
               <li>
-                <a href={'supportSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.support'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`components.Common.Header.support`} />
                 </a>
               </li>
@@ -257,7 +262,7 @@ const Footer = props => {
               <li>
                 <a
                   href={formatMessage({
-                    id: 'socialLink.facebook'
+                    id: 'link.facebook'
                   })}
                   target="_blank"
                   rel="noopener noreferrer">
@@ -303,29 +308,31 @@ const Footer = props => {
             <ul>
               <li>
                 <a
-                  href={`${'blogSite'}/category/careers`}
+                  href={formatMessage({
+                    id: 'link.careers'
+                  })}
                   target="_blank"
                   rel="noopener noreferrer">
                   <FormattedMessage id={`components.Common.Header.careers`} />
                 </a>
               </li>
               <li>
-                <Link to="/policy">
+                <Link to={`/${langKey}/policy`}>
                   <FormattedMessage id={`${scope}.privacy`} />
                 </Link>
               </li>
               <li>
-                <Link to="/terms">
+                <Link to={`/${langKey}/terms`}>
                   <FormattedMessage id={`${scope}.terms`} />
                 </Link>
               </li>
               <li>
-                <Link to="/contact">
+                <Link to={`/${langKey}/contact`}>
                   <FormattedMessage id={`${scope}.contactUs`} />
                 </Link>
               </li>
               <li>
-                <Link to="/sitemap">
+                <Link to={`/${langKey}/sitemap`}>
                   <FormattedMessage id={`${scope}.sitemap`} />
                 </Link>
               </li>

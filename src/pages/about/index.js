@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedHTMLMessage } from 'react-intl'
+import { FormattedHTMLMessage, injectIntl } from 'react-intl'
 import { Row, Col } from 'reactstrap'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
@@ -56,9 +56,14 @@ const sliderSettings = {
 }
 
 const AboutUs = props => {
+  const { formatMessage } = props.intl
   return (
     <Wrapper>
-      <SEO title="About" lang={props.langKey}/>
+      <SEO
+          title={formatMessage({ id: "about.meta.title" })}
+          description={formatMessage({ id: "about.meta.description" })}
+          lang={props.langKey}
+        />
       <Banner>
         <Container>
           <BannerText>
@@ -189,4 +194,4 @@ const AboutUs = props => {
   )
 }
 
-export default layoutWithLangKey(AboutUs)
+export default layoutWithLangKey(injectIntl(AboutUs))

@@ -303,7 +303,11 @@ module.exports = {
   "components.PrivacyPolicyPage.13": "Governing Law and Jurisdiction",
   "components.PrivacyPolicyPage.13_": "This Policy shall be governed by the laws of Singapore. You agree to submit to exclusive jurisdiction of the Singapore courts.",
 
-  "socialLink.facebook": "https://www.facebook.com/ezbiztrip",
+  "link.facebook": "https://www.facebook.com/ezbiztrip",
+  "link.blog": "https://blog.ezbiztrip.com",
+  "link.support": "https://support.ezbiztrip.com",
+  "link.careers": "https://blog.ezbiztrip.com/category/careers",
+
   "containers.pricingPlan.pageTitle": "Plan & Pricing",
   "containers.pricingPlan.pageDesc": "Pick a plan that right for business. It's FREE to get started.",
   "containers.pricingPlan.Subscription.basic": "basic",
@@ -351,5 +355,24 @@ module.exports = {
   "containers.pricingPlan.faq.5_": "Yes! For companies on a Premium plan, employees can book their private trips (paying for themselves, of course). This means that for any leisure trip, employees and their family and friends get to enjoy all the same features and support. ",
   "containers.pricingPlan.contactTitle": "Looking for an Enterprise Plan?",
   "containers.pricingPlan.contactDesc": "Have a lot of agents, need an SLA or have other special requirements?",
-  "containers.pricingPlan.contactMailDesc": "Get in touch and let’s talk!"
+  "containers.pricingPlan.contactMailDesc": "Get in touch and let’s talk!",
+
+  "home.meta.title": "EzBizTrip – Corporate travel management, Business ERP system, Automate expense report",
+  "home.meta.description": "Welcome to EzBiZ Trip, EzBiz Trip solution use artificial intelligence and machine learning to provide you with smart suggestion which help you to save time while searching for the best air-fare or hotels. ",
+  "about.meta.title": "EzBizTrip – Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "about.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
+  "contact.meta.title": "EzBizTrip – Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "contact.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
+  "features.meta.title": "EzBizTrip – Expenses Management, less effort business travel booking system, ERP system",
+  "features.meta.description": "EzBiz Trip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan. ",
+  "policy.meta.title": "Privacy policy",
+  "policy.meta.description": "",
+  "pricing.meta.title": "Plan and Pricing",
+  "pricing.meta.description": "",
+  "requestDemo.meta.title": "Request Demo",
+  "requestDemo.meta.description": "",
+  "sitemap.meta.title": "Sitemap",
+  "sitemap.meta.description": "",
+  "terms.meta.title": "Terms and Conditions",
+  "terms.meta.description": ""
 }

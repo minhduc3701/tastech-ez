@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import companyLogo from '../../images/logo.svg'
 import SelectLanguage from '../SelectLanguage'
 
@@ -294,50 +294,55 @@ const Overlay = styled.div`
   z-index: 98;
 `
 
-// to fix error:
-// error "window" is not available during server side rendering.
-if (typeof window === 'undefined') {
-  global.window = {}
-}
+class Header extends Component {
+  constructor(props) {
+    super(props)
 
-const Header = props => {
-  const [menuOpen, setMenuOpen] = useState(false)
+    this.toggle = this.toggle.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
 
-  const [stickyHeader, setStickyHeader] = useState({
-    headerShow: true,
-    scrollPos: 0
-  })
-
-  const top = window.document ? window.document.body.getBoundingClientRect().top : 0
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [top])
-
-  const toggle = () => {
-    setMenuOpen(!menuOpen)
+    this.state = {
+      menuOpen: false,
+      headerShow: true,
+      scrollPos: 0
+    }
   }
-
-  const handleScroll = () => {
-    let boundingTop = document.body.getBoundingClientRect().top
-
-    setStickyHeader({
-      scrollPos: boundingTop,
-      headerShow: boundingTop > 0 ? true : boundingTop > stickyHeader.scrollPos
+  toggle() {
+    this.setState({
+      menuOpen: !this.state.menuOpen
     })
   }
 
+  handleScroll() {
+    const { scrollPos } = this.state
+
+    let boundingTop = document.body.getBoundingClientRect().top
+    this.setState({
+      scrollPos: boundingTop,
+      headerShow: boundingTop > 0 ? true : boundingTop > scrollPos
+    })
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  render() {
+    let { langKey } = this.props
+
     let subNavigation = (
       <SubNav navbar>
-            <SelectLanguage langs={props.langs} />
+            <SelectLanguage langs={this.props.langs} />
 
-            <LoginBtn href="/app">
+            <LoginBtn href={`/app?lang=${langKey}`}>
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 
-            <StartBtn to="/request-demo">
+            <StartBtn to={`/${langKey}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
@@ -345,72 +350,81 @@ const Header = props => {
       </SubNav>
     )
 
-    let headerClassName = menuOpen
+    let headerClassName = this.state.menuOpen
       ? ''
-      : stickyHeader.headerShow
+      : this.state.headerShow
       ? 'header-visible'
       : 'header-hidden'
+
+    let { menuOpen } = this.state
+
+    const { formatMessage } = this.props.intl
 
     return (
       <HeaderWrapper className={headerClassName}>
         <HeaderNavbar>
-          <MenuToggler onClick={toggle}>
+          <MenuToggler onClick={this.toggle}>
             <Icon icon={baselineMoreVert} />
           </MenuToggler>
 
-          <HeaderNavBrand exact to="/">
+          <HeaderNavBrand exact to={`/${langKey}`}>
             <img src={companyLogo} alt="" />
           </HeaderNavBrand>
 
           <HeaderCollapse className={menuOpen ? 'menu-open' : ''}>
-            <span className="close-btn" onClick={toggle}>
+            <span className="close-btn" onClick={this.toggle}>
               <Icon icon={baselineClose} />
             </span>
 
-            <StartBtn to="/request-demo">
+            <StartBtn to={`/${langKey}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
             <MainNav navbar>
               <li>
-                <Link activeClassName="active" exact to="/">
+                <Link activeClassName="active" exact to={`/${langKey}`}>
                   <FormattedMessage id={`${scope}.home`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/features">
+                <Link activeClassName="active" to={`/${langKey}/features`}>
                   <FormattedMessage id={`${scope}.feature`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/pricing">
+                <Link activeClassName="active" to={`/${langKey}/pricing`}>
                   <FormattedMessage id={`${scope}.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/about">
+                <Link activeClassName="active" to={`/${langKey}/about`}>
                   <FormattedMessage id={`${scope}.aboutUs`} />
                 </Link>
               </li>
               <li>
-                <a href={'blogSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.blog'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`${scope}.blog`} />
                 </a>
               </li>
               <li>
-                <a href={'supportSite'} target="_blank" rel="noopener noreferrer">
+                <a href={formatMessage({
+                    id: 'link.support'
+                  })} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id={`${scope}.support`} />
                 </a>
               </li>
             </MainNav>
-            <SelectLanguage langs={props.langs} />
+            <SelectLanguage langs={this.props.langs} />
           </HeaderCollapse>
 
-          {menuOpen && <Overlay onClick={toggle} />}
+          {menuOpen && <Overlay onClick={this.toggle} />}
           {subNavigation}
         </HeaderNavbar>
       </HeaderWrapper>
     )
+  }
 }
 
-export default Header
+export default injectIntl(Header)

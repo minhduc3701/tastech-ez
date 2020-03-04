@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './Header'
 import Footer from './Footer'
-import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl';
@@ -67,11 +66,11 @@ const Layout = ({ children, location }) => {
               locale={langKey}
               messages={messages[langKey]}
             >
-                <Header langs={langsMenu} />
+                <Header langs={langsMenu} langKey={langKey}/>
                 <Content>
                   {children({langKey, defaultLangKey, homeLink})}
                 </Content>
-                <Footer />
+                <Footer langKey={langKey} />
             </IntlProvider>
           </Wrapper>
         )

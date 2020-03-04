@@ -81,6 +81,7 @@ const Article = styled.article`
 
 class SecondFeature extends Component {
   render() {
+    let {langKey} = this.props
     return (
       <Wrapper>
         <Container>
@@ -104,7 +105,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to="/feature">
+                    <ViewMoreBtn to={`/${langKey}/features`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>
@@ -134,7 +135,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to="/feature">
+                    <ViewMoreBtn to={`/${langKey}/features`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>
@@ -164,7 +165,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to="/feature">
+                    <ViewMoreBtn to={`/${langKey}/features`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>

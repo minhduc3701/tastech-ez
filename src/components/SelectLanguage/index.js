@@ -99,7 +99,7 @@ const LanguageDropdownContent = styled(DropdownMenu)`
 const SelectLanguage = (props) => {
   let links = []
 
-  props.langs.map(lang => {
+  props.langs.forEach(lang => {
       switch (lang.langKey) {
         case 'vi':
           links = [

@@ -7,6 +7,7 @@ import { FormattedHTMLMessage, injectIntl } from 'react-intl'
 import { Container } from '../../styles'
 import {layoutWithLangKey} from "../../components/layout"
 import queryString from 'query-string'
+import SEO from '../../components/seo'
 
 const scope = 'components.RequestDemo'
 
@@ -113,6 +114,11 @@ class RequestDemo extends Component {
 
     return (
       <Wrapper>
+        <SEO
+          title={formatMessage({ id: "requestDemo.meta.title" })}
+          description={formatMessage({ id: "requestDemo.meta.description" })}
+          lang={this.props.langKey}
+        />
         <BackGround src={rd_bg} />
 
         <Container>

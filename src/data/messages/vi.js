@@ -11,7 +11,7 @@ module.exports = {
   "components.Common.Header.getStarted": "Bắt đầu",
   "components.Common.Header.goToApp": "Vào EzBizTrip",
   "components.Common.Header.faq": "FAQ-Câu hỏi thường gặp",
-  "components.Common.Header.pricing": "Pricing",
+  "components.Common.Header.pricing": "Giá cả",
   "components.Common.Footer.privacy": "Quyền riêng tư và bảo mật",
   "components.Common.Footer.terms": "Điều khoản",
   "components.Common.Footer.contactUs": "Liên hệ ",
@@ -303,7 +303,11 @@ module.exports = {
   "components.PrivacyPolicyPage.13": "LUẬT ÁP DỤNG VÀ QUYỀN TÀI PHÁN",
   "components.PrivacyPolicyPage.13_": "Chính sách này được điều chỉnh bởi pháp luật của Singapore. Bạn tuân thủ thẩm quyền tài phán riêng biệt của tòa án Singapore.",
 
-  "socialLink.facebook": "https://www.facebook.com/ezbiztripvietnam/",
+  "link.facebook": "https://www.facebook.com/ezbiztripvietnam/",
+  "link.blog": "https://blog.ezbiztrip.com/vn/",
+  "link.support": "https://support.ezbiztrip.com/vn",
+  "link.careers": "https://blog.ezbiztrip.com/vn/category/careers-vn/",
+
   "containers.pricingPlan.pageTitle": "Gói sử dụng & Giá",
   "containers.pricingPlan.pageDesc": " Chọn một gói sử dụng phù hợp với nhu cầu của bạn. MIỄN PHÍ đăng kí.",
   "containers.pricingPlan.Subscription.basic": "cơ bản",
@@ -351,5 +355,24 @@ module.exports = {
   "containers.pricingPlan.faq.5_": "Đúng! Cho các công ty dùng Gói nâng cấp, nhân viên có thể đặt chuyến đi cho mục đích cá nhân (và thanh toán bằng tiền của bản thân). Điều này nghĩa là với bất kì chuyến đi du lịch nghỉ dưỡng nào, nhân viên và gia đình, bạn bè của họ đều có thể đặt chỗ dễ dàng trên EzBizTrip.",
   "containers.pricingPlan.contactTitle": "Bạn đang tìm kiếm Gói sử dụng Doanh nghiệp?",
   "containers.pricingPlan.contactDesc": "Có nhiều nhà cung cấp dịch vụ lữ hành khác nhau, bạn cần Cam kết sử dụng dịch vụ hoặc có các yêu cầu đặc biệt khác?",
-  "containers.pricingPlan.contactMailDesc": " Hãy liên lạc với chúng tôi!"
+  "containers.pricingPlan.contactMailDesc": " Hãy liên lạc với chúng tôi!",
+
+  "home.meta.title": "EzBizTrip – Corporate travel management, Business ERP system, Automate expense report",
+  "home.meta.description": "Welcome to EzBiZ Trip, EzBiz Trip solution use artificial intelligence and machine learning to provide you with smart suggestion which help you to save time while searching for the best air-fare or hotels. ",
+  "about.meta.title": "EzBizTrip – Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "about.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
+  "contact.meta.title": "EzBizTrip – Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "contact.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
+  "features.meta.title": "EzBizTrip – Expenses Management, less effort business travel booking system, ERP system",
+  "features.meta.description": "EzBiz Trip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan. ",
+  "policy.meta.title": "Privacy policy",
+  "policy.meta.description": "",
+  "pricing.meta.title": "Plan and Pricing",
+  "pricing.meta.description": "",
+  "requestDemo.meta.title": "Request Demo",
+  "requestDemo.meta.description": "",
+  "sitemap.meta.title": "Sitemap",
+  "sitemap.meta.description": "",
+  "terms.meta.title": "Terms and Conditions",
+  "terms.meta.description": ""
 }

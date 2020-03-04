@@ -19,7 +19,7 @@ import outlineMinus from '@iconify/icons-ic/outline-minus'
 import outlinePlus from '@iconify/icons-ic/outline-plus'
 import outlineEmail from '@iconify/icons-ic/outline-email'
 
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 const scope = 'containers.pricingPlan'
 
 const subscriptions = [
@@ -126,9 +126,16 @@ const PricingPlan = props => {
     return <div>{questions}</div>
   }
 
+      const { formatMessage } = props.intl
+
+
   return (
     <Wrapper>
-      <SEO title="Pricing" lang={props.langKey}/>
+      <SEO
+          title={formatMessage({ id: "pricing.meta.title" })}
+          description={formatMessage({ id: "pricing.meta.description" })}
+          lang={props.langKey}
+        />
 
       <Banner>
         <Container className="narrow">
@@ -213,4 +220,4 @@ const PricingPlan = props => {
   )
 }
 
-export default layoutWithLangKey(PricingPlan)
+export default layoutWithLangKey(injectIntl(PricingPlan))
