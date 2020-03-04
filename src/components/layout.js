@@ -66,11 +66,11 @@ const Layout = ({ children, location }) => {
               locale={langKey}
               messages={messages[langKey]}
             >
-                <Header langs={langsMenu} langKey={langKey}/>
+                <Header langs={langsMenu} langKey={langKey} langUri={homeLink}/>
                 <Content>
                   {children({langKey, defaultLangKey, homeLink})}
                 </Content>
-                <Footer langKey={langKey} />
+                <Footer langUri={homeLink} />
             </IntlProvider>
           </Wrapper>
         )
