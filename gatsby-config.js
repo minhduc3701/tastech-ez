@@ -65,5 +65,6 @@ module.exports = {
         // other options
       },
     },
+    `gatsby-plugin-meta-redirect`
   ],
 }

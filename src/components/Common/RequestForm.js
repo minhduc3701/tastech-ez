@@ -192,7 +192,7 @@ const FormInputCustom = styled(FormInput)`
 
 const Label = styled.label`
   color:  #222222;
-  font-size: ${props => (props.focus ? '10px' : '15px;')}
+  font-size: ${props => (props.focus ? '10px' : '15px;')};
   font-weight: normal;
   position: absolute;
   transition: all 0.15s ease;
