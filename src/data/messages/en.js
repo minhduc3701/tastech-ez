@@ -4,7 +4,7 @@ module.exports = {
   "components.Common.Header.blog": "Blog",
   "components.Common.Header.support": "Support",
   "components.Common.Header.careers": "Careers",
-  "components.Common.Header.feature": "Feature",
+  "components.Common.Header.feature": "Features",
   "components.Common.Header.aboutUs": "About Us",
   "components.Common.Header.requestDemo": "Request Demo",
   "components.Common.Header.login": "Log In",

@@ -378,7 +378,7 @@ const Header = props => {
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/feature">
+                <Link activeClassName="active" to="/features">
                   <FormattedMessage id={`${scope}.feature`} />
                 </Link>
               </li>
