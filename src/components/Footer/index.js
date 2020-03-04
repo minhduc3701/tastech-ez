@@ -206,14 +206,13 @@ const BottomRight = styled.div`
 
 const Footer = props => {
   const { formatMessage } = props.intl
-  let { langKey } = props
 
   return (
     <Wrapper>
       <Container>
         <FooterTop>
           <TopLeft>
-            <Link exact="true" to={`/${langKey}`}>
+            <Link exact="true" to={`${props.langUri}`}>
               <img src={companyLogo} alt="" />
             </Link>
           </TopLeft>
@@ -221,22 +220,22 @@ const Footer = props => {
           <TopCenter>
             <ul>
               <li>
-                <Link exact="true" to={`/${langKey}`}>
+                <Link exact="true" to={`${props.langUri}`}>
                   <FormattedMessage id={`components.Common.Header.home`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/features`}>
+                <Link to={`${props.langUri}/features`}>
                   <FormattedMessage id={`components.Common.Header.feature`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/pricing`}>
+                <Link to={`${props.langUri}/pricing`}>
                   <FormattedMessage id={`components.Common.Header.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/about`}>
+                <Link to={`${props.langUri}/about`}>
                   <FormattedMessage id={`components.Common.Header.aboutUs`} />
                 </Link>
               </li>
@@ -317,22 +316,22 @@ const Footer = props => {
                 </a>
               </li>
               <li>
-                <Link to={`/${langKey}/policy`}>
+                <Link to={`${props.langUri}/policy`}>
                   <FormattedMessage id={`${scope}.privacy`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/terms`}>
+                <Link to={`${props.langUri}/terms`}>
                   <FormattedMessage id={`${scope}.terms`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/contact`}>
+                <Link to={`${props.langUri}/contact`}>
                   <FormattedMessage id={`${scope}.contactUs`} />
                 </Link>
               </li>
               <li>
-                <Link to={`/${langKey}/sitemap`}>
+                <Link to={`${props.langUri}/sitemap`}>
                   <FormattedMessage id={`${scope}.sitemap`} />
                 </Link>
               </li>

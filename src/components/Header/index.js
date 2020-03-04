@@ -332,17 +332,15 @@ class Header extends Component {
   }
 
   render() {
-    let { langKey } = this.props
-
     let subNavigation = (
       <SubNav navbar>
             <SelectLanguage langs={this.props.langs} />
 
-            <LoginBtn href={`/app?lang=${langKey}`}>
+            <LoginBtn href={`/app?lang=${this.props.langKey}`}>
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 
-            <StartBtn to={`/${langKey}/request-demo`}>
+            <StartBtn to={`${this.props.langUri}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
@@ -367,7 +365,7 @@ class Header extends Component {
             <Icon icon={baselineMoreVert} />
           </MenuToggler>
 
-          <HeaderNavBrand exact to={`/${langKey}`}>
+          <HeaderNavBrand exact to={`${this.props.langUri}`}>
             <img src={companyLogo} alt="" />
           </HeaderNavBrand>
 
@@ -376,28 +374,28 @@ class Header extends Component {
               <Icon icon={baselineClose} />
             </span>
 
-            <StartBtn to={`/${langKey}/request-demo`}>
+            <StartBtn to={`${this.props.langUri}/request-demo`}>
               <FormattedMessage id={`${scope}.getStarted`} />
             </StartBtn>
 
             <MainNav navbar>
               <li>
-                <Link activeClassName="active" exact to={`/${langKey}`}>
+                <Link activeClassName="active" exact to={`${this.props.langUri}`}>
                   <FormattedMessage id={`${scope}.home`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`/${langKey}/features`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/features`}>
                   <FormattedMessage id={`${scope}.feature`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`/${langKey}/pricing`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/pricing`}>
                   <FormattedMessage id={`${scope}.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`/${langKey}/about`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/about`}>
                   <FormattedMessage id={`${scope}.aboutUs`} />
                 </Link>
               </li>
