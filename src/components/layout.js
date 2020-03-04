@@ -11,6 +11,9 @@ import styled from 'styled-components'
 import { Main } from '../styles'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 import vi from '../data/messages/vi';
 import en from '../data/messages/en';
 
@@ -18,6 +21,11 @@ const messages = {
   vi,
   en
 }
+
+// config react-toast
+toast.configure({
+  hideProgressBar: false
+})
 
 const Wrapper = styled(Main)`
   height: 100%;
