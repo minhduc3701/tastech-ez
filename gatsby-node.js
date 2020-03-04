@@ -15,3 +15,18 @@ exports.onCreatePage = ({page, actions}) => {
     })
   }
 }
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createRedirect } = actions;
+  const newLangs = ['', ...langs]
+
+  // Oops
+  newLangs.forEach(lang => {
+    createRedirect({
+      fromPath: `/${lang}/feature`,
+      toPath: `/${lang}/features`,
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
+  })
+}
