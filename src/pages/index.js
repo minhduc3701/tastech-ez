@@ -56,7 +56,7 @@ const sliderSettings = {
 
 const IndexPage = props => (
   <HomeWrapper>
-        <SEO title="Corporate travel management, Business ERP system, Automate expense report" lang={props.langKey}/>
+        <SEO title="Corporate travel management" lang={props.langKey}/>
 
         <Slider {...sliderSettings}>
           <SliderItem src={Banner1}>

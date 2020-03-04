@@ -49,8 +49,7 @@ const FeaturePage = props => {
     <Wrapper>
       <SEO
         lang={props.langKey}
-        title="Expenses Management, less effort business travel booking system, ERP system"
-        description="EzBizTrip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan."
+        title="Features"
       />
       <Banner>
         <Container>
