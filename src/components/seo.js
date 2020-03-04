@@ -76,7 +76,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: "image",
-          content: "/images/cover.jpg"
+          content: `${process.env.GATSBY_SITE_URL}/images/cover.jpg`
+        },
+        {
+          name: "og:image",
+          content: `${process.env.GATSBY_SITE_URL}/images/cover.jpg`
         }
       ].concat(meta)}
     >
