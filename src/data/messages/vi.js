@@ -359,9 +359,9 @@ module.exports = {
 
   "home.meta.title": "Quản lý chuyến công tác doanh nghiệp",
   "home.meta.description": "Xin chào, chúng tôi là ứng dụng đặt chỗ và quản lý chuyến công tác cho doanh nghiệp và cá nhân EzBizTrip. Chúng tôi tự hào mang tới giải pháp công nghệ thông minh hỗ trợ doanh nghiệp, cá nhân tiết kiệm thời gian tìm kiếm vé máy bay, phòng khách sạn tốt nhất",
-  "about.meta.title": "Sứ mệnh của chúng tôi là mang tới các dịch vụ thông minh cho doanh nghiệp bao gồm quản lý chuyến công tác, quản lý chi phí và chương trình quà tặng cho nhân viên",
+  "about.meta.title": "Về chúng tôi",
   "about.meta.description": "EzBizTrip được thành lập với mục tiêu độc tôn là mang lại trải nghiệm thân thiện nhất cho người dùng, hỗ trợ người dùng quản lý chuyến công tác cũng như công tác phí trong suốt chuyến đi một cách hiệu quả và khuyến khích nhân viên tiết kiệm chi phí công tác cho công ty.",
-  "contact.meta.title": "Chúng tôi hướng tới việc mang lại sự tiện lợi, tiết kiệm và thoải mái cho khách hàng hơn là kinh doanh",
+  "contact.meta.title": "Liên hệ",
   "contact.meta.description": "EzBizTrip được thành lập với mục tiêu độc tôn là mang lại trải nghiệm thân thiện nhất cho người dùng, hỗ trợ người dùng quản lý chuyến công tác cũng như công tác phí trong suốt chuyến đi một cách hiệu quả và khuyến khích nhân viên tiết kiệm chi phí công tác cho công ty.",
   "features.meta.title": "Tính năng",
   "features.meta.description": "EzBizTrip khác biệt với bất kỳ nền tảng quản lý công tác nào bởi chúng tôi mang tới sự tiện lợi, tiết kiệm và thoải mái cho khách hàng hơn là kinh doanh.",

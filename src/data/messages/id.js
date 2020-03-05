@@ -359,9 +359,9 @@ module.exports = {
 
   "home.meta.title": "Corporate travel management",
   "home.meta.description": "Welcome to EzBizTrip, EzBizTrip solution use artificial intelligence and machine learning to provide you with smart suggestion which help you to save time while searching for the best air-fare or hotels. ",
-  "about.meta.title": "Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "about.meta.title": "About us",
   "about.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
-  "contact.meta.title": "Our Vision, to provide smart travel, expense and rewards application for Business Traveler",
+  "contact.meta.title": "Contact us",
   "contact.meta.description": "EzBizTrip was founded with a goal of making business trip enjoyable, managing business trip effectively and encourage employee to help company save travelling cost.",
   "features.meta.title": "Features",
   "features.meta.description": "EzBiz Trip unique feature that make us different, we provide a easy to use expense management system, a trip management system that track submitted request anywhere anytime and an itinerary on the go that will alert you of your trip events and plan. ",
