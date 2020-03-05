@@ -365,7 +365,7 @@ class Header extends Component {
             <Icon icon={baselineMoreVert} />
           </MenuToggler>
 
-          <HeaderNavBrand exact to={`${this.props.langUri}`}>
+          <HeaderNavBrand to={`${this.props.langUri}`}>
             <img src={companyLogo} alt="" />
           </HeaderNavBrand>
 
@@ -380,22 +380,22 @@ class Header extends Component {
 
             <MainNav navbar>
               <li>
-                <Link activeClassName="active" exact to={`${this.props.langUri}`}>
+                <Link activeClassName="active" to={`${this.props.langUri}`}>
                   <FormattedMessage id={`${scope}.home`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/features`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/features/`}>
                   <FormattedMessage id={`${scope}.feature`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/pricing`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/pricing/`}>
                   <FormattedMessage id={`${scope}.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/about`}>
+                <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
                   <FormattedMessage id={`${scope}.aboutUs`} />
                 </Link>
               </li>

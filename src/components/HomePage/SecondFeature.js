@@ -104,7 +104,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to={`${this.props.langUri}/features`}>
+                    <ViewMoreBtn to={`${this.props.langUri}/features/`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>
@@ -134,7 +134,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to={`${this.props.langUri}/features`}>
+                    <ViewMoreBtn to={`${this.props.langUri}/features/`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>
@@ -164,7 +164,7 @@ class SecondFeature extends Component {
                     />
                   </p>
                   <div className="btn-wrapper">
-                    <ViewMoreBtn to={`${this.props.langUri}/features`}>
+                    <ViewMoreBtn to={`${this.props.langUri}/features/`}>
                       <FormattedHTMLMessage tagName="span" id="btn.readMore" />
                       <Icon icon={baselineArrowRightAlt} />
                     </ViewMoreBtn>

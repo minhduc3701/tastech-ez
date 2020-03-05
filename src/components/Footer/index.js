@@ -225,17 +225,17 @@ const Footer = props => {
                 </Link>
               </li>
               <li>
-                <Link to={`${props.langUri}/features`}>
+                <Link to={`${props.langUri}/features/`}>
                   <FormattedMessage id={`components.Common.Header.feature`} />
                 </Link>
               </li>
               <li>
-                <Link to={`${props.langUri}/pricing`}>
+                <Link to={`${props.langUri}/pricing/`}>
                   <FormattedMessage id={`components.Common.Header.pricing`} />
                 </Link>
               </li>
               <li>
-                <Link to={`${props.langUri}/about`}>
+                <Link to={`${props.langUri}/about/`}>
                   <FormattedMessage id={`components.Common.Header.aboutUs`} />
                 </Link>
               </li>

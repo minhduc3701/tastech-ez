@@ -62,17 +62,17 @@ const Sitemap = props => {
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/features`}>
+            <Link to={`${props.langUri}/features/`}>
               <FormattedMessage id={`components.Common.Header.feature`} />
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/pricing`}>
+            <Link to={`${props.langUri}/pricing/`}>
               <FormattedMessage id={`components.Common.Header.pricing`} />
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/about`}>
+            <Link to={`${props.langUri}/about/`}>
               <FormattedMessage id={`components.Common.Header.aboutUs`} />
             </Link>
           </li>
@@ -91,7 +91,7 @@ const Sitemap = props => {
             </a>
           </li>
           <li>
-           <Link to={`${props.langUri}/request-demo`}>
+           <Link to={`${props.langUri}/request-demo/`}>
               <FormattedMessage id={`components.Common.Header.getStarted`} />
             </Link>
           </li>
@@ -103,17 +103,17 @@ const Sitemap = props => {
             </a>
           </li>
           <li>
-            <Link to={`${props.langUri}/policy`}>
+            <Link to={`${props.langUri}/policy/`}>
               <FormattedMessage id={`components.Common.Footer.privacy`} />
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/terms`}>
+            <Link to={`${props.langUri}/terms/`}>
               <FormattedMessage id={`components.Common.Footer.terms`} />
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/contact`}>
+            <Link to={`${props.langUri}/contact/`}>
               <FormattedMessage id={`components.Common.Footer.contactUs`} />
             </Link>
           </li>
