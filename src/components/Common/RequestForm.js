@@ -686,7 +686,7 @@ class RequestForm extends Component {
               <FormattedMessage id={`${scope}.accept`} />
             </CheckBoxLabel>
             &nbsp;
-            <TermsLink to="/terms-and-conditions" target="_blank">
+            <TermsLink to={`${this.props.langUri}/terms`} target="_blank">
               <FormattedMessage id={`${scope}.termsAndConditions`} />
             </TermsLink>
           </FormField>

@@ -125,6 +125,7 @@ class RequestDemo extends Component {
           {!tksFlag ? (
             <FormWrapper>
               <RequestForm
+                langUri={this.props.langUri}
                 title={formatMessage({ id: `${scope}.formTitle` })}
                 des={formatMessage({ id: `${scope}.formDes` })}
                 downloadBtn={true}
