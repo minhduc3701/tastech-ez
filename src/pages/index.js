@@ -97,7 +97,7 @@ const IndexPage = props => {
 
         <FirstFeature />
         <SecondFeature langUri={props.langUri} />
-        <SectionRequestForm />
+        <SectionRequestForm langUri={props.langUri} />
       </HomeWrapper>
 )
 }

@@ -22,16 +22,9 @@ const Wrapper = styled.div`
   }
 `
 
-class SectionRequesForm extends Component {
+class SectionRequestForm extends Component {
   handleSubmit = values => {
-    // this.props.history.push({
-    //   pathname: '/request-demo',
-    //   state: {
-    //     tksFlag: true
-    //   }
-    // })
-
-    navigate(`/request-demo?thanks=1`)
+    navigate(`${this.props.langUri}/request-demo?thanks=1`)
   }
   render() {
     const { formatMessage } = this.props.intl
@@ -49,4 +42,4 @@ class SectionRequesForm extends Component {
     )
   }
 }
-export default injectIntl(SectionRequesForm)
+export default injectIntl(SectionRequestForm)
