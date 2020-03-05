@@ -50,10 +50,11 @@ const FeaturePage = props => {
   return (
     <Wrapper>
       <SEO
-          title={formatMessage({ id: "features.meta.title" })}
-          description={formatMessage({ id: "features.meta.description" })}
-          lang={props.langKey}
-        />
+        title={formatMessage({ id: "features.meta.title" })}
+        description={formatMessage({ id: "features.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
       <Banner>
         <Container>
           <BannerText>

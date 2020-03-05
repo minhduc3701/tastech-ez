@@ -12,11 +12,12 @@ const TermsAndConditions = props => {
 
   return (
     <Wrapper>
-           <SEO
-          title={formatMessage({ id: "terms.meta.title" })}
-          description={formatMessage({ id: "terms.meta.description" })}
-          lang={props.langKey}
-        />
+      <SEO
+        title={formatMessage({ id: "terms.meta.title" })}
+        description={formatMessage({ id: "terms.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
 
       <Container>
         <h1 className="page-title">

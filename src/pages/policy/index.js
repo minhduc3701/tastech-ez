@@ -12,11 +12,12 @@ const PrivacyPolicy = props => {
 
   return (
     <Wrapper>
-            <SEO
-          title={formatMessage({ id: "policy.meta.title" })}
-          description={formatMessage({ id: "policy.meta.description" })}
-          lang={props.langKey}
-        />
+      <SEO
+        title={formatMessage({ id: "policy.meta.title" })}
+        description={formatMessage({ id: "policy.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
 
       <Container>
         <h1 className="page-title">

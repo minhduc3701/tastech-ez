@@ -132,10 +132,11 @@ const PricingPlan = props => {
   return (
     <Wrapper>
       <SEO
-          title={formatMessage({ id: "pricing.meta.title" })}
-          description={formatMessage({ id: "pricing.meta.description" })}
-          lang={props.langKey}
-        />
+        title={formatMessage({ id: "pricing.meta.title" })}
+        description={formatMessage({ id: "pricing.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
 
       <Banner>
         <Container className="narrow">
