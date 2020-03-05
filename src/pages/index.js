@@ -96,7 +96,7 @@ const IndexPage = props => {
         </Slider>
 
         <FirstFeature />
-        <SecondFeature langKey={props.langKey} />
+        <SecondFeature langUri={props.langUri} />
         <SectionRequestForm />
       </HomeWrapper>
 )

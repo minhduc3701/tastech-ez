@@ -70,7 +70,7 @@ const Layout = ({ children, location }) => {
                 <Content>
                   {children({langKey, defaultLangKey, homeLink})}
                 </Content>
-                <Footer langUri={homeLink} />
+                <Footer langKey={langKey} langUri={homeLink} />
             </IntlProvider>
           </Wrapper>
         )
