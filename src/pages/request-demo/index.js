@@ -118,6 +118,7 @@ class RequestDemo extends Component {
           title={formatMessage({ id: "requestDemo.meta.title" })}
           description={formatMessage({ id: "requestDemo.meta.description" })}
           lang={this.props.langKey}
+          uri={this.props.uri}
         />
         <BackGround src={rd_bg} />
 

@@ -48,6 +48,7 @@ const Sitemap = props => {
         title={formatMessage({ id: "sitemap.meta.title" })}
         description={formatMessage({ id: "sitemap.meta.description" })}
         lang={props.langKey}
+        uri={props.uri}
       />
 
       <Container>

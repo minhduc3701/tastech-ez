@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { FormattedMessage, injectIntl } from 'react-intl'
 
-function SEO({ description, lang, meta, title, ...props }) {
+function SEO({ description, lang, meta, title, uri = '', ...props }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,6 +32,7 @@ function SEO({ description, lang, meta, title, ...props }) {
 
   const metaDescription = description || site.siteMetadata.description
   const {langs, defaultLangKey} = site.siteMetadata.languages
+  const slug = uri.replace(`/${lang}/`, '/')
 
   return (
     <Helmet
@@ -91,7 +92,7 @@ function SEO({ description, lang, meta, title, ...props }) {
         let isCurrentLang = (l === lang)
         let attrs =  {
           rel: isCurrentLang ? "canonical" : "alternate",
-          href: process.env.GATSBY_SITE_URL + `/${l === defaultLangKey ? '' : l}`
+          href: `${process.env.GATSBY_SITE_URL}${l === defaultLangKey ? '' : ('/' + l)}${slug}`
         }
 
         if (!isCurrentLang) {

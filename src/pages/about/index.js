@@ -60,10 +60,11 @@ const AboutUs = props => {
   return (
     <Wrapper>
       <SEO
-          title={formatMessage({ id: "about.meta.title" })}
-          description={formatMessage({ id: "about.meta.description" })}
-          lang={props.langKey}
-        />
+        title={formatMessage({ id: "about.meta.title" })}
+        description={formatMessage({ id: "about.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
       <Banner>
         <Container>
           <BannerText>

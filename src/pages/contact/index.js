@@ -10,10 +10,11 @@ const ContactUs = props => {
   return (
     <React.Fragment>
       <SEO
-          title={formatMessage({ id: "contact.meta.title" })}
-          description={formatMessage({ id: "contact.meta.description" })}
-          lang={props.langKey}
-        />
+        title={formatMessage({ id: "contact.meta.title" })}
+        description={formatMessage({ id: "contact.meta.description" })}
+        lang={props.langKey}
+        uri={props.uri}
+      />
 
       <ContactForm></ContactForm>
     </React.Fragment>
