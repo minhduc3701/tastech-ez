@@ -12,6 +12,7 @@ import styled from 'styled-components'
 import { Icon } from '@iconify/react'
 import flagForVietnam from '@iconify/icons-twemoji/flag-for-vietnam'
 import flagForUnitedKingdom from '@iconify/icons-twemoji/flag-for-united-kingdom'
+import flagForIndonesia from '@iconify/icons-twemoji/flag-for-indonesia'
 
 const LanguageSwitcher = styled(UncontrolledDropdown).attrs({
   className: 'languageSwitcher'
@@ -96,34 +97,30 @@ const LanguageDropdownContent = styled(DropdownMenu)`
   }
 `
 
+const flags = {
+  'en': {
+    name: 'English',
+    image: <Icon icon={flagForUnitedKingdom} />
+  },
+  'vi': {
+    name: 'Tiếng Việt',
+    image: <Icon icon={flagForVietnam} />
+  },
+  'id': {
+    name: 'Indonesia',
+    image: <Icon icon={flagForIndonesia}/>
+  }
+}
+
 const SelectLanguage = (props) => {
   let links = []
 
   props.langs.forEach(lang => {
-      switch (lang.langKey) {
-        case 'vi':
-          links = [
-            ...links,
-            {...lang, 
-              name: 'TIếng Việt',
-              image: <Icon icon={flagForVietnam} />
-            }
-          ]
-          break
-
-        case 'en':
-        default:
-          links = [
-            ...links,
-            {...lang, 
-              name: 'English',
-              image: <Icon icon={flagForUnitedKingdom} />
-            }
-          ]
-
-      }
-    }
-  )
+    links = [...links, {
+      ...lang,
+      ...flags[lang.langKey]
+    }]
+  })
 
   return (
     <LanguageSwitcher>

@@ -22,6 +22,7 @@ function SEO({ description, lang, meta, title, ...props }) {
             author
             languages {
               langs
+              defaultLangKey
             }
           }
         }
@@ -30,6 +31,7 @@ function SEO({ description, lang, meta, title, ...props }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const {langs, defaultLangKey} = site.siteMetadata.languages
 
   return (
     <Helmet
@@ -85,11 +87,11 @@ function SEO({ description, lang, meta, title, ...props }) {
         }
       ].concat(meta)}
     >
-      {site.siteMetadata.languages.langs.map(l => {
-        let isCurrentLang = l === lang
+      {langs.map(l => {
+        let isCurrentLang = (l === lang)
         let attrs =  {
           rel: isCurrentLang ? "canonical" : "alternate",
-          href: process.env.GATSBY_SITE_URL + (isCurrentLang ? "" : `/${l}`)
+          href: process.env.GATSBY_SITE_URL + `/${l === defaultLangKey ? '' : l}`
         }
 
         if (!isCurrentLang) {
@@ -98,7 +100,7 @@ function SEO({ description, lang, meta, title, ...props }) {
 
         return (
           <link {...attrs} />
-          )
+        )
       })}
     </Helmet>
   )

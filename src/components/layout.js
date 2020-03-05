@@ -13,12 +13,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import vi from '../data/messages/vi';
 import en from '../data/messages/en';
+import vi from '../data/messages/vi';
+import id from '../data/messages/id';
 
 const messages = {
+  en,
   vi,
-  en
+  id
 }
 
 // config react-toast
