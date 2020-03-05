@@ -33,6 +33,7 @@ class SectionRequestForm extends Component {
       <Wrapper>
         <Container className="text-center text-xl-right">
           <RequestForm
+            langUri={this.props.langUri}
             title={formatMessage({ id: `${scope}.title` })}
             des={formatMessage({ id: `${scope}.des` })}
             onSubmit={this.handleSubmit}
