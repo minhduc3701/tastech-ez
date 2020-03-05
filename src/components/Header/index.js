@@ -336,7 +336,7 @@ class Header extends Component {
       <SubNav navbar>
             <SelectLanguage langs={this.props.langs} />
 
-            <LoginBtn href={`/app?lang=${this.props.langKey}`}>
+            <LoginBtn href={`/app/?lang=${this.props.langKey}`}>
               <FormattedMessage id={`${scope}.login`} />
             </LoginBtn>
 

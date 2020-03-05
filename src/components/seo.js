@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { FormattedMessage, injectIntl } from 'react-intl'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, ...props }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,6 +22,7 @@ function SEO({ description, lang, meta, title }) {
             author
             languages {
               langs
+              defaultLangKey
             }
           }
         }
@@ -29,6 +31,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const {langs, defaultLangKey} = site.siteMetadata.languages
 
   return (
     <Helmet
@@ -72,20 +75,23 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: 'keywords',
-          content: 'Business trip, Business travel, Add expense, E-receipts, E-bills, Personal trip, Personal travel, Quick add, Quick add expense, Trip management, Trip management solutions, EzBizTrip, Easy Business Trip, Real-time market search, combo search, Real time market rate, real time market search, Flight search, Hotel search, Flight and hotel search, add services, itinerary, business analytics, business travel analytics, business travel report, business travel policy, Add expense to business trip, E-business trip receipts, E-business trip bills, ezb, easy biz trip, ez biz trip, ezbiz trip, ezbiz travel, easy business travel, EzBizTravel, ez biz travel, travel report, travel itinerary.'
+          content: props.intl.formatMessage({id: 'meta.keywords'})
         },
         {
           name: "image",
-          content: "/images/cover.jpg"
+          content: `${process.env.GATSBY_SITE_URL}/images/cover.jpg`
+        },
+        {
+          name: "og:image",
+          content: `${process.env.GATSBY_SITE_URL}/images/cover.jpg`
         }
       ].concat(meta)}
     >
-  
-      {site.siteMetadata.languages.langs.map(l => {
-        let isCurrentLang = l === lang
+      {langs.map(l => {
+        let isCurrentLang = (l === lang)
         let attrs =  {
           rel: isCurrentLang ? "canonical" : "alternate",
-          href: process.env.GATSBY_SITE_URL + (isCurrentLang ? "" : `/${l}`)
+          href: process.env.GATSBY_SITE_URL + `/${l === defaultLangKey ? '' : l}`
         }
 
         if (!isCurrentLang) {
@@ -94,7 +100,7 @@ function SEO({ description, lang, meta, title }) {
 
         return (
           <link {...attrs} />
-          )
+        )
       })}
     </Helmet>
   )
@@ -113,4 +119,4 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default injectIntl(SEO)

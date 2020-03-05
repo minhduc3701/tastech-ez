@@ -65,7 +65,7 @@ const SectionRequesLink = props => {
             <p>
               <FormattedMessage id={`${scope}.description`} />
             </p>
-            <Link to="/request-demo">
+            <Link to={`${props.langUri}/request-demo`}>
               <FormattedMessage id={`${scope}.link`} />
               <Icon icon={baselineArrowForward} />
             </Link>

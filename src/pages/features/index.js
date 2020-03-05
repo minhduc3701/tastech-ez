@@ -232,11 +232,11 @@ const FeaturePage = props => {
       </Section4>
 
       <div className="d-none d-md-block">
-        <SectionRequestLink />
+        <SectionRequestLink langUri={props.langUri}/>
       </div>
 
       <div className="d-block d-md-none">
-        <SectionRequestForm />
+        <SectionRequestForm langUri={props.langUri}/>
       </div>
 
       <VideoPopup
