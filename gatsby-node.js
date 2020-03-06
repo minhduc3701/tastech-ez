@@ -10,7 +10,7 @@ exports.onCreatePage = ({page, actions}) => {
   if (!skip) {
     langs.forEach(lang => {
       const newPage = Object.assign({}, page)
-      newPage.path = page.path.replace(/^\//, `${lang}/`)
+      newPage.path = page.path.replace(/^\//, `/${lang}/`)
       actions.createPage(newPage)
     })
   }
