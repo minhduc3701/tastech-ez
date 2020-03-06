@@ -267,7 +267,7 @@ class RequestForm extends Component {
     if (name === 'email') {
       let isPersonalEmail = false
 
-      if (!process.env.REACT_APP_DISABLE_CHECK_WORK_EMAIL) {
+      if (!process.env.GATSBY_DISABLE_CHECK_WORK_EMAIL) {
         let patt = new RegExp(
           '(gmail.com|googlemail.com|outlook.com|hotmail.com|live.com|live.co.|yahoo.com|yahoo.co.|yahoo.|ymail.com|inbox.com|icloud.com|facebook.com|mail.com|aol.com|msn.com|yandex.ru|mail.ru)'
         )
