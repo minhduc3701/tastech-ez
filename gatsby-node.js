@@ -1,6 +1,6 @@
 const {langs} = require('./src/data/config')
 
-const isIndexPage = (page, lang) => page.path === ``
+const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
 
 // @see https://youtu.be/wSIw0mu3Q1U
