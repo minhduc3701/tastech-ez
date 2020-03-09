@@ -475,7 +475,7 @@ class RequestForm extends Component {
 
     let disabledSubmitting =
       !this.state.isCaptchaVerified ||
-      !email ||
+      styleClass.email === 1 ||
       !fname ||
       !lname ||
       !phone ||
@@ -513,6 +513,7 @@ class RequestForm extends Component {
               name="email"
               onChange={this.handleInputChange}
               required
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             />
             <Label focus={email}>
               <FormattedMessage id={`${scope}.email`} />
