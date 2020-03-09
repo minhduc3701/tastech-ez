@@ -67,30 +67,30 @@ const IndexPage = props => {
         <Slider {...sliderSettings}>
           <SliderItem src={Banner1}>
             <Container>
-              <div className="text">
+              <h2 className="text">
                 <FormattedMessage id={`${scope}.banner1`} />
-              </div>
+              </h2>
             </Container>
           </SliderItem>
           <SliderItem src={Banner2}>
             <Container>
-              <div className="text">
+              <h2 className="text">
                 <FormattedMessage id={`${scope}.banner2`} />
-              </div>
+              </h2>
             </Container>
           </SliderItem>
           <SliderItem src={Banner3}>
             <Container>
-              <div className="text">
+              <h2 className="text">
                 <FormattedMessage id={`${scope}.banner3`} />
-              </div>
+              </h2>
             </Container>
           </SliderItem>
           <SliderItem src={Banner4}>
             <Container>
-              <div className="text">
+              <h2 className="text">
                 <FormattedMessage id={`${scope}.banner4`} />
-              </div>
+              </h2>
             </Container>
           </SliderItem>
         </Slider>
