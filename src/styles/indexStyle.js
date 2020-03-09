@@ -134,6 +134,7 @@ export const SliderItem = styled.div`
     color: #fff;
     line-height: 1.4;
     margin-left: 8.333333%;
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 991px) {
