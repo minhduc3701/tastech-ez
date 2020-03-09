@@ -483,7 +483,8 @@ class RequestForm extends Component {
       !role ||
       !NoE ||
       !country ||
-      isEmailFailed
+      isEmailFailed ||
+      !isTermsAccepted
 
     return (
       <FromWrapper>
