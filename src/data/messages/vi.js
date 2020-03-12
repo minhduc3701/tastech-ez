@@ -305,7 +305,7 @@ module.exports = {
 
   "link.facebook": "https://www.facebook.com/ezbiztripvietnam/",
   "link.blog": "https://blog.ezbiztrip.com/vn/",
-  "link.support": "https://support.ezbiztrip.com/vn",
+  "link.support": "https://support.ezbiztrip.com",
   "link.careers": "https://blog.ezbiztrip.com/vn/category/careers-vn/",
 
   "containers.pricingPlan.pageTitle": "Gói sử dụng & Giá",
