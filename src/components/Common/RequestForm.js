@@ -17,7 +17,7 @@ import { Link } from 'gatsby'
 import { Icon } from '@iconify/react'
 import baselineCheckCircle from '@iconify/icons-ic/baseline-check-circle'
 import outlineRadioButtonUnchecked from '@iconify/icons-ic/outline-radio-button-unchecked'
-import { toast } from 'react-toastify'
+import toast from '../../modules/toast'
 
 const scope = 'components.Common.RequestForm'
 
