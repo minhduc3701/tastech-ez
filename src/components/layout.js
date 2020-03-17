@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { css } from 'glamor'
 
 import en from '../data/messages/en';
 import vi from '../data/messages/vi';
@@ -25,8 +26,13 @@ const messages = {
 
 // config react-toast
 toast.configure({
-  hideProgressBar: false
-})
+  toastClassName: css({
+    borderRadius: '10px !important',
+    boxShadow: '0 1px 10px 0 rgba(0, 0, 0, 0.13) !important',
+    background: '#fff !important',
+    padding: '14px 16px !important'
+  })
+ })
 
 const Wrapper = styled(Main)`
   height: 100%;

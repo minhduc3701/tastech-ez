@@ -3,7 +3,7 @@ import api from '../../modules/api'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import Recaptcha, { resetRecaptcha } from '../RecaptchaV3'
 import { Row, Col } from 'reactstrap'
-import { toast } from 'react-toastify'
+import toast from '../../modules/toast'
 import LoadingButton from '../Common/LoadingButton'
 
 import {
@@ -70,10 +70,7 @@ class Contact extends React.Component {
     try {
       await api.sendContactForm(this.state)
       toast.success(
-        'Send message successful! We will contact with you soon!  Thanks a lot!',
-        {
-          position: toast.POSITION.TOP_CENTER
-        }
+        'Send message successful! We will contact with you soon!  Thanks a lot!'
       )
       this.setState({
         firstName: '',
@@ -86,9 +83,7 @@ class Contact extends React.Component {
       this.setState({
         isCaptchaVerified: false
       })
-      toast.error('Something went wrong! Please try again!', {
-        position: toast.POSITION.TOP_CENTER
-      })
+      toast.error('Something went wrong! Please try again!')
     }
 
     resetRecaptcha()
