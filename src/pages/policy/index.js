@@ -52,6 +52,11 @@ const PrivacyPolicy = props => {
               </a>
             </li>
             <li>
+              <a href="#opting-out">
+                <FormattedMessage id={`${scope}.optingOut`} />
+              </a>
+            </li>
+            <li>
               <a href="#how-we-use-your-information">
                 <FormattedMessage id={`${scope}.4`} />
               </a>
@@ -191,6 +196,14 @@ const PrivacyPolicy = props => {
               <FormattedHTMLMessage tagName="div" id={`${scope}.3e_`} />
             </li>
           </ul>
+        </div>
+
+        <h4 className="heading" id="opting-out">
+          <FormattedMessage id={`${scope}.optingOut`} />
+        </h4>
+
+        <div className="content">
+          <FormattedHTMLMessage tagName="div" id={`${scope}.optingOut_`} />
         </div>
 
         <h4 className="heading" id="how-we-use-your-information">

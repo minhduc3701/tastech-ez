@@ -241,6 +241,8 @@ module.exports = {
   "components.PrivacyPolicyPage.3d_": "Những cookie này được sử dụng để làm cho thông điệp quảng cáo phù hợp hơn với bạn",
   "components.PrivacyPolicyPage.3e": "Cookie truyền thông xã hội",
   "components.PrivacyPolicyPage.3e_": "Những cookie này được sử dụng để cho phép bạn chia sẻ nội dung mà bạn thấy thú vị thông qua mạng xã hội của bên thứ ba và các trang web khác. Chúng cũng có thể được sử dụng cho mục đích quảng cáo.",
+  "components.PrivacyPolicyPage.optingOut": "TỪ CHỐI",
+  "components.PrivacyPolicyPage.optingOut_": "Mỗi khi bạn cung cấp thông tin cho chúng tôi, bạn sẽ được lựa chọn từ chối liên lạc qua email hoặc bản tin quảng cáo. Bạn có thể nhấp vào liên kết được cung cấp ở cuối thư điện tử của chúng tôi để tự hủy đăng ký nhận thông tin liên lạc. Ngoài ra, hãy liên hệ với chúng tôi theo địa chỉ hoặc đường dây trợ giúp của chúng tôi để thông báo cho chúng tôi về quyết định từ chối của bạn.",
   "components.PrivacyPolicyPage.4": "CÁCH CHÚNG TÔI SỬ DỤNG THÔNG TIN CỦA BẠN",
   "components.PrivacyPolicyPage.4_": "Chúng tôi có thể sử dụng thông tin mà chúng tôi thu thập để cung cấp, cải thiện, cá nhân hóa, phân tích, chẩn đoán, đo lường và bảo vệ Dịch vụ của chúng tôi. Ví dụ về cách chúng tôi có thể sử dụng thông tin của bạn bao gồm:",
   "components.PrivacyPolicyPage.4a": "Cung cấp dịch vụ của chúng tôi cho bạn;",
