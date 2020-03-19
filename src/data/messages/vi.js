@@ -168,7 +168,7 @@ module.exports = {
   "components.RequestDemo.goHelp": "Tới trang Trợ giúp",
   
   "components.TermsAndConditionsPage.pageTitle": "Điều khoản và Điều kiện",
-  "components.TermsAndConditionsPage.lastUpdatedDate": "Cập nhật ngày 29.11.2019",
+  "components.TermsAndConditionsPage.lastUpdatedDate": "Cập nhật ngày 15.03.2020",
   "components.TermsAndConditionsPage.0": "Chào mừng tới EzBizTrip - Giải pháp công ty du lịch trực tuyến (“Giải pháp”). Xin vui lòng đọc kĩ Điều kiện thỏa thuận sử dụng. Bạn chỉ có thể đăng kí Giải pháp một lần và buộc phải dùng email công ty để đăng kí. Mọi thỏa thuận sau đây là bắt buộc đối với bất kỳ cá nhân nào sử dụng Giải pháp liên quan đến tài khoản EzBizTrip (Tài khoản trực tuyến). <br/> Bằng cách đăng ký sử dụng hoặc sử dụng Giải pháp có sẵn thông qua trang web <a href = \"Http: //www.ezbiztrip.vn \"> www.ezbiztrip.vn </a> và / trang của trang có liên quan (đối với trang web của Trang), bạn (1) đồng ý với các điều khoản sau và các điều kiện của thỏa thuận sử dụng này (Thỏa thuận T & C) và tuyên bố và bảo đảm rằng bạn được công ty hoặc tổ chức ủy quyền xác định là Chủ tài khoản (Công ty mật vụ) để sử dụng Tài khoản với tư cách là người dùng cá nhân . <br/> Ngoài ra, bằng cách đồng ý với Thỏa thuận T & C, bạn cũng đồng ý với chính sách quyền riêng tư của sản phẩm EzBizTrip, được đặt tại <a href=\"http://www.ezbiztrip.vn/privacy-policy\"> https: / /www.ezbiztrip.vn/privacy-policy </a>, bao gồm thông tin về cách EzBizTrip thu thập, sử dụng và tiết lộ thông tin cá nhân. Nếu bạn không đồng ý với Thỏa thuận T & C này, bạn không nên sử dụng Giải pháp. EzBizTrip Inc. có thể thay đổi tùy theo quyết định của mình bất cứ lúc nào. Khi thay đổi được đề ra, EzBizTrip sẽ tạo một bản sao mới thỏa thuận của bạn tại trang web và trong Ứng dụng. Mọi điều khoản bổ sung mới sẽ được cung cấp từ bên trong hoặc thông qua Giải pháp EzBizTrip công bố trên Trang web hoặc trong Ứng dụng. Chúng tôi sẽ cập nhật Ngày sửa đổi nội dung mới nhất trên T & C. Mọi thay đổi đối với Thỏa thuận T & C sẽ có hiệu lực ngay lập tức đối với Người dùng mới của trang web, Ứng dụng, và sẽ có hiệu lực sau mười lăm (15) ngày sau khi đăng thông báo về những thay đổi đó trên trang web cho Người dùng hiện tại hoặc sau mười lăm (15) ngày từ khi gửi thông báo qua email về những thay đổi đó cho Người dùng đã đăng ký. Nếu bạn không đồng ý với các thay đổi, bạn phải ngừng sử dụng Giải pháp.",
   "components.TermsAndConditionsPage.1": "Đăng kí; Bảo mật tài khoản.",
   "components.TermsAndConditionsPage.1a": "Đăng kí",
@@ -306,7 +306,7 @@ module.exports = {
   "components.PrivacyPolicyPage.13_": "Chính sách này được điều chỉnh bởi pháp luật của Singapore. Bạn tuân thủ thẩm quyền tài phán riêng biệt của tòa án Singapore.",
 
   "link.facebook": "https://www.facebook.com/ezbiztripvietnam/",
-  "link.blog": "https://blog.ezbiztrip.com/vn/",
+  "link.blog": "https://blog.ezbiztrip.com/vi/",
   "link.support": "https://support.ezbiztrip.com",
   "link.careers": "https://blog.ezbiztrip.com/vn/category/careers-vn/",
 
