@@ -34,7 +34,7 @@ jobs:
             GATSBY_API: https://api.dev.ezbiztrip.com
             GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
             GATSBY_META_ROBOTS_CONTENT: noindex
-            GATSBY_SITE_URL: http://dev.ezbiztrip.com
+            GATSBY_SITE_URL: https://dev.ezbiztrip.com
       - persist_to_workspace:
           root: ./
           paths:
@@ -82,7 +82,7 @@ jobs:
             GATSBY_API: https://api.test.ezbiztrip.com
             GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
             GATSBY_META_ROBOTS_CONTENT: noindex
-            GATSBY_SITE_URL: http://test.ezbiztrip.com
+            GATSBY_SITE_URL: https://test.ezbiztrip.com
       - persist_to_workspace:
           root: ./
           paths:
@@ -131,7 +131,7 @@ jobs:
             GATSBY_CAPTCHA_V3_KEY: 6LffYc0UAAAAALaIIERuw4E3XELVCXbA-jGD2ZuR
             GATSBY_DISABLE_CHECK_WORK_EMAIL: true
             GATSBY_META_ROBOTS_CONTENT: noindex
-            GATSBY_SITE_URL: http://demo.ezbiztrip.com
+            GATSBY_SITE_URL: https://demo.ezbiztrip.com
       - persist_to_workspace:
           root: ./
           paths:
