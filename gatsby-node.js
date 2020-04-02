@@ -19,6 +19,20 @@ exports.onCreatePage = ({page, actions}) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect } = actions;
 
+  createRedirect({
+    fromPath: `/id`,
+    toPath: `/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  
+  createRedirect({
+    fromPath: `/id/`,
+    toPath: `/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+
   // Oops
   createRedirect({
     fromPath: `/feature`,
