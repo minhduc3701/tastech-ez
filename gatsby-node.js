@@ -25,6 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
     isPermanent: true,
     redirectInBrowser: true,
   });
+  
   createRedirect({
     fromPath: `/id/`,
     toPath: `/`,
