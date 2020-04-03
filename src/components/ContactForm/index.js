@@ -37,7 +37,7 @@ import outlineLocationOn from '@iconify/icons-ic/outline-location-on'
 import twotonePhone from '@iconify/icons-ic/twotone-phone'
 import outlineEmail from '@iconify/icons-ic/outline-email'
 
-const scope = 'components.AboutUs'
+const scope = 'page.AboutUs'
 
 class Contact extends React.Component {
   constructor(props) {

@@ -131,6 +131,10 @@ const MainNav = styled(Nav)`
   flex-direction: row !important;
 
   li {
+    position: relative;
+  }
+
+  > li {
     margin-right: 40px;
 
     &:last-child {
@@ -138,7 +142,7 @@ const MainNav = styled(Nav)`
     }
   }
 
-  a {
+  >li>a, >li>span {
     color: #9197b5;
     font-size: 14px;
     position: relative;
@@ -146,6 +150,7 @@ const MainNav = styled(Nav)`
     display: flex;
     align-items: center;
     height: 100%;
+    cursor: pointer;
 
     &:after {
       content: "";
@@ -176,16 +181,64 @@ const MainNav = styled(Nav)`
     }
   }
 
+  ul {
+    position: absolute;
+    left: -25px;
+    width: 226px;
+    height: auto;
+    margin: 0;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: none;
+
+    li {
+      margin-top: 1px;
+      list-style-type: none;
+      a {
+        color: #222;
+        display: block;
+        padding: 11px 25px;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        &:hover {
+          background-color: #f5f5f5;
+          color: #f4b400;
+          text-decoration: none;
+        }
+
+        &.active {
+          color: #f4b400;
+        }
+      }
+    }
+  }
+
+  >li:hover {
+    >a, >span {
+      color: #fff;
+    }
+
+    > ul {
+    display: block;
+    }
+  }
+
+
   @media screen and (max-width: 1199px) {
     display: block !important;
     height: auto;
     margin-top: 15px;
 
-    li {
+    > li {
       margin-right: 0;
     }
 
-    a {
+    >li>a, >li>span {
       padding: 12px 0;
 
       &:after {
@@ -304,7 +357,8 @@ class Header extends Component {
     this.state = {
       menuOpen: false,
       headerShow: true,
-      scrollPos: 0
+      scrollPos: 0,
+      activeMenuFeatures: false
     }
   }
   toggle() {
@@ -325,6 +379,20 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+
+    let path = this.props.langs[0].link
+    let subMenuFeatures = [
+      'smart-suggestion',
+      'expense-management',
+      'travel-policy-management',
+      'rewards-program'
+      ]
+
+    for (const s of subMenuFeatures) {
+      if (path.includes(s)) {
+        this.setState({activeMenuFeatures: true})
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -356,6 +424,8 @@ class Header extends Component {
 
     let { menuOpen } = this.state
 
+    let active
+
     const { formatMessage } = this.props.intl
 
     return (
@@ -385,9 +455,29 @@ class Header extends Component {
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/features/`}>
-                  <FormattedMessage id={`${scope}.feature`} />
-                </Link>
+                <span className={this.state.activeMenuFeatures ? 'active' : ''}><FormattedMessage id={`${scope}.feature`} /></span>
+                <ul>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/smart-suggestion/`}>
+                      <FormattedMessage id={`${scope}.smartSuggestion`} />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/expense-management/`}>
+                      <FormattedMessage id={`${scope}.expenseManagement`} />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/travel-policy-management/`}>
+                      <FormattedMessage id={`${scope}.travelPolicyManagement`} />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/rewards-program/`}>
+                      <FormattedMessage id={`${scope}.rewardsProgram`} />
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li>
                 <Link activeClassName="active" to={`${this.props.langUri}/pricing/`}>

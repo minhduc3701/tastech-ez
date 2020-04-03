@@ -20,7 +20,7 @@ import outlinePlus from '@iconify/icons-ic/outline-plus'
 import outlineEmail from '@iconify/icons-ic/outline-email'
 
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
-const scope = 'containers.pricingPlan'
+const scope = 'page.pricingPlan'
 
 const subscriptions = [
   {

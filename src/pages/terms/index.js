@@ -5,7 +5,7 @@ import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 
-const scope = 'components.TermsAndConditionsPage'
+const scope = 'page.TermsAndConditions'
 
 const TermsAndConditions = props => {
       const { formatMessage } = props.intl

@@ -9,7 +9,7 @@ import {layoutWithLangKey} from "../../components/layout"
 import queryString from 'query-string'
 import SEO from '../../components/seo'
 
-const scope = 'components.RequestDemo'
+const scope = 'page.RequestDemo'
 
 const Wrapper = styled.div`
   padding-bottom: 100px;

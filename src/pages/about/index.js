@@ -1,59 +1,76 @@
 import React from 'react'
-import { FormattedHTMLMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import { Row, Col } from 'reactstrap'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
+import Article from '../../components/Article'
+import ContacForm from '../../components/ContactForm'
 
 import {
   Wrapper,
   Banner,
   BannerText,
-  Title,
-  SubTitle,
   SectionQuote,
-  Section1,
-  Section2,
-  IntroItem,
-  VisionImgWrapper,
-  VisionTextBlock
+  SectionTeam,
+  Member
 } from '../../styles/aboutStyle'
 
-import { Container } from '../../styles'
+import { Container, CustomRow } from '../../styles'
 
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import img1 from '../../images/about-page/1.jpg'
+import avt1 from '../../images/about-page/members/1.jpg'
+import avt2 from '../../images/about-page/members/2.jpg'
+import avt3 from '../../images/about-page/members/3.jpg'
+import avt4 from '../../images/about-page/members/4.jpg'
+import avt5 from '../../images/about-page/members/5.jpg'
+import avt6 from '../../images/about-page/members/6.jpg'
+import avt7 from '../../images/about-page/members/7.jpg'
+import avt8 from '../../images/about-page/members/8.jpg'
 
-import { Icon } from '@iconify/react'
-import quoteIcon from '@iconify/icons-raphael/quote'
+const scope = 'page.AboutUs'
 
-import VisionImg from '../../images/about-page/vision.jpg'
-import IntroIcon1 from '../../images/about-page/icon-1.svg'
-import IntroIcon2 from '../../images/about-page/icon-2.png'
-import IntroIcon3 from '../../images/about-page/icon-3.png'
-
-import ContacForm from '../../components/ContactForm'
-
-const scope = 'components.AboutUs'
-
-const sliderSettings = {
-  dots: true,
-  dotsClass: 'slick-dots',
-  arrows: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
-        infinite: true
-      }
-    }
-  ]
-}
+const members = [
+  {
+    name: 'Takaya Tomose',
+    position: 'CEO',
+    avatar: avt1
+  },
+  {
+    name: 'Huong Vu',
+    position: 'PO',
+    avatar: avt2
+  },
+  {
+    name: 'Traven Koo',
+    position: 'SM',
+    avatar: avt3
+  },
+  {
+    name: 'Shazrina Aim',
+    position: 'SE',
+    avatar: avt4
+  },
+  {
+    name: 'Minh Nguyen',
+    position: 'Dev',
+    avatar: avt5
+  },
+  {
+    name: 'Tuan Nguyen',
+    position: 'Dev',
+    avatar: avt6
+  },
+  {
+    name: 'Chan',
+    position: 'Designer',
+    avatar: avt7
+  },
+  {
+    name: 'Phan Ha',
+    position: 'Dev',
+    avatar: avt8
+  }
+]
 
 const AboutUs = props => {
   const { formatMessage } = props.intl
@@ -68,15 +85,13 @@ const AboutUs = props => {
       <Banner>
         <Container>
           <BannerText>
-            <p>
-              <FormattedHTMLMessage
-                tagName="span"
+            <p className="text-above">
+              <FormattedMessage
                 id={`${scope}.bannerText1`}
               />
             </p>
             <h2>
-              <FormattedHTMLMessage
-                tagName="span"
+              <FormattedMessage
                 id={`${scope}.bannerText2`}
               />
             </h2>
@@ -86,109 +101,50 @@ const AboutUs = props => {
 
       <SectionQuote>
         <Container>
-          <div className="quote-content">
-            <span className="icon">
-              <Icon icon={quoteIcon} />
-            </span>
-            <h3>
-              <FormattedHTMLMessage tagName="span" id={`${scope}.introTitle`} />
-            </h3>
-            <p>
-              <FormattedHTMLMessage
-                tagName="span"
-                id={`${scope}.introSubTitle`}
-              />
-            </p>
-          </div>
+          <CustomRow spacing={20}>
+            <Col md={6}>
+              <div className="image-block">
+                <img src={img1} alt="" />
+              </div>
+            </Col>
+
+            <Col md={6} className="d-flex align-items-center">
+              <div className="text-block">
+                <Article
+                  title={<FormattedMessage id={`${scope}.1`} />}
+                  content={<FormattedHTMLMessage id={`${scope}.1_`} />}
+                />
+
+                <div className="author">
+                  <span className="name">Takaya Tomose</span>
+
+                  <FormattedMessage id={`${scope}.ceo`} />
+                </div>
+              </div>
+            </Col>
+          </CustomRow>
         </Container>
       </SectionQuote>
 
-      <Section1>
+      <SectionTeam>
         <Container>
-          <Slider {...sliderSettings}>
-            <IntroItem>
-              <img src={IntroIcon1} alt="" />
-              <h3>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro1Title`}
-                />
-              </h3>
-              <p>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro1Content`}
-                />
-              </p>
-            </IntroItem>
-            <IntroItem>
-              <img src={IntroIcon2} alt="" />
-              <h3>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro2Title`}
-                />
-              </h3>
-              <p>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro2Content`}
-                />
-              </p>
-            </IntroItem>
-            <IntroItem>
-              <img src={IntroIcon3} alt="" />
-              <h3>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro3Title`}
-                />
-              </h3>
-              <p>
-                <FormattedHTMLMessage
-                  tagName="span"
-                  id={`${scope}.intro3Content`}
-                />
-              </p>
-            </IntroItem>
-          </Slider>
-        </Container>
-      </Section1>
+          <h2 className="section-title">
+          <FormattedMessage id={`${scope}.team`} />
+          </h2>
 
-      <Section2>
-        <Container>
-          <Row>
-            <Col md={5}>
-              <VisionImgWrapper>
-                <img src={VisionImg} alt="" />
-              </VisionImgWrapper>
-            </Col>
-
-            <Col lg={{ size: 6, offset: 1 }} md={7}>
-              <VisionTextBlock>
-                <SubTitle>
-                  <FormattedHTMLMessage
-                    tagName="span"
-                    id={`${scope}.visionSubTitle`}
-                  />
-                </SubTitle>
-                <Title>
-                  <FormattedHTMLMessage
-                    tagName="span"
-                    id={`${scope}.visionTitle1`}
-                  />
-                </Title>
-                <p>
-                  <FormattedHTMLMessage
-                    tagName="span"
-                    id={`${scope}.visionText1`}
-                  />
-                </p>
-              </VisionTextBlock>
-            </Col>
-          </Row>
+          <CustomRow spacing={20}>
+            {members.map((member, index) => (
+                <Col md={3} key={index}>
+                  <Member>
+                    <img src={member.avatar} alt=""/>
+                    <h3 className="name">{member.name}</h3>
+                    <p className="position"><FormattedMessage id={`${scope}.team.position.${member.position}`} /></p>
+                  </Member>
+                </Col>
+              ))}
+          </CustomRow>
         </Container>
-      </Section2>
+      </SectionTeam>
 
       <ContacForm bottom />
     </Wrapper>

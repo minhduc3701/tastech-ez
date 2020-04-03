@@ -3,12 +3,17 @@ import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 import ContactForm from '../../components/ContactForm'
 import { injectIntl } from 'react-intl'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  padding-bottom: 120px;
+`
 
 const ContactUs = props => {
     const { formatMessage } = props.intl
 
   return (
-    <React.Fragment>
+    <Wrapper>
       <SEO
         title={formatMessage({ id: "contact.meta.title" })}
         description={formatMessage({ id: "contact.meta.description" })}
@@ -16,8 +21,8 @@ const ContactUs = props => {
         uri={props.uri}
       />
 
-      <ContactForm></ContactForm>
-    </React.Fragment>
+      <ContactForm />
+    </Wrapper>
   )
 }
 
