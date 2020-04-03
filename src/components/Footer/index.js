@@ -26,18 +26,18 @@ const FooterTop = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 1199px) {
     display: block;
     padding: 40px 0 35px;
   }
 `
 
 const TopLeft = styled.div`
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     flex: 0 0 150px;
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 1199px) {
     display: block;
     text-align: center;
   }
@@ -74,7 +74,7 @@ const TopCenter = styled.div`
     }
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 1199px) {
     display: block;
     text-align: center;
     margin: 35px 0 30px;
@@ -125,11 +125,11 @@ const TopRight = styled.div`
     }
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     flex: 0 0 150px;
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 1199px) {
     display: block;
     text-align: center;
   }

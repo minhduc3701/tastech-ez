@@ -65,7 +65,7 @@ const sliderSettings = {
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-  autoplay: true,
+  // autoplay: true,
   autoplaySpeed: 5000
 }
 
@@ -134,7 +134,7 @@ const IndexPage = props => {
                     <li><FormattedMessage id={`${scope}.intro.1_3`} /></li>
                     <li><FormattedMessage id={`${scope}.intro.1_4`} /></li>
                   </ul>}
-                  link={<LinkDetail to="/" />}
+                  link={<LinkDetail to={`${props.langUri}/smart-suggestion/`} />}
                 />
               </Col>
 
@@ -149,7 +149,7 @@ const IndexPage = props => {
                   icon={<Icon icon={outlinePhotoCamera} />}
                   title={<FormattedMessage id={`${scope}.intro.2`} />}
                   content={<FormattedMessage id={`${scope}.intro.2_`} />}
-                  link={<LinkDetail to="/" />}
+                  link={<LinkDetail to={`${props.langUri}/expense-management/`} />}
                 />
               </Col>
 
@@ -164,7 +164,7 @@ const IndexPage = props => {
                   icon={<Icon icon={outlinePoll} />}
                   title={<FormattedMessage id={`${scope}.intro.3`} />}
                   content={<FormattedMessage id={`${scope}.intro.3_`} />}
-                  link={<LinkDetail to="/" />}
+                  link={<LinkDetail to={`${props.langUri}/travel-policy-management/`} />}
                 />
               </Col>
 
@@ -179,7 +179,7 @@ const IndexPage = props => {
                   icon={<Icon icon={outlineCardGiftcard} />}
                   title={<FormattedMessage id={`${scope}.intro.4`} />}
                   content={<FormattedMessage id={`${scope}.intro.4_`} />}
-                  link={<LinkDetail to="/" />}
+                  link={<LinkDetail to={`${props.langUri}/rewards-program/`} />}
                 />
               </Col>
 
@@ -193,9 +193,13 @@ const IndexPage = props => {
         <SectionHowWeWork>
           <div className="backdrop"></div>
           <Container>
-            <Heading>
-              <FormattedMessage id={`${scope}.howWeWork.sectionTitle`} />
-            </Heading>
+            <Row className="justify-content-center">
+              <Col xs={10}>
+                <Heading>
+                  <FormattedMessage id={`${scope}.howWeWork.sectionTitle`} />
+                </Heading>
+              </Col>
+            </Row>
 
             <CustomRow spacing={50}>
               <Col md={6}>
@@ -251,7 +255,7 @@ const IndexPage = props => {
                 </Customer>
               </Col>
               <Col md={6}>
-                <Customer color="#f4b400">
+                <Customer color="#f4b400"  className="owner">
                   <header>
                     <div className="icon">
                     <Icon icon={baselinePerson} />

@@ -33,7 +33,8 @@ const Wrapper = styled.div.attrs({className: 'article'})`
     }
   }
 
-  &.iconLeft {
+  @media screen and (min-width: 768px) {
+    &.iconLeft {
     display: flex;
 
     .icon {
@@ -45,10 +46,19 @@ const Wrapper = styled.div.attrs({className: 'article'})`
       flex: 1;
     }
   }
+  }
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    
+    ul {
+      text-align: left;
+    }
+  }
 `
 
 const Icon = styled.div`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 60px;
@@ -64,6 +74,10 @@ const Title = styled.h3`
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+  }
 `
 
 const Article = props => {

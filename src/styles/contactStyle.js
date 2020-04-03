@@ -32,6 +32,11 @@ export const Wrapper = styled.div`
 
   @media screen and (max-width: 767px) {
     padding: 50px 0 !important;
+
+    &:before {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
   }
 `
 
@@ -99,6 +104,16 @@ export const ContactForm = styled.form`
     ${FormField} {
       margin-bottom: 12px;
     }
+
+    .row {
+    margin-right: -5px;
+    margin-left: -5px;
+      > [class*='col'] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+
+  }
   }
 
   @media screen and (max-width: 575px) {
@@ -149,9 +164,10 @@ export const SubmitBtnWrapper = styled.div`
     background-color: #EAEAEA;
   }
 
-  @media screen and (max-width: 575px) {
-    margin-top: 12px;
-    margin-left: 0;
+  @media screen and (max-width: 767px) {
+    button {
+      border-radius: 28px;
+    }
   }
 `
 

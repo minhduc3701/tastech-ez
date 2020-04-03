@@ -26,12 +26,12 @@ const Wrapper = styled.div`
     background-position: center;
   }
 
-  @media screen and (max-width: 1199px) {
-
-  }
-
   @media screen and (max-width: 767px) {
+    padding-bottom: 100px;
 
+    &:before {
+      top: 60px;
+    }
   }
 `
 
@@ -58,6 +58,24 @@ export const Box = styled.div`
    footer {
     margin-top: 30px;
    }
+
+   @media screen and (max-width: 767px) {
+    padding: 50px 40px;
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.4;
+      margin-bottom: 13px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 25px;
+    }
+  }
 `
 
 export const StartLink = styled(Link)`

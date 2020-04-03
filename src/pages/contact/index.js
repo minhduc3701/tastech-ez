@@ -7,6 +7,10 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   padding-bottom: 120px;
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0;
+  }
 `
 
 const ContactUs = props => {

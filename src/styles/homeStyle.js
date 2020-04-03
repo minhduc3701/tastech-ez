@@ -90,11 +90,16 @@ export const Heading = styled.h2`
   line-height: 1.37;
   margin-bottom: 70px;
   text-align: center;
+
+  @media screen and (max-width: 767px) {
+    font-size: 25px;
+    line-height: 1.4;
+  }
 `
 
 export const SliderItem = styled.div`
   width: 100%;
-  height: 550px;
+  height: 500px;
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: top center;
@@ -122,29 +127,22 @@ export const SliderItem = styled.div`
 
   .text {
     position: absolute;
-    bottom: 22%;
-    left: 30px;
+    bottom: 130px;
+    left: 8.333333%;;
     width: 50%;
     font-size: 35px;
     font-weight: 600;
     color: #fff;
     line-height: 1.4;
-    margin-left: 8.333333%;
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 991px) {
-    .text {
-      left: 18px;
-      bottom: 80px;
-      margin-left: 0;
-    }
-  }
 
   @media screen and (max-width: 767px) {
     .text {
-      left: 50px;
-      width: 80%;
+      left: 40px;
+      bottom: 70px;
+      width: 70%;
     }
   }
 `
@@ -179,6 +177,22 @@ export const SectionIntro = styled.div`
   .row {
     margin-bottom: 40px;
   }
+
+  @media screen and (max-width: 1199px) {
+    .article {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 50px 0 0;
+
+    .article {
+      margin-bottom: 15px;
+    }
+  }
+
+
 `
 
 export const SectionHowWeWork = styled.div`
@@ -206,6 +220,18 @@ export const SectionHowWeWork = styled.div`
   ${Heading} {
     color: #fff;
     margin-bottom: 110px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 50px 0;
+
+    ${Heading} {
+      margin-bottom: 80px;
+    }
+
+    .backdrop {
+      height: 100%;
+    }
   }
 `
 
@@ -241,6 +267,7 @@ export const Customer = styled.div`
 
   .title {
     margin-top: 24px;
+    margin-bottom: 0;
   }
 
   .underline >span {
@@ -305,6 +332,45 @@ export const Customer = styled.div`
           margin-bottom: 0;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding: 0 16px 40px;
+
+    ul {
+      li {
+        svg {
+          margin-right: 25px;
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 767px) {
+    height: auto;
+
+    &.owner {
+      margin-top: 75px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    ul {
+      li {
+        h3 {
+        font-size: 16px;
+        line-height: 1.44;
+      }
+
+      }
+    }
+
+    .underline >span:after {
+      bottom: 0;
     }
   }
 `

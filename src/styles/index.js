@@ -195,7 +195,7 @@ export const CustomRow = styled(Row)`
     margin-right: -${props => props.spacing / 2}px;
     margin-left: -${props => props.spacing / 2}px;
 
-    > [class^='col'] {
+    > [class*='col'] {
       padding-right: -15px;
       padding-left: -15px;
 

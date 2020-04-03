@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
-import { Row, Col } from 'reactstrap'
+import { Col } from 'reactstrap'
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 import Article from '../../components/Article'
@@ -134,7 +134,7 @@ const AboutUs = props => {
 
           <CustomRow spacing={20}>
             {members.map((member, index) => (
-                <Col md={3} key={index}>
+                <Col md={3} xs={6} key={index}>
                   <Member>
                     <img src={member.avatar} alt=""/>
                     <h3 className="name">{member.name}</h3>

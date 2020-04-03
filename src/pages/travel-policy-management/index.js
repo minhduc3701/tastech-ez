@@ -54,7 +54,7 @@ const TravelPolicyManagementPage = props => {
           </Col>
               <Col md={6} className="d-flex align-items-center">
                 <div className="text-block">
-                  <p><FormattedMessage id={`${scope}.1`} /></p>
+                  <p className="first-paragraph"><FormattedMessage id={`${scope}.1`} /></p>
                   <Article
                   iconLeft
                   icon={<Icon icon={outlinePoll} />}

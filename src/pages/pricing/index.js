@@ -151,7 +151,7 @@ const PricingPlan = props => {
 
       <SectionPricing>
         <Container className="narrow">
-          <CustomRow spacing={40}>
+          <CustomRow spacing={40} className="subscriptions">
             {
                subscriptions.map(item => (
                <Col md={6}>

@@ -26,12 +26,8 @@ export const Banner = styled.div`
   }
 
 
-  @media screen and (max-width: 1199px) {
-    padding: 250px 0 90px;
-  }
-
   @media screen and (max-width: 767px) {
-
+    padding: 320px 0 70px;
   }
 
 `
@@ -55,12 +51,12 @@ export const BannerText = styled.div`
     &:after {
       content: "";
       display: inline-block;
-      width: 65px;
+      width: 60px;
       height: 8px;
       background-color: #f4b400;
       position: absolute;
       bottom: 1px;
-      left: -15px;
+      left: -10px;
       z-index: -1;
     }
   }
@@ -76,10 +72,11 @@ export const BannerText = styled.div`
     width: 100%;
     max-width: 100%;
     margin-left: 0;
-    padding: 0 20px;
+    padding: 0 24px;
 
     h2 {
-      font-size: 30px;
+      font-size: 25px;
+      line-height: 1.4;
     }
   }
 `
@@ -121,16 +118,69 @@ export const SectionQuote = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 767px) {
+    padding: 70px 0;
+
+    .image-block {
+      img {
+        height: 250px;
+        object-fit: cover;
+      }
+    }
+
+    .text-block {
+      margin: -80px 16px 0;
+      padding: 25px 23px 0;
+
+      .article {
+        text-align: left;
+      }
+    }
+
+    .author {
+      padding-left: 0;
+
+      .name {
+        display: block;
+        margin-bottom: 5px;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
 `
 
 export const SectionTeam = styled.div`
   padding-bottom: 80px;
+
   .section-title {
     font-size: 30px;
     font-weight: 600;
     line-height: 1.37;
     text-align: center;
     margin-bottom: 70px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 40px;
+  
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .row {
+    margin-right: -5px;
+    margin-left: -5px;
+      > [class*='col'] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+
+  }
   }
 `
 
@@ -151,5 +201,18 @@ export const Member = styled.div`
   .position {
     font-size: 13px;
     margin: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+
+    .name {
+      font-size: 16px;
+      margin: 20px 0 5px;
+    }
+
+    .position {
+      font-size: 12px;
+    }
   }
 `

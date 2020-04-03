@@ -15,16 +15,13 @@ const Wrapper = styled.div`
   background-position: center;
   position: relative;
 
-  @media screen and (max-width: 1199px) {
-    padding: 220px 0 65px;
-  }
-
   @media screen and (max-width: 767px) {
-
+    padding: 230px 0 70px;
+    background-image: linear-gradient(to top, rgba(19, 29, 126, 0.7) 0%, rgba(0, 15, 118, 0) 68%), url(${props => props.bgMobile ? props.bgMobile : props.bg || ''});
   }
 `
 
-const Inner = styled.h3`
+const Inner = styled.div`
   position: relative;
   color: #fff;
   z-index: 10;
@@ -36,6 +33,7 @@ const Inner = styled.h3`
 
   @media screen and (max-width: 767px) {
     width: 100%;
+    padding: 0 24px;
   }
 `
 
@@ -44,6 +42,11 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.67;
   margin-bottom: 0;
+
+  @media screen and (max-width: 767px) {
+    font-size: 25px;
+    line-height: 1.4;
+  }
 `
 
 export const Description = styled.h2`
@@ -104,6 +107,11 @@ export const Button = styled.button`
         }
       }
     }
+    
+    @media screen and (max-width: 767px) {
+    margin-top: 25px;
+  }
+
 `
 
 export const VideoPopup = styled(Modal)`

@@ -7,7 +7,7 @@ import {navigate} from 'gatsby'
 
 import { Container } from '../../styles'
 
-const scope = 'components.HomePage.RequestForm'
+const scope = 'page.HomePage.RequestForm'
 
 const Wrapper = styled.div`
   padding: 75px 0;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
 
   @media screen and (max-width: 991px) {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 `
 
