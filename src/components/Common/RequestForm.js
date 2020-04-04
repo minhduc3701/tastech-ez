@@ -14,9 +14,6 @@ import RequiredMarker from '../RequiredMarker'
 import _ from 'lodash'
 import Alert from '../Alert'
 import { Link } from 'gatsby'
-import { Icon } from '@iconify/react'
-import baselineCheckCircle from '@iconify/icons-ic/baseline-check-circle'
-import outlineRadioButtonUnchecked from '@iconify/icons-ic/outline-radio-button-unchecked'
 import toast from '../../modules/toast'
 
 const scope = 'components.Common.RequestForm'
@@ -35,7 +32,7 @@ const NoEOption = [
 
 const FromWrapper = styled.div`
   display: inline-block;
-  padding: 50px 60px;
+  padding: 40px 50px;
   width: 100%;
   max-width: 600px;
   border-radius: 16px;
@@ -103,24 +100,27 @@ const SubmitBtn = styled.button`
   padding: 17px;
 
   &:disabled {
-    background-color: #eaeaea;
+    background-color: #eaeaea !important;
   }
 
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background-color: #e3a800;
   }
 `
 const TextCenter = styled.div`
   text-align: center;
 `
 
-const CheckBoxLabel = styled.label`
+const TermsLabel = styled.span`
   display: inline-block;
   position: relative;
   font-size: 15px;
   font-weight: 600;
   color: #222222;
-  transition: all 0.3s ease-in-out;
 
   svg {
     font-size: 24px;
@@ -145,10 +145,6 @@ const CheckBoxLabel = styled.label`
       left: 6px;
       pointer-events: none;
     }
-  }
-
-  &:hover {
-    color: #f4b400;
   }
 
   @media screen and (max-width: 767px) {
@@ -248,8 +244,7 @@ class RequestForm extends Component {
         country: false
       },
       isCaptchaVerified: false,
-      isEmailFailed: null,
-      isTermsAccepted: false
+      isEmailFailed: null
     }
     this.handleInputChange = this.handleInputChange.bind(this)
   }
@@ -372,8 +367,7 @@ class RequestForm extends Component {
       'role',
       'NoE',
       'country',
-      'isCaptchaVerified',
-      'isTermsAccepted'
+      'isCaptchaVerified'
     ])
     let flagAllTrue = true
     Object.keys(draft).forEach((key, index) => {
@@ -469,8 +463,7 @@ class RequestForm extends Component {
       referral,
       touchSelect,
       flagFocus,
-      isEmailFailed,
-      isTermsAccepted
+      isEmailFailed
     } = this.state
 
     let disabledSubmitting =
@@ -483,8 +476,7 @@ class RequestForm extends Component {
       !role ||
       !NoE ||
       !country ||
-      isEmailFailed ||
-      !isTermsAccepted
+      isEmailFailed 
 
     return (
       <FromWrapper>
@@ -669,24 +661,9 @@ class RequestForm extends Component {
           </FormField>
 
           <FormField>
-            <CheckBoxLabel htmlFor="terms">
-              <span className="icon">
-                {isTermsAccepted ? (
-                  <Icon className="checked" icon={baselineCheckCircle} />
-                ) : (
-                  <Icon icon={outlineRadioButtonUnchecked} />
-                )}
-                <input
-                  id="terms"
-                  checked={isTermsAccepted}
-                  type="checkbox"
-                  name="isTermsAccepted"
-                  onChange={this.handleInputChange}
-                  required
-                />
-              </span>
+            <TermsLabel>
               <FormattedMessage id={`${scope}.accept`} />
-            </CheckBoxLabel>
+            </TermsLabel>
             &nbsp;
             <TermsLink to={`${this.props.langUri}/terms`} target="_blank">
               <FormattedMessage id={`${scope}.termsAndConditions`} />

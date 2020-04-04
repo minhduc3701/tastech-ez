@@ -23,6 +23,13 @@ export const Wrapper = styled.div`
   .customContainer.narrow {
     max-width: 866px;
   }
+
+  @media screen and (max-width: 767px) {
+    .section-title {
+      font-size: 23px;
+      line-height: 1.4;
+    }
+  }
 `
 
 export const Banner = styled.div`
@@ -77,6 +84,13 @@ export const Banner = styled.div`
     color: #fff;
     margin-bottom: 25px;
   }
+
+  @media screen and (max-width: 767px) {
+    .page-title {
+      font-size: 35px;
+      line-height: 1.34;
+    }
+  }
 `
 
 export const SectionPricing = styled.section`
@@ -96,6 +110,20 @@ export const SectionPricing = styled.section`
 
     b {
       font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .row {
+      padding: 0;
+    }
+
+    .subscriptions > div {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 `
@@ -139,6 +167,13 @@ export const Question = styled.div`
 
   &.active .label h4 {
     color: #f4b400;
+  }
+
+  @media screen and (max-width: 767px) {
+    .label h4 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
   }
 `
 
@@ -211,5 +246,9 @@ export const SectionContact = styled.section`
         color: #f4b400;
       }
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 50px 0;
   }
 `

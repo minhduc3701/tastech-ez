@@ -1,25 +1,42 @@
 import styled from 'styled-components'
-import Bg from '../images/contact-page/bg.jpg'
+import bg from '../images/contact-page/bg.jpg'
 import { FormField, FormInput, FormTextarea } from './index'
 
 export const Wrapper = styled.div`
-  overflow: hidden;
-  padding: 150px 0 100px;
-  background-image: url(${Bg});
-  background-size: 100% 66%;
-  background-position: top center;
-  background-repeat: no-repeat;
+  padding-top: 120px;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 120px;
+    right: 0;
+    left: 0;
+    background-image: url(${bg});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   &.image-bottom {
-    margin-bottom: -1px;
-    padding: 100px 0 150px;
-    background-position: bottom center;
+    padding-top: 0;
+    padding-bottom: 120px;
+    &:before {
+      top: 120px;
+      bottom: 0;
+    }
   }
 
   @media screen and (max-width: 767px) {
     padding: 50px 0 !important;
-    background-size: cover;
-    background-position: center !important;
+
+    &:before {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
   }
 `
 
@@ -37,7 +54,6 @@ export const ContactWrapper = styled.div`
   border-radius: 20px;
   box-shadow: 0 3px 99px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  max-width: 1000px;
   margin: auto;
 
   @media screen and (max-width: 991px) {
@@ -88,6 +104,16 @@ export const ContactForm = styled.form`
     ${FormField} {
       margin-bottom: 12px;
     }
+
+    .row {
+    margin-right: -5px;
+    margin-left: -5px;
+      > [class*='col'] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+
+  }
   }
 
   @media screen and (max-width: 575px) {
@@ -138,9 +164,10 @@ export const SubmitBtnWrapper = styled.div`
     background-color: #EAEAEA;
   }
 
-  @media screen and (max-width: 575px) {
-    margin-top: 12px;
-    margin-left: 0;
+  @media screen and (max-width: 767px) {
+    button {
+      border-radius: 28px;
+    }
   }
 `
 
