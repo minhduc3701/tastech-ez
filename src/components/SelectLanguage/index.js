@@ -13,6 +13,8 @@ import { Icon } from '@iconify/react'
 import flagForVietnam from '@iconify/icons-twemoji/flag-for-vietnam'
 import flagForUnitedKingdom from '@iconify/icons-twemoji/flag-for-united-kingdom'
 import flagForIndonesia from '@iconify/icons-twemoji/flag-for-indonesia'
+import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
+import baselineLanguage from '@iconify/icons-ic/baseline-language'
 
 const LanguageSwitcher = styled(UncontrolledDropdown).attrs({
   className: 'languageSwitcher'
@@ -47,6 +49,10 @@ const LanguageDropdownToggle = styled(DropdownToggle)`
 
   &:hover {
     color: #fff !important;
+  }
+
+  .icon-before, .icon-after {
+    display: none;
   }
 `
 
@@ -90,10 +96,8 @@ const LanguageDropdownContent = styled(DropdownMenu)`
   padding: 10px 0 !important;
   width: 220px;
 
-  @media screen and (max-width: 1199px) {
-    top: auto !important;
-    left: 0 !important;
-    width: 236px;
+  &:focus  {
+    outline: none !important;
   }
 `
 
@@ -125,7 +129,9 @@ const SelectLanguage = (props) => {
   return (
     <LanguageSwitcher>
       <LanguageDropdownToggle caret>
+        <Icon className="icon-before" icon={baselineLanguage} />
          <span>{props.langs.filter(lang => lang.selected)[0].langKey}</span>
+        <Icon className="icon-after" icon={bxChevronDown} />
        </LanguageDropdownToggle>
        <LanguageDropdownContent>
          {links.map(link => (

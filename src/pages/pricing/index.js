@@ -20,7 +20,7 @@ import outlinePlus from '@iconify/icons-ic/outline-plus'
 import outlineEmail from '@iconify/icons-ic/outline-email'
 
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
-const scope = 'containers.pricingPlan'
+const scope = 'page.pricingPlan'
 
 const subscriptions = [
   {
@@ -151,7 +151,7 @@ const PricingPlan = props => {
 
       <SectionPricing>
         <Container className="narrow">
-          <CustomRow spacing={40}>
+          <CustomRow spacing={40} className="subscriptions">
             {
                subscriptions.map(item => (
                <Col md={6}>

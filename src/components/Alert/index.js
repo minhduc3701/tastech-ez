@@ -19,7 +19,6 @@ const AlertWrapper = styled.div.attrs({ className: 'tas-alert' })`
     display: inline-flex;
     align-items: center;
   }
-
   &.error {
     color: #f41c1c;
     font-size: 12px;

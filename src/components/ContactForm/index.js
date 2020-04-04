@@ -37,7 +37,7 @@ import outlineLocationOn from '@iconify/icons-ic/outline-location-on'
 import twotonePhone from '@iconify/icons-ic/twotone-phone'
 import outlineEmail from '@iconify/icons-ic/outline-email'
 
-const scope = 'components.AboutUs'
+const scope = 'page.AboutUs'
 
 class Contact extends React.Component {
   constructor(props) {
@@ -118,7 +118,7 @@ class Contact extends React.Component {
                   </Title>
 
                   <CustomRow spacing={16}>
-                    <Col sm={6}>
+                    <Col>
                       <FormField>
                         <FormInput
                           required
@@ -135,7 +135,7 @@ class Contact extends React.Component {
                         </Label>
                       </FormField>
                     </Col>
-                    <Col sm={6}>
+                    <Col>
                       <FormField>
                         <FormInput
                           required
@@ -262,7 +262,8 @@ class Contact extends React.Component {
                     <li>
                       <Icon className="icon" icon={twotonePhone} />
 
-                      <a href="tel:+6562613219">+65 6261 3219</a>
+                      {/* <a href="tel:+6562613219">+65 6261 3219</a> */}
+                      <a href="tel:+6581841789"> +65-8184-1789</a>
                     </li>
 
                     <li>

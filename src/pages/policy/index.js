@@ -5,7 +5,7 @@ import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
 
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
-const scope = 'components.PrivacyPolicyPage'
+const scope = 'page.privacyPolicy'
 
 const PrivacyPolicy = props => {
       const { formatMessage } = props.intl

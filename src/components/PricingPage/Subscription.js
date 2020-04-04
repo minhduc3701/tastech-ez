@@ -9,7 +9,7 @@ import baselineClose from '@iconify/icons-ic/baseline-close'
 import arrowRight from '@iconify/icons-mdi/arrow-right'
 
 import { FormattedMessage } from 'react-intl'
-const scope = 'containers.pricingPlan.Subscription'
+const scope = 'page.pricingPlan.Subscription'
 
 const Subscription = props => {
   let futureFeatures = [

@@ -63,8 +63,23 @@ const Sitemap = props => {
             </Link>
           </li>
           <li>
-            <Link to={`${props.langUri}/features/`}>
-              <FormattedMessage id={`components.Common.Header.feature`} />
+            <Link to={`${props.langUri}/smart-suggestion/`}>
+              <FormattedMessage id={`components.Common.Header.smartSuggestion`} />
+            </Link>
+          </li>
+          <li>
+            <Link to={`${props.langUri}/expense-management/`}>
+              <FormattedMessage id={`components.Common.Header.expenseManagement`} />
+            </Link>
+          </li>
+          <li>
+            <Link to={`${props.langUri}/travel-policy-management/`}>
+              <FormattedMessage id={`components.Common.Header.travelPolicyManagement`} />
+            </Link>
+          </li>
+          <li>
+            <Link to={`${props.langUri}/rewards-program/`}>
+              <FormattedMessage id={`components.Common.Header.rewardsProgram`} />
             </Link>
           </li>
           <li>

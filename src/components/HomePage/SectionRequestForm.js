@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
 import RequestForm from '../Common/RequestForm'
 import styled from 'styled-components'
-import bg from './../../images/home-page/4.jpg'
+import bg from './../../images/home-page/requestDemo.jpg'
 import { injectIntl } from 'react-intl'
 import {navigate} from 'gatsby'
 
 import { Container } from '../../styles'
 
-const scope = 'components.HomePage.FourthFeature'
+const scope = 'page.HomePage.RequestForm'
 
 const Wrapper = styled.div`
   padding: 75px 0;
-  background-image: url(${bg}),
-    linear-gradient(310deg, #1d2148, rgba(244, 180, 0, 0.15));
+  background-image: linear-gradient(328deg, rgba(19, 29, 126, 0.4), rgba(0, 15, 118, 0.1) 80%), url(${bg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 991px) {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 `
 
