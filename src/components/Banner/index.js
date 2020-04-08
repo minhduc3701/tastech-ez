@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Modal } from 'reactstrap'
 import { Container } from '../../styles'
 
-import { Icon, InlineIcon } from '@iconify/react'
+import { Icon } from '@iconify/react'
 import baselineArrowRight from '@iconify/icons-ic/baseline-arrow-right'
 
 
@@ -74,13 +74,12 @@ export const Button = styled.button`
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
+      width: 60px;
+      height: 60px;
       background-color: #fff;
       border-radius: 50%;
       position: relative;
       margin-right: 22px;
-      border: 2px solid #fff;
       transition: all .3s ease-in-out;
       
       svg {
@@ -99,8 +98,7 @@ export const Button = styled.button`
       color: #f4b400;
 
       .icon {
-        border-color: #f4b400;
-        background-color: transparent;
+        background-color: #D8D8D8;
 
         svg {
           // color: #fff;
