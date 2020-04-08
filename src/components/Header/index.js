@@ -453,7 +453,7 @@ const LoginBtn = styled.a`
   padding: 10px 0;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
-  margin: 0 32px;
+  margin: 0 24px;
   white-space: nowrap;
 
   &:hover {
