@@ -60,13 +60,15 @@ const sliderSettings = {
   dotsClass: 'slick-dots',
   arrows: true,
   infinite: true,
-  speed: 500,
+  speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-  // autoplay: true,
-  autoplaySpeed: 5000
+    // autoplay: true,
+  autoplaySpeed: 5000,
+  swipe: true,
+  // fade: true
 }
 
 const LinkDetail = link => (
@@ -89,30 +91,30 @@ const IndexPage = props => {
         <Slider {...sliderSettings}>
           <SliderItem src={banner1}>
             <Container>
-              <h2 className="text">
+              <h1 className="text">
                 <FormattedMessage id={`${scope}.banner1`} />
-              </h2>
+              </h1>
             </Container>
           </SliderItem>
           <SliderItem src={banner2}>
             <Container>
-              <h2 className="text">
+              <h1 className="text">
                 <FormattedMessage id={`${scope}.banner2`} />
-              </h2>
+              </h1>
             </Container>
           </SliderItem>
           <SliderItem src={banner3}>
             <Container>
-              <h2 className="text">
+              <h1 className="text">
                 <FormattedMessage id={`${scope}.banner3`} />
-              </h2>
+              </h1>
             </Container>
           </SliderItem>
           <SliderItem src={banner4}>
             <Container>
-              <h2 className="text">
+              <h1 className="text">
                 <FormattedMessage id={`${scope}.banner4`} />
-              </h2>
+              </h1>
             </Container>
           </SliderItem>
         </Slider>
