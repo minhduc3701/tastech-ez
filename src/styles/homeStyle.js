@@ -4,7 +4,7 @@ import Backdrop from '../images/home-page/howWeWork.jpg'
 
 export const HomeWrapper = styled.div`
   overflow: hidden;
-
+  
   .slick-dots {
     position: absolute;
     bottom: 35px;
@@ -75,6 +75,10 @@ export const HomeWrapper = styled.div`
 
   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
     opacity: 1;
+  }
+
+  .slick-slider {
+    user-select: auto;
   }
 
   @media screen and (max-width: 991px) {

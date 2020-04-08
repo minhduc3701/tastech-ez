@@ -37,7 +37,7 @@ const Inner = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   font-size: 30px;
   font-weight: 600;
   line-height: 1.67;
@@ -49,7 +49,7 @@ export const Title = styled.h2`
   }
 `
 
-export const Description = styled.h2`
+export const Description = styled.h1`
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 0;
