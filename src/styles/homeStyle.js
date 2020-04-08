@@ -80,6 +80,16 @@ export const HomeWrapper = styled.div`
   .slick-slider {
     user-select: auto;
   }
+  
+  @media screen and (max-width: 1199px) {
+    .slick-prev {
+    left: 32px;
+  }
+
+  .slick-next {
+    right: 32px;
+  }
+  }
 
   @media screen and (max-width: 991px) {
     .slick-prev, .slick-next {
