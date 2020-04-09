@@ -348,7 +348,7 @@ module.exports = {
   "page.pricingPlan.contactMailDesc": "Get in touch and let’s talk!",
 
   "home.meta.title": "Business Travel Management & Expense Claim",
-  "home.meta.description": "EzBizTrip is a corporate travel management  company that helps businesses gain visibility and track business travel spending & keep employees happy.",
+  "home.meta.description": "EzBizTrip is a corporate travel management company that helps businesses gain visibility and track business travel spending & keep employees happy.",
   "about.meta.title": "We Nurture Business Travel Joy",
   "about.meta.description": "Our mission is to make business travellers happy, and also encourage less spending in business travel and increase productivity for employees.",
   "contact.meta.title": "Contact Us",
