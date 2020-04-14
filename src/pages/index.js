@@ -56,7 +56,7 @@ const PrevArrow = sliderProps => {
 }
 
 const sliderSettings = {
-  dots: false,
+  dots: true,
   dotsClass: 'slick-dots',
   arrows: true,
   infinite: true,
@@ -65,7 +65,7 @@ const sliderSettings = {
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-    // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 5000,
   swipe: true,
   // fade: true

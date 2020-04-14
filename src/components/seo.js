@@ -75,10 +75,6 @@ function SEO({ description, lang, meta, title, uri = '', ...props }) {
           content: metaDescription,
         },
         {
-          name: 'keywords',
-          content: props.intl.formatMessage({id: 'meta.keywords'})
-        },
-        {
           name: "image",
           content: `${process.env.GATSBY_SITE_URL}/images/cover.jpg`
         },
