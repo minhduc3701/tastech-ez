@@ -9,9 +9,11 @@ exports.onCreatePage = ({page, actions}) => {
 
   if (!skip) {
     langs.forEach(lang => {
-      const newPage = Object.assign({}, page)
-      newPage.path = page.path.replace(/^\//, `/${lang}/`)
-      actions.createPage(newPage)
+      if(lang !== process.env.GATSBY_DEFAULT_LANGUAGE){ // skip create /GATSBY_DEFAULT_LANGUAGE/url path
+        const newPage = Object.assign({}, page)
+        newPage.path = page.path.replace(/^\//, `/${lang}/`)
+        actions.createPage(newPage)
+      }
     })
   }
 }
