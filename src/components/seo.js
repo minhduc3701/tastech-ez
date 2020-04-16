@@ -92,11 +92,11 @@ function SEO({ description, lang, meta, title, uri = '', ...props }) {
             href: `${process.env.GATSBY_SITE_URL}${l === defaultLangKey ? '' : ('/' + l)}${slug}`
           }
           attrs = { ...attrs, hreflang: l }
+          return (
+            <link {...attrs} />
+          )
         }
-
-        return (
-          <link {...attrs} />
-        )
+        return 
       })}
     </Helmet>
   )
