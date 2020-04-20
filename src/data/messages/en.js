@@ -68,7 +68,7 @@ module.exports = {
   "page.HomePage.travellers.2_": "Maintaining a record of your business travel details is quick and simple with EzBizTrip.  You can record your expense at your fingertips by snapping photos of receipts and attach it anytime, anywhere!",
   "page.HomePage.travellers.3": "Get Reward with your Business Travel",
   "page.HomePage.travellers.3_": "Get Rewarded by making a cost-conscious trip for your business travel and redeem rewards which are Grab gift cards, IKEA vouchers and many more!",
-  "page.HomePage.travellers.4": "You are very Secure",
+  "page.HomePage.travellers.4": "You are very Secured",
   "page.HomePage.travellers.4_": "We are always here for you! You will be able to contact us whenever any complications occur. Call, chat and email us anytime from anywhere. ",
   "page.HomePage.owner": "Business Owner",
   "page.HomePage.owner.1": "Save time for employee’s travel booking",
