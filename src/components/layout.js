@@ -17,11 +17,13 @@ import { css } from 'glamor'
 import en from '../data/messages/en';
 import vi from '../data/messages/vi';
 import id from '../data/messages/id';
+import th from '../data/messages/th';
 
 const messages = {
   en,
   vi,
-  id
+  id,
+  th
 }
 
 // config react-toast

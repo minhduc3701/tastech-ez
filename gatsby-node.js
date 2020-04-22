@@ -1,5 +1,5 @@
-const {langs} = require('./src/data/config')
-
+const {langs, defaultLangKey} = require('./src/data/config')
+ 
 const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
 
@@ -9,7 +9,7 @@ exports.onCreatePage = ({page, actions}) => {
 
   if (!skip) {
     langs.forEach(lang => {
-      if(lang !== process.env.GATSBY_DEFAULT_LANGUAGE){ // skip create /GATSBY_DEFAULT_LANGUAGE/url path
+      if(lang !== defaultLangKey){ // skip create /GATSBY_DEFAULT_LANGUAGE/url path
         const newPage = Object.assign({}, page)
         newPage.path = page.path.replace(/^\//, `/${lang}/`)
         actions.createPage(newPage)
@@ -21,20 +21,6 @@ exports.onCreatePage = ({page, actions}) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect } = actions;
 
-  createRedirect({
-    fromPath: `/id/`,
-    toPath: `/`,
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-
-  createRedirect({
-    fromPath: `/id`,
-    toPath: `/`,
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-  
   // Oops
   createRedirect({
     fromPath: `/feature`,

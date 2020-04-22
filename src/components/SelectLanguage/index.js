@@ -13,6 +13,7 @@ import { Icon } from '@iconify/react'
 import flagForVietnam from '@iconify/icons-twemoji/flag-for-vietnam'
 import flagForUnitedKingdom from '@iconify/icons-twemoji/flag-for-united-kingdom'
 import flagForIndonesia from '@iconify/icons-twemoji/flag-for-indonesia'
+import flagForThailan from '@iconify/icons-twemoji/flag-for-thailand'
 import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
 import baselineLanguage from '@iconify/icons-ic/baseline-language'
 
@@ -107,12 +108,16 @@ const flags = {
     image: <Icon icon={flagForUnitedKingdom} />
   },
   'vi': {
-    name: 'Tiếng Việt',
+    name: 'Vietnam',
     image: <Icon icon={flagForVietnam} />
   },
   'id': {
     name: 'Indonesia',
     image: <Icon icon={flagForIndonesia}/>
+  },
+  'th': {
+    name: 'Thailand',
+    image: <Icon icon={flagForThailan}/>
   }
 }
 

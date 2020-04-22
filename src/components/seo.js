@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, title, uri = '', ...props }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const {langs, defaultLangKey} = site.siteMetadata.languages
+  const { langs, defaultLangKey } = site.siteMetadata.languages
   const slug = uri.replace(`/${lang}/`, '/')
 
   return (
@@ -86,18 +86,17 @@ function SEO({ description, lang, meta, title, uri = '', ...props }) {
     >
       {langs.map(l => {
         let isCurrentLang = (l === lang)
-        let attrs =  {
-          rel: isCurrentLang ? "canonical" : "alternate",
-          href: `${process.env.GATSBY_SITE_URL}${l === defaultLangKey ? '' : ('/' + l)}${slug}`
-        }
-
         if (!isCurrentLang) {
-          attrs = {...attrs, hreflang: l}
+          let attrs = {
+            rel: "alternate",
+            href: `${process.env.GATSBY_SITE_URL}${l === defaultLangKey ? '' : ('/' + l)}${slug}`
+          }
+          attrs = { ...attrs, hreflang: l }
+          return (
+            <link {...attrs} />
+          )
         }
-
-        return (
-          <link {...attrs} />
-        )
+        return 
       })}
     </Helmet>
   )
