@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Backdrop from '../images/home-page/howWeWork.jpg'
+import CampaingBanner from '../images/remote-work-expense-management/banner.jpg'
+
 
 export const HomeWrapper = styled.div`
   overflow: hidden;
@@ -386,5 +388,129 @@ export const Customer = styled.div`
     .underline >span:after {
       bottom: 0;
     }
+  }
+`
+
+export const CampaignWrapper = styled.div`
+  padding: 100px 8.33333% 0;
+  width: 100%;
+  height: 500px;
+  background-color: #F5F5F5;
+  background-repeat: no-repeat;
+  position: relative;
+
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 44%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(${CampaingBanner});
+  }
+
+  .video{
+    padding-right: 100px !important;
+  }
+ 
+  @media screen and (max-width: 1319px) {
+    .video{
+      padding-right: 20px !important;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding: 100px 8.33333% 0;
+    background-color: #fff;
+
+    &:before {
+      width: 100%;
+      height: 500px;
+    }
+    .video{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 8.33333% 0;
+  }
+
+
+`
+
+export const BannerContent = styled.div`
+  margin: 0 auto;
+  p{
+    font-size: 16px;
+    line-height: 1.56;
+    color: #171e45;
+    padding: 0;
+    margin: 0;
+  }
+  p.sub{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.64;
+  }
+  h1{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.13;
+    color: #171e45;
+    margin: 20px 0 25px;
+  }
+  a{
+    min-width: 170px;
+    border-radius: 20px;
+    background-color: #f4b400;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 35px 0  0;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  @media screen and (max-width: 1199px) {
+   p, h1{
+    color: #fff;
+   }
+  }
+
+`
+
+export const VideoWrapper = styled.div`
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  iframe{
+    z-index: 2;
+    border-radius: 20px;
+    max-width: 512px;
+    max-height: 360px;
+    min-width: 382px;
+    min-height: 268px;
+  }
+  
+  @media screen and (max-width: 1199px) {
+    margin: 10px 0 0;
+    justify-content: center;
   }
 `

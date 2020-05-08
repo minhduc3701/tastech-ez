@@ -1,5 +1,5 @@
 import React from "react"
-import {layoutWithLangKey} from '../components/layout'
+import { layoutWithLangKey } from '../components/layout'
 import { Row, Col } from 'reactstrap'
 
 import SEO from "../components/seo"
@@ -10,7 +10,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import { HomeWrapper, SliderItem, Heading, SectionIntro, SeeMore, SectionHowWeWork, Customer } from '../styles/homeStyle'
+import { HomeWrapper, CampaignWrapper, VideoWrapper, BannerContent, SliderItem, Heading, SectionIntro, SeeMore, SectionHowWeWork, Customer } from '../styles/homeStyle'
 import { Container, CustomRow } from '../styles'
 
 import banner1 from '../images/home-page/banner-1.jpg'
@@ -18,9 +18,9 @@ import banner2 from '../images/home-page/banner-2.jpg'
 import banner3 from '../images/home-page/banner-3.jpg'
 import banner4 from '../images/home-page/banner-4.jpg'
 import intro1 from '../images/home-page/1.png'
- import intro2 from '../images/home-page/2.png'
- import intro3 from '../images/home-page/3.png'
- import intro4 from '../images/home-page/4.png'
+import intro2 from '../images/home-page/2.png'
+import intro3 from '../images/home-page/3.png'
+import intro4 from '../images/home-page/4.png'
 
 import { Icon } from '@iconify/react'
 import baselineChevronRight from '@iconify/icons-ic/baseline-chevron-right'
@@ -35,6 +35,7 @@ import baselinePerson from '@iconify/icons-ic/baseline-person'
 import baselinePlus from '@iconify/icons-ic/baseline-plus'
 
 import { FormattedMessage, injectIntl } from 'react-intl'
+
 const scope = 'page.HomePage'
 
 const NextArrow = sliderProps => {
@@ -82,132 +83,158 @@ const IndexPage = props => {
   const { formatMessage } = props.intl
   return (
     <HomeWrapper>
-        <SEO
-          title={formatMessage({ id: "home.meta.title" })}
-          description={formatMessage({ id: "home.meta.description" })}
-          lang={props.langKey}
-        />
+      <SEO
+        title={formatMessage({ id: "home.meta.title" })}
+        description={formatMessage({ id: "home.meta.description" })}
+        lang={props.langKey}
+      />
 
-        <Slider {...sliderSettings}>
-          <SliderItem src={banner1}>
-            <Container>
-              <h1 className="text">
-                <FormattedMessage id={`${scope}.banner1`} />
-              </h1>
-            </Container>
-          </SliderItem>
-          <SliderItem src={banner2}>
-            <Container>
-              <h1 className="text">
-                <FormattedMessage id={`${scope}.banner2`} />
-              </h1>
-            </Container>
-          </SliderItem>
-          <SliderItem src={banner3}>
-            <Container>
-              <h1 className="text">
-                <FormattedMessage id={`${scope}.banner3`} />
-              </h1>
-            </Container>
-          </SliderItem>
-          <SliderItem src={banner4}>
-            <Container>
-              <h1 className="text">
-                <FormattedMessage id={`${scope}.banner4`} />
-              </h1>
-            </Container>
-          </SliderItem>
-        </Slider>
-
-        <SectionIntro>
+      <Slider {...sliderSettings}>
+        <CampaignWrapper>
           <Container>
-            <Heading>
-              <FormattedMessage id={`${scope}.intro.sectionTitle`} />
-            </Heading>
-
-            <Row>
-              <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={baselineFlight} />}
-                  title={<FormattedMessage id={`${scope}.intro.1`} />}
-                  content={<ul>
-                    <li><FormattedMessage id={`${scope}.intro.1_1`} /></li>
-                    <li><FormattedMessage id={`${scope}.intro.1_2`} /></li>
-                    <li><FormattedMessage id={`${scope}.intro.1_3`} /></li>
-                    <li><FormattedMessage id={`${scope}.intro.1_4`} /></li>
-                  </ul>}
-                  link={<LinkDetail to={`${props.langUri}/smart-suggestion/`} />}
-                />
+            <CustomRow spacing={20}>
+              <Col xl={{ size: 5, order: 2 }} lg={12} className="d-flex align-items-center">
+                <BannerContent>
+                  <p className="sub">
+                    WORK FROM HOME EXPENSE
+            </p>
+                  <h1>
+                    Simplify your expense claim with a report automation system.
+              </h1>
+                  <p>EzBizTrip is the best platform to make business travel much easier and simpler.
+            </p>
+                  <a href={`${props.langUri}remote-work-expense-management/`} target="_blank">
+                    I’m ready to start
+                  </a>
+                </BannerContent>
               </Col>
-
-              <Col md={{ size: 6, order: 1 }} className="text-center">
-                <img src={intro1} alt="" />
+              <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
+                <VideoWrapper>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </VideoWrapper>
               </Col>
-            </Row>
-
-            <Row>
-              <Col md={{ size: 6 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={outlinePhotoCamera} />}
-                  title={<FormattedMessage id={`${scope}.intro.2`} />}
-                  content={<FormattedMessage id={`${scope}.intro.2_`} />}
-                  link={<LinkDetail to={`${props.langUri}/expense-management/`} />}
-                />
-              </Col>
-
-              <Col md={{ size: 6 }} className="text-center">
-                <img src={intro2} alt="" />
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={outlinePoll} />}
-                  title={<FormattedMessage id={`${scope}.intro.3`} />}
-                  content={<FormattedMessage id={`${scope}.intro.3_`} />}
-                  link={<LinkDetail to={`${props.langUri}/travel-policy-management/`} />}
-                />
-              </Col>
-
-              <Col md={{ size: 6, order: 1 }} className="text-center">
-                <img src={intro3} alt="" />
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={{ size: 6 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={outlineCardGiftcard} />}
-                  title={<FormattedMessage id={`${scope}.intro.4`} />}
-                  content={<FormattedMessage id={`${scope}.intro.4_`} />}
-                  link={<LinkDetail to={`${props.langUri}/rewards-program/`} />}
-                />
-              </Col>
-
-              <Col md={{ size: 6 }} className="text-center">
-                <img src={intro4} alt="" />
-              </Col>
-            </Row>
+            </CustomRow>
           </Container>
-        </SectionIntro>
-
-        <SectionHowWeWork>
-          <div className="backdrop"></div>
+        </CampaignWrapper>
+        <SliderItem src={banner1}>
           <Container>
-            <Row className="justify-content-center">
-              <Col xs={10}>
-                <Heading>
-                  <FormattedMessage id={`${scope}.howWeWork.sectionTitle`} />
-                </Heading>
-              </Col>
-            </Row>
+            <h1 className="text">
+              <FormattedMessage id={`${scope}.banner1`} />
+            </h1>
+          </Container>
+        </SliderItem>
+        <SliderItem src={banner2}>
+          <Container>
+            <h1 className="text">
+              <FormattedMessage id={`${scope}.banner2`} />
+            </h1>
+          </Container>
+        </SliderItem>
+        <SliderItem src={banner3}>
+          <Container>
+            <h1 className="text">
+              <FormattedMessage id={`${scope}.banner3`} />
+            </h1>
+          </Container>
+        </SliderItem>
+        <SliderItem src={banner4}>
+          <Container>
+            <h1 className="text">
+              <FormattedMessage id={`${scope}.banner4`} />
+            </h1>
+          </Container>
+        </SliderItem>
+      </Slider>
 
-            <CustomRow spacing={50}>
-              <Col md={6}>
-                <Customer color="#0f73ee">
-                  <header>
-                    <div className="icon">
+      <SectionIntro>
+        <Container>
+          <Heading>
+            <FormattedMessage id={`${scope}.intro.sectionTitle`} />
+          </Heading>
+
+          <Row>
+            <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={baselineFlight} />}
+                title={<FormattedMessage id={`${scope}.intro.1`} />}
+                content={<ul>
+                  <li><FormattedMessage id={`${scope}.intro.1_1`} /></li>
+                  <li><FormattedMessage id={`${scope}.intro.1_2`} /></li>
+                  <li><FormattedMessage id={`${scope}.intro.1_3`} /></li>
+                  <li><FormattedMessage id={`${scope}.intro.1_4`} /></li>
+                </ul>}
+                link={<LinkDetail to={`${props.langUri}/smart-suggestion/`} />}
+              />
+            </Col>
+
+            <Col md={{ size: 6, order: 1 }} className="text-center">
+              <img src={intro1} alt="" />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={{ size: 6 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={outlinePhotoCamera} />}
+                title={<FormattedMessage id={`${scope}.intro.2`} />}
+                content={<FormattedMessage id={`${scope}.intro.2_`} />}
+                link={<LinkDetail to={`${props.langUri}/expense-management/`} />}
+              />
+            </Col>
+
+            <Col md={{ size: 6 }} className="text-center">
+              <img src={intro2} alt="" />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={outlinePoll} />}
+                title={<FormattedMessage id={`${scope}.intro.3`} />}
+                content={<FormattedMessage id={`${scope}.intro.3_`} />}
+                link={<LinkDetail to={`${props.langUri}/travel-policy-management/`} />}
+              />
+            </Col>
+
+            <Col md={{ size: 6, order: 1 }} className="text-center">
+              <img src={intro3} alt="" />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={{ size: 6 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={outlineCardGiftcard} />}
+                title={<FormattedMessage id={`${scope}.intro.4`} />}
+                content={<FormattedMessage id={`${scope}.intro.4_`} />}
+                link={<LinkDetail to={`${props.langUri}/rewards-program/`} />}
+              />
+            </Col>
+
+            <Col md={{ size: 6 }} className="text-center">
+              <img src={intro4} alt="" />
+            </Col>
+          </Row>
+        </Container>
+      </SectionIntro>
+
+      <SectionHowWeWork>
+        <div className="backdrop"></div>
+        <Container>
+          <Row className="justify-content-center">
+            <Col xs={10}>
+              <Heading>
+                <FormattedMessage id={`${scope}.howWeWork.sectionTitle`} />
+              </Heading>
+            </Col>
+          </Row>
+
+          <CustomRow spacing={50}>
+            <Col md={6}>
+              <Customer color="#0f73ee">
+                <header>
+                  <div className="icon">
                     <Icon icon={roundBusinessCenter} />
                   </div>
 
@@ -217,49 +244,49 @@ const IndexPage = props => {
                     <span className="underline">
                       {
                         formatMessage({ id: `${scope}.travellers` })
-                           .split(" ")
-                           .map((word, index) => <span key={index}>{word}</span>)
+                          .split(" ")
+                          .map((word, index) => <span key={index}>{word}</span>)
                       }
-                      </span>
+                    </span>
                   </h2>
-                  </header>
+                </header>
 
-                  <ul>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.travellers.1`} /></h3>
-                        <p><FormattedMessage id={`${scope}.travellers.1_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.travellers.2`} /></h3>
-                        <p><FormattedMessage id={`${scope}.travellers.2_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.travellers.3`} /></h3>
-                        <p><FormattedMessage id={`${scope}.travellers.3_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.travellers.4`} /></h3>
-                        <p><FormattedMessage id={`${scope}.travellers.4_`} /></p>
-                      </div>
-                    </li>
-                  </ul>
-                </Customer>
-              </Col>
-              <Col md={6}>
-                <Customer color="#f4b400"  className="owner">
-                  <header>
-                    <div className="icon">
+                <ul>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.travellers.1`} /></h3>
+                      <p><FormattedMessage id={`${scope}.travellers.1_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.travellers.2`} /></h3>
+                      <p><FormattedMessage id={`${scope}.travellers.2_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.travellers.3`} /></h3>
+                      <p><FormattedMessage id={`${scope}.travellers.3_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.travellers.4`} /></h3>
+                      <p><FormattedMessage id={`${scope}.travellers.4_`} /></p>
+                    </div>
+                  </li>
+                </ul>
+              </Customer>
+            </Col>
+            <Col md={6}>
+              <Customer color="#f4b400" className="owner">
+                <header>
+                  <div className="icon">
                     <Icon icon={baselinePerson} />
                   </div>
 
@@ -269,52 +296,52 @@ const IndexPage = props => {
                     <span className="underline">
                       {
                         formatMessage({ id: `${scope}.owner` })
-                           .split(" ")
-                           .map((word, index) => <span key={index}>{word}</span>)
+                          .split(" ")
+                          .map((word, index) => <span key={index}>{word}</span>)
                       }
                     </span>
                   </h2>
-                  </header>
+                </header>
 
-                  <ul>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.owner.1`} /></h3>
-                        <p><FormattedMessage id={`${scope}.owner.1_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.owner.2`} /></h3>
-                        <p><FormattedMessage id={`${scope}.owner.2_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.owner.3`} /></h3>
-                        <p><FormattedMessage id={`${scope}.owner.3_`} /></p>
-                      </div>
-                    </li>
-                    <li>
-                      <Icon icon={baselinePlus} />
-                      <div>
-                        <h3><FormattedMessage id={`${scope}.owner.4`} /></h3>
-                        <p><FormattedMessage id={`${scope}.owner.4_`} /></p>
-                      </div>
-                    </li>
-                  </ul>
-                </Customer>
-              </Col>
-            </CustomRow>
-          </Container>
-        </SectionHowWeWork>
+                <ul>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.owner.1`} /></h3>
+                      <p><FormattedMessage id={`${scope}.owner.1_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.owner.2`} /></h3>
+                      <p><FormattedMessage id={`${scope}.owner.2_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.owner.3`} /></h3>
+                      <p><FormattedMessage id={`${scope}.owner.3_`} /></p>
+                    </div>
+                  </li>
+                  <li>
+                    <Icon icon={baselinePlus} />
+                    <div>
+                      <h3><FormattedMessage id={`${scope}.owner.4`} /></h3>
+                      <p><FormattedMessage id={`${scope}.owner.4_`} /></p>
+                    </div>
+                  </li>
+                </ul>
+              </Customer>
+            </Col>
+          </CustomRow>
+        </Container>
+      </SectionHowWeWork>
 
-        <SectionRequestForm langUri={props.langUri} />
-      </HomeWrapper>
-)
+      <SectionRequestForm langUri={props.langUri} />
+    </HomeWrapper>
+  )
 }
 
 export default layoutWithLangKey(injectIntl(IndexPage))

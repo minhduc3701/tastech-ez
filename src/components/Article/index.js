@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div.attrs({className: 'article'})`
+const Wrapper = styled.div.attrs({ className: 'article' })`
   .icon {
     margin-bottom: 25px;
   }
-
+  display: ${props => props.dFlex ? 'flex' : 'block'};
   ul {
     padding: 0;
     margin: 0;
@@ -49,8 +49,11 @@ const Wrapper = styled.div.attrs({className: 'article'})`
   }
 
   @media screen and (max-width: 767px) {
-    text-align: center;
-    
+    text-align: ${props => props.dFlex ? 'left' : 'center'};
+    .icon {
+      margin-right: ${props => props.dFlex ? '28px' : '0'};
+    }
+   
     ul {
       text-align: left;
     }
@@ -82,7 +85,7 @@ const Title = styled.h3`
 
 const Article = props => {
   return (
-    <Wrapper className={props.iconLeft ? 'iconLeft' : ''}>
+    <Wrapper className={props.iconLeft ? 'iconLeft' : ''} dFlex={props.dFlex}>
       {props.icon &&
         <div className="icon">
           <Icon>{props.icon}</Icon>
@@ -93,7 +96,7 @@ const Article = props => {
         <Title>{props.title}</Title>
         <div>{props.content}</div>
         {props.link}
-      </div>  
+      </div>
     </Wrapper>
   )
 }
