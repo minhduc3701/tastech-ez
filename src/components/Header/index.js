@@ -19,6 +19,7 @@ import outlineSupervisedUserCircle from '@iconify/icons-ic/outline-supervised-us
 import baselinePictureInPicture from '@iconify/icons-ic/baseline-picture-in-picture'
 import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
 import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
+import outlineNewReleases from '@iconify/icons-ic/outline-new-releases';
 
 const scope = 'components.Common.Header'
 
@@ -84,7 +85,6 @@ const HeaderCollapse = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
-  transition: all 0.3s ease-in-out;
   position: relative;
 
   .languageSwitcher,
@@ -500,6 +500,35 @@ const Overlay = styled.div`
   z-index: 98;
 `
 
+const CampaignHeader = styled.div`
+  padding: 10px 0;
+  margin: 0 -32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3543c6;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  p, a {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+  }
+  p{
+    padding: 0 10px 0 0;
+  }
+  a{
+    text-decoration: underline
+  }
+  svg{
+    margin: 0 10px 0 0;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+`
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -531,7 +560,7 @@ class Header extends Component {
       showSub: prevState.showSub === name ? null : name
     }))
 
-    
+
   }
 
   handleScroll() {
@@ -553,11 +582,11 @@ class Header extends Component {
       'expense-management',
       'travel-policy-management',
       'rewards-program'
-      ]
+    ]
 
     for (const s of subMenuFeatures) {
       if (path.includes(s)) {
-        this.setState({activeMenuFeatures: true})
+        this.setState({ activeMenuFeatures: true })
       }
     }
   }
@@ -569,15 +598,15 @@ class Header extends Component {
   render() {
     let subNavigation = (
       <SubNav navbar>
-            <SelectLanguage langs={this.props.langs} />
+        <SelectLanguage langs={this.props.langs} />
 
-            <LoginBtn href={`/app/?lang=${this.props.langKey}`}>
-              <FormattedMessage id={`${scope}.login`} />
-            </LoginBtn>
+        <LoginBtn href={`/app/?lang=${this.props.langKey}`}>
+          <FormattedMessage id={`${scope}.login`} />
+        </LoginBtn>
 
-            <StartBtn to={`${this.props.langUri}/request-demo`}>
-              <FormattedMessage id={`${scope}.getStarted`} />
-            </StartBtn>
+        <StartBtn to={`${this.props.langUri}/request-demo`}>
+          <FormattedMessage id={`${scope}.getStarted`} />
+        </StartBtn>
 
         }
       </SubNav>
@@ -586,109 +615,121 @@ class Header extends Component {
     let headerClassName = this.state.menuOpen
       ? ''
       : this.state.headerShow
-      ? 'header-visible'
-      : 'header-hidden'
+        ? 'header-visible'
+        : 'header-hidden'
 
     let { menuOpen } = this.state
 
     const { formatMessage } = this.props.intl
 
     return (
-      <HeaderWrapper className={headerClassName}>
-        <HeaderNavbar>
-          <MenuToggler onClick={this.toggle}>
-            <Icon icon={baselineMoreVert} />
-          </MenuToggler>
+      <>
 
-          <HeaderNavBrand to={`${this.props.langUri}`}>
-            <img src={companyLogo} alt="" />
-          </HeaderNavBrand>
+        <HeaderWrapper className={headerClassName}>
+          <CampaignHeader>
+            <p>
+              <Icon icon={outlineNewReleases} color="#fff" width="20px" height="20px" />
+              New!  Simplify your expense claim even at home with
+            </p>
+            <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank">
+              Remote Work and Expense Management Solution
+              </a>
+          </CampaignHeader>
+          <HeaderNavbar>
+            <MenuToggler onClick={this.toggle}>
+              <Icon icon={baselineMoreVert} />
+            </MenuToggler>
 
-          <HeaderCollapse className={menuOpen ? 'menu-open' : ''}>
-            <div className="inner">
-            <StartBtn to={`${this.props.langUri}/request-demo`}>
-              <FormattedMessage id={`${scope}.getStarted`} />
-            </StartBtn>
+            <HeaderNavBrand to={`${this.props.langUri}`}>
+              <img src={companyLogo} alt="" />
+            </HeaderNavBrand>
 
-            <MainNav navbar>
-              <li>
-                <Link activeClassName="active" to={`${this.props.langUri}`}>
-                  <Icon className="menu-icon" icon={bxHomeAlt} />
-                  <FormattedMessage id={`${scope}.home`} />
-                </Link>
-              </li>
-              <li className={this.state.showSub ? 'show-sub' : ''}>
-                <span
-                  className={this.state.activeMenuFeatures ? 'active' : ''}
-                  onClick={this.toggleShowSub.bind(this, 'features')}
-                >
-                <Icon className="menu-icon" icon={baselinePostAdd} />
-                <FormattedMessage id={`${scope}.feature`} />
-                <Icon className="menu-icon-more" icon={bxChevronDown} />
-                </span>
-                <ul>
+            <HeaderCollapse className={menuOpen ? 'menu-open' : ''}>
+              <div className="inner">
+                <StartBtn to={`${this.props.langUri}/request-demo`}>
+                  <FormattedMessage id={`${scope}.getStarted`} />
+                </StartBtn>
+
+                <MainNav navbar>
                   <li>
-                    <Link activeClassName="active" to={`${this.props.langUri}/smart-suggestion/`}>
-                      <FormattedMessage id={`${scope}.smartSuggestion`} />
+                    <Link activeClassName="active" to={`${this.props.langUri}`}>
+                      <Icon className="menu-icon" icon={bxHomeAlt} />
+                      <FormattedMessage id={`${scope}.home`} />
+                    </Link>
+                  </li>
+                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                    <span
+                      className={this.state.activeMenuFeatures ? 'active' : ''}
+                      onClick={this.toggleShowSub.bind(this, 'features')}
+                    >
+                      <Icon className="menu-icon" icon={baselinePostAdd} />
+                      <FormattedMessage id={`${scope}.feature`} />
+                      <Icon className="menu-icon-more" icon={bxChevronDown} />
+                    </span>
+                    <ul>
+                      <li>
+                        <Link activeClassName="active" to={`${this.props.langUri}/smart-suggestion/`}>
+                          <FormattedMessage id={`${scope}.smartSuggestion`} />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link activeClassName="active" ineHome to={`${this.props.langUri}/expense-management/`}>
+                          <FormattedMessage id={`${scope}.expenseManagement`} />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link activeClassName="active" to={`${this.props.langUri}/travel-policy-management/`}>
+                          <FormattedMessage id={`${scope}.travelPolicyManagement`} />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link activeClassName="active" to={`${this.props.langUri}/rewards-program/`}>
+                          <FormattedMessage id={`${scope}.rewardsProgram`} />
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/pricing/`}>
+                      <Icon className="menu-icon" icon={baselineCreditCard} />
+                      <FormattedMessage id={`${scope}.pricing`} />
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active"ineHome to={`${this.props.langUri}/expense-management/`}>
-                      <FormattedMessage id={`${scope}.expenseManagement`} />
+                    <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
+                      <Icon className="menu-icon" icon={outlineSupervisedUserCircle} />
+                      <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to={`${this.props.langUri}/travel-policy-management/`}>
-                      <FormattedMessage id={`${scope}.travelPolicyManagement`} />
-                    </Link>
+                    <a href={formatMessage({
+                      id: 'link.blog'
+                    })} target="_blank" rel="noopener noreferrer">
+                      <Icon className="menu-icon" icon={baselinePictureInPicture} />
+                      <FormattedMessage id={`${scope}.blog`} />
+                    </a>
                   </li>
                   <li>
-                    <Link activeClassName="active" to={`${this.props.langUri}/rewards-program/`}>
-                      <FormattedMessage id={`${scope}.rewardsProgram`} />
-                    </Link>
+                    <a href={formatMessage({
+                      id: 'link.support'
+                    })} target="_blank" rel="noopener noreferrer">
+                      <Icon className="menu-icon" icon={outlineAnnouncement} />
+                      <FormattedMessage id={`${scope}.support`} />
+                    </a>
                   </li>
-                </ul>
-              </li>
-              <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/pricing/`}>
-                  <Icon className="menu-icon" icon={baselineCreditCard} />
-                  <FormattedMessage id={`${scope}.pricing`} />
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
-                <Icon className="menu-icon" icon={outlineSupervisedUserCircle} />
-                  <FormattedMessage id={`${scope}.aboutUs`} />
-                </Link>
-              </li>
-              <li>
-                <a href={formatMessage({
-                    id: 'link.blog'
-                  })} target="_blank" rel="noopener noreferrer">
-                  <Icon className="menu-icon" icon={baselinePictureInPicture} />
-                  <FormattedMessage id={`${scope}.blog`} />
-                </a>
-              </li>
-              <li>
-                <a href={formatMessage({
-                    id: 'link.support'
-                  })} target="_blank" rel="noopener noreferrer">
-                  <Icon className="menu-icon" icon={outlineAnnouncement} />
-                  <FormattedMessage id={`${scope}.support`} />
-                </a>
-              </li>
-            </MainNav>
-            <SelectLanguage langs={this.props.langs} />
-            </div>
-            <span className="close-btn" onClick={this.toggle}>
-              <Icon icon={baselineClose} />
-            </span>
-          </HeaderCollapse>
+                </MainNav>
+                <SelectLanguage langs={this.props.langs} />
+              </div>
+              <span className="close-btn" onClick={this.toggle}>
+                <Icon icon={baselineClose} />
+              </span>
+            </HeaderCollapse>
 
-          {menuOpen && <Overlay onClick={this.toggle} />}
-          {subNavigation}
-        </HeaderNavbar>
-      </HeaderWrapper>
+            {menuOpen && <Overlay onClick={this.toggle} />}
+            {subNavigation}
+          </HeaderNavbar>
+        </HeaderWrapper>
+      </>
     )
   }
 }

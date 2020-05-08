@@ -9,7 +9,7 @@ import 'intl';
 import styled from 'styled-components'
 import { Main } from '../styles'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Link } from 'gatsby'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { css } from 'glamor'
@@ -34,7 +34,7 @@ toast.configure({
     background: '#fff !important',
     padding: '14px 16px !important'
   })
- })
+})
 
 const Wrapper = styled(Main)`
   height: 100%;
@@ -48,6 +48,7 @@ const Content = styled.main`
     margin-top: 56px;
   }
 `
+
 
 const Layout = ({ children, location }) => {
   return (
@@ -72,15 +73,16 @@ const Layout = ({ children, location }) => {
         const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
         return (
           <Wrapper>
+           
             <IntlProvider
               locale={langKey}
               messages={messages[langKey]}
             >
-                <Header langs={langsMenu} langKey={langKey} langUri={homeLink}/>
-                <Content>
-                  {children({langKey, defaultLangKey, homeLink})}
-                </Content>
-                <Footer langKey={langKey} langUri={homeLink} />
+              <Header langs={langsMenu} langKey={langKey} langUri={homeLink} />
+              <Content>
+                {children({ langKey, defaultLangKey, homeLink })}
+              </Content>
+              <Footer langKey={langKey} langUri={homeLink} />
             </IntlProvider>
           </Wrapper>
         )
@@ -91,7 +93,7 @@ const Layout = ({ children, location }) => {
 
 export const layoutWithLangKey = C => props => (
   <Layout {...props}>
-    {({langKey, defaultLangKey, homeLink}) => (
+    {({ langKey, defaultLangKey, homeLink }) => (
       <C
         {...props}
         langUri={homeLink}
