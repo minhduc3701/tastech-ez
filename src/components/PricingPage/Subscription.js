@@ -55,7 +55,7 @@ const Subscription = props => {
           <FormattedMessage id={`${scope}.${props.name}_desc`} />
         </div>
 
-        <Link to="/request-demo">
+        <Link to={`${props.langUri}/request-demo`}>
           {!props.price ? (
             <FormattedMessage id={`${scope}.getStartedForFree`} />
           ) : (
