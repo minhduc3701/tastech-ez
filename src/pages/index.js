@@ -116,7 +116,7 @@ const IndexPage = props => {
             </CustomRow>
           </Container>
         </CampaignWrapper>
-        <SliderItem src={banner1}>
+        {/* <SliderItem src={banner1}>
           <Container>
             <h1 className="text">
               <FormattedMessage id={`${scope}.banner1`} />
@@ -143,8 +143,8 @@ const IndexPage = props => {
               <FormattedMessage id={`${scope}.banner4`} />
             </h1>
           </Container>
-        </SliderItem>
-      </Slider>
+        </SliderItem>*/}
+      </Slider> 
 
       <SectionIntro>
         <Container>

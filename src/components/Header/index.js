@@ -524,6 +524,9 @@ const CampaignHeader = styled.div`
   svg{
     margin: 0 10px 0 0;
   }
+  @media screen and (max-width: 1199px) {
+    margin: 0 -16px;
+  }
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
@@ -542,6 +545,7 @@ class Header extends Component {
       headerShow: true,
       scrollPos: 0,
       activeMenuFeatures: false,
+      activeMenuResources: false,
       showSub: null
     }
   }
@@ -577,6 +581,7 @@ class Header extends Component {
     window.addEventListener('scroll', this.handleScroll)
 
     let path = this.props.langs[0].link
+    path = path.split('/')[1]
     let subMenuFeatures = [
       'smart-suggestion',
       'expense-management',
@@ -585,10 +590,22 @@ class Header extends Component {
     ]
 
     for (const s of subMenuFeatures) {
-      if (path.includes(s)) {
+      if (path === s) {
         this.setState({ activeMenuFeatures: true })
       }
     }
+
+    let subMenuResources = [
+      'blog',
+      'remote-work-expense-management',
+    ]
+
+    for (const s of subMenuResources) {
+      if (path === s) {
+        this.setState({ activeMenuResources: true })
+      }
+    }
+
   }
 
   componentWillUnmount() {
@@ -695,20 +712,38 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.pricing`} />
                     </Link>
                   </li>
-                  <li>
-                    <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
-                      <Icon className="menu-icon" icon={outlineSupervisedUserCircle} />
-                      <FormattedMessage id={`${scope}.aboutUs`} />
-                    </Link>
+                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                    <span
+                      className={this.state.activeMenuResources ? 'active' : ''}
+                      onClick={this.toggleShowSub.bind(this, 'resources')}
+                    >
+                      <Icon className="menu-icon" icon={baselinePostAdd} />
+                      {/* <FormattedMessage id={`${scope}.feature`} /> */}
+                        Resources
+                      <Icon className="menu-icon-more" icon={bxChevronDown} />
+                    </span>
+                    <ul>
+                      <li>
+                        <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
+                          <FormattedMessage id={`${scope}.aboutUs`} />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
+                          {/* <FormattedMessage id={`${scope}.expenseManagement`} /> */}
+                          Remote Work Expense Management
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href={formatMessage({
                       id: 'link.blog'
                     })} target="_blank" rel="noopener noreferrer">
                       <Icon className="menu-icon" icon={baselinePictureInPicture} />
                       <FormattedMessage id={`${scope}.blog`} />
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href={formatMessage({
                       id: 'link.support'
