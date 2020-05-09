@@ -50,6 +50,9 @@ export const Banner = styled.div`
     }
   }
 
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+  }
 `
 
 export const BannerContent = styled.div`
@@ -97,7 +100,16 @@ export const BannerContent = styled.div`
     color: #fff;
    }
   }
-
+  @media screen and (max-width: 767px) {
+    p{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    a{
+      margin: 0 0 50px;
+    }
+  }
 `
 
 export const VideoWrapper = styled.div`
@@ -113,7 +125,7 @@ export const VideoWrapper = styled.div`
     border-radius: 20px;
     max-width: 570px;
     max-height: 400px;
-    min-width: 382px;
+    // min-width: 382px;
     min-height: 268px;
   }
   

@@ -42,11 +42,14 @@ const Wrapper = styled(Main)`
 `
 
 const Content = styled.main`
-  margin-top: 64px;
+  margin-top: ${props => props.campaign ? '104px': '64px' }; 
 
   @media screen and (max-width: 1199px) {
-    margin-top: 56px;
+     margin-top: ${props => props.campaign ? '96px': '56px' }; 
   }
+  @media screen and (max-width: 767px) {
+    margin-top: ${props => props.campaign ? '110px': '56px' }; 
+ }
 `
 
 
@@ -79,7 +82,7 @@ const Layout = ({ children, location }) => {
               messages={messages[langKey]}
             >
               <Header langs={langsMenu} langKey={langKey} langUri={homeLink} />
-              <Content>
+              <Content campaign={true}>
                 {children({ langKey, defaultLangKey, homeLink })}
               </Content>
               <Footer langKey={langKey} langUri={homeLink} />
