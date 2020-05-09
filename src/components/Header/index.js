@@ -712,6 +712,11 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.pricing`} />
                     </Link>
                   </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
+                      <FormattedMessage id={`${scope}.aboutUs`} />
+                    </Link>
+                  </li>
                   <li className={this.state.showSub ? 'show-sub' : ''}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
@@ -724,9 +729,12 @@ class Header extends Component {
                     </span>
                     <ul>
                       <li>
-                        <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
-                          <FormattedMessage id={`${scope}.aboutUs`} />
-                        </Link>
+                        <a href={formatMessage({
+                          id: 'link.blog'
+                        })} target="_blank" rel="noopener noreferrer">
+                          <Icon className="menu-icon" icon={baselinePictureInPicture} />
+                          <FormattedMessage id={`${scope}.blog`} />
+                        </a>
                       </li>
                       <li>
                         <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
@@ -736,14 +744,6 @@ class Header extends Component {
                       </li>
                     </ul>
                   </li>
-                  {/* <li>
-                    <a href={formatMessage({
-                      id: 'link.blog'
-                    })} target="_blank" rel="noopener noreferrer">
-                      <Icon className="menu-icon" icon={baselinePictureInPicture} />
-                      <FormattedMessage id={`${scope}.blog`} />
-                    </a>
-                  </li> */}
                   <li>
                     <a href={formatMessage({
                       id: 'link.support'
