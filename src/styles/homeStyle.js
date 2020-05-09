@@ -392,7 +392,7 @@ export const Customer = styled.div`
 `
 
 export const CampaignWrapper = styled.div`
-  padding: 100px 8.33333% 0;
+  padding: 70px 8.33333% 0;
   width: 100%;
   height: 500px;
   background-color: #F5F5F5;
@@ -425,7 +425,7 @@ export const CampaignWrapper = styled.div`
   }
 
   @media screen and (max-width: 1199px) {
-    padding: 100px 8.33333% 0;
+    padding: 70px 8.33333% 0;
     background-color: #fff;
 
     &:before {
@@ -437,8 +437,9 @@ export const CampaignWrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
-    padding: 50px 8.33333% 0;
+
+  @media screen and (max-width: 575px) {
+    padding: 70px 8.33333% 0;
   }
 
 
@@ -489,6 +490,17 @@ export const BannerContent = styled.div`
     color: #fff;
    }
   }
+  @media screen and (max-width: 767px) {
+    p{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    a{
+      margin: 0;
+    }
+  }
+  
 
 `
 
