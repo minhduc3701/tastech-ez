@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import moment from 'moment'
 import { Col, Collapse } from 'reactstrap'
-import {layoutWithLangKey} from "../../components/layout"
+import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
 import { Container, CustomRow } from '../../styles'
 import {
@@ -12,7 +12,7 @@ import {
   Question,
   SectionContact
 } from '../../styles/pricingStyle'
- import Subscription from '../../components/PricingPage/Subscription'
+import Subscription from '../../components/PricingPage/Subscription'
 
 import { Icon } from '@iconify/react'
 import outlineMinus from '@iconify/icons-ic/outline-minus'
@@ -108,8 +108,8 @@ const PricingPlan = props => {
             {collapse === i ? (
               <Icon icon={outlineMinus} />
             ) : (
-              <Icon icon={outlinePlus} />
-            )}
+                <Icon icon={outlinePlus} />
+              )}
 
             <h4>
               <FormattedMessage id={`${scope}.faq.${i + 1}`} />
@@ -126,8 +126,7 @@ const PricingPlan = props => {
     return <div>{questions}</div>
   }
 
-      const { formatMessage } = props.intl
-
+  const { formatMessage } = props.intl
 
   return (
     <Wrapper>
@@ -153,11 +152,11 @@ const PricingPlan = props => {
         <Container className="narrow">
           <CustomRow spacing={40} className="subscriptions">
             {
-               subscriptions.map(item => (
-               <Col md={6}>
-                 <Subscription {...item} />
-               </Col>
-             ))
+              subscriptions.map(item => (
+                <Col md={6}>
+                  <Subscription {...item} langUri={props.langUri} />
+                </Col>
+              ))
             }
           </CustomRow>
 
