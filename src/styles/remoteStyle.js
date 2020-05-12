@@ -140,12 +140,13 @@ export const SectionIntro = styled.div`
   p{
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.56;
     text-align: left;
     color: #323232;
   }
   h2{
+    font-family: work sans;
     font-size: 35px;
     font-weight: 600;
     line-height: 1.2;

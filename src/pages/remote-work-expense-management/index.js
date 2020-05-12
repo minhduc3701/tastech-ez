@@ -15,8 +15,10 @@ import {
   TitleWithCircle
 } from '../../styles/remoteStyle'
 
+
+import baselineNetworkCheck from '@iconify/icons-ic/baseline-network-check';
 import outlinePoll from '@iconify/icons-ic/outline-poll'
-import baselineEventAvailable from '@iconify/icons-ic/baseline-event-available'
+// import baselineEventAvailable from '@iconify/icons-ic/baseline-event-available'
 import { Container, CustomRow } from '../../styles'
 import { Link } from 'gatsby'
 import { Icon } from '@iconify/react'
@@ -125,14 +127,16 @@ const RemoteWorkExpenseManagement = props => {
                 <Article
                   dFlex={true}
                   iconLeft
-                  icon={<Icon icon={outlinePoll} />}
+                  // icon={<Icon icon={outlinePoll} />}
+                  icon ={<Icon icon={baselineNetworkCheck} />}
                   title={'Increase Productivity'}
                   content={'Using EzBizTrip’s platform, employees can simply create an expense report to record and submit their expenses no matter where they are.'}
                 />
                 <Article
                   dFlex={true}
                   iconLeft
-                  icon={<Icon icon={baselineEventAvailable} />}
+                  icon={<Icon icon={outlinePoll} />}
+                  // icon={<Icon icon={baselineEventAvailable} />}
                   title={'Higher Efficiency and Accuracy'}
                   content={'EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoicesfrom mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.'}
                 />
@@ -170,7 +174,7 @@ const RemoteWorkExpenseManagement = props => {
           </CustomRow>
         </Container>
       </SectionIntro>
-      <SectionRequestForm bottom bgSrc={img4} />
+      <SectionRequestForm bottom bgSrc={img4} type="remote-form" />
     </Wrapper>
   )
 }
