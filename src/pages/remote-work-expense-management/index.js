@@ -26,7 +26,7 @@ import img2 from '../../images/remote-work-expense-management/2.png'
 import img3 from '../../images/remote-work-expense-management/3.png'
 import img4 from '../../images/remote-work-expense-management/4.jpg'
 
-const scope = 'page.AboutUs'
+const scope = 'page.remoteWork'
 
 const RemoteWorkExpenseManagement = props => {
   const { formatMessage } = props.intl
@@ -46,16 +46,16 @@ const RemoteWorkExpenseManagement = props => {
             <Col xl={{ size: 5, order: 2 }} lg={12} className="d-flex align-items-center">
               <BannerContent>
                 <p className="sub">
-                  WORK FROM HOME EXPENSE 
-            </p>
+                  <FormattedMessage id={`${scope}.subTitle`} />
+                </p>
                 <h1>
-                  Simplify your expense claim with a report automation system.
-              </h1>
-                <p>EzBizTrip is the best platform to make business travel much easier and simpler.
-            </p>
-            <Link to={`${props.langUri}/request-demo/`}>
-                  I’m ready to start
-                  </Link>
+                  <FormattedMessage id={`${scope}.mainTitle`} />
+                </h1>
+                <FormattedMessage id={`${scope}.description`} />  <p>
+                </p>
+                <Link to={`${props.langUri}/request-demo/`}>
+                  <FormattedMessage id={`${scope}.startBtn`} />
+                </Link>
               </BannerContent>
             </Col>
             <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
@@ -73,23 +73,14 @@ const RemoteWorkExpenseManagement = props => {
           <CustomRow spacing={70}>
             <Col md={6}>
               <h2>
-                Get your business
-                ready for a remote working arrangement
+                <FormattedMessage id={`${scope}.s1_title`} />
+
               </h2>
               <p className="mb25">
-                Remote working, be it work-from-home or multiple office work
-                arrangements, may potentially be the norm as businesses
-                undertake government COVID-19 advisories. EzBizTrip
-                understands this firsthand as we have multiple teams working
-                remotely in various South East Asia offices, even before COVID-19.
-                Employees and management often find it challenging to work
-                efficiently without the required supporting tools.
+                <FormattedMessage id={`${scope}.s1_content`} />
               </p>
               <p>
-                With the comfort and convenience of working in office taken away,
-                workers sometimes take on the extra burden of getting approval
-                for their expense claims by superiors and accountants separately.
-                This process can often be long, mundane and inefficient.
+                <FormattedMessage id={`${scope}.s1_content2`} />
               </p>
             </Col>
             <Col md={6}>
@@ -106,11 +97,10 @@ const RemoteWorkExpenseManagement = props => {
           <CustomRow spacing={20}>
             <Col md={12} lg={{ size: 6, offset: 3 }}>
               <TitleWithCircle>
-                Supporting remote workers with EzBizTrip’s Expense Claims Management
+                <FormattedMessage id={`${scope}.s2_title`} />
               </TitleWithCircle>
               <p>
-                Taking advantage of EzBizTrip Corporate Travel platform’s “hidden”
-                expense claims management is easy:
+                <FormattedMessage id={`${scope}.s2_content`} />
               </p>
             </Col>
           </CustomRow>
@@ -126,15 +116,15 @@ const RemoteWorkExpenseManagement = props => {
                   dFlex={true}
                   iconLeft
                   icon={<Icon icon={outlinePoll} />}
-                  title={'Increase Productivity'}
-                  content={'Using EzBizTrip’s platform, employees can simply create an expense report to record and submit their expenses no matter where they are.'}
+                  title={<FormattedMessage id={`${scope}.s3_title`} />}
+                  content={<FormattedMessage id={`${scope}.s3_content`} />}
                 />
                 <Article
                   dFlex={true}
                   iconLeft
                   icon={<Icon icon={baselineEventAvailable} />}
-                  title={'Higher Efficiency and Accuracy'}
-                  content={'EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoicesfrom mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.'}
+                  title={<FormattedMessage id={`${scope}.s3_title2`} />}
+                  content={<FormattedMessage id={`${scope}.s3_content2`} />}
                 />
               </div>
             </Col>
@@ -154,12 +144,11 @@ const RemoteWorkExpenseManagement = props => {
           <CustomRow spacing={20}>
             <Col lg={{ size: 8, offset: 2, order: 2 }}>
               <h2 className="mb20">
-                Analysis
+
+                <FormattedMessage id={`${scope}.s4_title4`} />
               </h2>
               <p>
-                With the option of categorizing these expenses, the company’s management
-                canhave a bird’s eye view of  the full expenses and determine if any of the
-                company’s resources can be reallocated for better use.
+                <FormattedMessage id={`${scope}.s4_content`} />
               </p>
             </Col>
             <Col lg={{ size: 10, offset: 1, order: 1 }} className="text-center">

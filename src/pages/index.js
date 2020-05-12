@@ -96,15 +96,16 @@ const IndexPage = props => {
               <Col xl={{ size: 5, order: 2 }} lg={12} className="d-flex align-items-center">
                 <BannerContent>
                   <p className="sub">
-                    WORK FROM HOME EXPENSE
-            </p>
+                    <FormattedMessage id={`${scope}.WFHsubTitle`} />
+                  </p>
                   <h1>
-                    Simplify your expense claim with a report automation system.
-              </h1>
-                  <p>EzBizTrip is the best platform to make business travel much easier and simpler.
-            </p>
+                    <FormattedMessage id={`${scope}.WFHtitle`} />
+                  </h1>
+                  <FormattedMessage id={`${scope}.WFHdes`} />
+                  <p>
+                  </p>
                   <a href={`${props.langUri}remote-work-expense-management/`} target="_blank">
-                    I’m ready to start
+                    <FormattedMessage id={`${scope}.WFHbtn`} />
                   </a>
                 </BannerContent>
               </Col>
@@ -144,7 +145,7 @@ const IndexPage = props => {
             </h1>
           </Container>
         </SliderItem>*/}
-      </Slider> 
+      </Slider>
 
       <SectionIntro>
         <Container>
