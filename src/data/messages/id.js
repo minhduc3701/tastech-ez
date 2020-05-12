@@ -1,4 +1,4 @@
-module.exports ={
+module.exports = {
   "btn.readMore": "Baca selengkapnya",
   "components.Common.Header.home": "Beranda",
   "components.Common.Header.blog": "Blog",
@@ -42,6 +42,10 @@ module.exports ={
   "components.Common.NotFound.message": "Tampaknya kami tidak dapat menemukan halaman yang Anda cari.",
   "components.Common.NotFound.404": "Error code: 404",
   "components.Common.NotFound.backToHome": "Kembali ke Beranda",
+  "page.HomePage.WFHsubTitle": "WORK FROM HOME EXPENSE",
+  "page.HomePage.WFHtitle": "Simplify your expense claim with a report automation system.",
+  "page.HomePage.WFHdes": "EzBizTrip is the best platform to make business travel much easier and simpler.",
+  "page.HomePage.WFHbtn": "I’m ready to start",
   "page.HomePage.banner1": "Pesan perjalanan bisnis Anda dengan mudah",
   "page.HomePage.banner2": "Mengotomatisasikan Biaya",
   "page.HomePage.banner3": "Manajemen Kebijakan Perjalanan",
@@ -146,7 +150,7 @@ module.exports ={
   "page.rewardsProgram.2_": "Ini menjadi win-win solution baik untuk karyawan maupun perusahaan!",
   "page.rewardsProgram.3_": "Mengajak karyawan untuk berhemat dalam pengeluaran mereka sehingga menurunkan jumlah biaya perjalanan secara keseluruhan ",
   "page.rewardsProgram.4_": " Program Happy Rewards kami berfungsi sebagai akumulasi loyalitas keseluruhan kredit bagi perusahaan untuk mengimbangi biaya hadiah wajib tahunan perusahaan ",
-  
+
   "page.RequestDemo.formTitle": "Ajukan Uji Coba",
   "page.RequestDemo.formDes": "Isi formulir di bawah ini dan kami akan menunjukkan kepada Anda bagaimana EzBizTrip dapat membantu mengatur program perjalanan Anda.",
   "page.RequestDemo.thankYou": "Terima Kasih!",
@@ -373,5 +377,20 @@ module.exports ={
   "sitemap.meta.description": "Temukan solusi manajemen perjalanan bisnis. Mencari harga perjalanan secara real-time, menambah biaya perjalanan secara online, mengurangi penggunaan kertas dan mempercepat pengelolaan biaya. EzBizTrip membuat perjalanan bisnis menjadi lebih baik dan mudah.",
   "terms.meta.title": "Syarat dan Ketentuan",
   "terms.meta.description": "Temukan solusi manajemen perjalanan bisnis. Mencari harga perjalanan secara real-time, menambah biaya perjalanan secara online, mengurangi penggunaan kertas dan mempercepat pengelolaan biaya. EzBizTrip membuat perjalanan bisnis menjadi lebih baik dan mudah.",
-  "meta.keywords": "Perjalanan bisnis, Perjalanan dinas, Menambah biaya, Tanda terima digital, Tagihan digital, Perjalanan pribadi, Perjalanan personal, Menambah cepat, Menambah biaya dengan cepat, Manajemen perjalanan, Solusi manajemen perjalanan, EzBizTrip, Perjalanan bisnis yang mudah, Pencarian harga real-time, Pencarian kombo, Harga pasar real-time, Pencarian tiket pesawat, Pencarian hotel, Pencarian tiket pesawat dan hotel, Menambah layanan, Jadwal perjalanan, Analisis bisnis, Analisis perjalanan bisnis, Laporan perjalanan bisnis, Kebijakan perjalanan bisnis, Menambah biaya pada perjalanan bisnis, Tanda terima digital perjalanan bisnis, Tagihan digital perjalanan bisnis, Perjalanan bisnis yang mudah, Ez biz trip, Perjalanan Ez biz, EzBizTravel, Laporan perjalanan, Jadwal perjalanan."
+  "meta.keywords": "Perjalanan bisnis, Perjalanan dinas, Menambah biaya, Tanda terima digital, Tagihan digital, Perjalanan pribadi, Perjalanan personal, Menambah cepat, Menambah biaya dengan cepat, Manajemen perjalanan, Solusi manajemen perjalanan, EzBizTrip, Perjalanan bisnis yang mudah, Pencarian harga real-time, Pencarian kombo, Harga pasar real-time, Pencarian tiket pesawat, Pencarian hotel, Pencarian tiket pesawat dan hotel, Menambah layanan, Jadwal perjalanan, Analisis bisnis, Analisis perjalanan bisnis, Laporan perjalanan bisnis, Kebijakan perjalanan bisnis, Menambah biaya pada perjalanan bisnis, Tanda terima digital perjalanan bisnis, Tagihan digital perjalanan bisnis, Perjalanan bisnis yang mudah, Ez biz trip, Perjalanan Ez biz, EzBizTravel, Laporan perjalanan, Jadwal perjalanan.",
+  "page.remoteWork.subTitle": "WORK FROM HOME EXPENSE ",
+  "page.remoteWork.mainTitle": "Simplify your expense claim with a report automation system.",
+  "page.remoteWork.description": "EzBizTrip is the best platform to make business travel much easier and simpler.",
+  "page.remoteWork.startBtn": "I’m ready to start",
+  "page.remoteWork.s1_title": "Get your business ready for a remote working arrangement",
+  "page.remoteWork.s1_content": "Remote working, be it work-from-home or multiple office work arrangements, may potentially be the norm as businesses undertake government COVID-19 advisories. EzBizTrip understands this firsthand as we have multiple teams working remotely in various South East Asia offices, even before COVID-19. Employees and management often find it challenging to work efficiently without the required supporting tools.",
+  "page.remoteWork.s1_content2": "With the comfort and convenience of working in office taken away, workers sometimes take on the extra burden of getting approval for their expense claims by superiors and accountants separately. This process can often be long, mundane and inefficient.",
+  "page.remoteWork.s2_title": "Supporting remote workers with EzBizTrip’s Expense Claims Management",
+  "page.remoteWork.s2_content": "Taking advantage of EzBizTrip Corporate Travel platform’s “hidden” expense claims management is easy:",
+  "page.remoteWork.s4_title4": "Analysis",
+  "page.remoteWork.s4_content": "With the option of categorizing these expenses, the company’s management canhave a bird’s eye view of  the full expenses and determine if any of the company’s resources can be reallocated for better use.",
+  "page.remoteWork.s3_title": "Increase Productivity",
+  "page.remoteWork.s3_content": "Using EzBizTrip’s platform, employees can simply create an expense report to record and submit their expenses no matter where they are.",
+  "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
+  "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoicesfrom mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.",
 }
