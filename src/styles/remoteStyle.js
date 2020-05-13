@@ -140,12 +140,13 @@ export const SectionIntro = styled.div`
   p{
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.56;
     text-align: left;
     color: #323232;
   }
   h2{
+    font-family: work sans;
     font-size: 35px;
     font-weight: 600;
     line-height: 1.2;
@@ -184,7 +185,11 @@ export const SectionIntro = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    padding: 25px 0 25px;
+    padding: 35px 0 0;
+    h2{
+      font-size: 30px;
+       margin: 0;
+    }
     &.analysis{
       p, h2{
         text-align: left
@@ -192,6 +197,9 @@ export const SectionIntro = styled.div`
     }
     .article {
       margin-bottom: 15px;
+    }
+    .article:first-child {
+      margin-top: 0;
     }
   }
 `
@@ -217,11 +225,14 @@ export const TitleWithCircle = styled.h2`
     z-index: -1;
   }
   @media screen and (max-width: 767px) {
-    padding: 75px 0 25px;
+    padding: 35px 0 25px;
     &:before {
       top: 0;
-      left: -88px;
+      left: -67px;
+      width: 139px;
+      height: 139px;
     }
+    
   }
 `
 

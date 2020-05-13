@@ -3,7 +3,7 @@ import RequestForm from '../Common/RequestForm'
 import styled from 'styled-components'
 import bg from './../../images/home-page/requestDemo.jpg'
 import { injectIntl } from 'react-intl'
-import {navigate} from 'gatsby'
+import { navigate } from 'gatsby'
 
 import { Container } from '../../styles'
 
@@ -27,14 +27,27 @@ class SectionRequestForm extends Component {
   }
   render() {
     const { formatMessage } = this.props.intl
+    let { type } = this.props
+    let title
+    let des
+    switch (type) {
+      case "remote-form":
+        title = "remote-form-title"
+        des="remote-form-des"
+        break;
+      default:
+        title= 'title'
+        des='des'
+        break;
+    }
 
     return (
       <Wrapper bgSrc={this.props.bgSrc}>
         <Container className="text-center text-xl-right">
           <RequestForm
             langUri={this.props.langUri}
-            title={formatMessage({ id: `${scope}.title` })}
-            des={formatMessage({ id: `${scope}.des` })}
+            title={formatMessage({ id: `${scope}.${title}` })}
+            des={formatMessage({ id: `${scope}.${des}` })}
             onSubmit={this.handleSubmit}
           />
         </Container>
