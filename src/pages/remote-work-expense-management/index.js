@@ -15,6 +15,8 @@ import {
   TitleWithCircle
 } from '../../styles/remoteStyle'
 
+
+import baselineNetworkCheck from '@iconify/icons-ic/baseline-network-check';
 import outlinePoll from '@iconify/icons-ic/outline-poll'
 import baselineEventAvailable from '@iconify/icons-ic/baseline-event-available'
 import { Container, CustomRow } from '../../styles'
@@ -115,14 +117,14 @@ const RemoteWorkExpenseManagement = props => {
                 <Article
                   dFlex={true}
                   iconLeft
-                  icon={<Icon icon={outlinePoll} />}
+                  icon ={<Icon icon={baselineNetworkCheck} />}
                   title={<FormattedMessage id={`${scope}.s3_title`} />}
                   content={<FormattedMessage id={`${scope}.s3_content`} />}
                 />
                 <Article
                   dFlex={true}
                   iconLeft
-                  icon={<Icon icon={baselineEventAvailable} />}
+                  icon={<Icon icon={outlinePoll} />}
                   title={<FormattedMessage id={`${scope}.s3_title2`} />}
                   content={<FormattedMessage id={`${scope}.s3_content2`} />}
                 />
@@ -159,7 +161,7 @@ const RemoteWorkExpenseManagement = props => {
           </CustomRow>
         </Container>
       </SectionIntro>
-      <SectionRequestForm bottom bgSrc={img4} />
+      <SectionRequestForm bottom bgSrc={img4} type="remote-form" />
     </Wrapper>
   )
 }
