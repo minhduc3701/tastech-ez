@@ -8,7 +8,7 @@ import {
 } from '../../styles/featureStyle'
 
 
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl ,FormattedHTMLMessage} from 'react-intl'
 
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
@@ -44,7 +44,8 @@ const ExpenseManagementPage = props => {
       />
       <Banner 
         bg={bg}
-        text={<FormattedMessage id={`${scope}.banner.text`} />}
+        // text={<FormattedMessage id={`${scope}.banner.text`} />}
+        text={<FormattedHTMLMessage tagName="span" id={`${scope}.banner.text`}/>}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
         video="https://www.youtube.com/embed/JmSQYhSAYvw?rel=0&autoplay=1"
       />

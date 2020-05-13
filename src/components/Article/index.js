@@ -73,10 +73,12 @@ const Icon = styled.div`
 `
 
 const Title = styled.h3`
-  font-size: 20px;
+  font-size: 35px;
   font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: #171e45;
+  font-family: work sans;
 
   @media screen and (max-width: 767px) {
     font-size: 18px;

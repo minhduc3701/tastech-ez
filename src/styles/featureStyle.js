@@ -8,13 +8,21 @@ export const SectionSG = styled.div`
   padding: 80px 0 30px;
 
   .article {
-    padding: 0 90px;
+    padding: 0 0 0 90px;
   }
 
   .row {
     margin-bottom: 40px;
   }
-
+  .smarttitle h2{
+    font-family: work sans;
+    font-size: 35px;
+    font-weight: 600;
+    color: #171e45;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    margin-top:50px;
+  }
   @media screen and (max-width: 767px) {
     padding: 60px 0 0;
 
@@ -29,7 +37,7 @@ export const SectionEM1 = styled.div`
   padding: 80px 0 60px;
 
   .article {
-    padding: 0 90px;
+    padding: 0;
   }
 
   @media screen and (max-width: 767px) {
@@ -45,7 +53,7 @@ export const SectionEM1 = styled.div`
 export const SectionEM2 = styled.div`
   padding: 0 0 80px;
   .article {
-    padding: 0 90px;
+    padding: 0;
     margin-bottom: 60px;
   }
 

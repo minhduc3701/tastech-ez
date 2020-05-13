@@ -47,7 +47,7 @@ export const Summary = styled.div`
     }
 
     .free & {
-      color: #0f73ee;
+      color: #3ac9b6;
     }
   }
 
@@ -78,7 +78,7 @@ export const Summary = styled.div`
     }
 
     .free & {
-      background: #0f73ee;
+      background: #f4b400;
     }
 
     &:hover {
@@ -116,7 +116,7 @@ export const List = styled.ul`
       color: #f4b400;
 
       .free & {
-        color: #0f73ee;
+        color: #f4b400;
       }
     }
 
@@ -152,9 +152,7 @@ export const List = styled.ul`
       }
     }
 
-    .text-has-underline {
-      text-decoration: underline;
-    }
+    
     
     &.disabled {
       color: #c1c1c1;

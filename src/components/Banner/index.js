@@ -25,7 +25,7 @@ const Inner = styled.div`
   position: relative;
   color: #fff;
   z-index: 10;
-  width: 50%;
+  width: 70%;
 
   @media screen and (max-width: 1199px) {
     width: 60%;
@@ -38,10 +38,11 @@ const Inner = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.67;
   margin-bottom: 0;
+  font-family: work sans;
 
   @media screen and (max-width: 767px) {
     font-size: 25px;

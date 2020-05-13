@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import { Col } from 'reactstrap'
-import {layoutWithLangKey} from "../../components/layout"
+import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
 import Article from '../../components/Article'
 import ContacForm from '../../components/ContactForm'
@@ -26,7 +26,8 @@ import avt5 from '../../images/about-page/members/5.jpg'
 import avt6 from '../../images/about-page/members/6.jpg'
 import avt7 from '../../images/about-page/members/7.jpg'
 import avt8 from '../../images/about-page/members/8.jpg'
-
+import avt9 from '../../images/about-page/members/9.jpg'
+import avt10 from '../../images/about-page/members/10.jpg'
 const scope = 'page.AboutUs'
 
 const members = [
@@ -69,6 +70,22 @@ const members = [
     name: 'Phan Ha',
     position: 'Dev',
     avatar: avt8
+  },
+  {
+    name: '',
+    position: null,
+    avatar: null
+  }
+  ,
+  {
+    name: 'Vu Hoan',
+    position: 'Dev',
+    avatar: avt9
+  },
+  {
+    name: 'Thang Nguyen',
+    position: 'Dev',
+    avatar: avt10
   }
 ]
 
@@ -129,19 +146,22 @@ const AboutUs = props => {
       <SectionTeam>
         <Container>
           <h2 className="section-title">
-          <FormattedMessage id={`${scope}.team`} />
+            <FormattedMessage id={`${scope}.team`} />
           </h2>
 
           <CustomRow spacing={20}>
             {members.map((member, index) => (
-                <Col md={3} xs={6} key={index}>
-                  <Member>
-                    <img src={member.avatar} alt=""/>
-                    <h3 className="name">{member.name}</h3>
-                    <p className="position"><FormattedMessage id={`${scope}.team.position.${member.position}`} /></p>
-                  </Member>
-                </Col>
-              ))}
+              <Col md={3} xs={6} key={index}>
+                <Member>
+                  <img src={member.avatar} alt="" />
+                  <h3 className="name">{member.name}</h3>
+                  <p className="position">
+                    {member.position &&
+                      <FormattedMessage id={`${scope}.team.position.${member.position}`} />}
+                  </p>
+                </Member>
+              </Col>
+            ))}
           </CustomRow>
         </Container>
       </SectionTeam>
