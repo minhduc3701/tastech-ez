@@ -128,6 +128,7 @@ const AboutUs = props => {
             <Col md={6} className="d-flex align-items-center">
               <div className="text-block">
                 <Article
+                  fontSize='25'
                   title={<FormattedMessage id={`${scope}.1`} />}
                   content={<FormattedHTMLMessage id={`${scope}.1_`} />}
                 />

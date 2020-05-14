@@ -7,9 +7,9 @@ import {
 } from '../../styles/featureStyle'
 
 
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl,FormattedHTMLMessage} from 'react-intl'
 
-import {layoutWithLangKey} from "../../components/layout"
+import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
 import Banner from '../../components/Banner'
 import Article from '../../components/Article'
@@ -26,7 +26,7 @@ import img1 from '../../images/travel-policy-management/1.png'
 const scope = 'page.travelPolicyManagement'
 
 const TravelPolicyManagementPage = props => {
-  
+
 
   const { formatMessage } = props.intl
 
@@ -38,7 +38,7 @@ const TravelPolicyManagementPage = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-      <Banner 
+      <Banner
         bg={bg}
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         description={<FormattedMessage id={`${scope}.banner.description`} />}
@@ -48,31 +48,34 @@ const TravelPolicyManagementPage = props => {
 
       <SectionTP>
         <Container>
-        <Row>
-          <Col md={6} className="text-center">
-            <img src={img1} alt=""/>
-          </Col>
-              <Col md={6} className="d-flex align-items-center">
-                <div className="text-block">
-                  <p className="first-paragraph"><FormattedMessage id={`${scope}.1`} /></p>
-                  <Article
+          <Row>
+            <Col md={6} className="text-center">
+              <img src={img1} alt=""/>
+            </Col>
+            <Col md={6} className="d-flex align-items-center">
+              <div className="text-block firsttitle">
+
+                <h2><FormattedMessage id={`${scope}.1`} /></h2>
+                <Article
                   iconLeft
+                  fontSize='25'
                   icon={<Icon icon={outlinePoll} />}
                   title={<FormattedMessage id={`${scope}.2`} />}
                   content={<FormattedMessage id={`${scope}.2_`} />}
-                  
+
                 />
                 <Article
-                iconLeft
+                  iconLeft
+                  fontSize='25'
                   icon={<Icon icon={baselineEventAvailable} />}
                   title={<FormattedMessage id={`${scope}.3`} />}
-                  content={<FormattedMessage id={`${scope}.3_`} />}
-                  
+                  content={<FormattedHTMLMessage tagName="span" id={`${scope}.3_`} />}
+
                 />
-                </div>
-              </Col>
-            </Row>
-      </Container>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </SectionTP>
 
       <PromoLinks langUri={props.langUri}/>

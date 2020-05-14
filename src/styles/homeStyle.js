@@ -282,11 +282,13 @@ export const Customer = styled.div`
   }
 
   .title {
+    font-family:work sans;
     margin-top: 24px;
     margin-bottom: 0;
   }
 
   .underline >span {
+    font-family:work sans;
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -337,7 +339,7 @@ export const Customer = styled.div`
       }
 
       h3 {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         line-height: 1.39;
         margin-bottom: 15px;

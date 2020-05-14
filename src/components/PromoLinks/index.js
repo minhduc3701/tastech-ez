@@ -1,4 +1,5 @@
 import React from 'react'
+import { Row, Col } from 'reactstrap'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Container } from '../../styles'
@@ -40,23 +41,28 @@ export const Box = styled.div`
   box-shadow: 0 3px 50px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-radius: 10px;
-  text-align: center;
+  // text-align: center;
   padding: 55px 60px 60px;
+  
 
   h3 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
-    line-height: 1.67;
-    color: #000;
+    line-height: 1.2;
+    color: #171e45;
     margin-bottom: 18px;
+    font-family:work sans;
   }
 
    p {
-    font-size: 20px;
+    font-size: 18px;
    }
 
    footer {
     margin-top: 30px;
+   }
+   .buttonAlignCenter{
+     margin:auto;
    }
 
    @media screen and (max-width: 767px) {
@@ -87,6 +93,7 @@ export const StartLink = styled(Link)`
   border-radius: 5px;
   background-color: #f4b400;
   color: #fff;
+  text-align:center;
 
   &:hover {
     text-decoration: none;
@@ -100,18 +107,24 @@ const PromoLinks = props => {
     <Wrapper bg={props.bg}>
       <Container>
         <Box>
-          <h3>
-              <FormattedMessage id={`${scope}.title`} />
-            </h3>
-            <p>
-              <FormattedMessage id={`${scope}.description`} />
-            </p>
+          <Row>
+            <Col md={{size:7,offset:1}}>
+              <h3>
+                <FormattedMessage id={`${scope}.title`} />
+              </h3>
+              <p>
+                <FormattedMessage id={`${scope}.description`} />
+              </p>
+            </Col>
 
-            <footer>
+            <Col md={{size:3,offset:1}} className="buttonAlignCenter">
               <StartLink to={`${props.langUri}/request-demo`}>
-              <FormattedMessage id={`${scope}.startLink`} />
-            </StartLink>
-            </footer>
+                  <FormattedMessage id={`${scope}.startLink`} />
+              </StartLink>
+            </Col>
+
+          </Row>
+
         </Box>
       </Container>
     </Wrapper>

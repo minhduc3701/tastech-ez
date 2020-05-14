@@ -140,7 +140,7 @@ export const SectionIntro = styled.div`
   p{
     margin: 0;
     padding: 0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.56;
     text-align: left;
     color: #323232;

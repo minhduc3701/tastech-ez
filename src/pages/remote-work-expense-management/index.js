@@ -117,6 +117,7 @@ const RemoteWorkExpenseManagement = props => {
                 <Article
                   dFlex={true}
                   iconLeft
+                  fontSize='25'
                   icon ={<Icon icon={baselineNetworkCheck} />}
                   title={<FormattedMessage id={`${scope}.s3_title`} />}
                   content={<FormattedMessage id={`${scope}.s3_content`} />}
@@ -124,6 +125,7 @@ const RemoteWorkExpenseManagement = props => {
                 <Article
                   dFlex={true}
                   iconLeft
+                  fontSize='25'
                   icon={<Icon icon={outlinePoll} />}
                   title={<FormattedMessage id={`${scope}.s3_title2`} />}
                   content={<FormattedMessage id={`${scope}.s3_content2`} />}
@@ -144,6 +146,11 @@ const RemoteWorkExpenseManagement = props => {
       <SectionIntro mt={80} mb={150} className="analysis">
         <Container>
           <CustomRow spacing={20}>
+          <Col lg={{ size: 10, offset: 1, order: 1 }} className="text-center">
+              <div className="image-block">
+                <img src={img3} alt="" />
+              </div>
+            </Col>
             <Col lg={{ size: 8, offset: 2, order: 2 }}>
               <h2 className="mb20">
 
@@ -153,11 +160,7 @@ const RemoteWorkExpenseManagement = props => {
                 <FormattedMessage id={`${scope}.s4_content`} />
               </p>
             </Col>
-            <Col lg={{ size: 10, offset: 1, order: 1 }} className="text-center">
-              <div className="image-block">
-                <img src={img3} alt="" />
-              </div>
-            </Col>
+            
           </CustomRow>
         </Container>
       </SectionIntro>

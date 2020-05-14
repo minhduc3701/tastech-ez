@@ -35,7 +35,7 @@ export const Banner = styled.div`
 export const BannerText = styled.div`
   z-index: 3;
   color: #fff;
-  max-width: 600px;
+  max-width: 767px;
   width: 100%;
   position: relative;
 
@@ -99,12 +99,12 @@ export const SectionQuote = styled.div`
   .author {
     padding-left: 30px;
     margin-top: 30px;
-    font-size: 13px;
+    font-size: 16px;
 
     .name {
       color: #f4b400;
       display: inlie-block;
-      font-size: 15px;
+      font-size: 16px;
 
       &:after {
         content: "";

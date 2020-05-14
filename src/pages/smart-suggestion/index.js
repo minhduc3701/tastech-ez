@@ -41,6 +41,7 @@ const SmartSuggestionPage = props => {
       />
       <Banner
         bg={bg}
+        bannerInnerWidth='70'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
         video="https://www.youtube.com/embed/JmSQYhSAYvw?rel=0&autoplay=1"

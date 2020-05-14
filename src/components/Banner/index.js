@@ -25,7 +25,7 @@ const Inner = styled.div`
   position: relative;
   color: #fff;
   z-index: 10;
-  width: 70%;
+  width: ${props => props.bannerInnerWidth ? `${props.bannerInnerWidth}%`:'50%'};
 
   @media screen and (max-width: 1199px) {
     width: 60%;
@@ -147,7 +147,7 @@ const Banner = props => {
   return (
     <Wrapper bg={props.bg}>
         <Container>
-          <Inner>
+          <Inner bannerInnerWidth={props.bannerInnerWidth}>
             <Title>{props.text}</Title>
             
             {props.description && <Description>{props.description}</Description>}

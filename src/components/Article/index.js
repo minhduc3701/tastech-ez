@@ -73,7 +73,7 @@ const Icon = styled.div`
 `
 
 const Title = styled.h3`
-  font-size: 35px;
+  font-size: ${props => props.fontSize ? `${props.fontSize}px` : '35px'};
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 40px;
@@ -95,7 +95,7 @@ const Article = props => {
       }
 
       <div className="content">
-        <Title>{props.title}</Title>
+        <Title fontSize={props.fontSize}>{props.title}</Title>
         <div>{props.content}</div>
         {props.link}
       </div>

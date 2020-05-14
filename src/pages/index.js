@@ -21,6 +21,7 @@ import intro1 from '../images/home-page/1.png'
 import intro2 from '../images/home-page/2.png'
 import intro3 from '../images/home-page/3.png'
 import intro4 from '../images/home-page/4.png'
+import intro5 from '../images/home-page/5.png'
 
 import { Icon } from '@iconify/react'
 import baselineChevronRight from '@iconify/icons-ic/baseline-chevron-right'
@@ -33,8 +34,8 @@ import outlineCardGiftcard from '@iconify/icons-ic/outline-card-giftcard'
 import roundBusinessCenter from '@iconify/icons-ic/round-business-center'
 import baselinePerson from '@iconify/icons-ic/baseline-person'
 import baselinePlus from '@iconify/icons-ic/baseline-plus'
-
-import { FormattedMessage, injectIntl } from 'react-intl'
+import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
+import { FormattedMessage, injectIntl ,FormattedHTMLMessage} from 'react-intl'
 
 const scope = 'page.HomePage'
 
@@ -217,6 +218,19 @@ const IndexPage = props => {
               <img src={intro4} alt="" />
             </Col>
           </Row>
+          <Row>
+            <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={outlineAnnouncement} />}
+                title={<FormattedMessage id={`${scope}.intro.5`} />}
+                content={<FormattedHTMLMessage type='span' id={`${scope}.intro.5_`} />}
+              />
+            </Col>
+
+            <Col md={{ size: 6, order: 1 }} className="text-center">
+              <img src={intro5} alt="" />
+            </Col>
+          </Row>
         </Container>
       </SectionIntro>
 
@@ -224,7 +238,7 @@ const IndexPage = props => {
         <div className="backdrop"></div>
         <Container>
           <Row className="justify-content-center">
-            <Col xs={10}>
+            <Col xs={8}>
               <Heading>
                 <FormattedMessage id={`${scope}.howWeWork.sectionTitle`} />
               </Heading>
