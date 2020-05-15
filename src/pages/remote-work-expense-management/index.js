@@ -53,7 +53,8 @@ const RemoteWorkExpenseManagement = props => {
                 <h1>
                   <FormattedMessage id={`${scope}.mainTitle`} />
                 </h1>
-                <FormattedMessage id={`${scope}.description`} />  <p>
+                 <p>
+                 <FormattedMessage id={`${scope}.description`} />
                 </p>
                 <Link to={`${props.langUri}/request-demo/`}>
                   <FormattedMessage id={`${scope}.startBtn`} />

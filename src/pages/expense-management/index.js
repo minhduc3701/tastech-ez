@@ -1,11 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Container,CustomRow } from '../../styles'
+import { Container, CustomRow } from '../../styles'
 import {
   Wrapper,
   SectionEM1,
   SectionEM2,
-  SectionIntro
+  SectionIntro,
+  SectionRemote,
+  BtnStart
 } from '../../styles/featureStyle'
 
 
@@ -23,11 +25,13 @@ import outlinePoll from '@iconify/icons-ic/outline-poll'
 import outlineLaptopMac from '@iconify/icons-ic/outline-laptop-mac'
 import baselineNetworkCheck from '@iconify/icons-ic/baseline-network-check'
 import outlineCheckBox from '@iconify/icons-ic/outline-check-box'
+import baselineArrowRightAlt from '@iconify/icons-ic/baseline-arrow-right-alt';
 
 
 import bg from '../../images/expense-management/banner.jpg'
 import img1 from '../../images/expense-management/1.png'
 import img3 from '../../images/expense-management/3.png'
+import imgRemote from '../../images/expense-management/imgRemote.png'
 
 const scope = 'page.expenseManagement'
 
@@ -61,7 +65,7 @@ const ExpenseManagementPage = props => {
                 <FormattedMessage id={`${scope}.1title_`} />
               </h2>
             </Col>
-            <Col md={{ size: 6 }} className="d-flex align-items-center">
+            <Col md={{ size: 5 }} className="d-flex align-items-center">
               <Article
                 icon={<Icon icon={outlinePhotoCamera} />}
                 title={<FormattedMessage id={`${scope}.1`} />}
@@ -74,7 +78,7 @@ const ExpenseManagementPage = props => {
               />
             </Col>
 
-            <Col md={{ size: 6 }} className="text-center">
+            <Col md={{ size: 6,offset:1 }} className="text-center">
               <img src={img1} alt="" />
             </Col>
           </Row>
@@ -84,7 +88,7 @@ const ExpenseManagementPage = props => {
       <SectionEM2>
         <Container>
           <Row>
-            <Col md={6}>
+            <Col md={5}>
               <Article
                 icon={<Icon icon={outlinePoll} />}
                 title={<FormattedMessage id={`${scope}.2`} />}
@@ -92,7 +96,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={6}>
+            <Col md={{size:6,offset:1}}>
               <Article
                 icon={<Icon icon={outlineLaptopMac} />}
                 title={<FormattedMessage id={`${scope}.3`} />}
@@ -102,7 +106,7 @@ const ExpenseManagementPage = props => {
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
+            <Col md={5}>
               <Article
                 icon={<Icon icon={baselineNetworkCheck} />}
                 title={<FormattedMessage id={`${scope}.4`} />}
@@ -110,7 +114,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={6}>
+            <Col md={{size:6,offset:1}}>
               <Article
                 icon={<Icon icon={outlineCheckBox} />}
                 title={<FormattedMessage id={`${scope}.5`} />}
@@ -125,7 +129,7 @@ const ExpenseManagementPage = props => {
       <SectionIntro mt={80} mb={150} className="howcanhelp">
         <Container>
           <CustomRow spacing={20}>
-          <Col lg={{ size: 10, offset: 1, order: 1 }} className="text-center">
+            <Col lg={{ size: 10, offset: 1, order: 1 }} className="text-center">
               <div className="image-block">
                 <img src={img3} alt="" />
               </div>
@@ -139,16 +143,16 @@ const ExpenseManagementPage = props => {
                 <FormattedMessage id={`${scope}.6_content`} />
               </p>
             </Col>
-            
+
           </CustomRow>
         </Container>
       </SectionIntro>
-      
+
       <SectionEM2>
         <Container>
-          
+
           <Row>
-            <Col md={6}>
+            <Col md={5}>
               <Article
                 icon={<Icon icon={baselineNetworkCheck} />}
                 title={<FormattedMessage id={`${scope}.7`} />}
@@ -156,7 +160,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={6}>
+            <Col md={{size:6,offset:1}}>
               <Article
                 icon={<Icon icon={outlineCheckBox} />}
                 title={<FormattedMessage id={`${scope}.8`} />}
@@ -167,7 +171,32 @@ const ExpenseManagementPage = props => {
           </Row>
         </Container>
       </SectionEM2>
-      
+      <SectionRemote>
+        <Container>
+          <CustomRow spacing={20}>
+            <Col xl={7}lg={6}  sm={12} className="image-background">
+              <div className="image-block">
+                <img src={imgRemote} alt="" />
+                <div className="yellowCircle"></div>
+              </div>
+            </Col>
+            <Col xl={5} lg={6} sm={12} className="d-flex align-items-center">
+              <div className="text-block textCenter">
+                <Article
+                  title={<FormattedMessage id={`${scope}.remote`} />}
+                  content={<FormattedMessage id={`${scope}.remote_`} />}
+                />
+
+                <BtnStart type="submit">
+                  <FormattedMessage tagName="span" id={`${scope}.submit`} />
+                  <Icon icon={baselineArrowRightAlt} />
+                </BtnStart>
+              </div>
+            </Col>
+
+          </CustomRow>
+        </Container>
+      </SectionRemote>
       <PromoLinks langUri={props.langUri} />
 
     </Wrapper>

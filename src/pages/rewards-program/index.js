@@ -75,14 +75,14 @@ const RewardsProgramPage = props => {
       <SectionRP2>
         <Container>
           <CustomRow spacing={60}>
-            <Col md={6}>
+            <Col md={5}>
               <Article
                 icon={<Icon icon={outlineSentimentSatisfied} />}
                 title={<FormattedMessage id={`${scope}.3`} />}
                 content={<FormattedMessage id={`${scope}.3_`} />}
               />
             </Col>
-            <Col md={6}>
+            <Col md={{size:6,offset:1}}>
               <Article
                 icon={<Icon icon={baselineCardGiftcard} />}
                 title={<FormattedMessage id={`${scope}.4`} />}

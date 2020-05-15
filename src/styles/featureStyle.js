@@ -202,13 +202,14 @@ export const SectionIntro = styled.div`
 
   @media screen and (max-width: 767px) {
     padding: 35px 0 0;
+    margin-bottom:40px;
     h2{
       font-size: 30px;
        margin: 0;
     }
     &.howcanhelp{
       p, h2{
-        text-align: left
+        text-align: center
       }
     }
     .article {
@@ -218,4 +219,103 @@ export const SectionIntro = styled.div`
       margin-top: 0;
     }
   }
+`
+export const SectionRemote = styled.div`
+    .image-background{
+      z-index:5;
+    }
+    .yellowCircle{
+      position:absolute;
+      background:#f4b400;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      bottom:120px;
+      right:10px;
+    }
+    .imgMargin{
+      margin:auto;
+    }
+    margin:0 0 150px 0;
+    .image-block {
+      padding:0 20px;
+      img {
+        width:100%;
+      }
+    }
+    .text-block {
+        margin-left:-100px;
+        background:#3543c6;
+        color:#fff;
+        padding:60px 50px 60px 150px;
+        .article{
+          .content{
+            color:#fff;
+          }
+          
+          .title{
+            color:#fff;
+          }
+        }
+        
+    }
+    .textCenter{
+    }
+    @media screen and (max-width: 1200px) {
+      .text-block{
+        padding:20px 50px 20px 150px;     
+      }    
+    }
+    @media screen and (max-width: 991px) {
+      .text-block{
+          margin: -60px -48px 0 -48px;
+          width: calc(100% + 96px);
+          padding:120px 120px 60px 120px;       
+      }
+      .yellowCircle{
+          visibility:hidden;
+      }
+      .textCenter{
+        text-align:center;
+      }
+
+    }
+    @media screen and (max-width: 767px) {
+      .text-block{
+          margin: -40px -16px 0 -16px;
+          width: calc(100% + 32px);
+          padding:60px;       
+      }
+      .yellowCircle{
+          visibility:hidden;
+      }
+      .textCenter{
+        text-align:center;
+      }
+
+    }
+    
+`
+export const BtnStart = styled.button`
+  width: 40%;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.35;
+  border-radius: 28px;
+  background-color: #ffffff;
+  border: none;
+  color: #3543c6;
+  padding: 10px 0;
+  min-width:140px;
+
+&:focus {
+  outline: none;
+}
+
+&:hover {
+  background-color: #3543c6;
+  color: #ffffff;
+}
+
 `

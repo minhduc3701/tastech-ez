@@ -40,7 +40,7 @@ const Inner = styled.div`
 export const Title = styled.h1`
   font-size: 40px;
   font-weight: 600;
-  line-height: 1.67;
+  line-height: 1.5;
   margin-bottom: 0;
   font-family: work sans;
 

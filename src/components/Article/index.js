@@ -72,16 +72,29 @@ const Icon = styled.div`
   background-color: #f4b400;
 `
 
-const Title = styled.h3`
-  font-size: ${props => props.fontSize ? `${props.fontSize}px` : '35px'};
+const Title = styled.h3.attrs({ className: 'title' })`
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   color: #171e45;
   font-family: work sans;
 
+  @media screen and (max-width: 991px) {
+    font-size: 25px;
+  }
   @media screen and (max-width: 767px) {
-    font-size: 18px;
+    font-size: 23px;
+  }
+`
+const Content = styled.div.attrs({ className: 'content' })`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #171e45;
+  @media screen and (max-width: 767px) {
+    font-size: 15px;
   }
 `
 
@@ -96,7 +109,7 @@ const Article = props => {
 
       <div className="content">
         <Title fontSize={props.fontSize}>{props.title}</Title>
-        <div>{props.content}</div>
+        <Content>{props.content}</Content>
         {props.link}
       </div>
     </Wrapper>
