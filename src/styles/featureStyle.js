@@ -14,7 +14,7 @@ export const SectionSG = styled.div`
   .row {
     margin-bottom: 40px;
   }
-  .smarttitle h2{
+  .smarttitle h1{
     font-family: work sans;
     font-size: 35px;
     font-weight: 600;
@@ -35,7 +35,10 @@ export const SectionSG = styled.div`
 
 export const SectionEM1 = styled.div`
   padding: 80px 0 60px;
-  .headtitle h2{
+  .paddingbetween{
+    padding-right:40px;
+  }
+  .headtitle h1{
     font-family: work sans;
     font-size: 35px;
     font-weight: 600;
@@ -60,6 +63,9 @@ export const SectionEM1 = styled.div`
 
 export const SectionEM2 = styled.div`
   padding: 0 0 80px;
+  .paddingbetween{
+    padding-right:40px;
+  }
   .article {
     padding: 0;
     margin-bottom: 60px;
@@ -76,7 +82,10 @@ export const SectionEM2 = styled.div`
 
 export const SectionTP = styled.div`
   padding: 100px 0;
-  .firsttitle h2{
+  .paddingbetween{
+    padding-right:40px;
+  }
+  .firsttitle h1{
     font-family: work sans;
     font-size: 35px;
     font-weight: 600;
@@ -114,7 +123,10 @@ export const SectionTP = styled.div`
 
 export const SectionRP1 = styled.div`
   padding: 100px 0 80px;
-  .headtitle h2{
+  .paddingbetween{
+    padding-right:40px;
+  }
+  .headtitle h1{
     font-family: work sans;
     font-size: 35px;
     font-weight: 600;
@@ -141,7 +153,9 @@ export const SectionRP1 = styled.div`
 
 export const SectionRP2 = styled.div`
   padding-bottom: 150px;
-
+  .paddingbetween{
+    padding-right:80px;
+  }
   @media screen and (max-width: 767px) {
     padding-bottom: 70px;
 

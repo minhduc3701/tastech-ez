@@ -51,6 +51,7 @@ const ExpenseManagementPage = props => {
       <Banner
         bg={bg}
         // text={<FormattedMessage id={`${scope}.banner.text`} />}
+        Titleh2='h2'
         bannerInnerWidth='60'
         text={<FormattedHTMLMessage tagName="span" id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
@@ -61,11 +62,11 @@ const ExpenseManagementPage = props => {
         <Container>
           <Row>
             <Col md={12} className="text-center headtitle">
-              <h2>
+              <h1>
                 <FormattedMessage id={`${scope}.1title_`} />
-              </h2>
+              </h1>
             </Col>
-            <Col md={{ size: 5 }} className="d-flex align-items-center">
+            <Col md={6} className="d-flex align-items-center paddingbetween">
               <Article
                 icon={<Icon icon={outlinePhotoCamera} />}
                 title={<FormattedMessage id={`${scope}.1`} />}
@@ -78,7 +79,7 @@ const ExpenseManagementPage = props => {
               />
             </Col>
 
-            <Col md={{ size: 6,offset:1 }} className="text-center">
+            <Col md={6} className="text-center">
               <img src={img1} alt="" />
             </Col>
           </Row>
@@ -88,7 +89,7 @@ const ExpenseManagementPage = props => {
       <SectionEM2>
         <Container>
           <Row>
-            <Col md={5}>
+            <Col md={6} className="paddingbetween">
               <Article
                 icon={<Icon icon={outlinePoll} />}
                 title={<FormattedMessage id={`${scope}.2`} />}
@@ -96,7 +97,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={{size:6,offset:1}}>
+            <Col md={6}>
               <Article
                 icon={<Icon icon={outlineLaptopMac} />}
                 title={<FormattedMessage id={`${scope}.3`} />}
@@ -106,7 +107,7 @@ const ExpenseManagementPage = props => {
             </Col>
           </Row>
           <Row>
-            <Col md={5}>
+            <Col md={6} className="paddingbetween">
               <Article
                 icon={<Icon icon={baselineNetworkCheck} />}
                 title={<FormattedMessage id={`${scope}.4`} />}
@@ -114,7 +115,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={{size:6,offset:1}}>
+            <Col md={6}>
               <Article
                 icon={<Icon icon={outlineCheckBox} />}
                 title={<FormattedMessage id={`${scope}.5`} />}
@@ -152,7 +153,7 @@ const ExpenseManagementPage = props => {
         <Container>
 
           <Row>
-            <Col md={5}>
+            <Col md={6} className="paddingbetween">
               <Article
                 icon={<Icon icon={baselineNetworkCheck} />}
                 title={<FormattedMessage id={`${scope}.7`} />}
@@ -160,7 +161,7 @@ const ExpenseManagementPage = props => {
 
               />
             </Col>
-            <Col md={{size:6,offset:1}}>
+            <Col md={6}>
               <Article
                 icon={<Icon icon={outlineCheckBox} />}
                 title={<FormattedMessage id={`${scope}.8`} />}

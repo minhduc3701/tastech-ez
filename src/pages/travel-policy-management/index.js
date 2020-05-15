@@ -40,6 +40,7 @@ const TravelPolicyManagementPage = props => {
       />
       <Banner
         bg={bg}
+        Titleh2='h2'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         description={<FormattedMessage id={`${scope}.banner.description`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
@@ -55,7 +56,7 @@ const TravelPolicyManagementPage = props => {
             <Col md={6} className="d-flex align-items-center">
               <div className="text-block firsttitle">
 
-                <h2><FormattedMessage id={`${scope}.1`} /></h2>
+                <h1><FormattedMessage id={`${scope}.1`} /></h1>
                 <Article
                   iconLeft
                   fontSize='25'

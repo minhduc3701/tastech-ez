@@ -49,8 +49,20 @@ export const Title = styled.h1`
     line-height: 1.4;
   }
 `
+export const Titleh2 = styled.h2`
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-family: work sans;
 
-export const Description = styled.h1`
+  @media screen and (max-width: 767px) {
+    font-size: 25px;
+    line-height: 1.4;
+  }
+`
+
+export const Description = styled.h2`
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 0;
@@ -148,7 +160,9 @@ const Banner = props => {
     <Wrapper bg={props.bg}>
         <Container>
           <Inner bannerInnerWidth={props.bannerInnerWidth}>
-            <Title>{props.text}</Title>
+            {
+               props.Titleh2?<Titleh2>{props.text}</Titleh2>:<Title>{props.text}</Title>
+            }  
             
             {props.description && <Description>{props.description}</Description>}
             {props.video &&

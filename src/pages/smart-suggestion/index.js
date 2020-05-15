@@ -42,6 +42,7 @@ const SmartSuggestionPage = props => {
       <Banner
         bg={bg}
         bannerInnerWidth='70'
+        Titleh2='h2'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
         video="https://www.youtube.com/embed/JmSQYhSAYvw?rel=0&autoplay=1"
@@ -51,9 +52,9 @@ const SmartSuggestionPage = props => {
         <Container>
           <Row className="justify-content-center">
             <Col md={12} className="text-center smarttitle">
-              <h2>
+              <h1>
                 <FormattedMessage id={`${scope}.1title_`} />
-              </h2>
+              </h1>
             </Col>
 
             <Col md={10} className="text-center">

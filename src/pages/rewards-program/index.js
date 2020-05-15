@@ -42,6 +42,7 @@ const RewardsProgramPage = props => {
       />
       <Banner
         bg={bg}
+        Titleh2='h2'
         bannerInnerWidth='65'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
@@ -52,9 +53,9 @@ const RewardsProgramPage = props => {
         <Container>
           <Row>
             <Col md={12} className="text-center headtitle">
-              <h2>
+              <h1>
                 <FormattedMessage id={`${scope}.1title_`} />
-              </h2>
+              </h1>
             </Col>
             <Col md={6} className="text-center">
               <img src={img1} alt=""/>
@@ -74,15 +75,15 @@ const RewardsProgramPage = props => {
 
       <SectionRP2>
         <Container>
-          <CustomRow spacing={60}>
-            <Col md={5}>
+          <CustomRow spacing={80}>
+            <Col md={6} >
               <Article
                 icon={<Icon icon={outlineSentimentSatisfied} />}
                 title={<FormattedMessage id={`${scope}.3`} />}
                 content={<FormattedMessage id={`${scope}.3_`} />}
               />
             </Col>
-            <Col md={{size:6,offset:1}}>
+            <Col md={6}>
               <Article
                 icon={<Icon icon={baselineCardGiftcard} />}
                 title={<FormattedMessage id={`${scope}.4`} />}
