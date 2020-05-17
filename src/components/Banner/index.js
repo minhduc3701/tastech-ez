@@ -25,7 +25,7 @@ const Inner = styled.div`
   position: relative;
   color: #fff;
   z-index: 10;
-  width: 50%;
+  width: ${props => props.bannerInnerWidth ? `${props.bannerInnerWidth}%`:'50%'};
 
   @media screen and (max-width: 1199px) {
     width: 60%;
@@ -38,10 +38,23 @@ const Inner = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 1.67;
+  line-height: 1.5;
   margin-bottom: 0;
+  font-family: work sans;
+
+  @media screen and (max-width: 767px) {
+    font-size: 25px;
+    line-height: 1.4;
+  }
+`
+export const Titleh2 = styled.h2`
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-family: work sans;
 
   @media screen and (max-width: 767px) {
     font-size: 25px;
@@ -49,7 +62,7 @@ export const Title = styled.h1`
   }
 `
 
-export const Description = styled.h1`
+export const Description = styled.h2`
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 0;
@@ -146,8 +159,10 @@ const Banner = props => {
   return (
     <Wrapper bg={props.bg}>
         <Container>
-          <Inner>
-            <Title>{props.text}</Title>
+          <Inner bannerInnerWidth={props.bannerInnerWidth}>
+            {
+               props.Titleh2?<Titleh2>{props.text}</Titleh2>:<Title>{props.text}</Title>
+            }  
             
             {props.description && <Description>{props.description}</Description>}
             {props.video &&

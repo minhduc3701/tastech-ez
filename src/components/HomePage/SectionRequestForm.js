@@ -35,6 +35,10 @@ class SectionRequestForm extends Component {
         title = "remote-form-title"
         des="remote-form-des"
         break;
+      case "pricing-form":
+        title="pricing-form-title"
+        des="pricing-form-des"
+        break;
       default:
         title= 'title'
         des='des'

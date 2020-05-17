@@ -103,10 +103,10 @@ export const HomeWrapper = styled.div`
 export const Heading = styled.h2`
   font-size: 35px;
   font-weight: 600;
-  line-height: 1.37;
+  line-height: 1.2;
   margin-bottom: 70px;
   text-align: center;
-
+  font-family:work sans;
   @media screen and (max-width: 767px) {
     font-size: 25px;
     line-height: 1.4;
@@ -191,7 +191,7 @@ export const SectionIntro = styled.div`
   }
 
   .row {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   @media screen and (max-width: 1199px) {
@@ -282,11 +282,13 @@ export const Customer = styled.div`
   }
 
   .title {
+    font-family:work sans;
     margin-top: 24px;
     margin-bottom: 0;
   }
 
   .underline >span {
+    font-family:work sans;
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -337,13 +339,14 @@ export const Customer = styled.div`
       }
 
       h3 {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         line-height: 1.39;
         margin-bottom: 15px;
       }
 
       p {
+        font-size:16px;
         &:last-child {
           margin-bottom: 0;
         }
@@ -361,7 +364,6 @@ export const Customer = styled.div`
         }
       }
     }
-
   }
 
   @media screen and (max-width: 767px) {
@@ -378,9 +380,12 @@ export const Customer = styled.div`
     ul {
       li {
         h3 {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.44;
       }
+      p{
+        font-size:15px;
+       }
 
       }
     }
