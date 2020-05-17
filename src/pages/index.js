@@ -111,7 +111,7 @@ const IndexPage = props => {
                   </h2>
                   
                   <p>
-                  <FormattedMessage id={`${scope}.WFHdes`} />
+                    <FormattedMessage id={`${scope}.WFHdes`} />
                   </p>
                   <a href={`${props.langUri}remote-work-expense-management/`} target="_blank">
                     <FormattedMessage id={`${scope}.WFHbtn`} />

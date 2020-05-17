@@ -15,11 +15,11 @@ import baselineMoreVert from '@iconify/icons-ic/baseline-more-vert'
 import bxHomeAlt from '@iconify/icons-bx/bx-home-alt'
 import baselinePostAdd from '@iconify/icons-ic/baseline-post-add'
 import baselineCreditCard from '@iconify/icons-ic/baseline-credit-card'
-import outlineSupervisedUserCircle from '@iconify/icons-ic/outline-supervised-user-circle'
 import baselinePictureInPicture from '@iconify/icons-ic/baseline-picture-in-picture'
 import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
 import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
 import outlineNewReleases from '@iconify/icons-ic/outline-new-releases';
+import closeIcon from '@iconify/icons-ion/close';
 
 const scope = 'components.Common.Header'
 
@@ -503,7 +503,7 @@ const Overlay = styled.div`
 const CampaignHeader = styled.div`
   padding: 10px 0;
   margin: 0 -32px;
-  display: flex;
+  display: ${props => props.isShow ? 'flex' : 'none'};
   justify-content: center;
   align-items: center;
   background-color: #3543c6;
@@ -523,6 +523,12 @@ const CampaignHeader = styled.div`
   }
   svg{
     margin: 0 10px 0 0;
+  }
+  div{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    cursor: pointer;
   }
   @media screen and (max-width: 1199px) {
     margin: 0 -16px;
@@ -612,6 +618,7 @@ class Header extends Component {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
+
   render() {
     let subNavigation = (
       <SubNav navbar>
@@ -635,7 +642,7 @@ class Header extends Component {
         ? 'header-visible'
         : 'header-hidden'
 
-    let { menuOpen } = this.state
+    let { menuOpen, } = this.state
 
     const { formatMessage } = this.props.intl
 
@@ -643,7 +650,7 @@ class Header extends Component {
       <>
 
         <HeaderWrapper className={headerClassName}>
-          <CampaignHeader>
+          <CampaignHeader isShow={this.props.showCampaign} >
             <p>
               <Icon icon={outlineNewReleases} color="#fff" width="20px" height="20px" />
               New!  Simplify your expense claim even at home with
@@ -651,6 +658,9 @@ class Header extends Component {
             <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank">
               Remote Work and Expense Management Solution
               </a>
+            <div>
+              <Icon icon={closeIcon} color="#fff" width="20px" height="20px" onClick={this.props.hideCampaign} />
+            </div>
           </CampaignHeader>
           <HeaderNavbar>
             <MenuToggler onClick={this.toggle}>
