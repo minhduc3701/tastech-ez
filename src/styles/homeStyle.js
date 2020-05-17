@@ -185,7 +185,16 @@ export const SeeMore = styled(Link)`
 
 export const SectionIntro = styled.div`
   padding: 120px 0 30px;
-
+  h1{
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 70px;
+    text-align: center;
+    font-family:work sans;
+    
+     
+  }
   .article {
     padding: 0 50px;
   }
@@ -202,7 +211,11 @@ export const SectionIntro = styled.div`
 
   @media screen and (max-width: 767px) {
     padding: 50px 0 0;
-
+    h1{
+      font-size: 25px;
+      line-height: 1.4;
+  
+    }
     .article {
       margin-bottom: 15px;
     }
@@ -465,12 +478,13 @@ export const BannerContent = styled.div`
     font-weight: 600;
     line-height: 1.64;
   }
-  h1{
+  h2{
     font-size: 40px;
     font-weight: 600;
-    line-height: 1.13;
+    line-height: 45px;
     color: #171e45;
     margin: 20px 0 25px;
+    font-family:work sans;
   }
   a{
     min-width: 170px;
@@ -491,7 +505,7 @@ export const BannerContent = styled.div`
     text-decoration: none;
   }
   @media screen and (max-width: 1199px) {
-   p, h1{
+   p, h2{
     color: #fff;
    }
   }

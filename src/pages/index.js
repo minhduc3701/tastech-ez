@@ -93,9 +93,9 @@ const IndexPage = props => {
       <Slider {...sliderSettings}>
       <SliderItem src={banner1}>
           <Container>
-            <h1 className="text">
+            <h2 className="text">
               <FormattedMessage id={`${scope}.banner1`} />
-            </h1>
+            </h2>
           </Container>
         </SliderItem>
         <CampaignWrapper>
@@ -106,9 +106,10 @@ const IndexPage = props => {
                   <p className="sub">
                     <FormattedMessage id={`${scope}.WFHsubTitle`} />
                   </p>
-                  <h1>
+                  <h2>
                     <FormattedMessage id={`${scope}.WFHtitle`} />
-                  </h1>  
+                  </h2>
+                  
                   <p>
                     <FormattedMessage id={`${scope}.WFHdes`} />
                   </p>
@@ -125,34 +126,14 @@ const IndexPage = props => {
             </CustomRow>
           </Container>
         </CampaignWrapper>
-       {/*  <SliderItem src={banner2}>
-          <Container>
-            <h1 className="text">
-              <FormattedMessage id={`${scope}.banner2`} />
-            </h1>
-          </Container>
-        </SliderItem>
-        <SliderItem src={banner3}>
-          <Container>
-            <h1 className="text">
-              <FormattedMessage id={`${scope}.banner3`} />
-            </h1>
-          </Container>
-        </SliderItem>
-        <SliderItem src={banner4}>
-          <Container>
-            <h1 className="text">
-              <FormattedMessage id={`${scope}.banner4`} />
-            </h1>
-          </Container>
-        </SliderItem>*/}
+      
       </Slider>
 
       <SectionIntro>
         <Container>
-          <Heading>
+          <h1>
             <FormattedMessage id={`${scope}.intro.sectionTitle`} />
-          </Heading>
+          </h1>
 
           <Row>
             <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
