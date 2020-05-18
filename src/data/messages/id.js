@@ -65,7 +65,6 @@ module.exports = {
   "page.HomePage.intro.4_": "Program Reward Perjalanan Bisnis dari EzBizTrip, memberi insentif dan mendorong karyawan untuk mengeluarkan biaya lebih bijak sehingga memaksimalkan biaya yang dapat dihemat dengan menawarkan berbagai pilihan reward bila biaya yang dikeluarkan di bawah anggaran.",
   "page.HomePage.intro.5": "Local Support - You are always in good hands! Our team is around the world!",
   "page.HomePage.intro.5_": "Business Travel is complicated & tiring, we get it. Whether you’re on the road or in the office, our team will always be there for you, in a chatbot and over the phone, at no additional cost. You can call in, chat, email us and we will be assisting you. Our corporate travel platform is based in Singapore, but we also provide services in these languages : <b>Japanese, Mandarin, Bahasa Melayu, Bahasa Indonesia and Vietnamese</b>.",
-
   "page.HomePage.howWeWork.sectionTitle": "How can a corporate travel like EzBizTrip work for your team?",
    "page.HomePage.howWeWork.for": "Untuk",
   "page.HomePage.travellers": "Wisatawan Bisnis",
@@ -170,7 +169,6 @@ module.exports = {
   "page.rewardsProgram.3_": "Our Happy Rewards works as an overall loyalty accumulation of credits for the company to offset their mandatory annual corporate gift expenses.By monitoring travel spends, travellers can ensure that they receive maximum point rewards by not going over budget.These can later be redeemed for products and services from partnered industries.",
   "page.rewardsProgram.4": "Benefits of Incentive Travel",
   "page.rewardsProgram.4_": "EzBizTrip business travel rewards programs allow points or credits earned to be exchanged for other luxuries such as flight purchases or upgrades. These rewards positively impact the travel spend and budget of a company. With EzBizTrip, travellers accrue points through a rewards system when savings are made while on trips. Our top-rated, modern travel management tools provide support by easing booking for corporate travellers and managers and providing detailed invoicing and reporting. Even corporate workers who travel infrequently benefit from our platform in the long term as points will add up, earning them future services and products.",
-
   "page.RequestDemo.formTitle": "Ajukan Uji Coba",
   "page.RequestDemo.formDes": "Isi formulir di bawah ini dan kami akan menunjukkan kepada Anda bagaimana EzBizTrip dapat membantu mengatur program perjalanan Anda.",
   "page.RequestDemo.thankYou": "Terima Kasih!",
@@ -180,7 +178,6 @@ module.exports = {
   "page.RequestDemo.goBack": "Kembali ke halaman sebelumnya",
   "page.RequestDemo.goHome": "Pergi ke Beranda",
   "page.RequestDemo.goHelp": "Kunjungi Pusat Bantuan kami",
-
   "page.TermsAndConditions.pageTitle": "Syarat dan Ketentuan",
   "page.TermsAndConditions.lastUpdatedDate": "Diperbarui pada 29 Nov 2019",
   "page.TermsAndConditions.0": "Selamat datang di EzBizTrip - Solusi Agen Perjalanan Online (“Solusi”). Mohon dibaca ketentuan pemakaian dengan baik. Anda hanya dapat mendaftar dan menggunakan EzBizTrip dengan alamat email perusahaan yang berlaku. Perjanjian berikut diperlukan dari setiap individu yang akan menggunakan akun EzBizTrip (“Akun”).<br/>Dengan mendaftar untuk menggunakan, tersedia melalui situs web <a href=\"https://www.ezbiztrip.com\">www.ezbiztrip.com</a> dan/atau situs web terkait (secara kolektif disebut, “Situs”), anda (1) menyetujui syarat dan ketentuan berikut (“Perjanjian S&K”) dan menyatakan dan menjamin bahwa Anda diotorisasi oleh perusahaan atau organisasi yang diidentifikasi sebagai pemegang Akun (“Perusahaan”) untuk dapat menggunakan akun sebagai pengguna individu (“Pengguna”).<br/>Selain itu, dengan menyetujui Perjanjian S&K, Anda juga menyetujui kebijakan privasi produk EzBizTrip, yang terletak di <a href=\"https://www.ezbiztrip.com/privacy-policy\">https://www.ezbiztrip.com/privacy-policy</a>, yang mencakup informasi tentang bagaimana EzBizTrip mengumpulkan, menggunakan, dan mengungkapkan informasi pribadi. Jika Anda tidak menyetujui Perjanjian S&K ini, jangan gunakan Solusi. Harap dicatat bahwa Perjanjian S&K dapat berubah oleh pihak EzBizTrip. (“EzBizTrip”) atas kebijakannya sendiri kapan saja. Ketika perubahan dibuat, EzBizTrip akan membuat salinan baru tentang perjanjian Anda yang tersedia di situs web dan di dalam Aplikasi. Segala persyaratan tambahan yang baru akan tersedia pada, atau melalui EzBizTrip yang terpengaruh pada Situs Web atau di dalam Aplikasi. Kami akan memperbarui tanggal “Pembaharuan Terbaru” di bagian atas Perjanjian S&K. Setiap perubahan pada Perjanjian S&K akan segera berlaku untuk Pengguna baru Situs Web, Aplikasi, dan akan berlaku lima belas (15) hari setelah memposting pemberitahuan perubahan tersebut di Situs Web untuk Pengguna yang ada atau lima belas (15) hari setelah pengiriman pemberitahuan email tentang perubahan tersebut kepada Pengguna Terdaftar. Jika Anda tidak setuju dengan perubahan, Anda harus berhenti menggunakan Solusi. ",
@@ -318,12 +315,10 @@ module.exports = {
   "page.privacyPolicy.12_": "Kami berhak untuk membuat perubahan pada Kebijakan ini kapan saja. Kami akan memberi tahu Anda tentang perubahan signifikan pada Kebijakan kami di situs web atau melalui saluran komunikasi yang sesuai. Semua perubahan akan berlaku tepat setelah memposting ke halaman ini kecuali disebutkan sebaliknya dalam pemberitahuan. Dengan terus menggunakan layanan kami, artinya Anda setuju pada kebijakan dan bila ada pembaharuan.",
   "page.privacyPolicy.13": "Hukum dan Yurisdiksi yang Berlaku",
   "page.privacyPolicy.13_": "Kebijakan akan diatur oleh hukum Singapura. Anda setuju untuk tunduk pada yurisdiksi eksklusif pengadilan Singapura.",
-
   "link.facebook": "https://www.facebook.com/ezbiztrip",
   "link.blog": "https://blog.ezbiztrip.com",
   "link.support": "https://support.ezbiztrip.com",
   "link.careers": "https://blog.ezbiztrip.com/category/careers",
-
   "page.pricingPlan.pageTitle": "Rencana & Harga",
   "page.pricingPlan.pageDesc": "Pilih paket perencanaan yang tepat untuk bisnis Anda. GRATIS untuk memulai.",
   "page.pricingPlan.Subscription.basic": "dasar",
@@ -375,7 +370,6 @@ module.exports = {
   "page.pricingPlan.contactTitle": "Mencari Rencana Perusahaan?",
   "page.pricingPlan.contactDesc": "Punya banyak agen, butuh SLA atau punya persyaratan khusus lainnya?",
   "page.pricingPlan.contactMailDesc": "Hubungi kami dan mari bicarakan!",
-
   "home.meta.title": "Manajemen Perjalanan Bisnis",
   "home.meta.description": "Selamat datang di EzBizTrip, solusi EzBizTrip menggunakan Kecerdasan buatan dan Mesin Pembelajar untuk memberikan Anda saran terbaik yang dapat menghemat waktu selagi mencari layanan terbaik untuk perjalanan Anda. ",
   "about.meta.title": "Tentang Kami",
