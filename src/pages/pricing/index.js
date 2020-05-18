@@ -13,7 +13,7 @@ import {
   SectionContact
 } from '../../styles/pricingStyle'
 import Subscription from '../../components/PricingPage/Subscription'
-
+import SectionRequestForm from '../../components/HomePage/SectionRequestForm'
 import { Icon } from '@iconify/react'
 import outlineMinus from '@iconify/icons-ic/outline-minus'
 import outlinePlus from '@iconify/icons-ic/outline-plus'
@@ -34,39 +34,9 @@ const subscriptions = [
         combo: true,
         flight: true,
         hotel: true,
-        transportation: false,
-        restaurant: false,
-        group: false
-      },
-      {
-        category: 'management',
-        itinerary: true,
-        expense: true,
-        reward: false,
-        report: false
-      },
-      {
-        category: 'assistance',
-        basicSupport: true,
-        advanceSupport: false,
-        insurance: false
-      }
-    ]
-  },
-  {
-    name: 'premium',
-    price: 7,
-    currency: 'SGD',
-    period: 'month',
-    features: [
-      {
-        category: 'booking',
-        combo: true,
-        flight: true,
-        hotel: true,
-        transportation: true,
-        restaurant: true,
-        group: true
+        // transportation: false,
+        // restaurant: false,
+        // group: false
       },
       {
         category: 'management',
@@ -78,11 +48,47 @@ const subscriptions = [
       {
         category: 'assistance',
         basicSupport: true,
-        advanceSupport: true,
-        insurance: true
+        // advanceSupport: false,
+        // insurance: false
+      },
+      {
+        category: 'expensemanagement',
+        expenseclaims:true,
+        autoreport:true
+
       }
     ]
-  }
+  },
+  // {
+  //   name: 'premium',
+  //   price: 7,
+  //   currency: 'SGD',
+  //   period: 'month',
+  //   features: [
+  //     {
+  //       category: 'booking',
+  //       combo: true,
+  //       flight: true,
+  //       hotel: true,
+  //       transportation: true,
+  //       restaurant: true,
+  //       group: true
+  //     },
+  //     {
+  //       category: 'management',
+  //       itinerary: true,
+  //       expense: true,
+  //       reward: true,
+  //       report: true
+  //     },
+  //     {
+  //       category: 'assistance',
+  //       basicSupport: true,
+  //       advanceSupport: true,
+  //       insurance: true
+  //     }
+  //   ]
+  // }
 ]
 
 const availableFrom = '2020-01-06'
@@ -153,7 +159,7 @@ const PricingPlan = props => {
           <CustomRow spacing={40} className="subscriptions">
             {
               subscriptions.map(item => (
-                <Col md={6}>
+                <Col md={{size:8,offset:2}} >
                   <Subscription {...item} langUri={props.langUri} />
                 </Col>
               ))
@@ -181,41 +187,8 @@ const PricingPlan = props => {
         </Container>
       </SectionFAQ>
 
-      <SectionContact>
-        <Container className="narrow">
-          <header>
-            <h3 className="section-title">
-              <FormattedMessage id={`${scope}.contactTitle`} />
-            </h3>
-            <p className="section-desc">
-              <FormattedHTMLMessage
-                tagName="span"
-                id={`${scope}.contactDesc`}
-              />
-            </p>
-          </header>
-
-          <CustomRow spacing={40} className="justify-content-center">
-            {/*<Col md={6}>
-              <a className="item" href="tel:+6562613219">
-                <Icon icon={twotonePhone}/>
-                <div className="info">+65 6261 3219</div>
-                <div className="desc"><FormattedMessage id={`${scope}.contactPhoneDesc`} /></div>
-              </a>
-            </Col>*/}
-
-            <Col md={6}>
-              <a className="item" href="mailto:support@ezbiztrip.com">
-                <Icon icon={outlineEmail} />
-                <div className="info">support@ezbiztrip.com</div>
-                <div className="desc">
-                  <FormattedMessage id={`${scope}.contactMailDesc`} />
-                </div>
-              </a>
-            </Col>
-          </CustomRow>
-        </Container>
-      </SectionContact>
+     
+      <SectionRequestForm langUri={props.langUri} type="pricing-form" />
     </Wrapper>
   )
 }

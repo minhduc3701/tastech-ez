@@ -7,7 +7,7 @@ import calendarIcon from '../images/calendar_icon.svg'
 // @see https://medium.com/harrys-engineering/creating-a-typography-system-with-react-and-styled-components-ae3661369266
 export const MainStyle = css`
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.53;
   color: #323232;
   box-sizing: border-box !important;

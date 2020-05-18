@@ -7,7 +7,7 @@ import {
 } from '../../styles/featureStyle'
 
 
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl ,FormattedHTMLMessage} from 'react-intl'
 
 import {layoutWithLangKey} from "../../components/layout"
 import SEO from '../../components/seo'
@@ -27,7 +27,7 @@ import img3 from '../../images/smart-suggestion/3.png'
 const scope = 'page.smartSuggestion'
 
 const SmartSuggestionPage = props => {
-  
+
 
   const { formatMessage } = props.intl
 
@@ -39,8 +39,10 @@ const SmartSuggestionPage = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-      <Banner 
+      <Banner
         bg={bg}
+        bannerInnerWidth='70'
+        Titleh2='h2'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
         video="https://www.youtube.com/embed/JmSQYhSAYvw?rel=0&autoplay=1"
@@ -48,46 +50,53 @@ const SmartSuggestionPage = props => {
 
       <SectionSG>
         <Container>
-        <Row className="justify-content-center">
-          <Col md={10} className="text-center">
-            <img src={img1} alt=""/>
-          </Col>
-          <Col md={6} className="text-center">
-            <p><FormattedMessage id={`${scope}.1_`} /></p>
-            <br/>
-          </Col>
-        </Row>
+          <Row className="justify-content-center">
+            <Col md={12} className="text-center smarttitle">
+              <h1>
+                <FormattedMessage id={`${scope}.1title_`} />
+              </h1>
+            </Col>
 
-        <Row>
-              <Col md={{ size: 6 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={baselineAccessTime} />}
-                  title={<FormattedMessage id={`${scope}.2`} />}
-                  content={<FormattedMessage id={`${scope}.2_`} />}
-                  
-                />
-              </Col>
+            <Col md={10} className="text-center">
+              <img src={img1} alt=""/>
+            </Col>
+            <Col md={8} className="text-center">
+              {/* <p><FormattedMessage id={`${scope}.1_`} /></p> */}
+              <p><FormattedHTMLMessage tagName="span" id={`${scope}.1_`}/></p>
+              <br />
+            </Col>
+          </Row>
 
-              <Col md={{ size: 6 }} className="text-center">
-                <img src={img2} alt="" />
-              </Col>
-            </Row>
+          <Row>
+            <Col md={{ size: 6 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={baselineAccessTime} />}
+                title={<FormattedMessage id={`${scope}.2`} />}
+                content={<FormattedMessage id={`${scope}.2_`} />}
 
-            <Row>
-              <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
-                <Article
-                  icon={<Icon icon={baselinePlaylistAddCheck} />}
-                  title={<FormattedMessage id={`${scope}.3`} />}
-                  content={<FormattedMessage id={`${scope}.3_`} />}
-                  
-                />
-              </Col>
+              />
+            </Col>
 
-              <Col md={{ size: 6, order: 1 }} className="text-center">
-                <img src={img3} alt="" />
-              </Col>
-            </Row>
-      </Container>
+            <Col md={{ size: 6 }} className="text-center">
+              <img src={img2} alt="" />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={{ size: 6, order: 2 }} className="d-flex align-items-center">
+              <Article
+                icon={<Icon icon={baselinePlaylistAddCheck} />}
+                title={<FormattedMessage id={`${scope}.3`} />}
+                content={<FormattedMessage id={`${scope}.3_`} />}
+
+              />
+            </Col>
+
+            <Col md={{ size: 6, order: 1 }} className="text-center">
+              <img src={img3} alt="" />
+            </Col>
+          </Row>
+        </Container>
       </SectionSG>
 
       <PromoLinks langUri={props.langUri}/>

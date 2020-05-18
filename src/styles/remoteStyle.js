@@ -99,6 +99,7 @@ export const BannerContent = styled.div`
    p, h1{
     color: #fff;
    }
+   
   }
   @media screen and (max-width: 767px) {
     p{
@@ -140,7 +141,7 @@ export const SectionIntro = styled.div`
   p{
     margin: 0;
     padding: 0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.56;
     text-align: left;
     color: #323232;
@@ -186,6 +187,7 @@ export const SectionIntro = styled.div`
 
   @media screen and (max-width: 767px) {
     padding: 35px 0 0;
+    margin-bottom:40px;
     h2{
       font-size: 30px;
        margin: 0;

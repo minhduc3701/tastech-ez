@@ -85,11 +85,7 @@ const Subscription = props => {
                   <Icon icon={baselineClose} />
                 )}
                 <span
-                  className={
-                    _.includes(notedFeatures, feature)
-                      ? 'text-has-underline'
-                      : ''
-                  }>
+                  >
                   <FormattedMessage id={`${scope}.${feature}`} />
                 </span>
                 &nbsp;

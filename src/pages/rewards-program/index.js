@@ -10,7 +10,7 @@ import {
 
 import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 
-import {layoutWithLangKey} from "../../components/layout"
+import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
 import Banner from '../../components/Banner'
 import Article from '../../components/Article'
@@ -28,7 +28,7 @@ import img1 from '../../images/rewards-program/1.png'
 const scope = 'page.rewardsProgram'
 
 const RewardsProgramPage = props => {
-  
+
 
   const { formatMessage } = props.intl
 
@@ -40,8 +40,10 @@ const RewardsProgramPage = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-      <Banner 
+      <Banner
         bg={bg}
+        Titleh2='h2'
+        bannerInnerWidth='65'
         text={<FormattedMessage id={`${scope}.banner.text`} />}
         button={<FormattedMessage id={`${scope}.banner.button`} />}
         video="https://www.youtube.com/embed/JmSQYhSAYvw?rel=0&autoplay=1"
@@ -49,51 +51,50 @@ const RewardsProgramPage = props => {
 
       <SectionRP1>
         <Container>
-        <Row>
-          <Col md={6} className="text-center">
-            <img src={img1} alt=""/>
-          </Col>
-              <Col md={6} className="d-flex align-items-center">
-                <div className="text-block">
-                  <Article
+          <Row>
+            <Col md={12} className="text-center headtitle">
+              <h1>
+                <FormattedMessage id={`${scope}.1title_`} />
+              </h1>
+            </Col>
+            <Col md={6} className="text-center">
+              <img src={img1} alt=""/>
+            </Col>
+            <Col md={6} className="d-flex align-items-center">
+              <div className="text-block">
+                <Article
+                  fontSize='25'
                   title={<FormattedMessage id={`${scope}.1`} />}
                   content={<FormattedHTMLMessage id={`${scope}.1_`} />}
                 />
-                </div>
-              </Col>
-            </Row>
-      </Container>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </SectionRP1>
 
       <SectionRP2>
         <Container>
-          <CustomRow spacing={60}>
-            <Col md={4}>
+          <CustomRow spacing={80}>
+            <Col md={6} >
               <Article
-                  icon={<Icon icon={baselineSwapHoriz} />}
-                  
-                  content={<FormattedMessage id={`${scope}.2_`} />}
-                />
+                icon={<Icon icon={outlineSentimentSatisfied} />}
+                title={<FormattedMessage id={`${scope}.3`} />}
+                content={<FormattedMessage id={`${scope}.3_`} />}
+              />
             </Col>
-            <Col md={4}>
+            <Col md={6}>
               <Article
-                  icon={<Icon icon={outlineSentimentSatisfied} />}
-                  
-                  content={<FormattedMessage id={`${scope}.3_`} />}
-                />
-            </Col>
-            <Col md={4}>
-              <Article
-                  icon={<Icon icon={baselineCardGiftcard} />}
-                  
-                  content={<FormattedMessage id={`${scope}.4_`} />}
-                />
+                icon={<Icon icon={baselineCardGiftcard} />}
+                title={<FormattedMessage id={`${scope}.4`} />}
+                content={<FormattedMessage id={`${scope}.4_`} />}
+              />
             </Col>
           </CustomRow>
         </Container>
       </SectionRP2>
 
-      <PromoLinks langUri={props.langUri}/>
+      <PromoLinks langUri={props.langUri} />
 
     </Wrapper>
   )
