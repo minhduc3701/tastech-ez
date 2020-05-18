@@ -45,7 +45,7 @@ module.exports = {
   "page.HomePage.WFHsubTitle": "WORK FROM HOME EXPENSE",
   "page.HomePage.WFHtitle": "Simplify your expense claim with a report automation system.",
   "page.HomePage.WFHdes": "EzBizTrip is the best platform to make business travel much easier and simpler.",
-  "page.HomePage.WFHbtn": "I’m ready to start",
+  "page.HomePage.WFHbtn": "See more",
   "page.HomePage.banner1": "Super easy business travel management",
   "page.HomePage.banner2": "EzBizTrip, your friendly travel assistant",
   "page.HomePage.banner3": "Have your business travel expenses ready in one-click!",
