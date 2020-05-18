@@ -65,7 +65,6 @@ module.exports = {
   "page.HomePage.intro.4_": "EzBizTrip Business Travel Rewards program incentivizes and encourages employees to make better spending decisions and maximizes savings by offering more flexibility  while rewarding them when they come under budget",
   "page.HomePage.intro.5": "Local Support - You are always in good hands! Our team is around the world!",
   "page.HomePage.intro.5_": "Business Travel is complicated & tiring, we get it. Whether you’re on the road or in the office, our team will always be there for you, in a chatbot and over the phone, at no additional cost. You can call in, chat, email us and we will be assisting you. Our corporate travel platform is based in Singapore, but we also provide services in these languages : <b>Japanese, Mandarin, Bahasa Melayu, Bahasa Indonesia and Vietnamese</b>.",
-
   "page.HomePage.howWeWork.sectionTitle": "How can a corporate travel like EzBizTrip work for your team?",
   "page.HomePage.howWeWork.for": "สำหรับ",
   "page.HomePage.travellers": "ผู้เดินทางเพื่อธุรกิจ",
@@ -98,7 +97,7 @@ module.exports = {
   "page.AboutUs.1_": "<p>ฉันเข้าร่วมการเดินทางเพื่อธุรกิจประมาณ 180 วันในหนึ่งปีและฉันรู้สึกเสมอว่าการจัดการเดินทางและการเรียงลำดับค่าใช้จ่ายในการเดินทางทำให้ฉันเสียเวลาอันมีค่า ระยะเวลานั้นจะมีประโยชน์มากขึ้นหากใช้เวลากับการทำงานจริงและมีประสิทธิผล </p> <p> ฉันพบว่านักธุรกิจส่วนใหญ่รู้สึกแบบเดียวกันดังนั้นตัดสินใจเริ่มใช้ EzBizTrip เพื่อให้การเดินทางทางธุรกิจง่ายขึ้นและง่ายขึ้นมาก </p>",
   "page.AboutUs.ceo": "ผู้ร่วมก่อตั้ง EzBizTrip",
   "page.AboutUs.team": "ทีมพลวัตของเรา",
-  "page.AboutUs.team.positon.CEO": "ผู้ร่วมก่อตั้งและ CEO",
+  "page.AboutUs.team.position.CEO": "ผู้ร่วมก่อตั้งและ CEO",
   "page.AboutUs.team.position.PO": "เจ้าของผลิตภัณฑ์",
   "page.AboutUs.team.position.SM": "ผู้จัดการฝ่ายขายและการตลาด",
   "page.AboutUs.team.position.SE": "พนักงานขาย",
@@ -170,7 +169,6 @@ module.exports = {
   "page.rewardsProgram.3_": "Our Happy Rewards works as an overall loyalty accumulation of credits for the company to offset their mandatory annual corporate gift expenses.By monitoring travel spends, travellers can ensure that they receive maximum point rewards by not going over budget.These can later be redeemed for products and services from partnered industries.",
   "page.rewardsProgram.4": "Benefits of Incentive Travel",
   "page.rewardsProgram.4_": "EzBizTrip business travel rewards programs allow points or credits earned to be exchanged for other luxuries such as flight purchases or upgrades. These rewards positively impact the travel spend and budget of a company. With EzBizTrip, travellers accrue points through a rewards system when savings are made while on trips. Our top-rated, modern travel management tools provide support by easing booking for corporate travellers and managers and providing detailed invoicing and reporting. Even corporate workers who travel infrequently benefit from our platform in the long term as points will add up, earning them future services and products.",
-
   "page.RequestDemo.formTitle": "ขอการสาธิต",
   "page.RequestDemo.formDes": "กรอกแบบฟอร์มด้านล่างและเราจะแสดงให้คุณเห็นว่า EzBizTrip สามารถช่วยจัดโปรแกรมการเดินทางของคุณให้เป็นไปได้อย่างไร",
   "page.RequestDemo.thankYou": "ขอขอบคุณ!",
@@ -180,7 +178,6 @@ module.exports = {
   "page.RequestDemo.goBack": "กลับไปที่หน้าก่อนหน้า",
   "page.RequestDemo.goHome": "กลับไปที่โฮม",
   "page.RequestDemo.goHelp": "เยี่ยมชมศูนย์ช่วยเหลือของเรา",
-
   "page.TermsAndConditions.pageTitle": "ข้อกำหนดและเงื่อนไข",
   "page.TermsAndConditions.lastUpdatedDate": "อัพเดทวันที่ 29 พฤศจิกายน 2019",
   "page.TermsAndConditions.0": "ยินดีต้อนรับสู่ EzBizTrip - โซลูชั่นตัวแทนการท่องเที่ยวออนไลน์ (“โซลูชั่น”) โปรดอ่านข้อตกลงการใช้งานอย่างละเอียด คุณสามารถลงทะเบียนและใช้โซลูชันได้ด้วยที่อยู่อีเมลบริษัท ข้อตกลงต่อไปนี้เป็นสิ่งจำเป็นสำหรับบุคคลใด ๆ ที่ใช้โซลูชันที่เกี่ยวข้องกับบัญชี EzBizTrip (“ บัญชี”).<br/>โดยการลงทะเบียนเพื่อใช้หรือใช้งานโซลูชันซึ่งมีให้ผ่านทางเว็บไซต์ <a href=\"https://www.ezbiztrip.com\">www.ezbiztrip.com</a> และ / หรือเว็บไซต์ที่เกี่ยวข้อง (เรียกรวมกันว่า“ไซต์”),คุณ (1) ยอมรับข้อกำหนดและเงื่อนไขต่อไปนี้ของสิ่งนี้ ข้อตกลงการใช้งาน (“ ข้อตกลง T&C”) และรับรองและรับประกันว่าคุณได้รับอนุญาตจากบริษัทหรือองค์กรที่ระบุว่าเป็นเจ้าของบัญชี (“ บริษัท ”) เพื่อใช้บัญชีเป็นผู้ใช้รายบุคคล (“ ผู้ใช้”) <br / > ยิ่งไปกว่านั้นเมื่อยอมรับข้อตกลงของ T&C คุณก็ยอมรับนโยบายความเป็นส่วนตัวของผลิตภัณฑ์ EzBizTrip ซึ่งตั้งอยู่ที่ <a href=\"https://www.ezbiztrip.com/privacy-policy\">https://www.ezbiztrip.com/privacy-policy</a>,ซึ่งรวมถึงข้อมูลเกี่ยวกับวิธีที่ EzBizTrip รวบรวมใช้และเปิดเผยข้อมูลส่วนบุคคล หากคุณไม่เห็นด้วยกับข้อตกลงและเงื่อนไขฉบับนี้อย่าใช้โซลูชัน โปรดทราบว่าข้อตกลงของ T&C อาจมีการเปลี่ยนแปลงโดย EzBizTrip Inc. (“ EzBizTrip”) ตามดุลยพินิจของตนได้ตลอดเวลา เมื่อมีการเปลี่ยนแปลง EzBizTrip จะทำสำเนาข้อตกลงใหม่ของคุณที่เว็บไซต์และภายในแอปพลิเคชัน ข้อกำหนดเพิ่มเติมใหม่ใด ๆ จะมีให้จากภายในหรือผ่านทางโซลูชัน EzBizTrip ที่ได้รับผลกระทบบนเว็บไซต์หรือภายในแอปพลิเคชัน เราจะอัปเดตวันที่“ อัพเดตล่าสุด” ที่ด้านบนสุดของข้อตกลงและเงื่อนไข การเปลี่ยนแปลงข้อตกลงและเงื่อนไขใด ๆ จะมีผลทันทีสำหรับผู้ใช้ใหม่ของเว็บไซต์แอปพลิเคชันและจะมีผลสิบห้า (15) วันหลังจากโพสต์ประกาศการเปลี่ยนแปลงดังกล่าวบนเว็บไซต์สำหรับผู้ใช้ที่มีอยู่หรือสิบห้า (15) วันหลังจากส่ง อีเมลแจ้งการเปลี่ยนแปลงดังกล่าวกับผู้ใช้ที่ลงทะเบียน หากคุณไม่เห็นด้วยกับการเปลี่ยนแปลงคุณต้องหยุดใช้โซลูชั่น",
@@ -318,12 +315,10 @@ module.exports = {
   "page.privacyPolicy.12_": "เราขอสงวนสิทธิ์ในการเปลี่ยนแปลงนโยบายนี้ได้ตลอดเวลา เราจะแจ้งให้คุณทราบถึงการเปลี่ยนแปลงที่สำคัญใด ๆ ต่อนโยบายนี้ในเว็บไซต์ของเราหรือผ่านช่องทางการสื่อสารที่เหมาะสม การเปลี่ยนแปลงทั้งหมดจะมีผลทันทีเมื่อโพสต์ในหน้านี้เว้นแต่จะระบุไว้เป็นอย่างอื่นในการแจ้งเตือน การใช้บริการของเราอย่างต่อเนื่องของคุณถือเป็นข้อตกลงของคุณต่อนโยบายนี้และการปรับปรุงใด ๆ",
   "page.privacyPolicy.13": "กฎหมายที่บังคับใช้และเขตอำนาจศาล",
   "page.privacyPolicy.13_": "นโยบายนี้จะถูกควบคุมโดยกฎหมายของสิงคโปร์ คุณตกลงที่จะส่งไปยังเขตอำนาจศาลพิเศษของศาลสิงคโปร์",
-
   "link.facebook": "https://www.facebook.com/ezbiztrip",
   "link.blog": "https://blog.ezbiztrip.com",
   "link.support": "https://support.ezbiztrip.com",
   "link.careers": "https://blog.ezbiztrip.com/category/careers",
-
   "page.pricingPlan.pageTitle": "แผนและราคา",
   "page.pricingPlan.pageDesc": "เลือกแผนที่เหมาะสมกับธุรกิจ ไม่มีค่าใช้จ่ายในการใช้งาน",
   "page.pricingPlan.Subscription.basic": "เริ่มต้น",
@@ -375,7 +370,6 @@ module.exports = {
   "page.pricingPlan.contactTitle": "กำลังมองหาแผนองค์กร?",
   "page.pricingPlan.contactDesc": "มีตัวแทนจำนวนมากต้องการ SLA หรือมีข้อกำหนดพิเศษอื่น ๆหรือไม่?",
   "page.pricingPlan.contactMailDesc": "ติดต่อและพูดคุยกัน!",
-
   "home.meta.title": "การจัดการการเดินทางขององค์กร",
   "home.meta.description": "ยินดีต้อนรับสู่ EzBizTrip โซลูชัน EzBizTrip ใช้ปัญญาประดิษฐ์และการเรียนรู้ของเครื่องเพื่อให้คำแนะนำที่ชาญฉลาดซึ่งช่วยให้คุณประหยัดเวลาในการค้นหาตั๋วเครื่องบินหรือโรงแรมที่ดีที่สุด",
   "about.meta.title": "เกี่ยวกับเรา",
