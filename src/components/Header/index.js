@@ -20,6 +20,8 @@ import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
 import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
 import outlineNewReleases from '@iconify/icons-ic/outline-new-releases';
 import closeIcon from '@iconify/icons-ion/close';
+import outlineSupervisedUserCircle from '@iconify/icons-ic/outline-supervised-user-circle';
+
 
 const scope = 'components.Common.Header'
 
@@ -299,7 +301,7 @@ const MainNav = styled(Nav)`
         padding: 10px 25px;
         display: flex;
         align-items: center;
-        font-size: 13px;
+        font-size: 14px;
         &:hover {
           background-color: #f5f5f5;
           color: #f4b400;
@@ -588,6 +590,7 @@ class Header extends Component {
 
     let path = this.props.langs[0].link
     path = path.split('/')[1]
+
     let subMenuFeatures = [
       'smart-suggestion',
       'expense-management',
@@ -724,6 +727,7 @@ class Header extends Component {
                   </li>
                   <li>
                     <Link activeClassName="active" to={`${this.props.langUri}/about/`}>
+                      <Icon className="menu-icon" icon={outlineSupervisedUserCircle} />
                       <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
