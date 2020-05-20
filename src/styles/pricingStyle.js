@@ -73,6 +73,7 @@ export const Banner = styled.div`
   }
 
   .page-title {
+    font-family:work sans;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
@@ -94,7 +95,7 @@ export const Banner = styled.div`
 `
 
 export const SectionPricing = styled.section`
-  margin-top: -150px;
+  margin-top: -170px;
   position: relative;
   z-index: 10;
 

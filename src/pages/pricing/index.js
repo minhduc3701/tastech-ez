@@ -27,7 +27,8 @@ const subscriptions = [
     name: 'basic',
     price: 0,
     currency: 'SGD',
-    period: 'forever',
+    period: 'freetrail',
+    pricePerUser:'price',
     features: [
       {
         category: 'booking',
@@ -166,12 +167,12 @@ const PricingPlan = props => {
             }
           </CustomRow>
 
-          <div className="available-from">
+          {/* <div className="available-from">
             *&nbsp;
             <FormattedMessage id={`${scope}.availableFrom`} />
             &nbsp;
             <b>{moment(availableFrom).format('MMMM YYYY')}</b>
-          </div>
+          </div> */}
         </Container>
       </SectionPricing>
 

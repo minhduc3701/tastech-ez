@@ -325,6 +325,8 @@ module.exports = {
   "page.pricingPlan.Subscription.premium": "พรีเมี่ยม",
   "page.pricingPlan.Subscription.priceFree": "ฟรี",
   "page.pricingPlan.Subscription.forever": "ตลอดไป",
+  "page.pricingPlan.Subscription.freetrail": "1 YEAR FREE TRAIL",
+  "page.pricingPlan.Subscription.price": "$1/user/month",
   "page.pricingPlan.Subscription.month": "/ ผู้ใช้ / เดือน",
   "page.pricingPlan.Subscription.basic_desc": " จองการเดินทางเพื่อธุรกิจและการจัดการค่าใช้จ่ายได้ในที่เดียว",
   "page.pricingPlan.Subscription.premium_desc": "รับข้อมูลเชิงลึกมากขึ้นและสามารถควบคุมได้มากขึ้นจากการจองไปยังการบัญชี",
