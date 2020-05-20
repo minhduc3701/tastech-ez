@@ -1,6 +1,7 @@
 import React from "react"
 import { layoutWithLangKey } from '../components/layout'
 import { Row, Col } from 'reactstrap'
+import { Link } from 'gatsby'
 
 import SEO from "../components/seo"
 import Article from '../components/Article'
@@ -107,9 +108,12 @@ const IndexPage = props => {
                   <p>
                     <FormattedMessage id={`${scope}.WFHdes`} />
                   </p>
-                  <a href={`${props.langUri}remote-work-expense-management/`} target="_blank">
+                  {/* <a href={`${props.langUri}remote-work-expense-management/`} >
                     <FormattedMessage id={`${scope}.WFHbtn`} />
-                  </a>
+                  </a> */}
+                  <Link to={`${props.langUri}remote-work-expense-management/`}>
+                  <FormattedMessage id={`${scope}.WFHbtn`} />
+                </Link>
                 </BannerContent>
               </Col>
               <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
@@ -279,7 +283,7 @@ const IndexPage = props => {
                 </ul>
               </Customer>
             </Col>
-            <Col md={6}>
+            <Col md={6} >
               <Customer color="#f4b400" className="owner">
                 <header>
                   <div className="icon">

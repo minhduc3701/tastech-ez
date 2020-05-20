@@ -6,12 +6,13 @@ export const Wrapper = styled.div`
 `
 
 export const Banner = styled.div`
-  padding: 480px 0 80px;
+  padding: 240px 0 80px;
   background-image: url(${BannerBg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  height:500px;
 
   &:before {
     content: "";

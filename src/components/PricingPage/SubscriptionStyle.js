@@ -7,10 +7,7 @@ export const Wrapper = styled.div`
   border-radius: 20px;
   color: #222;
   transition: all .3s ease-in-out;
-
- 
-    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.16);
-  
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.16); 
 `
 
 export const Summary = styled.div`
