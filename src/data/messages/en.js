@@ -331,6 +331,8 @@ module.exports = {
   "page.pricingPlan.Subscription.premium": "premium",
   "page.pricingPlan.Subscription.priceFree": "free",
   "page.pricingPlan.Subscription.forever": "Forever",
+  "page.pricingPlan.Subscription.freetrail": "1 YEAR FREE TRAIL",
+  "page.pricingPlan.Subscription.price": "$1/user/month",
   "page.pricingPlan.Subscription.month": "/ user / month",
   "page.pricingPlan.Subscription.basic_desc": " Book all business trips & expense management in one place",
   "page.pricingPlan.Subscription.premium_desc": "Gain more insights and have more control from booking to accounting  ",

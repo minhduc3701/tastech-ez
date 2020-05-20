@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  border: 1px solid #e4e4e4;
+  border: 1px solid #fff;
   background: #fff;
   flex: 1;
   border-radius: 20px;
   color: #222;
   transition: all .3s ease-in-out;
 
-  &:hover {
+ 
     box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.16);
-  }
+  
 `
 
 export const Summary = styled.div`
@@ -52,11 +52,26 @@ export const Summary = styled.div`
   }
 
   .period {
-    margin-bottom: 15px;
+    margin-bottom:3px;
+    font-size:16px;
+    line-height:22px;
+    font-weight:600;
+
+  }
+  .pricePerUser {
+    text-decoration:line-through;
+    color:#626262;
+    margin-bottom: 20px;
+    font-size:14px;
+    line-height:19px;
   }
 
   .desc {
+    font-size:15px;
     margin-bottom: 25px;
+    line-height:20px;
+    padding:0 30px;
+    color:#222222;
   }
 
   a {
