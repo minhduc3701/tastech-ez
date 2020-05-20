@@ -62,6 +62,7 @@ export const BannerText = styled.div`
   }
 
   h2 {
+    font-family:work sans;
     font-size: 40px;
     font-weight: 600;
     line-height: 1.38;
@@ -157,6 +158,7 @@ export const SectionTeam = styled.div`
   padding-bottom: 80px;
 
   .section-title {
+    font-family:work sans;
     font-size: 30px;
     font-weight: 600;
     line-height: 1.37;

@@ -6,11 +6,13 @@ export const Wrapper = styled.div`
 `
 
 export const Banner = styled.div`
-  padding: 100px 0px;
+  padding: 70px 8.33333% 0;
+  width: 100%;
+  height: 500px;
   background-color: #F5F5F5;
   background-repeat: no-repeat;
   position: relative;
-
+  
 
   &:before {
     content: "";
@@ -37,8 +39,7 @@ export const Banner = styled.div`
   }
 
   @media screen and (max-width: 1199px) {
-    padding: 0;
-    margin: 0 0 55px;
+    padding: 70px 8.33333% 0;
     background-color: #fff;
 
     &:before {
@@ -53,6 +54,10 @@ export const Banner = styled.div`
   @media screen and (max-width: 767px) {
     padding-top: 50px;
   }
+  @media screen and (max-width: 575px) {
+    padding: 70px 8.33333% 0;
+  }
+
 `
 
 export const BannerContent = styled.div`
@@ -65,7 +70,7 @@ export const BannerContent = styled.div`
     margin: 0;
   }
   p.sub{
-    margin: 40px 0 0;
+    margin:0;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.64;
@@ -76,6 +81,7 @@ export const BannerContent = styled.div`
     line-height: 1.13;
     color: #171e45;
     margin: 20px 0 25px;
+    font-family:work sans;
   }
   a{
     min-width: 170px;
@@ -90,7 +96,7 @@ export const BannerContent = styled.div`
     line-height: 1.33;
     color: #ffffff;
     cursor: pointer;
-    margin: 35px 0 40px;
+    margin: 35px 0 0 0;
   }
   a:hover{
     text-decoration: none;
@@ -124,9 +130,9 @@ export const VideoWrapper = styled.div`
   iframe{
     z-index: 2;
     border-radius: 20px;
-    max-width: 570px;
-    max-height: 400px;
-    // min-width: 382px;
+    max-width: 512px;
+    max-height: 360px;
+    min-width: 382px;
     min-height: 268px;
   }
   
@@ -145,6 +151,12 @@ export const SectionIntro = styled.div`
     line-height: 1.56;
     text-align: left;
     color: #323232;
+  }
+  p.sub{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.64;
   }
   h2{
     font-family: work sans;

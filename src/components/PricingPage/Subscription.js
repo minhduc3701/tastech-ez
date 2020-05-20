@@ -50,7 +50,9 @@ const Subscription = props => {
         <div className="period">
           <FormattedMessage id={`${scope}.${props.period}`} />
         </div>
-
+        <div className="pricePerUser">
+          <FormattedMessage id={`${scope}.${props.pricePerUser}`} />
+        </div>   
         <div className="desc">
           <FormattedMessage id={`${scope}.${props.name}_desc`} />
         </div>

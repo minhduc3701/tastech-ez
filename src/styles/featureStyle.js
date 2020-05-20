@@ -8,7 +8,7 @@ export const SectionSG = styled.div`
   padding: 80px 0 30px;
 
   .article {
-    padding: 0 0 0 90px;
+    padding: 0 0 0 40px;
   }
 
   .row {
