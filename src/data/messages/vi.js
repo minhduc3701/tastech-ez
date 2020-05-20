@@ -245,6 +245,8 @@ module.exports = {
   "page.pricingPlan.Subscription.expensemanagement": "Expense Management",
   "page.pricingPlan.Subscription.flight": "Đặt máy bay ",
   "page.pricingPlan.Subscription.forever": "Không thời hạn",
+  "page.pricingPlan.Subscription.freetrail": "1 YEAR FREE TRAIL",
+  "page.pricingPlan.Subscription.price": "$1/user/month",
   "page.pricingPlan.Subscription.getStartedForFree": "Bắt đầu sử dụng Miễn phí",
   "page.pricingPlan.Subscription.group": "Đặt chỗ theo Nhóm",
   "page.pricingPlan.Subscription.hotel": "Đặt khách sạn",

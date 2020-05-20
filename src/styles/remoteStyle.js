@@ -6,10 +6,6 @@ export const Wrapper = styled.div`
 `
 
 export const Banner = styled.div`
-  // padding: 100px 0px;
-  // background-color: #F5F5F5;
-  // background-repeat: no-repeat;
-  // position: relative;
   padding: 70px 8.33333% 0;
   width: 100%;
   height: 500px;
@@ -44,7 +40,6 @@ export const Banner = styled.div`
 
   @media screen and (max-width: 1199px) {
     padding: 70px 8.33333% 0;
-    // margin: 0 0 55px;
     background-color: #fff;
 
     &:before {

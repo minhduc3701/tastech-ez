@@ -65,7 +65,6 @@ module.exports = {
   "page.HomePage.intro.4_": "EzBizTrip Business Travel Rewards program incentivizes and encourages employees to make better spending decisions and maximizes savings by offering more flexibility  while rewarding them when they come under budget",
   "page.HomePage.intro.5": "Local Support - You are always in good hands! Our team is around the world!",
   "page.HomePage.intro.5_": "Business Travel is complicated & tiring, we get it. Whether you’re on the road or in the office, our team will always be there for you, in a chatbot and over the phone, at no additional cost. You can call in, chat, email us and we will be assisting you. Our corporate travel platform is based in Singapore, but we also provide services in these languages : <b>Japanese, Mandarin, Bahasa Melayu, Bahasa Indonesia and Vietnamese</b>.",
-
   "page.HomePage.howWeWork.sectionTitle": "How can a corporate travel like EzBizTrip work for your team?",
   "page.HomePage.howWeWork.for": "For",
   "page.HomePage.travellers": "Business Travellers",
@@ -159,7 +158,6 @@ module.exports = {
   "page.travelPolicyManagement.2_": "We want to ensure that our travellers stay within their travel policy and at the same time gain flexibility from it. This is why we have integrated policy into our platform. When travel managers put their corporate travel policy into the system, employees would be able to see clearly on which flights & hotels they can book. ",
   "page.travelPolicyManagement.3": "Policy Travellers Will Agree With ",
   "page.travelPolicyManagement.3_": "Having an in-built policy makes it easy for travel managers to keep travellers within the budget. Travellers also have an incentive to save the company money by making wise cost-conscious travel choices.<br/><br/> Travel managers can create a corporate travel policy and change it whenever. Once a policy has been set in the platform, there is no need to worry about travellers booking out of budget anymore.<br/><br/> A formal Expense policy is essential for any business. Both SMEs and big companies can profit from having a clearly defined corporate travel policy as it helps employees understand how a company’s money should and can be spent.<br/><br/> With guidelines being stated clearly in black and white, corporate travellers will have a better understanding of travel spend expectations when on a business trip.<br/><br/> For corporate travellers looking to have their travels reimbursed, abiding by the policy is also vital. Implementing such a policy will establish a mutual understanding between employee and employer that reimbursement is only possible with detailed and accurate expense reports.",
-  
   "page.rewardsProgram.banner.text": "Get the most out of your travels with our “Happy Rewards” program",
   "page.rewardsProgram.banner.button": "WATCH VIDEO",
   "page.rewardsProgram.1": "We give freedom to business travellers, we provide a built-in policy that companies need & we have it all in one place",
@@ -170,7 +168,6 @@ module.exports = {
   "page.rewardsProgram.3_": "Our Happy Rewards works as an overall loyalty accumulation of credits for the company to offset their mandatory annual corporate gift expenses.By monitoring travel spends, travellers can ensure that they receive maximum point rewards by not going over budget.These can later be redeemed for products and services from partnered industries.",
   "page.rewardsProgram.4": "Benefits of Incentive Travel",
   "page.rewardsProgram.4_": "EzBizTrip business travel rewards programs allow points or credits earned to be exchanged for other luxuries such as flight purchases or upgrades. These rewards positively impact the travel spend and budget of a company. With EzBizTrip, travellers accrue points through a rewards system when savings are made while on trips. Our top-rated, modern travel management tools provide support by easing booking for corporate travellers and managers and providing detailed invoicing and reporting. Even corporate workers who travel infrequently benefit from our platform in the long term as points will add up, earning them future services and products.",
-
   "page.RequestDemo.formTitle": "Request A Demo",
   "page.RequestDemo.formDes": "Fill out the form below and we'll show you how EzBizTrip can help put your travel program on cruise control.",
   "page.RequestDemo.thankYou": "Thank You!",
@@ -180,7 +177,6 @@ module.exports = {
   "page.RequestDemo.goBack": "Go back to the previous page",
   "page.RequestDemo.goHome": "Go to Home",
   "page.RequestDemo.goHelp": "Visit our Help Center",
-
   "page.TermsAndConditions.pageTitle": "Terms and conditions",
   "page.TermsAndConditions.lastUpdatedDate": "Updated on Nov 29, 2019",
   "page.TermsAndConditions.0": "Welcome to the EzBizTrip - Online Travel Agency Solutions (the “Solutions”). Please read this terms of use agreement carefully. You are only able to register and use the Solutions with a company email address. The following agreement is required of any individual who use the Solutions in connection with a EzBizTrip account (“Account”).<br/>By registering to use, or using, the Solutions, which is available through the website <a href=\"https://www.ezbiztrip.com\">www.ezbiztrip.com</a> and/or the related websites (collectively, the “Site”), you (1) agree to the following terms and conditions of this terms of use agreement (“T&C Agreement”) and represent and warrant that you are authorized by the company or organization identified as the Account holder (“Company”) to use the Account as an individual user (“User”).<br/>Moreover, by agreeing to T&C Agreement, you also agree to the EzBizTrip product privacy policy, located at <a href=\"https://www.ezbiztrip.com/privacy-policy\">https://www.ezbiztrip.com/privacy-policy</a>, which includes information on how EzBizTrip collects, uses and discloses personal information. If you do not agree to this T&C Agreement, do not use the Solutions. Please note that T&C Agreement is subject to change by EzBizTrip Inc. (“EzBizTrip”) in its sole discretion at any time. When changes are made, EzBizTrip will make a new copy of your agreement available at the website and within the Application. Any new Supplemental Terms will be made available from within, or through, the affected EzBizTrip Solution on the Website or within the Application. We will update the “Latest Updated” date at the top the the T&C Agreement. Any changes to the T&C Agreement will be effective immediately for new Users of the Website, the Application, and will be effective fifteen (15) days after posting notice of such changes on the Website for existing Users or fifteen (15) days after dispatch of an email notice of such changes to Registered Users. If you do not agree to the changes, you must stop using the Solutions. ",
@@ -226,7 +222,6 @@ module.exports = {
   "page.TermsAndConditions.6d_": "When you redeem your Reward Points for products and services offered by third parties (e.g., flights offered by airlines, hotel accommodations), all products or services purchased through the redemption of Reward Points may be governed by such third party terms.  EzBizTrip has no liability for the acts or omissions of any third party, including third parties whose products and services are made available through the Store.",
   "page.TermsAndConditions.7": "Contact information.",
   "page.TermsAndConditions.7_": "Send the written communication to the following address:<br/>EzBizTrip Inc,<br/>9 Temasek Boulevard, <br/>Suntec Tower Two, #07-01, <br/>Singapore 038989<br/>OR your may email us to: contact@ezbiztrip.com",
- 
   "page.privacyPolicy.pageTitle": "PRIVACY POLICY",
   "page.privacyPolicy.lastUpdatedDate": "Updated on Mar 15, 2020",
   "page.privacyPolicy.0": "<p>We recognise that your privacy is essential and we take it seriously.</p><p>This Privacy Policy (“Policy”) applies to all products and services offered by Tastech Pte. Ltd operating as EzBizTrip (“EzBizTrip”, “we”, “our” or “us”).Here we describe how we collect, use and handle your information when you use our platform, websites, applications and services (collectively, “Services“). This Policy supplements our Terms of Service (“Terms”), capitalised terms not defined herein have meanings outlined in the Terms. By using the Services, you consent to our use of your information under this Policy and Terms, and as permitted or required by law.</p><p>This Policy sets out how the personal data you provide to us is collected, used, processed or disclosed by us in accordance with the European Union General Data Protection Regulation (“GDPR”) and the Personal Data Protection Act 2012 (No. 26 of 2012) (“PDPA”). We may amend this Policy at any time and without prior notice. Such amendments will be effective immediately and shall apply to any information you provide, or your use of the Services. Your use and access of EzBizTrip after the amendments to this Policy will constitute your acceptance to the terms and conditions, as modified.</p>",
@@ -319,12 +314,10 @@ module.exports = {
   "page.privacyPolicy.12_": "We reserve the right to make changes to this Policy at any time. We will notify you of any significant changes to this Policy on our website or through appropriate communication channels. All changes shall be effective immediately upon posting to this page unless otherwise mentioned in the notification. Your continued use of our Services constitutes your agreement to this Policy and any updates.",
   "page.privacyPolicy.13": "Governing Law and Jurisdiction",
   "page.privacyPolicy.13_": "This Policy shall be governed by the laws of Singapore. You agree to submit to exclusive jurisdiction of the Singapore courts.",
-
   "link.facebook": "https://www.facebook.com/ezbiztrip",
   "link.blog": "https://blog.ezbiztrip.com",
   "link.support": "https://support.ezbiztrip.com",
   "link.careers": "https://blog.ezbiztrip.com/category/careers",
-
   "page.pricingPlan.pageTitle": "Plan & Pricing",
   "page.pricingPlan.pageDesc": "Pick a plan that right for business. It's FREE to get started.",
   "page.pricingPlan.Subscription.basic": "basic",
@@ -363,7 +356,6 @@ module.exports = {
   "page.pricingPlan.Subscription.expenseclaims": "Expense Claims",
   "page.pricingPlan.Subscription.autoreport": "Automation Report",
   "page.pricingPlan.Subscription.expensemanagement": "Expense Management",
-
   "page.pricingPlan.availableFrom": "Available from",
   "page.pricingPlan.faqTitle": "Frequently Asked Question",
   "page.pricingPlan.faq.1": "How long does setting up an account take? ",
@@ -379,7 +371,6 @@ module.exports = {
   "page.pricingPlan.contactTitle": "Looking for an Enterprise Plan?",
   "page.pricingPlan.contactDesc": "Have a lot of agents, need an SLA or have other special requirements?",
   "page.pricingPlan.contactMailDesc": "Get in touch and let’s talk!",
-
   "home.meta.title": "Corporate Travel & Expense Management in Singapore | EzBizTrip",
   "home.meta.description": "Automate and manage your corporate travel bookings and expenses. Snap photos of receipts of money spent and be rewarded for money saved. Connect with us today.",
   "about.meta.title": "Our Team Make Business Travel Easy and Simple",
