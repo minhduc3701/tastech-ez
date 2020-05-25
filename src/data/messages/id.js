@@ -16,6 +16,8 @@ module.exports = {
   "components.Common.Header.goToApp": "Menuju ke Aplikasi",
   "components.Common.Header.faq": "FAQ",
   "components.Common.Header.pricing": "Biaya",
+  "components.Common.Header.resources": "Resources",
+  "components.Common.Header.remote": "Remote Work Expense Management",
   "components.Common.Footer.privacy": "Kebijakan",
   "components.Common.Footer.terms": "Ketentuan",
   "components.Common.Footer.contactUs": "Hubungi Kami",

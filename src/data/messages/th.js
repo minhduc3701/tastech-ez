@@ -16,6 +16,8 @@ module.exports = {
   "components.Common.Header.goToApp": "ไปยังแอพ",
   "components.Common.Header.faq": "คำถามที่พบบ่อย",
   "components.Common.Header.pricing": "การตั้งราคา",
+  "components.Common.Header.resources": "Resources",
+  "components.Common.Header.remote": "Remote Work Expense Management",
   "components.Common.Footer.privacy": "นโยบาย",
   "components.Common.Footer.terms": "เงื่อนไข",
   "components.Common.Footer.contactUs": "ติดต่อเรา",

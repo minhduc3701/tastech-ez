@@ -687,7 +687,7 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.home`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                  <li className={this.state.showSub === 'features' && 'show-sub'}>
                     <span
                       className={this.state.activeMenuFeatures ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'features')}
@@ -731,14 +731,13 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                  <li className={this.state.showSub === 'resources' && 'show-sub'}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'resources')}
                     >
                       <Icon className="menu-icon" icon={baselinePostAdd} />
-                      {/* <FormattedMessage id={`${scope}.feature`} /> */}
-                        Resources
+                      <FormattedMessage id={`${scope}.resources`} />
                       <Icon className="menu-icon-more" icon={bxChevronDown} />
                     </span>
                     <ul>
@@ -752,8 +751,7 @@ class Header extends Component {
                       </li>
                       <li>
                         <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
-                          {/* <FormattedMessage id={`${scope}.expenseManagement`} /> */}
-                          Remote Work Expense Management
+                          <FormattedMessage id={`${scope}.remote`} />
                         </Link>
                       </li>
                     </ul>

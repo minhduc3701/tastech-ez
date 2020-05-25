@@ -24,6 +24,8 @@ module.exports = {
   "components.Common.Header.smartSuggestion": "Trợ lý thông minh",
   "components.Common.Header.support": "Hỗ trợ",
   "components.Common.Header.travelPolicyManagement": "Quản lý hạn mức",
+  "components.Common.Header.resources": "Resources",
+  "components.Common.Header.remote": "Remote Work Expense Management",
   "components.Common.NotFound.404": "Lỗi: 404",
   "components.Common.NotFound.backToHome": "Về trang chủ",
   "components.Common.NotFound.message": "Có vẻ như trang bạn tìm không có rồi!",
