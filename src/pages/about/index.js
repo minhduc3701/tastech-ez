@@ -4,7 +4,7 @@ import { Col } from 'reactstrap'
 import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
 import Article from '../../components/Article'
-import ContacForm from '../../components/ContactForm'
+import ContactForm from '../../components/ContactForm'
 
 import {
   Wrapper,
@@ -167,7 +167,7 @@ const AboutUs = props => {
         </Container>
       </SectionTeam>
 
-      <ContacForm bottom />
+      <ContactForm bottom />
     </Wrapper>
   )
 }
