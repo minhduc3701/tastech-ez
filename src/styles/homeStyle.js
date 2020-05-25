@@ -245,6 +245,7 @@ export const SectionHowWeWork = styled.div`
       position: relative;
     }
   }
+  
 
   ${Heading} {
     color: #fff;
@@ -265,6 +266,12 @@ export const SectionHowWeWork = styled.div`
 `
 
 export const Customer = styled.div`
+  
+    &:hover{
+      box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.16); 
+      border: solid 1px #fff;
+    }
+  
   border-radius: 15px;
   border: solid 1px #e4e4e4;
   background-color: #ffffff;
