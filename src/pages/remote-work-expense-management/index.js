@@ -36,9 +36,9 @@ const RemoteWorkExpenseManagement = props => {
     <Wrapper>
       <SEO
         // title={formatMessage({ id: "about.meta.title" })}
-        title={`Remote Working & Expense Management | EzBizTrip`}
+        title = {formatMessage({id:`${scope}.seoTitle`}) }
         // description={formatMessage({ id: "about.meta.description" })}
-        description={`Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today.`}
+        description={formatMessage({id:`${scope}.automateManage`}) }
         lang={props.langKey}
         uri={props.uri}
       />
