@@ -656,10 +656,12 @@ class Header extends Component {
           <CampaignHeader isShow={this.props.showCampaign} >
             <p>
               <Icon icon={outlineNewReleases} color="#fff" width="20px" height="20px" />
-              New!  Simplify your expense claim even at home with
+              
+              <FormattedMessage id={`${scope}.newSimplify`} />
             </p>
             <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank">
-              Remote Work and Expense Management Solution
+              
+              <FormattedMessage id={`${scope}.remoteSolution`} />
               </a>
             <div>
               <Icon icon={closeIcon} color="#fff" width="20px" height="20px" onClick={this.props.hideCampaign} />

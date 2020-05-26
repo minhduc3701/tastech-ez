@@ -18,6 +18,8 @@ module.exports = {
   "components.Common.Header.pricing": "การตั้งราคา",
   "components.Common.Header.resources": "Resources",
   "components.Common.Header.remote": "Remote Work Expense Management",
+  "components.Common.Header.remoteSolution": "Remote Work and Expense Management Solution",
+  "components.Common.Header.newSimplify": "New!  Simplify your expense claim even at home with",
   "components.Common.Footer.privacy": "นโยบาย",
   "components.Common.Footer.terms": "เงื่อนไข",
   "components.Common.Footer.contactUs": "ติดต่อเรา",
@@ -414,4 +416,7 @@ module.exports = {
   "page.remoteWork.s3_content": "Using EzBizTrip’s platform, employees can simply create an expense report to record and submit their expenses no matter where they are.",
   "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoices from mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.",
+  "page.remoteWork.seoTitle": "Remote Working & Expense Management | EzBizTrip",
+  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today."
+
 }
