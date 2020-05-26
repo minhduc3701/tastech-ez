@@ -17,7 +17,6 @@ import Article from '../../components/Article'
 import PromoLinks from '../../components/PromoLinks'
 
 import { Icon } from '@iconify/react'
-import baselineSwapHoriz from '@iconify/icons-ic/baseline-swap-horiz'
 import outlineSentimentSatisfied from '@iconify/icons-ic/outline-sentiment-satisfied'
 import baselineCardGiftcard from '@iconify/icons-ic/baseline-card-giftcard'
 

@@ -154,8 +154,6 @@ module.exports = {
   "page.expenseManagement.7_": "Both the finance department and traveller require a detailed report on travel spend. Corporate travellers require documentation so that they are properly reimbursed for the money spent on their business travels. The report will ensure that expenses can be audited properly and effectively.",
   "page.expenseManagement.8": "Benefits of a Business Travel Expenses App",
   "page.expenseManagement.8_": "Utilising the functions available on a business travel expenses app like that of EzBizTrip is the solution to most accounting problems that travellers and companies face when tracking expenses on their trips.<br/><br/>A business travel expenses app keeps travellers on track of business travel policy compliance and spending budget. A good tracking app will allow users to capture receipts and keep these digital receipts of travel spend to create a detailed expense report for full reimbursements.",
-  "page.expenseManagement.remote": "Remote Working and Expense Management",
-  "page.expenseManagement.remote_": "Automate and Manage your daily expense even when you are working remotely!",
   "page.travelPolicyManagement.banner.text": "Manajemen Kebijakan Perjalanan",
   "page.travelPolicyManagement.banner.description": "Built-in policies for employees to gain flexibility while staying within budget.",
   "page.travelPolicyManagement.banner.button": "TONTON VIDEO",
@@ -418,6 +416,9 @@ module.exports = {
   "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoicesfrom mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.",
   "page.remoteWork.seoTitle": "Remote Working & Expense Management | EzBizTrip",
-  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today."
-
+  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today.",
+  "page.AboutUs.contactFormSuccess": "Send message successful! We will contact with you soon!  Thanks a lot!",
+  "page.AboutUs.contactFormError": "Something went wrong! Please try again!",
+  "notfound404.notfound": "NOT FOUND",
+  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness."
 }
