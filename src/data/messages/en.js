@@ -416,5 +416,9 @@ module.exports = {
   "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoices from mobile phones and tablets while the amount is being keyed into the system side by side. This increases efficiency as well as accuracy.",
   "page.remoteWork.seoTitle": "Remote Working & Expense Management | EzBizTrip",
-  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today."
+  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today.",
+  "page.AboutUs.contactFormSuccess": "Send message successful! We will contact with you soon!  Thanks a lot!",
+  "page.AboutUs.contactFormError": "Something went wrong! Please try again!",
+  "notfound404.notfound": "NOT FOUND",
+  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness."
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Col } from 'reactstrap'
 import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
@@ -18,7 +18,6 @@ import {
 
 import baselineNetworkCheck from '@iconify/icons-ic/baseline-network-check';
 import outlinePoll from '@iconify/icons-ic/outline-poll'
-import baselineEventAvailable from '@iconify/icons-ic/baseline-event-available'
 import { Container, CustomRow } from '../../styles'
 import { Link } from 'gatsby'
 import { Icon } from '@iconify/react'
@@ -63,7 +62,7 @@ const RemoteWorkExpenseManagement = props => {
             </Col>
             <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
               <VideoWrapper>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="CampaignVideo" width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </VideoWrapper>
             </Col>
 
