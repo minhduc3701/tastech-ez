@@ -1,5 +1,6 @@
 const {langs, defaultLangKey} = require('./src/data/config')
- 
+const path = require("path")
+
 const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
 
@@ -16,10 +17,19 @@ exports.onCreatePage = ({page, actions}) => {
       }
     })
   }
+
+   if (page.path.match(/^\/blog/)) {
+   window.alert('ok')
+  //   actions.createPage({
+  //     path: "/post",
+  //     matchPath: '/blog/*',
+  //     component: path.resolve(`src/components/BlogPostTemplate.js`),
+  //   })
+   }
 }
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createRedirect } = actions;
+  const { createRedirect, createPage } = actions;
 
   // Oops
   createRedirect({
@@ -49,4 +59,10 @@ exports.createPages = ({ graphql, actions }) => {
     isPermanent: true,
     redirectInBrowser: true,
   });
+
+   createPage({
+     path: '/post',
+     matchPath: '/blog/*',
+     component: path.resolve(`./src/components/BlogPostTemplate.js`),
+   });
 }

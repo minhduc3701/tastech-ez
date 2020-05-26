@@ -1,9 +1,11 @@
 import axios from 'axios'
 
 export const DOMAIN = process.env.GATSBY_API
+const BLOG_SITE = 'https://blog.ezbiztrip.com/wp-json/wp/v2'
 
 const endpoints = {
-  requests: `${DOMAIN}/requests`
+  requests: `${DOMAIN}/requests`,
+  blog: BLOG_SITE
 }
 
 export default {
@@ -17,5 +19,12 @@ export default {
 
   sendContactForm(data) {
     return axios.post(`${endpoints.requests}/contact`, data)
-  }
+  },
+
+  getBlogPosts() {
+    return axios({
+      method: 'get',
+      url: `${endpoints.blog}/posts`
+    })
+  },
 }

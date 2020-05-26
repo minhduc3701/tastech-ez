@@ -731,6 +731,12 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
+                   <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/blog/`}>
+                      <Icon className="menu-icon" icon={outlineSupervisedUserCircle} />
+                      Blog
+                    </Link>
+                  </li>
                   <li className={this.state.showSub ? 'show-sub' : ''}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
