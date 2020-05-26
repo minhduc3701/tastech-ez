@@ -39,7 +39,7 @@ module.exports = {
   "components.Common.RequestForm.optionEmployer": "นายจ้าง",
   "components.Common.RequestForm.optionEmployee": "พนักงาน",
   "components.Common.RequestForm.emailWarning": "โปรดใส่อีเมลที่ทำงานที่ถูกต้อง",
-  "components.Common.RequestForm.accept": "โดยการคลิก \ขอการสาธิต\",คุณยอมรับ",
+  "components.Common.RequestForm.accept": "โดยการคลิก \"ขอการสาธิต\",คุณยอมรับ",
   "components.Common.RequestForm.termsAndConditions": "ข้อกำหนดและเงื่อนไข",
   "components.Common.RequestForm.error": "มีอะไรบางอย่างผิดพลาด, โปรดลองอีกครั้ง!",
   "components.Common.NotFound.oops": "Oops!",
@@ -158,7 +158,6 @@ module.exports = {
   "page.travelPolicyManagement.banner.description": "Built-in policies for employees to gain flexibility while staying within budget.",
   "page.travelPolicyManagement.banner.button": "WATCH VIDEO",
   "page.travelPolicyManagement.1": "Easy management of corporate travel policy with EzBizTrip",
-  "page.rewardsProgram.1title_": "Business Travel and Maximising Rewards",
   "page.travelPolicyManagement.2": "นโยบายการท่องเที่ยวที่เป็นธรรม",
   "page.travelPolicyManagement.2_": "เราต้องการให้แน่ใจว่านักท่องเที่ยวของเราจะอยู่ในนโยบายการเดินทางของพวกเขาและในเวลาเดียวกันก็จะได้รับความยืดหยุ่น นี่คือเหตุผลที่เราได้รวมนโยบายเข้ากับแพลตฟอร์มของเรา เมื่อผู้จัดการการเดินทางนำนโยบายการเดินทางขององค์กรไปไว้ในระบบ พนักงานจะสามารถมองเห็นได้อย่างชัดเจนว่าพวกเขาสามารถจองเที่ยวบินและโรงแรมใด",
   "page.travelPolicyManagement.3": "นโยบายของนักเดินทางจะเห็นด้วยกับ",
@@ -417,6 +416,9 @@ module.exports = {
   "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoices from mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.",
   "page.remoteWork.seoTitle": "Remote Working & Expense Management | EzBizTrip",
-  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today."
-
+  "page.remoteWork.automateManage": "Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today.",
+  "page.AboutUs.contactFormSuccess": "Send message successful! We will contact with you soon!  Thanks a lot!",
+  "page.AboutUs.contactFormError": "Something went wrong! Please try again!",
+  "notfound404.notfound": "NOT FOUND",
+  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness."
 }
