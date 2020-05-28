@@ -1,71 +1,51 @@
-import React, { useState, useEffect } from 'react'
+import React from "react"
+import { graphql } from "gatsby"
+import SEO from "../../components/seo"
 import {layoutWithLangKey} from "../../components/layout"
-import SEO from '../../components/seo'
+
 import { injectIntl } from 'react-intl'
-import api from '../../modules/api'
-import { Link } from 'gatsby'
-import _ from 'lodash'
 
 import { Wrapper } from '../../styles/blogStyle'
 import { Container } from '../../styles'
+import { Link } from 'gatsby'
 
-
-const Blog = props => {
-  const [blogPosts, setBlogPosts] = useState([])
-
-  const { formatMessage } = props.intl
-
-  const getBlogPosts = async () => {
-     try {
- 
-         const res = await api.getBlogPosts()
-         
-         setBlogPosts(res.data)
- 
-       } catch (e) {
-          console.log(e)
-       }
-  }
-
-  useEffect(() => {
-    getBlogPosts()
-  }, [])
-
-  // console.log(blogPosts)
+const Blog = ({ data }) => {
   return (
     <Wrapper>
-      <SEO
-        title={formatMessage({ id: "contact.meta.title" })}
-        description={formatMessage({ id: "contact.meta.description" })}
-        lang={props.langKey}
-        uri={props.uri}
-      />
+    <Container>
+      <SEO title="blog" />
 
-      <Container>
-
-        {blogPosts.map((post, index) => (
-          <div key={index}> 
-            <div className="row">
-              <div className="col-md-3">
-                <Link to={`${props.langUri}/blog/${post.slug}`}>
-                  <img src={post.jetpack_featured_media_url} alt=""/>
-                </Link>
-              </div>
-
-              <div className="col-md-9">
-                <Link to={`${props.langUri}/blog/${post.slug}`}>
-                <h3 dangerouslySetInnerHTML={{__html: post.title.rendered}} />
-                </Link>
-                <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-              </div>
-            </div>
-            <hr/>
-          </div>
-          ))}
-
-      </Container>
+      {data.allWordpressPost.edges.map(({ node }) => {
+        return (
+        <div>
+          <h3>
+            <Link to={`blog/${node.slug}`} dangerouslySetInnerHTML={{ __html: node.title }} />
+          </h3>
+          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+          {node.date}
+        </div>
+      )
+      }
+      )}
+    </Container>
     </Wrapper>
   )
 }
+
+
+export const pageQuery = graphql`
+  query {
+    allWordpressPost(sort: { fields: [date] }) {
+      edges {
+        node {
+          title
+          excerpt
+          slug
+          date(formatString: "MMMM DD, YYYY")
+        }
+      }
+    }
+  }
+  `
 
 export default layoutWithLangKey(injectIntl(Blog))

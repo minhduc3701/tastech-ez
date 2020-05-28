@@ -1,5 +1,7 @@
 const {langs, defaultLangKey} = require('./src/data/config')
 const path = require("path")
+const _ = require("lodash")
+const { slash } = require(`gatsby-core-utils`)
 
 const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
@@ -17,28 +19,13 @@ exports.onCreatePage = ({page, actions}) => {
       }
     })
   }
-
-   if (page.path.match(/^\/blog/)) {
-   window.alert('ok')
-  //   actions.createPage({
-  //     path: "/post",
-  //     matchPath: '/blog/*',
-  //     component: path.resolve(`src/components/BlogPostTemplate.js`),
-  //   })
-   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+
+exports.createPages = async ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions;
 
   // Oops
-  createRedirect({
-    fromPath: `/feature`,
-    toPath: `/features`,
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-
   createRedirect({
     fromPath: `/privacy-policy`,
     toPath: `/policy`,
@@ -60,9 +47,33 @@ exports.createPages = ({ graphql, actions }) => {
     redirectInBrowser: true,
   });
 
-   createPage({
-     path: '/post',
-     matchPath: '/blog/*',
-     component: path.resolve(`./src/components/BlogPostTemplate.js`),
-   });
+  const result = await graphql(`
+    {
+      allWordpressPost(sort: {fields: [date]}) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date(formatString: "MM-DD-YYYY")
+          }
+        }
+      }
+    }
+
+  `)
+
+    _.get(result, 'data.allWordpressPost.edges', []).forEach(({ node }) => {
+      createPage({
+        path: `blog/${node.slug}`,
+        component: slash(path.resolve(`./src/templates/post/index.js`)),
+        context: {
+          // This is the $slug variable
+          // passed to template
+          slug: node.slug,
+        },
+      })
+    })
+
+
 }

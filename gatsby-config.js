@@ -65,6 +65,26 @@ module.exports = {
         // other options
       },
     },
-    `gatsby-plugin-meta-redirect`
+    `gatsby-plugin-meta-redirect`,
+
+    {
+        resolve: `gatsby-source-wordpress`,
+        options: {
+            // Specify the URL of the WordPress source
+            baseUrl: `https://blog.ezbiztrip.com`,
+            protocol: `http`,
+            // Indicates if a site is hosted on WordPress.com
+            hostingWPCOM: false,
+            // Specify which URL structures to fetch
+            includedRoutes: [
+              '**/posts',
+              '**/pages',
+              '**/tags',
+              '**/categories',
+              '**/media'
+            ],
+            useACF: false
+        }
+    }
   ],
 }
