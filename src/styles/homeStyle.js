@@ -417,7 +417,7 @@ export const Customer = styled.div`
 `
 
 export const CampaignWrapper = styled.div`
-  padding: 70px 8.33333% 0;
+  padding: 50px 8.33333% 0;
   width: 100%;
   height: 500px;
   background-color: #F5F5F5;
@@ -450,7 +450,7 @@ export const CampaignWrapper = styled.div`
   }
 
   @media screen and (max-width: 1199px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 8.33333% 0;
     background-color: #fff;
 
     &:before {
@@ -464,7 +464,7 @@ export const CampaignWrapper = styled.div`
 
 
   @media screen and (max-width: 575px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 8.33333% 0;
   }
 
 

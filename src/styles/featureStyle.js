@@ -59,6 +59,11 @@ export const SectionEM1 = styled.div`
       margin-bottom: 15px;
     }
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 `
 
 export const SectionEM2 = styled.div`
@@ -76,6 +81,11 @@ export const SectionEM2 = styled.div`
 
     .article {
       padding: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
     }
   }
 `
@@ -118,6 +128,11 @@ export const SectionTP = styled.div`
       margin-top: 60px;
     }
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 
 `
 
@@ -148,6 +163,11 @@ export const SectionRP1 = styled.div`
     }
 
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 
 `
 
@@ -161,6 +181,11 @@ export const SectionRP2 = styled.div`
 
     .article {
       margin-top: 60px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
     }
   }
 

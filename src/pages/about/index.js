@@ -23,7 +23,7 @@ import avt2 from '../../images/about-page/members/2.jpg'
 import avt3 from '../../images/about-page/members/3.jpg'
 import avt4 from '../../images/about-page/members/4.jpg'
 import avt5 from '../../images/about-page/members/5.jpg'
-import avt6 from '../../images/about-page/members/6.jpg'
+
 import avt7 from '../../images/about-page/members/7.jpg'
 import avt8 from '../../images/about-page/members/8.jpg'
 import avt9 from '../../images/about-page/members/9.jpg'
@@ -57,11 +57,6 @@ const members = [
     avatar: avt5
   },
   {
-    name: 'Tuan Nguyen',
-    position: 'Dev',
-    avatar: avt6
-  },
-  {
     name: 'Chan',
     position: 'Designer',
     avatar: avt7
@@ -71,12 +66,6 @@ const members = [
     position: 'Dev',
     avatar: avt8
   },
-  {
-    name: '',
-    position: null,
-    avatar: null
-  }
-  ,
   {
     name: 'Vu Hoan',
     position: 'Dev',
@@ -152,7 +141,7 @@ const AboutUs = props => {
 
           <CustomRow spacing={20}>
             {members.map((member, index) => (
-              <Col md={3} xs={6} key={index}>
+              <Col md={4} xs={6} key={index}>
                 <Member>
                   <img src={member.avatar} alt="" />
                   <h3 className="name">{member.name}</h3>

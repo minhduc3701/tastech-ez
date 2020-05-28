@@ -34,7 +34,7 @@ export const Banner = styled.div`
  
   @media screen and (max-width: 1319px) {
     .video{
-      padding-right: 20px !important;
+      padding-right: 10px !important;
     }
   }
 
@@ -55,7 +55,9 @@ export const Banner = styled.div`
     padding-top: 50px;
   }
   @media screen and (max-width: 575px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 8.33333% 0;
+    
+    
   }
 
 `
@@ -105,7 +107,6 @@ export const BannerContent = styled.div`
    p, h1{
     color: #fff;
    }
-   
   }
   @media screen and (max-width: 767px) {
     p{
@@ -116,6 +117,7 @@ export const BannerContent = styled.div`
     a{
       margin: 0 0 50px;
     }
+    margin:0 -20px;
   }
 `
 
@@ -140,6 +142,10 @@ export const VideoWrapper = styled.div`
     margin: 10px 0 0;
     justify-content: center;
   }
+  @media screen and (max-width: 575px) {
+    // margin:0 -20px;
+  }
+
 
 `
 
@@ -196,12 +202,12 @@ export const SectionIntro = styled.div`
     .article {
       padding: 0;
     }
-    margin-top:200px;
+    margin-top:${props => props.thefirstcpn ? "200px":"0"};
   }
 
   @media screen and (max-width: 767px) {
     padding: 35px 0 0;
-    margin-top:250px;
+    margin-top:${props => props.thefirstcpn ? "250px":"0"};
     margin-bottom:40px;
     h2{
       font-size: 30px;
@@ -221,7 +227,7 @@ export const SectionIntro = styled.div`
   }
   @media screen and (max-width: 575px) {
     padding: 35px 0 0;
-    margin-top:300px;
+    margin-top:${props => props.thefirstcpn ? "300px":"0"};
     margin-bottom:40px;
     h2{
       font-size: 30px;
