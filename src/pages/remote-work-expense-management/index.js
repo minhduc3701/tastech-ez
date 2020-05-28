@@ -76,7 +76,6 @@ const RemoteWorkExpenseManagement = props => {
             <Col md={6}>
               <h2>
                 <FormattedMessage id={`${scope}.s1_title`} />
-
               </h2>
               <p className="mb25">
                 <FormattedMessage id={`${scope}.s1_content`} />

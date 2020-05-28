@@ -132,7 +132,7 @@ export const VideoWrapper = styled.div`
     border-radius: 20px;
     max-width: 512px;
     max-height: 360px;
-    min-width: 382px;
+    // min-width: 382px;
     min-height: 268px;
   }
   
@@ -140,6 +140,7 @@ export const VideoWrapper = styled.div`
     margin: 10px 0 0;
     justify-content: center;
   }
+
 `
 
 export const SectionIntro = styled.div`
@@ -195,10 +196,12 @@ export const SectionIntro = styled.div`
     .article {
       padding: 0;
     }
+    margin-top:200px;
   }
 
   @media screen and (max-width: 767px) {
     padding: 35px 0 0;
+    margin-top:250px;
     margin-bottom:40px;
     h2{
       font-size: 30px;
@@ -216,6 +219,27 @@ export const SectionIntro = styled.div`
       margin-top: 0;
     }
   }
+  @media screen and (max-width: 575px) {
+    padding: 35px 0 0;
+    margin-top:300px;
+    margin-bottom:40px;
+    h2{
+      font-size: 30px;
+       margin: 0;
+    }
+    &.analysis{
+      p, h2{
+        text-align: left
+      }
+    }
+    .article {
+      margin-bottom: 15px;
+    }
+    .article:first-child {
+      margin-top: 0;
+    }
+  }
+
 `
 
 export const TitleWithCircle = styled.h2`
