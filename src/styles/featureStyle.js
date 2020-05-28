@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'gatsby'
 export const Wrapper = styled.div`
 
 `
@@ -277,7 +277,7 @@ export const SectionRemote = styled.div`
     }
     margin:0 0 150px 0;
     .image-block {
-      padding:0 20px;
+      padding:0;
       img {
         width:100%;
       }
@@ -335,8 +335,8 @@ export const SectionRemote = styled.div`
     }
     
 `
-export const BtnStart = styled.button`
-  width: 40%;
+export const BtnStart = styled(Link).attrs({ className: 'BtnStart' })`
+  width: 50%;
   margin-top: 20px;
   font-size: 14px;
   font-weight: bold;
@@ -345,7 +345,7 @@ export const BtnStart = styled.button`
   background-color: #ffffff;
   border: none;
   color: #3543c6;
-  padding: 10px 0;
+  padding: 10px;
   min-width:140px;
 
 &:focus {

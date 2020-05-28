@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   height:500px;
 
   @media screen and (max-width: 767px) {
-    padding: 230px 0 70px;
+    padding: 200px 0 70px;
     background-image: linear-gradient(to top, rgba(19, 29, 126, 0.7) 0%, rgba(0, 15, 118, 0) 68%), url(${props => props.bgMobile ? props.bgMobile : props.bg || ''});
   }
 `

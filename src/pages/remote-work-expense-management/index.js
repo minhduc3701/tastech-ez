@@ -70,7 +70,7 @@ const RemoteWorkExpenseManagement = props => {
         </Container>
       </Banner>
 
-      <SectionIntro mt={150} thefirstcpn='true'>
+      <SectionIntro mt={150} >
         <Container>
           <CustomRow spacing={70}>
             <Col md={6}>

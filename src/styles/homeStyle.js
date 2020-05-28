@@ -417,7 +417,7 @@ export const Customer = styled.div`
 `
 
 export const CampaignWrapper = styled.div`
-  padding: 50px 8.33333% 0;
+  padding: 80px 8.33333% 0;
   width: 100%;
   height: 500px;
   background-color: #F5F5F5;
@@ -440,7 +440,7 @@ export const CampaignWrapper = styled.div`
   }
 
   .video{
-    padding-right: 100px !important;
+    padding-right: 90px !important;
   }
  
   @media screen and (max-width: 1319px) {
@@ -448,7 +448,9 @@ export const CampaignWrapper = styled.div`
       padding-right: 20px !important;
     }
   }
-
+  @media screen and (max-width: 1299px) {
+    padding: 60px 8.33333% 0;
+  }
   @media screen and (max-width: 1199px) {
     padding: 50px 8.33333% 0;
     background-color: #fff;
@@ -532,19 +534,19 @@ export const BannerContent = styled.div`
 
 export const VideoWrapper = styled.div`
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 
   iframe{
     z-index: 2;
     border-radius: 20px;
-    max-width: 512px;
-    max-height: 360px;
-    min-width: 382px;
-    min-height: 268px;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
   
   @media screen and (max-width: 1199px) {
