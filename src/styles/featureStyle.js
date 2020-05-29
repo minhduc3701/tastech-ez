@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'gatsby'
 export const Wrapper = styled.div`
 
 `
@@ -59,6 +59,11 @@ export const SectionEM1 = styled.div`
       margin-bottom: 15px;
     }
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 `
 
 export const SectionEM2 = styled.div`
@@ -76,6 +81,11 @@ export const SectionEM2 = styled.div`
 
     .article {
       padding: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
     }
   }
 `
@@ -118,6 +128,11 @@ export const SectionTP = styled.div`
       margin-top: 60px;
     }
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 
 `
 
@@ -148,6 +163,11 @@ export const SectionRP1 = styled.div`
     }
 
   }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
+    }
+  }
 
 `
 
@@ -161,6 +181,11 @@ export const SectionRP2 = styled.div`
 
     .article {
       margin-top: 60px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .paddingbetween{
+      padding-right:15px;
     }
   }
 
@@ -252,7 +277,7 @@ export const SectionRemote = styled.div`
     }
     margin:0 0 150px 0;
     .image-block {
-      padding:0 20px;
+      padding:0;
       img {
         width:100%;
       }
@@ -310,8 +335,8 @@ export const SectionRemote = styled.div`
     }
     
 `
-export const BtnStart = styled.button`
-  width: 40%;
+export const BtnStart = styled(Link).attrs({ className: 'BtnStart' })`
+  width: 50%;
   margin-top: 20px;
   font-size: 14px;
   font-weight: bold;
@@ -320,7 +345,7 @@ export const BtnStart = styled.button`
   background-color: #ffffff;
   border: none;
   color: #3543c6;
-  padding: 10px 0;
+  padding: 10px;
   min-width:140px;
 
 &:focus {
