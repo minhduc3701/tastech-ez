@@ -70,13 +70,12 @@ const RemoteWorkExpenseManagement = props => {
         </Container>
       </Banner>
 
-      <SectionIntro mt={150}>
+      <SectionIntro mt={150} >
         <Container>
           <CustomRow spacing={70}>
             <Col md={6}>
               <h2>
                 <FormattedMessage id={`${scope}.s1_title`} />
-
               </h2>
               <p className="mb25">
                 <FormattedMessage id={`${scope}.s1_content`} />
