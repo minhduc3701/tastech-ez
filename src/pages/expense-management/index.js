@@ -188,7 +188,7 @@ const ExpenseManagementPage = props => {
                   content={<FormattedMessage id={`${scope}.remote_`} />}
                 />
 
-                <BtnStart type="submit">
+                <BtnStart to={`${props.langUri}remote-work-expense-management/`}>
                   <FormattedMessage tagName="span" id={`${scope}.submit`} />
                   <Icon icon={baselineArrowRightAlt} />
                 </BtnStart>

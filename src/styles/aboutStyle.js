@@ -28,7 +28,7 @@ export const Banner = styled.div`
 
 
   @media screen and (max-width: 767px) {
-    padding: 320px 0 70px;
+    padding: 300px 0 70px;
   }
 
 `

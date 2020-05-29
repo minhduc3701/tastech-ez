@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
 `
 
 export const Banner = styled.div`
-  padding: 70px 8.33333% 0;
+  padding: 100px 8.33333% 20px;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
+  height:max-content;
   background-color: #F5F5F5;
   background-repeat: no-repeat;
   position: relative;
@@ -34,14 +35,14 @@ export const Banner = styled.div`
  
   @media screen and (max-width: 1319px) {
     .video{
-      padding-right: 20px !important;
+      padding-right: 10px !important;
     }
   }
 
   @media screen and (max-width: 1199px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 6.33333% 0;
     background-color: #fff;
-
+    margin-bottom:50px;
     &:before {
       width: 100%;
       height: 500px;
@@ -53,9 +54,15 @@ export const Banner = styled.div`
 
   @media screen and (max-width: 767px) {
     padding-top: 50px;
+    &:before {
+      width: 100%;
+      height:90%;
+    }
   }
   @media screen and (max-width: 575px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 6.33333% 0;
+    margin-bottom:30px;
+   
   }
 
 `
@@ -96,7 +103,7 @@ export const BannerContent = styled.div`
     line-height: 1.33;
     color: #ffffff;
     cursor: pointer;
-    margin: 35px 0 0 0;
+    margin: 25px 0 0 0;
   }
   a:hover{
     text-decoration: none;
@@ -105,7 +112,9 @@ export const BannerContent = styled.div`
    p, h1{
     color: #fff;
    }
-   
+   a{
+     margin:35px 0;
+   }
   }
   @media screen and (max-width: 767px) {
     p{
@@ -121,25 +130,25 @@ export const BannerContent = styled.div`
 
 export const VideoWrapper = styled.div`
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 
   iframe{
     z-index: 2;
     border-radius: 20px;
-    max-width: 512px;
-    max-height: 360px;
-    min-width: 382px;
-    min-height: 268px;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
-  
   @media screen and (max-width: 1199px) {
     margin: 10px 0 0;
     justify-content: center;
   }
+
 `
 
 export const SectionIntro = styled.div`
@@ -196,17 +205,26 @@ export const SectionIntro = styled.div`
       padding: 0;
     }
   }
-
+  @media screen and (max-width: 991px) {
+    padding: 35px 0 25px;
+    .article {
+      padding: 0;
+    }
+  }
   @media screen and (max-width: 767px) {
-    padding: 35px 0 0;
-    margin-bottom:40px;
+    padding: 20px 0 0;   
+    margin-bottom:20px;
     h2{
       font-size: 30px;
-       margin: 0;
+      margin: 0 0 20px 0;
     }
     &.analysis{
       p, h2{
         text-align: left
+      }
+      margin-bottom:60px;
+      .image-block{
+        margin-top:0;
       }
     }
     .article {
@@ -215,7 +233,11 @@ export const SectionIntro = styled.div`
     .article:first-child {
       margin-top: 0;
     }
+    .image-block{
+      margin-top:20px;
+    }
   }
+
 `
 
 export const TitleWithCircle = styled.h2`
