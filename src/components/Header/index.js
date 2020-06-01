@@ -518,6 +518,7 @@ const CampaignHeader = styled.div`
     color: #ffffff;
   }
   p{
+    margin-right:20px;
     padding: 0 10px 0 0;
   }
   a{
