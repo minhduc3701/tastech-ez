@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div.attrs({ className: 'article' })`
+const Wrapper = styled.article.attrs({ className: 'article' })`
   .icon {
     margin-bottom: 25px;
   }

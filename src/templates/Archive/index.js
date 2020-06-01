@@ -5,7 +5,7 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-import { Wrapper } from '../../styles/blogStyle'
+import { Wrapper, PageTitle } from './style'
 import { Container } from '../../styles'
 import { Link } from 'gatsby'
 import _ from 'lodash'
@@ -14,20 +14,23 @@ import Categories from  '../../components/BlogCategories'
 import BlogArticle from '../../components/BlogArticle'
 import BlogReadmore from '../../components/BlogReadmore'
 
-
-const Blog = props => {
+const Archive = props => {
   const [page, setPage] = useState(1)
   const perPage = 10
 
-  let posts = props.data.allWordpressPost.edges.filter(edge => edge.node.polylang_current_lang === props.langKey)
-  let categories = props.data.allWordpressCategory.edges
-
+  let posts = _.get(props.data, 'allWordpressPost.edges', [])
+  let categories = _.get(props.data, 'allWordpressCategory.edges', [])
+  
   return (
     <Wrapper>
     <Container>
       <SEO title="Blog" />
+
       <Row>
         <Col md={8}>
+
+        <PageTitle>{props.data.wordpressCategory.name}</PageTitle>
+
         <Row>
       { posts
         .slice(0, Math.min(posts.length, page * perPage))
@@ -52,11 +55,6 @@ const Blog = props => {
           langUri={props.langUri}
           langKey={props.langKey}
         />
-
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
-        <div class="fb-page" data-href="https://www.facebook.com/ezbiztrip/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ezbiztrip/">ezbiztrip.com</a></blockquote></div>
-
         </Col>
       </Row>
     </Container>
@@ -66,8 +64,8 @@ const Blog = props => {
 
 
 export const query = graphql`
-  query {
-    allWordpressPost {
+  query($slug: String!) {
+    allWordpressPost(filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
       edges {
         node {
           title
@@ -87,7 +85,7 @@ export const query = graphql`
       }
     }
 
-    allWordpressCategory {
+    allWordpressCategory(filter: {count: {gt: 0}}) {
       edges {
         node {
           count
@@ -100,7 +98,13 @@ export const query = graphql`
         }
       }
     }
+
+    wordpressCategory(slug: {eq: $slug}) {
+      slug
+      name
+    }
+  
   }
   `
 
-export default layoutWithLangKey(injectIntl(Blog))
+export default layoutWithLangKey(injectIntl(Archive))

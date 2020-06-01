@@ -411,4 +411,7 @@ module.exports = {
   "page.remoteWork.s3_content": "Using EzBizTrip’s platform, employees can simply create an expense report to record and submit their expenses no matter where they are.",
   "page.remoteWork.s3_title2": "Higher Efficiency and Accuracy",
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoices from mobile phones and tablets while the amount is being keyed into the system side by side. This increases efficiency as well as accuracy.",
+  "blog.categories": "Categories",
+  "blog.readMore": "Read more",
+  "blog.minRead": "min read"
 }

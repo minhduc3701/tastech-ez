@@ -467,5 +467,8 @@ module.exports = {
   "terms.meta.description": "Mọi điều khoản điều kiện giữa Khách hàng và EzBizTrip được thực hiện theo Điều khoản sử dụng này.",
   "terms.meta.title": "Điều khoản và điều kiện",
   "travelPolicyManagement.meta.description": "Xây dựng chính sách hạn mức cho nhân viên dễ dàng và linh hoạt, giúp nhân viên của bạn dễ dàng kiểm soát chi phí",
-  "travelPolicyManagement.meta.title": "Quản lý hạn mức"
+  "travelPolicyManagement.meta.title": "Quản lý hạn mức",
+  "blog.categories": "Chuyên mục",
+  "blog.readMore": "Xem thêm",
+  "blog.minRead": "phút đọc"
 }

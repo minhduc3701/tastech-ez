@@ -1,7 +1,6 @@
 const {langs, defaultLangKey} = require('./src/data/config')
 const path = require("path")
 const _ = require("lodash")
-const { slash } = require(`gatsby-core-utils`)
 
 const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
@@ -47,15 +46,12 @@ exports.createPages = async ({ graphql, actions }) => {
     redirectInBrowser: true,
   });
 
-  const result = await graphql(`
+  const blogPosts = await graphql(`
     {
-      allWordpressPost(sort: {fields: [date]}) {
+      allWordpressPost {
         edges {
           node {
-            title
-            excerpt
             slug
-            date(formatString: "MM-DD-YYYY")
           }
         }
       }
@@ -63,15 +59,48 @@ exports.createPages = async ({ graphql, actions }) => {
 
   `)
 
-    _.get(result, 'data.allWordpressPost.edges', []).forEach(({ node }) => {
+    _.get(blogPosts, 'data.allWordpressPost.edges', []).forEach(({ node }) => {
+    langs.forEach(lang => {
+      let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
       createPage({
-        path: `blog/${node.slug}`,
-        component: slash(path.resolve(`./src/templates/post/index.js`)),
+        path: `${langUri}blog/${node.slug}`,
+        component: path.resolve(`./src/templates/Post/index.js`),
         context: {
-          // This is the $slug variable
-          // passed to template
           slug: node.slug,
         },
+      })
+    })
+  })
+
+  const blogCategories = await graphql(`
+    {
+      allWordpressCategory(filter: {count: {gt: 0}}) {
+        edges {
+          node {
+            id
+            count
+            name
+            slug
+            description
+          }
+        }
+      }
+    }
+
+  `)
+
+  _.get(blogCategories, 'data.allWordpressCategory.edges', []).forEach(({ node }) => {
+      langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+          path: `${langUri}blog/category/${node.slug}`,
+          component: path.resolve(`./src/templates/Archive/index.js`),
+          context: {
+            slug: node.slug
+          },
+        })
       })
     })
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="275" height="275" viewBox="0 0 275 275">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#e4e4e4}.cls-4{clip-path:url(#clip-path-3)}.cls-5,.cls-7{fill:#bbb}.cls-6{fill:rgba(0,0,0,0)}.cls-7{font-size:16px;font-family:OpenSans,Open Sans}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h275v275H0z" class="cls-1"/>
+        </clipPath>
+        <clipPath id="clip-path-3">
+            <path d="M0 0h50v50H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="Component_172_1" class="cls-2" data-name="Component 172 – 1">
+        <g id="Component_171_1" class="cls-2" data-name="Component 171 – 1">
+            <path id="Rectangle_1677" d="M0 0h275v275H0z" class="cls-3" data-name="Rectangle 1677"/>
+        </g>
+        <g id="Component_170_1" class="cls-4" data-name="Component 170 – 1" transform="translate(113 113)">
+            <path id="Path_3369" d="M2 5v34.375h43.75V5zm3.125 3.125h37.5v21.728l-8.25-8.3-1.125-1.125-1.125 1.125-5.953 5.956-8.984-9.081-1.125-1.128-1.125 1.125-9.813 9.816zm31.25 3.125a3.125 3.125 0 1 0 3.054 3.125 3.125 3.125 0 0 0-3.054-3.125zm-20.312 10.5l14.356 14.5H5.125v-3.563zm17.187 3.125l9.375 9.375v2h-7.766l-6.492-6.544z" class="cls-5" data-name="Path 3369" transform="translate(1.125 2.813)"/>
+            <path id="Rectangle_2573" d="M0 0h50v50H0z" class="cls-6" data-name="Rectangle 2573"/>
+        </g>
+    </g>
+</svg>
