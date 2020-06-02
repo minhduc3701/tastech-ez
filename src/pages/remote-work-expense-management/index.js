@@ -72,7 +72,7 @@ const RemoteWorkExpenseManagement = props => {
             </Col>
             <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
               <VideoWrapper>
-                <iframe title="CampaignVideo" width="100%" height="100%" src={youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="CampaignVideo" width="100%" height="100%" src={youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </VideoWrapper>
             </Col>
 
