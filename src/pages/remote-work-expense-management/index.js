@@ -31,6 +31,16 @@ const scope = 'page.remoteWork'
 
 const RemoteWorkExpenseManagement = props => {
   const { formatMessage } = props.intl
+  let youtubeLink
+  switch (props.langKey) {
+    case 'id':
+      youtubeLink = 'https://www.youtube.com/embed/ddaf2t0_Tgg'
+      break;
+    case 'en':
+    default:
+      youtubeLink = 'https://www.youtube.com/embed/l6ClKu66vI8'
+      break;
+  }
   return (
     <Wrapper>
       <SEO
@@ -62,7 +72,7 @@ const RemoteWorkExpenseManagement = props => {
             </Col>
             <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
               <VideoWrapper>
-                <iframe title="CampaignVideo" width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="CampaignVideo" width="100%" height="100%" src={youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </VideoWrapper>
             </Col>
 
