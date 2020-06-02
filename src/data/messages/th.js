@@ -414,5 +414,7 @@ module.exports = {
   "page.remoteWork.s3_content2": "EzBizTrip’s expense claims allows photo taking/uploading of receipts and invoices from mobile phones and tablets while the amount is being keyed into the systemside by side. This increases efficiency as well as accuracy.",
   "blog.categories": "Categories",
   "blog.readMore": "Read more",
-  "blog.minRead": "min read"
+  "blog.minRead": "min read",
+  "blog.editor": "Editor",
+  "blog.mustRead": "Must read"
 }

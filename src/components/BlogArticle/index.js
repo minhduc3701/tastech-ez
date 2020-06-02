@@ -4,7 +4,7 @@ import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
 
 import { Wrapper, Thumbnail, Categories, Title, Excerpt, Meta } from './style'
-import { Icon, InlineIcon } from '@iconify/react'
+import { Icon } from '@iconify/react'
 import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
 import AlternativeImage from '../../components/AlternativeImage'
 
@@ -13,18 +13,25 @@ const BlogArticle = props => {
 
   return (
     <Wrapper>
-      <Thumbnail>
-        <Link to={`${props.langUri}/blog/${post.slug}`}>
-          <AlternativeImage
-            ratio={250/350}
-            imageSrc={post.featured_media.source_url}
-          />
-        </Link>
-      </Thumbnail>
+      {!_.isEmpty(_.get(post, 'featured_media.source_url')) &&
+        <Thumbnail>
+          <Link
+            to={`${props.langUri}/blog/${post.slug}`}
+            className="image-hover"
+          >
+            <AlternativeImage
+              ratio={250/350}
+              imageSrc={_.get(post, 'featured_media.source_url')}
+            />
+          </Link>
+        </Thumbnail>
+      }
+
       {
               !_.isEmpty(post.categories) &&
           <Categories>
-            {post.categories.map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
+            {post.categories
+              .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
           </Categories>
       }
       <Title>
@@ -38,7 +45,7 @@ const BlogArticle = props => {
           {post.date}
         </span>
         <span>
-          {_.round(post.content.length * 0.0008 || 1)}
+          {_.ceil(post.fields.readingTime.minutes)}
           &nbsp;
           <FormattedMessage id="blog.minRead" />
         </span>

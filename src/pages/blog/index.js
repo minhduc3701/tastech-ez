@@ -1,61 +1,44 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import {layoutWithLangKey} from "../../components/layout"
 
-import { injectIntl, FormattedMessage } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 import { Wrapper } from '../../styles/blogStyle'
 import { Container } from '../../styles'
-import { Link } from 'gatsby'
-import _ from 'lodash'
 import { Row, Col } from 'reactstrap'
-import Categories from  '../../components/BlogCategories'
-import BlogArticle from '../../components/BlogArticle'
-import BlogReadmore from '../../components/BlogReadmore'
+import BlogBannerTop from '../../components/BlogBannerTop'
+import BlogSidebar from '../../components/BlogSidebar'
+import BlogList from '../../components/BlogList'
 
 
 const Blog = props => {
-  const [page, setPage] = useState(1)
-  const perPage = 10
-
   let posts = props.data.allWordpressPost.edges.filter(edge => edge.node.polylang_current_lang === props.langKey)
-  let categories = props.data.allWordpressCategory.edges
 
   return (
     <Wrapper>
     <Container>
       <SEO title="Blog" />
-      <Row>
-        <Col md={8}>
-        <Row>
-      { posts
-        .slice(0, Math.min(posts.length, page * perPage))
-        .map(({ node }, index) => (
-          <Col sm={6} key={index}>
-          <BlogArticle
-            post={node}
-            langUri={props.langUri}
-          />
-          </Col>
-      )
-      )}
-        </Row>
 
-        {page * perPage < posts.length &&
-          <BlogReadmore onClick={() => setPage(page + 1)} />
-        }
-        </Col>
-        <Col md={4}>
-          <Categories
-          categories={categories}
+      <BlogBannerTop
           langUri={props.langUri}
           langKey={props.langKey}
         />
 
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
-        <div class="fb-page" data-href="https://www.facebook.com/ezbiztrip/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ezbiztrip/">ezbiztrip.com</a></blockquote></div>
+
+      <Row>
+        <Col md={8}>
+          <BlogList 
+            posts={posts}
+            langUri={props.langUri}
+          />
+        </Col>
+        <Col md={4}>
+          <BlogSidebar
+          langUri={props.langUri}
+          langKey={props.langKey}
+        />
 
         </Col>
       </Row>
@@ -67,7 +50,7 @@ const Blog = props => {
 
 export const query = graphql`
   query {
-    allWordpressPost {
+    allWordpressPost(sort: {fields: date, order: DESC}) {
       edges {
         node {
           title
@@ -83,19 +66,10 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-        }
-      }
-    }
-
-    allWordpressCategory {
-      edges {
-        node {
-          count
-          name
-          slug
-          description
-          parent_element {
-            slug
+          fields {
+            readingTime {
+              minutes
+            }
           }
         }
       }

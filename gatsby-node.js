@@ -104,5 +104,14 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
+    langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+              path: `${langUri}blog/search`,
+              component: path.resolve(`./src/templates/Search/index.js`)
+          })
+      })
+
 
 }

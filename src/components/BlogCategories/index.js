@@ -1,31 +1,64 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
-import { Wrapper, WidgetTitle, Category, Background } from './style'
+import { Wrapper, Category, Background } from './style'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
 
 const BlogCategories = props => {
-  let filteredCategories = props.categories
-        .filter(({ node }) => _.get(node, 'parent_element.slug') === props.langKey)
+return (
+  <StaticQuery
+    query={graphql`
+      query {
+        allWordpressCategory(filter: {slug: {nin: ["en", "vi", "id", "th"]}, count: {gt: 0}}) {
+          edges {
+            node {
+              count
+              name
+              slug
+              description
+              parent_element {
+                slug
+              }
+            }
+          }
+        }
+      }
+      `}
 
-  return (
-    <Wrapper>
-      <WidgetTitle><FormattedMessage id="blog.categories" /></WidgetTitle>
+      render={data => {
+        let categories = data.allWordpressCategory.edges
+          .filter(({ node }) => _.get(node, 'parent_element.slug') === props.langKey)
 
-      {filteredCategories && filteredCategories.map(({ node }, index) => (
-            <Category
-              to={`${props.langUri}/blog/category/${node.slug}`}
-            >
-              {node.description && <Background dangerouslySetInnerHTML={{ __html: node.description }} />}
+        if (_.isEmpty(categories)) {
+          return <div></div>
+        }
 
-              <span>{node.name}</span>
+        return (
+         <Wrapper className="widget">
+           <h3 className="widget-title"><FormattedMessage id="blog.categories" /></h3>
+          
+          <div className="widget-content">
+           {!_.isEmpty(categories) && categories.map(({ node }) => (
+                 <Category
+                   key={node.slug}
+                   to={`${props.langUri}/blog/category/${node.slug}`}
+                   className="image-hover"
+                 >
+                   {node.description && <Background dangerouslySetInnerHTML={{ __html: node.description }} />}
+
+                   <span>{node.name}</span>
 
 
-            </Category>
-            ))}
-    </Wrapper>
+                 </Category>
+                 ))}
+           </div>
+         </Wrapper>
+        )
+      }}
+  />
   )
+
 }
 
 export default BlogCategories

@@ -5920,6 +5920,14 @@ gatsby-transformer-sharp@^2.3.13:
     semver "^5.7.1"
     sharp "^0.23.4"
 
+gatsby-wordpress-reading-time@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-wordpress-reading-time/-/gatsby-wordpress-reading-time-1.0.4.tgz#e9f92c3866a8bc1c06dd3eaab5543d37c9209584"
+  integrity sha512-ZzhBnwKs8i1aHV1D6QPhSAoSZ4rjEIb9sZ0tGYYYGTOkISXzQmvL3A02he7HI2Vrm+bF4hTr5JVIiM05mC9W9Q==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    reading-time "^1.2.0"
+
 gatsby@^2.19.7:
   version "2.19.7"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.7.tgz#670d04f25259a914db0049ebd56c14bc04f62d38"
@@ -10685,6 +10693,11 @@ readdirp@~3.4.0:
   integrity sha512-0xe001vZBnJEK+uKcj8qOhyAKPzIT+gStxWr3LCB0DwcXR5NZJ3IaC+yGnHCYzB/S7ov3m3EEbZI2zeNvX+hGQ==
   dependencies:
     picomatch "^2.2.1"
+
+reading-time@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/reading-time/-/reading-time-1.2.0.tgz#ced71c06715762f805506328dcc1fd45d8249ac4"
+  integrity sha512-5b4XmKK4MEss63y0Lw0vn0Zn6G5kiHP88mUnD8UeEsyORj3sh1ghTH0/u6m1Ax9G2F4wUZrknlp6WlIsCvoXVA==
 
 recursive-readdir@2.2.1:
   version "2.2.1"

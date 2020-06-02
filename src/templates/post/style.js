@@ -17,6 +17,7 @@ export const PostHeader = styled.div`
   margin-bottom: 40px;
   margin-top: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 `
 
@@ -29,7 +30,7 @@ export const Meta = styled.div`
     font-size: 24px;
     margin-right: 12px;
     position: relative;
-    top: -1px;
+    top: -2px;
   }
 
   > span {
@@ -54,8 +55,6 @@ export const Meta = styled.div`
 `
 
 export const Categories = styled.div`
-  margin-bottom: 10px;
-
   >a {
     position: relative;
     font-size: 15px;
@@ -89,9 +88,21 @@ export const PostTitle = styled.h1`
 export const PostContent = styled.div`
   .wp-block-image {
     margin: 10px auto;
-    
+
     .aligncenter {
       text-align: center;
+    }
+  }
+`
+
+export const PostFooter = styled.div`
+  margin-top: 50px;
+  padding-left: 30px;
+  border-left: 5px solid #f4b400;
+
+  .info {
+    strong {
+      margin-right: 30px;
     }
   }
 `

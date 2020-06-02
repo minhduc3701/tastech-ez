@@ -31,6 +31,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-wordpress": "^3.3.8",
     "gatsby-transformer-sharp": "^2.3.13",
+    "gatsby-wordpress-reading-time": "^1.0.4",
     "glamor": "^2.20.40",
     "intl": "^1.2.5",
     "prop-types": "^15.7.2",

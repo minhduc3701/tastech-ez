@@ -1,26 +1,26 @@
-import React from "react"
-import { graphql, navigate } from "gatsby"
+import React, { useState } from "react"
+import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import {layoutWithLangKey} from "../../components/layout"
 
-import { injectIntl } from 'react-intl'
-import _ from 'lodash'
+import { injectIntl, FormattedMessage } from 'react-intl'
+
 import { Wrapper, PageTitle } from './style'
 import { Container } from '../../styles'
-
+import { Link } from 'gatsby'
+import _ from 'lodash'
 import { Row, Col } from 'reactstrap'
 import BlogSidebar from  '../../components/BlogSidebar'
-import BlogList from '../../components/BlogList'
+import BlogArticle from '../../components/BlogArticle'
+import BlogReadmore from '../../components/BlogReadmore'
 
 const Archive = props => {
+  const [page, setPage] = useState(1)
+  const perPage = 10
 
   let posts = _.get(props.data, 'allWordpressPost.edges', [])
-  let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.slug')
-
-   if (props.langKey !== currentCategoryLang) {
-     navigate(`${props.langUri}/blog`)
-   }
-
+  
+  console.log(props.location)
   return (
     <Wrapper>
     <Container>
@@ -29,12 +29,25 @@ const Archive = props => {
       <Row>
         <Col md={8}>
 
-        <PageTitle>{_.get(props, 'data.wordpressCategory.name')}</PageTitle>
+        <PageTitle>Search</PageTitle>
 
-          <BlogList 
-            posts={posts}
+        <Row>
+      { posts
+        .slice(0, Math.min(posts.length, page * perPage))
+        .map(({ node }, index) => (
+          <Col sm={6} key={index}>
+          <BlogArticle
+            post={node}
             langUri={props.langUri}
           />
+          </Col>
+      )
+      )}
+        </Row>
+
+        {page * perPage < posts.length &&
+          <BlogReadmore onClick={() => setPage(page + 1)} />
+        }
         </Col>
         <Col md={4}>
           <BlogSidebar
@@ -50,8 +63,8 @@ const Archive = props => {
 
 
 export const query = graphql`
-  query($slug: String!) {
-    allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
+  query {
+    allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: ""}}}}) {
       edges {
         node {
           title
@@ -73,14 +86,6 @@ export const query = graphql`
             }
           }
         }
-      }
-    }
-
-    wordpressCategory(slug: {eq: $slug}) {
-      slug
-      name
-      parent_element {
-        slug
       }
     }
   

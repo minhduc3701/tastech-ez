@@ -1,18 +1,22 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import { Container } from '../../styles'
 import _ from 'lodash'
 import {layoutWithLangKey} from "../../components/layout"
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-import { Wrapper, FeatureImage, PostEntry, PostTitle, PostHeader, Meta, Categories, PostContent } from './style'
-import { Icon, InlineIcon } from '@iconify/react'
+import { Wrapper, FeatureImage, PostEntry, PostTitle, PostHeader, Meta, Categories, PostContent, PostFooter } from './style'
+import { Icon } from '@iconify/react'
 import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
 
 import { Link } from 'gatsby'
 
 const Post = props => {
   const post = props.data.wordpressPost
+  
+    if (props.langKey !== post.polylang_current_lang) {
+      navigate(`${props.langUri}/blog`)
+    }
 
   return (
     <Wrapper>
@@ -29,7 +33,7 @@ const Post = props => {
               {post.date}
             </span>
             <span>
-              {_.round(post.content.length * 0.0008 || 1)}
+              {_.ceil(post.fields.readingTime.minutes)}
               &nbsp;
               <FormattedMessage id="blog.minRead" />
             </span>
@@ -38,13 +42,21 @@ const Post = props => {
           {
               !_.isEmpty(post.categories) &&
           <Categories>
-            {post.categories.map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
+            {post.categories
+              .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
           </Categories>
       }
 
         </PostHeader>
         <PostTitle dangerouslySetInnerHTML={{ __html: post.title }} />
         <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
+          
+        <PostFooter>
+          <p className="info">
+            <strong><FormattedMessage id="blog.editor" /></strong>
+            {post.author.name}
+          </p>
+        </PostFooter>
       </PostEntry>
     </Container>
     </Wrapper>
@@ -64,6 +76,15 @@ export const query = graphql`
         name
         slug
       }
+      fields {
+        readingTime {
+          minutes
+        }
+      }
+      author {
+        name
+      }
+      polylang_current_lang
     }
 
   }

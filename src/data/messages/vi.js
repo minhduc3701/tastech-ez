@@ -470,5 +470,7 @@ module.exports = {
   "travelPolicyManagement.meta.title": "Quản lý hạn mức",
   "blog.categories": "Chuyên mục",
   "blog.readMore": "Xem thêm",
-  "blog.minRead": "phút đọc"
+  "blog.minRead": "phút đọc",
+  "blog.editor": "Biên tập",
+  "blog.mustRead": "Nên đọc"
 }

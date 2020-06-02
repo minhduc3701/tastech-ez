@@ -2,14 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export const Wrapper = styled.div`
-  
-`
 
-export const WidgetTitle = styled.h3`
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 15px 0 30px;
 `
 
 export const Category = styled(Link)`

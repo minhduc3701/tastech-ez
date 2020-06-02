@@ -73,17 +73,20 @@ module.exports = {
             // Specify the URL of the WordPress source
             baseUrl: `https://blog.ezbiztrip.com`,
             protocol: `http`,
-            // Indicates if a site is hosted on WordPress.com
             hostingWPCOM: false,
-            // Specify which URL structures to fetch
             includedRoutes: [
               '**/posts',
               '**/pages',
               '**/tags',
               '**/categories',
-              '**/media'
+              '**/media',
+              '**/searchResults',
+              '**/users'
             ],
-            useACF: false
+            useACF: false,
+            plugins: [
+              `gatsby-wordpress-reading-time`,
+            ]
         }
     }
   ],

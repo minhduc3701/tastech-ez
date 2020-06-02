@@ -40,7 +40,7 @@ export const Title = styled.h3`
     font-size: 20px;
     font-weight: 600;
     color: #000;
-    line-height: 1.45;
+    line-height: 1.5;
 
     &:hover {
       text-decoration: none;
