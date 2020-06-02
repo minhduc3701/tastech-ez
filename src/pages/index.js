@@ -36,7 +36,7 @@ import roundBusinessCenter from '@iconify/icons-ic/round-business-center'
 import baselinePerson from '@iconify/icons-ic/baseline-person'
 import baselinePlus from '@iconify/icons-ic/baseline-plus'
 import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
-import { FormattedMessage, injectIntl ,FormattedHTMLMessage} from 'react-intl'
+import { FormattedMessage, injectIntl, FormattedHTMLMessage } from 'react-intl'
 
 const scope = 'page.HomePage'
 
@@ -83,6 +83,16 @@ const LinkDetail = link => (
 
 const IndexPage = props => {
   const { formatMessage } = props.intl
+  let youtubeLink
+  switch (props.langKey) {
+    case 'id':
+      youtubeLink = 'https://www.youtube.com/embed/ddaf2t0_Tgg'
+      break;
+    case 'en':
+    default:
+      youtubeLink = 'https://www.youtube.com/embed/l6ClKu66vI8'
+      break;
+  }
   return (
     <HomeWrapper>
       <SEO
@@ -92,7 +102,7 @@ const IndexPage = props => {
       />
 
       <Slider {...sliderSettings}>
-    
+
         <CampaignWrapper>
           <Container>
             <CustomRow spacing={20}>
@@ -104,7 +114,7 @@ const IndexPage = props => {
                   <h2>
                     <FormattedMessage id={`${scope}.WFHtitle`} />
                   </h2>
-                  
+
                   <p>
                     <FormattedMessage id={`${scope}.WFHdes`} />
                   </p>
@@ -112,8 +122,8 @@ const IndexPage = props => {
                     <FormattedMessage id={`${scope}.WFHbtn`} />
                   </a> */}
                   <Link to={`${props.langUri}remote-work-expense-management/`}>
-                  <FormattedMessage id={`${scope}.WFHbtn`} />
-                </Link>
+                    <FormattedMessage id={`${scope}.WFHbtn`} />
+                  </Link>
                 </BannerContent>
               </Col>
               <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
