@@ -192,8 +192,7 @@ export const SectionIntro = styled.div`
     margin-bottom: 70px;
     text-align: center;
     font-family:work sans;
-    
-     
+    color:#171e45;
   }
   .article {
     padding: 0 50px;
@@ -419,7 +418,8 @@ export const Customer = styled.div`
 export const CampaignWrapper = styled.div`
   padding: 80px 8.33333% 0;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
+  height:max-content;
   background-color: #F5F5F5;
   background-repeat: no-repeat;
   position: relative;
@@ -460,13 +460,15 @@ export const CampaignWrapper = styled.div`
       height: 500px;
     }
     .video{
-      display: none;
+      margin-top:40px;
+      padding-right: 0;
     }
   }
 
 
   @media screen and (max-width: 575px) {
     padding: 50px 8.33333% 0;
+    margin-bottom:30px;
   }
 
 

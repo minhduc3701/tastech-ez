@@ -118,7 +118,7 @@ const IndexPage = props => {
               </Col>
               <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
                 <VideoWrapper>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </VideoWrapper>
               </Col>
             </CustomRow>
