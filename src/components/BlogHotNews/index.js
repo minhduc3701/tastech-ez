@@ -4,8 +4,8 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import { Wrapper, Post, Thumbnail, Content } from './style'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
-import AlternativeImage from '../../components/AlternativeImage'
-
+import AlternativeImage from '../AlternativeImage'
+import BlogReadingTime from '../BlogReadingTime'
 
 const BlogBannerTop = props => {
 return (
@@ -17,15 +17,11 @@ return (
             node {
               slug
               title
+              content
               featured_media {
                 source_url
               }
               polylang_current_lang
-              fields {
-                readingTime {
-                  minutes
-                }
-              }
             }
           }
         }
@@ -71,9 +67,7 @@ return (
                     </Link>
                   </h4>
                   <p>
-                    {_.ceil(node.fields.readingTime.minutes)}
-                    &nbsp;
-                    <FormattedMessage id="blog.minRead" />
+                    <BlogReadingTime post={node} />
                   </p>
                 </Content>
               </Post>

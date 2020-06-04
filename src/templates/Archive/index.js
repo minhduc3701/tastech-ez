@@ -67,11 +67,6 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-          fields {
-            readingTime {
-              minutes
-            }
-          }
         }
       }
     }

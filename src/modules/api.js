@@ -21,10 +21,10 @@ export default {
     return axios.post(`${endpoints.requests}/contact`, data)
   },
 
-  getBlogPosts() {
+  searchBlogPosts(keyword) {
     return axios({
       method: 'get',
-      url: `${endpoints.blog}/posts`
+      url: `${endpoints.blog}/posts/?search=${keyword}&orderby=date&order=desc&per_page=100&_fields=author,id,excerpt,title,link`
     })
   },
 }

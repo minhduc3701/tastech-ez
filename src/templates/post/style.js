@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+  margin-bottom: 120px;
 `
 
 export const FeatureImage = styled.img`
@@ -9,7 +10,7 @@ export const FeatureImage = styled.img`
   object-fit: cover;
 `
 
-export const PostEntry = styled.div`
+export const CurrentPost = styled.div`
   margin-bottom: 120px;
 `
 
@@ -86,8 +87,8 @@ export const PostTitle = styled.h1`
 `
 
 export const PostContent = styled.div`
-  .wp-block-image {
-    margin: 10px auto;
+  .wp-block-image, figure {
+    margin: 1rem auto;
 
     .aligncenter {
       text-align: center;
@@ -105,4 +106,16 @@ export const PostFooter = styled.div`
       margin-right: 30px;
     }
   }
+`
+
+export const RelatedPosts = styled.div`
+  
+`
+
+export const SectionTitle = styled.h2`
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 `

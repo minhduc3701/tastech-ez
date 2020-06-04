@@ -15,7 +15,7 @@ export const Post = styled.div`
 
 export const Thumbnail = styled.div`
   flex: 0 0 28%;
-  margin-right: 8%;
+  margin-right: min(8%, 30px);
 `
 
 export const Content = styled.div`

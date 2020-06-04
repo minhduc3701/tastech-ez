@@ -83,10 +83,7 @@ module.exports = {
               '**/searchResults',
               '**/users'
             ],
-            useACF: false,
-            plugins: [
-              `gatsby-wordpress-reading-time`,
-            ]
+            useACF: false
         }
     }
   ],

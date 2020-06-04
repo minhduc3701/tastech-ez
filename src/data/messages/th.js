@@ -416,5 +416,8 @@ module.exports = {
   "blog.readMore": "Read more",
   "blog.minRead": "min read",
   "blog.editor": "Editor",
-  "blog.mustRead": "Must read"
+  "blog.mustRead": "Must read",
+  "blog.relatedPosts": "Related read",
+  "blog.searchPlaceholder": "Search",
+  "blog.searchResults": "Search Results for"
 }

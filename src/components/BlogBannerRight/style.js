@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
 
 export const PostLink = styled(Link)`
   display: block;
-  height: 300px;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,53 +1,73 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { graphql, navigate } from "gatsby"
 import SEO from "../../components/seo"
 import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl, FormattedMessage } from 'react-intl'
-
+import _ from 'lodash'
 import { Wrapper, PageTitle } from './style'
 import { Container } from '../../styles'
-import { Link } from 'gatsby'
-import _ from 'lodash'
+
 import { Row, Col } from 'reactstrap'
 import BlogSidebar from  '../../components/BlogSidebar'
-import BlogArticle from '../../components/BlogArticle'
-import BlogReadmore from '../../components/BlogReadmore'
+import BlogList from '../../components/BlogList'
 
-const Archive = props => {
-  const [page, setPage] = useState(1)
-  const perPage = 10
+import api from '../../modules/api'
+import axios from 'axios'
 
-  let posts = _.get(props.data, 'allWordpressPost.edges', [])
-  
-  console.log(props.location)
+const Search = (props) => {
+  // console.log(props)
+  // const [keyword, setKeyword] = useState(props.location.state.keyword)
+  let keyword = props.location.state.keyword
+  const [result, setResult] = useState([])
+
+  // window.alert(props.location.state.keyword)
+
+  // let keyword = _.last(_.get(props, 'location.search', '').split("?s="))
+
+  const fetchData = async str => {
+   const res = await api.searchBlogPosts(str)
+   setResult(res)
+  }
+
+  useEffect(() => {
+    // if (_.get(props, 'location.search', '')) {
+    //   setKeyword(_.last(_.get(props, 'location.search', '').split("?s=")))
+    // }
+    // console.log('keyword', keyword)
+        // window.alert(keyword)
+
+
+    fetchData(keyword)
+  }, [keyword])
+
+  // console.log('aaa', result)
+
+  let posts = []
+
+
   return (
     <Wrapper>
+
     <Container>
       <SEO title="Blog" />
 
       <Row>
         <Col md={8}>
 
-        <PageTitle>Search</PageTitle>
+        <PageTitle>
+          <FormattedMessage id="blog.searchResults" />:
+          &nbsp;"
+          {keyword.split("+").join(" ")}
+          "
+          ({posts.length})
 
-        <Row>
-      { posts
-        .slice(0, Math.min(posts.length, page * perPage))
-        .map(({ node }, index) => (
-          <Col sm={6} key={index}>
-          <BlogArticle
-            post={node}
+        </PageTitle>
+
+          <BlogList 
+            posts={posts}
             langUri={props.langUri}
           />
-          </Col>
-      )
-      )}
-        </Row>
-
-        {page * perPage < posts.length &&
-          <BlogReadmore onClick={() => setPage(page + 1)} />
-        }
         </Col>
         <Col md={4}>
           <BlogSidebar
@@ -61,10 +81,9 @@ const Archive = props => {
   )
 }
 
-
 export const query = graphql`
   query {
-    allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: ""}}}}) {
+    allWordpressPost(sort: {fields: date, order: DESC}) {
       edges {
         node {
           title
@@ -80,11 +99,6 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-          fields {
-            readingTime {
-              minutes
-            }
-          }
         }
       }
     }
@@ -92,4 +106,4 @@ export const query = graphql`
   }
   `
 
-export default layoutWithLangKey(injectIntl(Archive))
+export default layoutWithLangKey(injectIntl(Search))

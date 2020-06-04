@@ -6,7 +6,8 @@ import { FormattedMessage } from 'react-intl'
 import { Wrapper, Thumbnail, Categories, Title, Excerpt, Meta } from './style'
 import { Icon } from '@iconify/react'
 import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
-import AlternativeImage from '../../components/AlternativeImage'
+import AlternativeImage from '../AlternativeImage'
+import BlogReadingTime from '../BlogReadingTime'
 
 const BlogArticle = props => {
   const { post } = props
@@ -44,11 +45,7 @@ const BlogArticle = props => {
           <Icon icon={baselineAccessTime} />
           {post.date}
         </span>
-        <span>
-          {_.ceil(post.fields.readingTime.minutes)}
-          &nbsp;
-          <FormattedMessage id="blog.minRead" />
-        </span>
+        <BlogReadingTime post={post} />
       </Meta>
     </Wrapper>
   )

@@ -472,5 +472,8 @@ module.exports = {
   "blog.readMore": "Xem thêm",
   "blog.minRead": "phút đọc",
   "blog.editor": "Biên tập",
-  "blog.mustRead": "Nên đọc"
+  "blog.mustRead": "Nên đọc",
+  "blog.relatedPosts": "Bài viết liên quan",
+  "blog.searchPlaceholder": "Tìm kiếm",
+  "blog.searchResults": "Kết quả tìm kiếm"
 }

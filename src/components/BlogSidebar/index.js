@@ -1,13 +1,13 @@
 import React from "react"
 import { Wrapper } from './style'
-import BlogSearch from '../BlogSearch'
+import BlogSearchBox from '../BlogSearchBox'
 import BlogCategories from '../BlogCategories'
 import BlogBannerRight from '../BlogBannerRight'
 import BlogHotNews from '../BlogHotNews'
 
 const BlogSidebar = props => (
   <Wrapper>
-    <BlogSearch {...props} />
+    <BlogSearchBox {...props} />
     <BlogCategories {...props} />
     <BlogHotNews {...props} />
     <BlogBannerRight {...props} />

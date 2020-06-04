@@ -112,18 +112,24 @@ class Layout extends Component {
   }
 };
 
-export const layoutWithLangKey = C => props => (
-  <Layout {...props}>
-    {({ langKey, defaultLangKey, homeLink }) => (
-      <C
-        {...props}
-        langUri={homeLink}
-        langKey={langKey}
-        defaultLangKey={defaultLangKey}
-      />
-    )}
-  </Layout>
-)
+ export const layoutWithLangKey = C => props => {
+  console.log("layout", props)
+  return (
+    
+   <Layout {...props}>
+     {({ langKey, defaultLangKey, homeLink }) => (
+       <C
+         {...props}
+         langUri={homeLink}
+         langKey={langKey}
+         defaultLangKey={defaultLangKey}
+       />
+     )}
+   </Layout>
+   )}
+
+
+
 
 Layout.propTypes = {
   children: PropTypes.func,
