@@ -45,7 +45,7 @@ return (
                    to={`${props.langUri}/blog/category/${node.slug}`}
                    className="image-hover"
                  >
-                   {node.description && <Background dangerouslySetInnerHTML={{ __html: node.description }} />}
+                   {node.description && <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: node.description }} />}
 
                    <span>{node.name}</span>
 

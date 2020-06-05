@@ -34,13 +34,14 @@ export const Categories = styled.div`
 `
 
 export const Title = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 1;
 
   a {
     font-size: 20px;
     font-weight: 600;
     color: #000;
-    line-height: 1.45;
+    line-height: 1.4;
 
     &:hover {
       text-decoration: none;

@@ -23,13 +23,14 @@ export const Content = styled.div`
 
   h4 {
     line-height: 1;
-    margin-bottom: 15px;
+    margin-top: -4px;
+    margin-bottom: 11px;
 
     a {
       font-size: 15px;
       font-weight: 600;
       color: #000;
-      line-height: 1.53;
+      line-height: 1.2;
 
       &:hover {
         text-decoration: none;
@@ -41,5 +42,9 @@ export const Content = styled.div`
   p {
     font-size: 14px;
     color: #626262;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `
