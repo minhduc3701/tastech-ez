@@ -20,6 +20,10 @@ const Post = props => {
   let currentPost = props.data.wordpressPost
 
   if (props.langKey !== currentPost.polylang_current_lang) {
+    if (typeof window === 'undefined') {
+      return <div></div>
+    }
+
     navigate(`${props.langUri}/blog`)
   }
 

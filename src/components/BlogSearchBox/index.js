@@ -16,7 +16,10 @@ const BlogSearchBox = props => {
     if (keyword.trim()) {
       props.updateKeyword(keyword.trim())
       
-      navigate(`${props.langUri}/blog/search?s=${keyword.trim()}`)
+      if (typeof window !== 'undefined') {
+        navigate(`${props.langUri}/blog/search?s=${keyword.trim()}`)
+      }
+      
     }
   }
 
