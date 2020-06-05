@@ -5,9 +5,10 @@ import _ from 'lodash'
 import {layoutWithLangKey} from "../../components/layout"
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-import { Wrapper, FeatureImage, CurrentPost, PostTitle, PostHeader, Meta, Categories, Tags, PostContent, PostFooter, RelatedPosts, SectionTitle } from './style'
+import { Wrapper, FeatureImage, CurrentPost, PostTitle, PostHeader, Meta, Categories, Tags, PostContent, PostFooter, RelatedPosts, SectionTitle, BackButton } from './style'
 import { Icon } from '@iconify/react'
 import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
+import baselineArrowBack from '@iconify/icons-ic/baseline-arrow-back'
 
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
@@ -29,7 +30,7 @@ const Post = props => {
 
   let relatedPost = props.data.allWordpressPost.edges
     .filter(({node}) => {
-      if (node.polylang_current_lang !== currentPost.polylang_current_lang) {
+      if (node.polylang_current_lang !== currentPost.polylang_current_lang || node.slug === currentPost.slug) {
         return false
       }
 
@@ -59,6 +60,15 @@ const Post = props => {
       {_.get(currentPost, 'featured_media.source_url') &&
         <FeatureImage src={currentPost.featured_media.source_url}></FeatureImage>
       }
+
+      {window &&
+        <BackButton
+          onClick={() => window.history.back()}
+          className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'       }
+        >
+        <Icon icon={baselineArrowBack} />
+      </BackButton>
+    }
 
     <Container>
       <CurrentPost>
@@ -136,6 +146,7 @@ export const query = graphql`
     wordpressPost(slug: { eq: $slug }) {
       title
       content
+      slug
       date(formatString: "MMMM DD, YYYY")
       featured_media {
         source_url

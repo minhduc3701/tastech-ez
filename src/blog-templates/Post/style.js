@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   margin-bottom: 120px;
+  position: relative;
+
 `
 
 export const FeatureImage = styled.img`
@@ -116,6 +118,10 @@ export const PostContent = styled.div`
       text-align: center;
     }
   }
+
+  p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
+    margin-top: 1.5em;
+  }
 `
 
 export const PostFooter = styled.div`
@@ -140,4 +146,29 @@ export const SectionTitle = styled.h2`
   color: #000;
   text-transform: uppercase;
   margin-bottom: 50px;
+`
+
+export const BackButton = styled.div`
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #626262;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 9;
+
+  &.relative {
+    position: relative;
+    margin: 32px 0 0 32px;
+    top: auto;
+    left: auto;
+  }
 `

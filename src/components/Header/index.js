@@ -21,6 +21,7 @@ import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
 import outlineNewReleases from '@iconify/icons-ic/outline-new-releases';
 import closeIcon from '@iconify/icons-ion/close';
 import outlineSupervisedUserCircle from '@iconify/icons-ic/outline-supervised-user-circle';
+import blogIcon from '@iconify/icons-carbon/blog'
 
 
 const scope = 'components.Common.Header'
@@ -72,7 +73,7 @@ const HeaderNavBrand = styled(Link)`
     height: 30px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1300px) {
     flex: 0 0 300px;
   }
 
@@ -332,6 +333,12 @@ const MainNav = styled(Nav)`
     }
   }
 
+  @media screen and (max-width: 1299px) {
+    >li {
+      margin-right: 30px;
+    }
+  }
+
   @media screen and (max-width: 1199px) {
     display: block !important;
     height: auto;
@@ -414,7 +421,7 @@ const SubNav = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1300px) {
     flex: 0 0 300px;
   }
 
@@ -606,7 +613,6 @@ class Header extends Component {
     }
 
     let subMenuResources = [
-      'blog',
       'remote-work-expense-management',
     ]
 
@@ -734,6 +740,12 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
+                  <li>
+                    <Link activeClassName="active" to={`${this.props.langUri}/blog/`}>
+                      <Icon className="menu-icon" icon={blogIcon} />
+                      <FormattedMessage id={`${scope}.blog`} />
+                    </Link>
+                  </li>
                   <li className={this.state.showSub === 'resources' && 'show-sub'}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
@@ -744,11 +756,6 @@ class Header extends Component {
                       <Icon className="menu-icon-more" icon={bxChevronDown} />
                     </span>
                     <ul>
-                      <li>
-                        <Link activeClassName="active" to={`${this.props.langUri}/blog`}>
-                          <FormattedMessage id={`${scope}.blog`} />
-                        </Link>
-                      </li>
                       <li>
                         <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
                           <FormattedMessage id={`${scope}.remote`} />

@@ -1031,6 +1031,11 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.0.1.tgz#8401e6915ffa0a35c04b3ba3199b1709ff2e91c4"
   integrity sha512-vxEz3niHjxEKCuGcXWakysVknQKtxCYjSrnTjvR3M78iw3O+vdSKZ0nxsGSIT7LswYVwigbgCkljpjcHqfK3tw==
 
+"@iconify/icons-carbon@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-carbon/-/icons-carbon-1.0.2.tgz#970ecb4ed29f8e422dee7ae92163754d0e10fa23"
+  integrity sha512-AV/SKR+HXwoMV2SYzEXqlSkZtSKUMGzo8VhhcHVnvXAPuQCRKJEOQqHZYvLN2m5UcskmZBmxtB3b1H7w5WN39w==
+
 "@iconify/icons-el@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@iconify/icons-el/-/icons-el-1.0.3.tgz#611ad9b352386c7ccbc4ad7f1874f4af93e93a38"

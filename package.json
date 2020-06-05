@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@iconify/icons-bx": "^1.0.1",
+    "@iconify/icons-carbon": "^1.0.2",
     "@iconify/icons-el": "^1.0.3",
     "@iconify/icons-ic": "^1.0.12",
     "@iconify/icons-ion": "^1.0.12",
