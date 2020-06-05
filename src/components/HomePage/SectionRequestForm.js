@@ -23,7 +23,10 @@ const Wrapper = styled.div`
 
 class SectionRequestForm extends Component {
   handleSubmit = values => {
-    navigate(`${this.props.langUri}/request-demo?thanks=1`)
+     if (typeof window !== 'undefined') {
+      navigate(`${this.props.langUri}/request-demo?thanks=1`)
+    }    
+    
   }
   render() {
     const { formatMessage } = this.props.intl

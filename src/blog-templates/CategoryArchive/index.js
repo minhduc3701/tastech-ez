@@ -18,7 +18,11 @@ const CategoryArchive = props => {
   let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.slug')
 
    if (props.langKey !== currentCategoryLang) {
-     navigate(`${props.langUri}/blog`)
+    if (typeof window === 'undefined') {
+      return <div></div>
+    }
+     
+    navigate(`${props.langUri}/blog`)
    }
 
   return (
