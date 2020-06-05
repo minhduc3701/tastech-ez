@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import moment from 'moment'
+// import moment from 'moment'
 import { Col, Collapse } from 'reactstrap'
 import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
@@ -10,16 +10,15 @@ import {
   SectionPricing,
   SectionFAQ,
   Question,
-  SectionContact
 } from '../../styles/pricingStyle'
 import Subscription from '../../components/PricingPage/Subscription'
 import SectionRequestForm from '../../components/HomePage/SectionRequestForm'
 import { Icon } from '@iconify/react'
 import outlineMinus from '@iconify/icons-ic/outline-minus'
 import outlinePlus from '@iconify/icons-ic/outline-plus'
-import outlineEmail from '@iconify/icons-ic/outline-email'
+// import outlineEmail from '@iconify/icons-ic/outline-email'
 
-import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 const scope = 'page.pricingPlan'
 
 const subscriptions = [
@@ -92,7 +91,7 @@ const subscriptions = [
   // }
 ]
 
-const availableFrom = '2020-01-06'
+// const availableFrom = '2020-01-06'
 
 const PricingPlan = props => {
   const [collapse, setCollapse] = useState(false)

@@ -518,6 +518,7 @@ const CampaignHeader = styled.div`
     color: #ffffff;
   }
   p{
+    margin-right:20px;
     padding: 0 10px 0 0;
   }
   a{
@@ -656,10 +657,12 @@ class Header extends Component {
           <CampaignHeader isShow={this.props.showCampaign} >
             <p>
               <Icon icon={outlineNewReleases} color="#fff" width="20px" height="20px" />
-              New!  Simplify your expense claim even at home with
+              
+              <FormattedMessage id={`${scope}.newSimplify`} />
             </p>
             <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank">
-              Remote Work and Expense Management Solution
+              
+              <FormattedMessage id={`${scope}.remoteSolution`} />
               </a>
             <div>
               <Icon icon={closeIcon} color="#fff" width="20px" height="20px" onClick={this.props.hideCampaign} />
@@ -687,7 +690,7 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.home`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                  <li className={this.state.showSub === 'features' && 'show-sub'}>
                     <span
                       className={this.state.activeMenuFeatures ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'features')}
@@ -731,14 +734,13 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.aboutUs`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub ? 'show-sub' : ''}>
+                  <li className={this.state.showSub === 'resources' && 'show-sub'}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'resources')}
                     >
                       <Icon className="menu-icon" icon={baselinePostAdd} />
-                      {/* <FormattedMessage id={`${scope}.feature`} /> */}
-                        Resources
+                      <FormattedMessage id={`${scope}.resources`} />
                       <Icon className="menu-icon-more" icon={bxChevronDown} />
                     </span>
                     <ul>
@@ -749,8 +751,7 @@ class Header extends Component {
                       </li>
                       <li>
                         <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
-                          {/* <FormattedMessage id={`${scope}.expenseManagement`} /> */}
-                          Remote Work Expense Management
+                          <FormattedMessage id={`${scope}.remote`} />
                         </Link>
                       </li>
                     </ul>

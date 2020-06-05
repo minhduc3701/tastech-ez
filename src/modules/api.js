@@ -24,7 +24,7 @@ export default {
   searchBlogPosts(keyword) {
     return axios({
       method: 'get',
-      url: `${endpoints.blog}/posts/?search=${keyword}&orderby=date&order=desc&per_page=100&_fields=author,id,excerpt,title,link`
+      url: `${endpoints.blog}/posts/?search=${keyword}&orderby=date&order=desc&_fields=slug,title,excerpt,content,polylang_current_lang,jetpack_featured_media_url,date,categories&per_page=200`
     })
   },
 }

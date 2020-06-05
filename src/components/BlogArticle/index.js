@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from 'gatsby'
 import _ from 'lodash'
-import { FormattedMessage } from 'react-intl'
 
 import { Wrapper, Thumbnail, Categories, Title, Excerpt, Meta } from './style'
 import { Icon } from '@iconify/react'
@@ -11,7 +10,6 @@ import BlogReadingTime from '../BlogReadingTime'
 
 const BlogArticle = props => {
   const { post } = props
-
   return (
     <Wrapper>
       {!_.isEmpty(_.get(post, 'featured_media.source_url')) &&

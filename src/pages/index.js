@@ -1,6 +1,7 @@
 import React from "react"
 import { layoutWithLangKey } from '../components/layout'
 import { Row, Col } from 'reactstrap'
+import { Link } from 'gatsby'
 
 import SEO from "../components/seo"
 import Article from '../components/Article'
@@ -10,13 +11,13 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import { HomeWrapper, CampaignWrapper, VideoWrapper, BannerContent, SliderItem, Heading, SectionIntro, SeeMore, SectionHowWeWork, Customer } from '../styles/homeStyle'
+import { HomeWrapper, CampaignWrapper, VideoWrapper, BannerContent, Heading, SectionIntro, SeeMore, SectionHowWeWork, Customer } from '../styles/homeStyle'
 import { Container, CustomRow } from '../styles'
 
-import banner1 from '../images/home-page/banner-1.jpg'
-import banner2 from '../images/home-page/banner-2.jpg'
-import banner3 from '../images/home-page/banner-3.jpg'
-import banner4 from '../images/home-page/banner-4.jpg'
+// import banner1 from '../images/home-page/banner-1.jpg'
+// import banner2 from '../images/home-page/banner-2.jpg'
+// import banner3 from '../images/home-page/banner-3.jpg'
+// import banner4 from '../images/home-page/banner-4.jpg'
 import intro1 from '../images/home-page/1.png'
 import intro2 from '../images/home-page/2.png'
 import intro3 from '../images/home-page/3.png'
@@ -35,7 +36,7 @@ import roundBusinessCenter from '@iconify/icons-ic/round-business-center'
 import baselinePerson from '@iconify/icons-ic/baseline-person'
 import baselinePlus from '@iconify/icons-ic/baseline-plus'
 import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
-import { FormattedMessage, injectIntl ,FormattedHTMLMessage} from 'react-intl'
+import { FormattedMessage, injectIntl, FormattedHTMLMessage } from 'react-intl'
 
 const scope = 'page.HomePage'
 
@@ -82,6 +83,16 @@ const LinkDetail = link => (
 
 const IndexPage = props => {
   const { formatMessage } = props.intl
+  let youtubeLink
+  switch (props.langKey) {
+    case 'id':
+      youtubeLink = 'https://www.youtube.com/embed/ddaf2t0_Tgg'
+      break;
+    case 'en':
+    default:
+      youtubeLink = 'https://www.youtube.com/embed/l6ClKu66vI8'
+      break;
+  }
   return (
     <HomeWrapper>
       <SEO
@@ -91,7 +102,7 @@ const IndexPage = props => {
       />
 
       <Slider {...sliderSettings}>
-    
+
         <CampaignWrapper>
           <Container>
             <CustomRow spacing={20}>
@@ -103,18 +114,21 @@ const IndexPage = props => {
                   <h2>
                     <FormattedMessage id={`${scope}.WFHtitle`} />
                   </h2>
-                  
+
                   <p>
                     <FormattedMessage id={`${scope}.WFHdes`} />
                   </p>
-                  <a href={`${props.langUri}remote-work-expense-management/`} target="_blank">
+                  {/* <a href={`${props.langUri}remote-work-expense-management/`} >
                     <FormattedMessage id={`${scope}.WFHbtn`} />
-                  </a>
+                  </a> */}
+                  <Link to={`${props.langUri}remote-work-expense-management/`}>
+                    <FormattedMessage id={`${scope}.WFHbtn`} />
+                  </Link>
                 </BannerContent>
               </Col>
               <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
                 <VideoWrapper>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="100%" src={youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </VideoWrapper>
               </Col>
             </CustomRow>
@@ -279,7 +293,7 @@ const IndexPage = props => {
                 </ul>
               </Customer>
             </Col>
-            <Col md={6}>
+            <Col md={6} >
               <Customer color="#f4b400" className="owner">
                 <header>
                   <div className="icon">

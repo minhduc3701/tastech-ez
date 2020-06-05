@@ -43,7 +43,6 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  pointter-events: none;
 
   * {
     display: none;

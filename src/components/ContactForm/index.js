@@ -52,6 +52,7 @@ class Contact extends React.Component {
       isCaptchaVerified: false
     }
   }
+  
   handleInputChange = event => {
     const target = event.target
     const value = target.type === 'checkbox' ? target.checked : target.value
@@ -63,15 +64,14 @@ class Contact extends React.Component {
   }
 
   handleSubmit = async event => {
+    const { formatMessage } = this.props.intl
     event.preventDefault()
     this.setState({
       submitting: true
     })
     try {
       await api.sendContactForm(this.state)
-      toast.success(
-        'Send message successful! We will contact with you soon!  Thanks a lot!'
-      )
+      toast.success(formatMessage({id:`${scope}.contactFormSuccess`}))
       this.setState({
         firstName: '',
         lastName: '',
@@ -83,7 +83,7 @@ class Contact extends React.Component {
       this.setState({
         isCaptchaVerified: false
       })
-      toast.error('Something went wrong! Please try again!')
+      toast.error(formatMessage({id:`${scope}.contactFormError`}))
     }
 
     resetRecaptcha()

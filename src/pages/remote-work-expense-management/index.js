@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Col } from 'reactstrap'
 import { layoutWithLangKey } from "../../components/layout"
 import SEO from '../../components/seo'
@@ -18,7 +18,6 @@ import {
 
 import baselineNetworkCheck from '@iconify/icons-ic/baseline-network-check';
 import outlinePoll from '@iconify/icons-ic/outline-poll'
-import baselineEventAvailable from '@iconify/icons-ic/baseline-event-available'
 import { Container, CustomRow } from '../../styles'
 import { Link } from 'gatsby'
 import { Icon } from '@iconify/react'
@@ -32,13 +31,23 @@ const scope = 'page.remoteWork'
 
 const RemoteWorkExpenseManagement = props => {
   const { formatMessage } = props.intl
+  let youtubeLink
+  switch (props.langKey) {
+    case 'id':
+      youtubeLink = 'https://www.youtube.com/embed/ddaf2t0_Tgg'
+      break;
+    case 'en':
+    default:
+      youtubeLink = 'https://www.youtube.com/embed/l6ClKu66vI8'
+      break;
+  }
   return (
     <Wrapper>
       <SEO
         // title={formatMessage({ id: "about.meta.title" })}
-        title={`Remote Working & Expense Management | EzBizTrip`}
+        title = {formatMessage({id:`${scope}.seoTitle`}) }
         // description={formatMessage({ id: "about.meta.description" })}
-        description={`Automate & Manage your daily expense even when working remotely. Track, manage and snap photos of your receipts. Enquire with us today.`}
+        description={formatMessage({id:`${scope}.automateManage`}) }
         lang={props.langKey}
         uri={props.uri}
       />
@@ -63,7 +72,7 @@ const RemoteWorkExpenseManagement = props => {
             </Col>
             <Col xl={{ size: 7, order: 1 }} lg={12} className="video" >
               <VideoWrapper>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l6ClKu66vI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="CampaignVideo" width="100%" height="100%" src={youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </VideoWrapper>
             </Col>
 
@@ -71,13 +80,12 @@ const RemoteWorkExpenseManagement = props => {
         </Container>
       </Banner>
 
-      <SectionIntro mt={150}>
+      <SectionIntro mt={150} >
         <Container>
           <CustomRow spacing={70}>
             <Col md={6}>
               <h2>
                 <FormattedMessage id={`${scope}.s1_title`} />
-
               </h2>
               <p className="mb25">
                 <FormattedMessage id={`${scope}.s1_content`} />

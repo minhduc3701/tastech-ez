@@ -113,7 +113,6 @@ class Layout extends Component {
 };
 
  export const layoutWithLangKey = C => props => {
-  console.log("layout", props)
   return (
     
    <Layout {...props}>

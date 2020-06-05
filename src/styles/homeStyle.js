@@ -192,8 +192,7 @@ export const SectionIntro = styled.div`
     margin-bottom: 70px;
     text-align: center;
     font-family:work sans;
-    
-     
+    color:#171e45;
   }
   .article {
     padding: 0 50px;
@@ -245,6 +244,7 @@ export const SectionHowWeWork = styled.div`
       position: relative;
     }
   }
+  
 
   ${Heading} {
     color: #fff;
@@ -265,6 +265,12 @@ export const SectionHowWeWork = styled.div`
 `
 
 export const Customer = styled.div`
+  
+    &:hover{
+      box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.16); 
+      border: solid 1px #fff;
+    }
+  
   border-radius: 15px;
   border: solid 1px #e4e4e4;
   background-color: #ffffff;
@@ -410,9 +416,10 @@ export const Customer = styled.div`
 `
 
 export const CampaignWrapper = styled.div`
-  padding: 70px 8.33333% 0;
+  padding: 80px 8.33333% 0;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
+  height:max-content;
   background-color: #F5F5F5;
   background-repeat: no-repeat;
   position: relative;
@@ -433,7 +440,7 @@ export const CampaignWrapper = styled.div`
   }
 
   .video{
-    padding-right: 100px !important;
+    padding-right: 90px !important;
   }
  
   @media screen and (max-width: 1319px) {
@@ -441,9 +448,11 @@ export const CampaignWrapper = styled.div`
       padding-right: 20px !important;
     }
   }
-
+  @media screen and (max-width: 1299px) {
+    padding: 60px 8.33333% 0;
+  }
   @media screen and (max-width: 1199px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 8.33333% 0;
     background-color: #fff;
 
     &:before {
@@ -451,13 +460,15 @@ export const CampaignWrapper = styled.div`
       height: 500px;
     }
     .video{
-      display: none;
+      margin-top:40px;
+      padding-right: 0;
     }
   }
 
 
   @media screen and (max-width: 575px) {
-    padding: 70px 8.33333% 0;
+    padding: 50px 8.33333% 0;
+    margin-bottom:30px;
   }
 
 
@@ -525,19 +536,19 @@ export const BannerContent = styled.div`
 
 export const VideoWrapper = styled.div`
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 
   iframe{
     z-index: 2;
     border-radius: 20px;
-    max-width: 512px;
-    max-height: 360px;
-    min-width: 382px;
-    min-height: 268px;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
   
   @media screen and (max-width: 1199px) {

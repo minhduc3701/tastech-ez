@@ -46,6 +46,7 @@ export const Title = styled.h2`
   color: #323232;
   line-height: 1.5;
   margin-bottom: 30px;
+  font-family:work sans;
 `
 
 export const ContactWrapper = styled.div`

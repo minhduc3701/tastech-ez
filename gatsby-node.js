@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       createPage({
         path: `${langUri}blog/${node.slug}`,
-        component: path.resolve(`./src/templates/Post/index.js`),
+        component: path.resolve(`./src/blog-templates/Post/index.js`),
         context: {
           slug: node.slug,
         },
@@ -96,7 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
         createPage({
           path: `${langUri}blog/category/${node.slug}`,
-          component: path.resolve(`./src/templates/Archive/index.js`),
+          component: path.resolve(`./src/blog-templates/CategoryArchive/index.js`),
           context: {
             slug: node.slug
           },
@@ -104,12 +104,44 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
+  const blogTags = await graphql(`
+    {
+      allWordpressTag(filter: {count: {gt: 0}}) {
+        edges {
+          node {
+            id
+            count
+            name
+            slug
+            description
+          }
+        }
+      }
+    }
+
+  `)
+
+  _.get(blogTags, 'data.allWordpressTag.edges', []).forEach(({ node }) => {
+      langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+          path: `${langUri}blog/tag/${node.slug}`,
+          component: path.resolve(`./src/blog-templates/TagArchive/index.js`),
+          context: {
+            slug: node.slug
+          },
+        })
+      })
+    })
+
+
     langs.forEach(lang => {
         let langUri = lang === defaultLangKey ? '' : `/${lang}/`
 
         createPage({
               path: `${langUri}blog/search`,
-              component: path.resolve(`./src/templates/Search/index.js`)
+              component: path.resolve(`./src/blog-templates/Search/index.js`)
           })
       })
 

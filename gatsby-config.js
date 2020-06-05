@@ -85,6 +85,18 @@ module.exports = {
             ],
             useACF: false
         }
+    },
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        pathToCreateStoreModule: './src/state/createStore',
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        cleanupOnClient: true
+      }
     }
-  ],
+  ]
 }
