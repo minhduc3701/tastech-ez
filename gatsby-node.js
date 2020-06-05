@@ -1,5 +1,7 @@
 const {langs, defaultLangKey} = require('./src/data/config')
- 
+const path = require("path")
+const _ = require("lodash")
+
 const isIndexPage = (page, lang) => page.path === `/${lang}`
 const is404Page = page => page.path.startsWith('/404')
 
@@ -18,17 +20,11 @@ exports.onCreatePage = ({page, actions}) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createRedirect } = actions;
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createRedirect, createPage } = actions;
 
   // Oops
-  createRedirect({
-    fromPath: `/feature`,
-    toPath: `/features`,
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-
   createRedirect({
     fromPath: `/privacy-policy`,
     toPath: `/policy`,
@@ -49,4 +45,105 @@ exports.createPages = ({ graphql, actions }) => {
     isPermanent: true,
     redirectInBrowser: true,
   });
+
+  const blogPosts = await graphql(`
+    {
+      allWordpressPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+
+  `)
+
+    _.get(blogPosts, 'data.allWordpressPost.edges', []).forEach(({ node }) => {
+    langs.forEach(lang => {
+      let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+      createPage({
+        path: `${langUri}blog/${node.slug}`,
+        component: path.resolve(`./src/blog-templates/Post/index.js`),
+        context: {
+          slug: node.slug,
+        },
+      })
+    })
+  })
+
+  const blogCategories = await graphql(`
+    {
+      allWordpressCategory(filter: {count: {gt: 0}}) {
+        edges {
+          node {
+            id
+            count
+            name
+            slug
+            description
+          }
+        }
+      }
+    }
+
+  `)
+
+  _.get(blogCategories, 'data.allWordpressCategory.edges', []).forEach(({ node }) => {
+      langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+          path: `${langUri}blog/category/${node.slug}`,
+          component: path.resolve(`./src/blog-templates/CategoryArchive/index.js`),
+          context: {
+            slug: node.slug
+          },
+        })
+      })
+    })
+
+  const blogTags = await graphql(`
+    {
+      allWordpressTag(filter: {count: {gt: 0}}) {
+        edges {
+          node {
+            id
+            count
+            name
+            slug
+            description
+          }
+        }
+      }
+    }
+
+  `)
+
+  _.get(blogTags, 'data.allWordpressTag.edges', []).forEach(({ node }) => {
+      langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+          path: `${langUri}blog/tag/${node.slug}`,
+          component: path.resolve(`./src/blog-templates/TagArchive/index.js`),
+          context: {
+            slug: node.slug
+          },
+        })
+      })
+    })
+
+
+    langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+              path: `${langUri}blog/search`,
+              component: path.resolve(`./src/blog-templates/Search/index.js`)
+          })
+      })
+
+
 }

@@ -420,5 +420,13 @@ module.exports = {
   "page.AboutUs.contactFormSuccess": "Send message successful! We will contact with you soon!  Thanks a lot!",
   "page.AboutUs.contactFormError": "Something went wrong! Please try again!",
   "notfound404.notfound": "NOT FOUND",
-  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness."
+  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness.",
+  "blog.categories": "Categories",
+  "blog.readMore": "Read more",
+  "blog.minRead": "min read",
+  "blog.editor": "Editor",
+  "blog.mustRead": "Must read",
+  "blog.relatedPosts": "Related read",
+  "blog.searchPlaceholder": "Search",
+  "blog.searchResults": "Search Results for"
 }

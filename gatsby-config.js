@@ -65,6 +65,38 @@ module.exports = {
         // other options
       },
     },
-    `gatsby-plugin-meta-redirect`
-  ],
+    `gatsby-plugin-meta-redirect`,
+
+    {
+        resolve: `gatsby-source-wordpress`,
+        options: {
+            // Specify the URL of the WordPress source
+            baseUrl: `https://blog.ezbiztrip.com`,
+            protocol: `http`,
+            hostingWPCOM: false,
+            includedRoutes: [
+              '**/posts',
+              '**/pages',
+              '**/tags',
+              '**/categories',
+              '**/media',
+              '**/searchResults',
+              '**/users'
+            ],
+            useACF: false
+        }
+    },
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        pathToCreateStoreModule: './src/state/createStore',
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        cleanupOnClient: true
+      }
+    }
+  ]
 }

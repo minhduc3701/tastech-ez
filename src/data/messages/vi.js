@@ -420,5 +420,13 @@ module.exports = {
   "page.AboutUs.contactFormSuccess": "Send message successful! We will contact with you soon!  Thanks a lot!",
   "page.AboutUs.contactFormError": "Something went wrong! Please try again!",
   "notfound404.notfound": "NOT FOUND",
-  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness."
+  "notfound404.sadness": "You just hit a route that doesn't exist... the sadness.",
+  "blog.categories": "Chuyên mục",
+  "blog.readMore": "Xem thêm",
+  "blog.minRead": "phút đọc",
+  "blog.editor": "Biên tập",
+  "blog.mustRead": "Nên đọc",
+  "blog.relatedPosts": "Bài viết liên quan",
+  "blog.searchPlaceholder": "Tìm kiếm",
+  "blog.searchResults": "Kết quả tìm kiếm"
 }

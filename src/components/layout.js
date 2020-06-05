@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { css } from 'glamor'
+import _ from 'lodash'
 
 import en from '../data/messages/en';
 import vi from '../data/messages/vi';
@@ -85,7 +86,7 @@ class Layout extends Component {
       }
     `}
         render={data => {
-          const url = location.pathname;
+          const url = _.get(location, 'pathname', '')
           const { langs, defaultLangKey } = data.site.siteMetadata.languages;
           const langKey = getCurrentLangKey(langs, defaultLangKey, url);
           const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, '/');
@@ -111,18 +112,23 @@ class Layout extends Component {
   }
 };
 
-export const layoutWithLangKey = C => props => (
-  <Layout {...props}>
-    {({ langKey, defaultLangKey, homeLink }) => (
-      <C
-        {...props}
-        langUri={homeLink}
-        langKey={langKey}
-        defaultLangKey={defaultLangKey}
-      />
-    )}
-  </Layout>
-)
+ export const layoutWithLangKey = C => props => {
+  return (
+    
+   <Layout {...props}>
+     {({ langKey, defaultLangKey, homeLink }) => (
+       <C
+         {...props}
+         langUri={homeLink}
+         langKey={langKey}
+         defaultLangKey={defaultLangKey}
+       />
+     )}
+   </Layout>
+   )}
+
+
+
 
 Layout.propTypes = {
   children: PropTypes.func,

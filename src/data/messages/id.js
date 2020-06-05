@@ -420,5 +420,13 @@ module.exports = {
   "page.AboutUs.contactFormError": "Terjadi kesalahan, mphon coba kembali!",
   "page.travelPolicyManagement.1": "Manajemen kebijakan perjalanan bisnis yang mudah dengan EzBizTrip",
   "notfound404.notfound": "TIDAK DITEMUKAN",
-  "notfound404.sadness": "Anda baru saja memilih rute yang tidak ada ...."
+  "notfound404.sadness": "Anda baru saja memilih rute yang tidak ada ....",
+    "blog.categories": "Categories",
+  "blog.readMore": "Read more",
+  "blog.minRead": "min read",
+  "blog.editor": "Editor",
+  "blog.mustRead": "Must read",
+  "blog.relatedPosts": "Related read",
+  "blog.searchPlaceholder": "Search",
+  "blog.searchResults": "Search Results for"
 }

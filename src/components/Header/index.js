@@ -745,12 +745,9 @@ class Header extends Component {
                     </span>
                     <ul>
                       <li>
-                        <a href={formatMessage({
-                          id: 'link.blog'
-                        })} target="_blank" rel="noopener noreferrer">
-                          <Icon className="menu-icon" icon={baselinePictureInPicture} />
+                        <Link activeClassName="active" to={`${this.props.langUri}/blog`}>
                           <FormattedMessage id={`${scope}.blog`} />
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <Link activeClassName="active" ineHome to={`${this.props.langUri}/remote-work-expense-management/`}>
