@@ -45,6 +45,7 @@ const CategoryArchive = props => {
           <BlogSidebar
           langUri={props.langUri}
           langKey={props.langKey}
+          currentCategorySlug={_.get(props, 'data.wordpressCategory.slug')}
         />
         </Col>
       </Row>

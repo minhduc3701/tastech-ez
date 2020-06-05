@@ -13,6 +13,7 @@ import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import BlogArticle from '../../components/BlogArticle'
 import BlogReadingTime from '../../components/BlogReadingTime'
+import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
 
 const Post = props => {
@@ -41,7 +42,7 @@ const Post = props => {
     .slice(0, 3)  
 
     let currentTags = currentPost.tags && currentPost.tags.filter(tag => !_.includes(['top', 'right', 'hot'], tag.slug))
-    console.log(currentPost)
+
   return (
     <Wrapper>
       <SEO
@@ -56,45 +57,52 @@ const Post = props => {
       }
 
     <Container>
-      <Row className="justify-content-center">
-        <Col lg={10}>
       <CurrentPost>
-        <PostHeader>
-          <Meta>
-            <span>
-              <Icon icon={baselineAccessTime} />
-              {currentPost.date}
-            </span>
-            <BlogReadingTime post={currentPost} />
-          </Meta>
+      <Row>
+        <Col lg={{size: 10, order: 2}}>
+              <PostHeader>
+                <Meta>
+                  <span>
+                    <Icon icon={baselineAccessTime} />
+                    {currentPost.date}
+                  </span>
+                  <BlogReadingTime post={currentPost} />
+                </Meta>
 
-          {
-              !_.isEmpty(currentPost.categories) &&
-          <Categories>
-            {currentPost.categories
-              .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
-          </Categories>
-      }
+                {
+                    !_.isEmpty(currentPost.categories) &&
+                <Categories>
+                  {currentPost.categories
+                    .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
+                </Categories>
+            }
 
-        </PostHeader>
-        <PostTitle dangerouslySetInnerHTML={{ __html: currentPost.title }} />
-        <PostContent dangerouslySetInnerHTML={{ __html: currentPost.content }} />
+              </PostHeader>
+              <PostTitle dangerouslySetInnerHTML={{ __html: currentPost.title }} />
+              <PostContent dangerouslySetInnerHTML={{ __html: currentPost.content }} />
 
-        {!_.isEmpty(currentTags) &&
-        <Tags>
-            {currentTags
-              .map(tag => <Link key={tag.slug} to={`${props.langUri}/blog/tag/${tag.slug}`}>{tag.name}</Link>)}
-        </Tags>
-      }
-        <PostFooter>
-          <p className="info">
-            <strong><FormattedMessage id="blog.editor" /></strong>
-            {currentPost.author.name}
-          </p>
-        </PostFooter>
-      </CurrentPost>
-              </Col>
+              {!_.isEmpty(currentTags) &&
+              <Tags>
+                  {currentTags
+                    .map(tag => <Link key={tag.slug} to={`${props.langUri}/blog/tag/${tag.slug}`}>{tag.name}</Link>)}
+              </Tags>
+            }
+              <PostFooter>
+                <p className="info">
+                  <strong><FormattedMessage id="blog.editor" /></strong>
+                  {currentPost.author.name}
+                </p>
+              </PostFooter>
+          </Col>
+
+        <Col lg={{size: 1, order: 1}}>
+          <BlogSharing
+            url={props.location.href}
+            title={currentPost.title}
+          />
+        </Col>
       </Row>
+      </CurrentPost>
 
       {!_.isEmpty(relatedPost) && (
       <RelatedPosts>
