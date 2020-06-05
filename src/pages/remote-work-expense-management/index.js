@@ -36,6 +36,9 @@ const RemoteWorkExpenseManagement = props => {
     case 'id':
       youtubeLink = 'https://www.youtube.com/embed/ddaf2t0_Tgg'
       break;
+    case 'vi':
+        youtubeLink = 'https://www.youtube.com/embed/IPBIfCEaaf0'
+        break;
     case 'en':
     default:
       youtubeLink = 'https://www.youtube.com/embed/l6ClKu66vI8'
