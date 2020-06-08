@@ -190,7 +190,7 @@ export const SectionTitle = styled.h2`
   margin-bottom: 50px;
 `
 
-export const BackButton = styled.div`
+export const BackButton = styled.span`
   cursor: pointer;
   display: inline-flex;
   align-items: center;

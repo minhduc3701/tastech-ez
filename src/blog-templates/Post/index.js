@@ -20,6 +20,9 @@ import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
 
 const extractContent = str => {
+  if (typeof document === 'undefined') {
+      return str
+    }
   let span = document.createElement('span')
   span.innerHTML = str
   return span.textContent || span.innerText
@@ -75,7 +78,9 @@ const Post = props => {
           onClick={() => window.history.back()}
           className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'}
         >
+        test before
         <Icon icon={baselineArrowBack} />
+        test after
       </BackButton>
     }
 
