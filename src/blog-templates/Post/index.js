@@ -55,13 +55,14 @@ const Post = props => {
         description={""}
         lang={props.langKey}
         uri={props.uri}
+        image={_.get(currentPost, 'featured_media.source_url')}
       />
 
       {_.get(currentPost, 'featured_media.source_url') &&
         <FeatureImage src={currentPost.featured_media.source_url}></FeatureImage>
       }
 
-      {window &&
+      {typeof window !== 'undefined' &&
         <BackButton
           onClick={() => window.history.back()}
           className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'       }

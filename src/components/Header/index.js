@@ -696,7 +696,7 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.home`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub === 'features' && 'show-sub'}>
+                  <li className={this.state.showSub === 'features' ? 'show-sub' : ''}>
                     <span
                       className={this.state.activeMenuFeatures ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'features')}
@@ -746,7 +746,7 @@ class Header extends Component {
                       <FormattedMessage id={`${scope}.blog`} />
                     </Link>
                   </li>
-                  <li className={this.state.showSub === 'resources' && 'show-sub'}>
+                  <li className={this.state.showSub === 'resources' ? 'show-sub' : ''}>
                     <span
                       className={this.state.activeMenuResources ? 'active' : ''}
                       onClick={this.toggleShowSub.bind(this, 'resources')}

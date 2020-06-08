@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Wrapper } from './style'
 import BlogSearchBox from '../BlogSearchBox'
 import BlogCategories from '../BlogCategories'
@@ -11,13 +11,6 @@ const BlogSidebar = props => {
 
   // 103365231056941
 
-  useEffect(() => {
-    // if (window.FB) {
-    //   var el = this.refs.fbplugins.getDOMNode();
-    //   window.FB.XFBML.parse(el);
-    // }
-  }, [])
-
   return (
   <Wrapper>
     <BlogSearchBox {...props} />
@@ -25,10 +18,12 @@ const BlogSidebar = props => {
     <BlogHotNews {...props} />
     <BlogBannerRight {...props} />
     
+    {/* not work */}
     <FacebookProvider appId="103365231056941">
-      <Page href="https://www.facebook.com" tabs="timeline" />
-      <Like href="http://www.facebook.com" colorScheme="dark" showFaces share />
+      <Page href="https://www.facebook.com/ezbiztrip" tabs="timeline" />
+      <Like href="http://www.facebook.com/ezbiztrip" colorScheme="dark" showFaces share />
     </FacebookProvider> 
+
   </Wrapper>
   )
 }

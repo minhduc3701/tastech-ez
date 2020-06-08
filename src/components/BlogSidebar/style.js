@@ -12,4 +12,7 @@ export const Wrapper = styled.div`
     margin-bottom: 30px;
   }
 
+    @media screen and (max-width: 767px) {
+      margin-top: 50px;
+    }
 `
