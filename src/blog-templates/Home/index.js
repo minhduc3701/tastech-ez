@@ -5,7 +5,7 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl } from 'react-intl'
 
-import { Wrapper } from '../../styles/blogStyle'
+import { Wrapper } from './style'
 import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
 import BlogBannerTop from '../../components/BlogBannerTop'
@@ -14,7 +14,7 @@ import BlogList from '../../components/BlogList'
 
 
 const Blog = props => {
-  let posts = props.data.allWordpressPost.edges.filter(edge => edge.node.polylang_current_lang === props.langKey)
+  let posts = props.data.allWordpressPost.edges
 
   return (
     <Wrapper>
@@ -49,8 +49,8 @@ const Blog = props => {
 
 
 export const query = graphql`
-  query {
-    allWordpressPost(sort: {fields: date, order: DESC}) {
+  query($lang: String!) {
+    allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}}) {
       edges {
         node {
           title
