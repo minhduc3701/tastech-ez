@@ -78,9 +78,7 @@ const Post = props => {
           onClick={() => window.history.back()}
           className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'}
         >
-        test before
         <Icon icon={baselineArrowBack} />
-        test after
       </BackButton>
     }
 
