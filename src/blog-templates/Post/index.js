@@ -5,10 +5,12 @@ import _ from 'lodash'
 import {layoutWithLangKey} from "../../components/layout"
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-import { Wrapper, FeatureImage, CurrentPost, PostTitle, PostHeader, Meta, Categories, Tags, PostContent, PostFooter, RelatedPosts, SectionTitle, BackButton } from './style'
+import { Wrapper, FeatureImage, CurrentPost, PostTitle, PostHeader, Meta, Categories, Tags, PostContent, PostFooter, RelatedPosts, SectionTitle, BackButton, Breadcrumb } from './style'
 import { Icon } from '@iconify/react'
 import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
 import baselineArrowBack from '@iconify/icons-ic/baseline-arrow-back'
+import bxHomeSmile from '@iconify/icons-bx/bx-home-smile'
+import baselineKeyboardArrowRight from '@iconify/icons-ic/baseline-keyboard-arrow-right'
 
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
@@ -16,6 +18,12 @@ import BlogArticle from '../../components/BlogArticle'
 import BlogReadingTime from '../../components/BlogReadingTime'
 import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
+
+const extractContent = str => {
+  let span = document.createElement('span')
+  span.innerHTML = str
+  return span.textContent || span.innerText
+};
 
 const Post = props => {
   let currentPost = props.data.wordpressPost
@@ -47,11 +55,11 @@ const Post = props => {
     .slice(0, 3)  
 
     let currentTags = currentPost.tags && currentPost.tags.filter(tag => !_.includes(['top', 'right', 'hot'], tag.slug))
-
+    
   return (
     <Wrapper>
       <SEO
-        title={currentPost.title}
+        title={extractContent(currentPost.title)}
         description={""}
         lang={props.langKey}
         uri={props.uri}
@@ -76,6 +84,25 @@ const Post = props => {
       <Row>
         <Col lg={{size: 10, order: 2}}>
               <PostHeader>
+                <Breadcrumb>
+                  <Link to={`${props.langUri}/blog`}>
+                    <Icon icon={bxHomeSmile} />
+                    <FormattedMessage id="blog.homeBlog" />
+                  </Link>
+
+                {
+                  !_.isEmpty(currentPost.categories) &&
+                  <React.Fragment>
+                  <Icon icon={baselineKeyboardArrowRight} />
+                  <Categories>
+                    <ul>
+                    {currentPost.categories
+                      .map(cat => <li><Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link></li>)}
+                      </ul>
+                  </Categories>
+                  </React.Fragment>
+                }
+                </Breadcrumb>
                 <Meta>
                   <span>
                     <Icon icon={baselineAccessTime} />
@@ -83,14 +110,6 @@ const Post = props => {
                   </span>
                   <BlogReadingTime post={currentPost} />
                 </Meta>
-
-                {
-                    !_.isEmpty(currentPost.categories) &&
-                <Categories>
-                  {currentPost.categories
-                    .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
-                </Categories>
-            }
 
               </PostHeader>
               <PostTitle dangerouslySetInnerHTML={{ __html: currentPost.title }} />

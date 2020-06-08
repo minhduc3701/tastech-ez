@@ -9,12 +9,44 @@ export const Wrapper = styled.div`
   margin-top: 40px;
 
   button {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    border: solid 1px #e4e4e4 !important;
+    border-radius: 50%;
     outline: none !important;
 
     &:last-child {
       margin: 0;
     }
+
+    circle {
+      fill: #fff;
+      transition: all .3s ease-in-out;
+
+      + path {
+        fill: #626262;
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    &:hover {
+      border-color: transparent !important;
+
+      circle + path {
+        fill: #fff;
+      }
+    }
+  }
+
+  [aria-label="facebook"]:hover circle {
+    fill: #3b5998;
+  }
+
+  [aria-label="twitter"]:hover circle {
+    fill: #00aced;
+  }
+
+  [aria-label="linkedin"]:hover circle {
+    fill: #007fb1;
   }
 
   @media screen and (max-width: 991px) {
@@ -43,6 +75,11 @@ export const CopyButton= styled.button`
   color: #626262;
   background-color: transparent;
   position: relative;
+
+  &:hover {
+    background-color: #f4b400;
+    color: #fff;
+  }
 `
 
 export const CopyNotify = styled.div`

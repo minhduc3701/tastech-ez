@@ -429,5 +429,6 @@ module.exports = {
   "blog.relatedPosts": "Bài viết liên quan",
   "blog.searchPlaceholder": "Tìm kiếm",
   "blog.searchResults": "Kết quả tìm kiếm",
-  "blog.copied": "Copied"
+  "blog.copied": "Copied",
+  "blog.homeBlog": "Blog"
 }

@@ -98,7 +98,7 @@ class Layout extends Component {
                 locale={langKey}
                 messages={messages[langKey]}
               >
-                <Header langs={langsMenu} langKey={langKey} langUri={homeLink} hideCampaign={this.hideCampaign} showCampaign={showCampaign} />
+                <Header langs={langsMenu} langKey={langKey} langUri={homeLink} hideCampaign={this.hideCampaign} showCampaign={showCampaign} url={url}/>
                 <Content campaign={showCampaign}>
                   {children({ langKey, defaultLangKey, homeLink })}
                 </Content>

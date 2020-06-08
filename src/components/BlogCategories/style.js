@@ -52,7 +52,7 @@ export const Background = styled.div`
     content: "";
     width: 100%;
     height: 100%;
-    background-color: ${props => props.active ? 'rgba(53, 67, 198, 0.8)' : 'rgba(0, 0, 0, 0.2)' };
+    background-color: ${props => props.active ? 'rgba(53, 67, 198, 0.7)' : 'rgba(0, 0, 0, 0.2)' };
     position: absolute;
     top: 0;
     left: 0;

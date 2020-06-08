@@ -23,6 +23,8 @@ import closeIcon from '@iconify/icons-ion/close';
 import outlineSupervisedUserCircle from '@iconify/icons-ic/outline-supervised-user-circle';
 import blogIcon from '@iconify/icons-carbon/blog'
 
+import _ from 'lodash'
+
 
 const scope = 'components.Common.Header'
 
@@ -741,7 +743,11 @@ class Header extends Component {
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to={`${this.props.langUri}/blog/`}>
+                    <Link
+                      activeClassName="active"
+                      className={_.includes(_.get(this.props, 'url'), '/blog/') ? 'active' : ''}
+                      to={`${this.props.langUri}/blog`}
+                    >
                       <Icon className="menu-icon" icon={blogIcon} />
                       <FormattedMessage id={`${scope}.blog`} />
                     </Link>

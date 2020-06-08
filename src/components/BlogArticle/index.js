@@ -29,8 +29,10 @@ const BlogArticle = props => {
       {
               !_.isEmpty(post.categories) &&
           <Categories>
+            <ul>
             {post.categories
-              .map(cat => <Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link>)}
+              .map(cat => <li><Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link></li>)}
+            </ul>
           </Categories>
       }
       <Title>

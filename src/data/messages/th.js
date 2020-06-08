@@ -429,5 +429,6 @@ module.exports = {
   "blog.relatedPosts": "Related read",
   "blog.searchPlaceholder": "Search",
   "blog.searchResults": "Search Results for",
-  "blog.copied": "Copied"
+  "blog.copied": "Copied",
+  "blog.homeBlog": "Blog"
 }
