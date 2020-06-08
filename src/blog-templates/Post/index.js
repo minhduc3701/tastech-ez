@@ -62,10 +62,10 @@ const Post = props => {
         <FeatureImage src={currentPost.featured_media.source_url}></FeatureImage>
       }
 
-      {typeof window !== 'undefined' &&
+      {(typeof window !== 'undefined') &&
         <BackButton
           onClick={() => window.history.back()}
-          className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'       }
+          className={_.get(currentPost, 'featured_media.source_url') ? '' : 'relative'}
         >
         <Icon icon={baselineArrowBack} />
       </BackButton>
