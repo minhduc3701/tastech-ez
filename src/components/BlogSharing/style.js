@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
   button {
     margin-bottom: 20px;
     outline: none !important;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   @media screen and (max-width: 991px) {
@@ -24,4 +28,28 @@ export const Wrapper = styled.div`
       margin-right: 20px;
     }
   }
+`
+
+export const CopyButton= styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: solid 1px #e4e4e4;
+  border-radius: 50%;
+  outline: none !important;
+  font-size: 20px;
+  color: #626262;
+  background-color: transparent;
+  position: relative;
+`
+
+export const CopyNotify = styled.div`
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  display: inline-block;
+  font-size: 10px;
 `
