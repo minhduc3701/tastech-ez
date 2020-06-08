@@ -17,17 +17,47 @@ export const CurrentPost = styled.div`
 `
 
 export const PostHeader = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `
 
+export const Breadcrumb = styled.div`
+  margin-bottom: 10px;
+  margin-right: 30px;
+
+  > a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #626262;
+
+    svg {
+      font-size: 24px;
+      margin-right: 10px;
+      position: relative;
+      top: -3px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: #f4b400;
+    }
+  }
+
+  > svg {
+    font-size: 20px;
+    margin: 0 7px;
+    position: relative;
+    top: -1px;
+  }
+`
+
 export const Meta = styled.div`
   color: #626262;
   font-size: 14px;
-  margin-right: 30px;
+  margin-bottom: 10px;
 
   svg {
     font-size: 24px;
@@ -58,20 +88,32 @@ export const Meta = styled.div`
 `
 
 export const Categories = styled.div`
-  >a {
-    position: relative;
+  display: inline-block;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      list-style-type: none;
+      display: inline-block;
+
+      &:after {
+        content: ",";
+        margin-right: 5px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  a {
     font-size: 15px;
     font-weight: 600;
-    margin-bottom: 15px;
     color: #626262;
-
-    &:after {
-      content: ", "
-    }
-
-    &:last-child:after {
-      display: none;
-    }
 
     &:hover {
       text-decoration: none;

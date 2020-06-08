@@ -5,6 +5,8 @@ import {
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon
 } from 'react-share'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -23,12 +25,16 @@ const BlogSharing = ({ url, title }) => {
   return (
     <Wrapper>
       <FacebookShareButton url={url} title={title}>
-        <FacebookIcon round size={40}/>
+        <FacebookIcon round size={38}/>
       </FacebookShareButton>
 
       <TwitterShareButton url={url} title={title}>
-        <TwitterIcon round size={40}/>
+        <TwitterIcon round size={38}/>
       </TwitterShareButton>
+
+      <LinkedinShareButton url={url} title={title}>
+        <LinkedinIcon round size={38}/>
+      </LinkedinShareButton>
 
       <CopyToClipboard
         text={url}

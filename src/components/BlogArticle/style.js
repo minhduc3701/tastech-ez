@@ -10,21 +10,31 @@ export const Thumbnail = styled.div`
 
 export const Categories = styled.div`
   margin-bottom: 10px;
+  
+  ul {
+    padding: 0;
+    margin: 0;
 
-  >a {
-    position: relative;
+    li {
+      position: relative;
+      list-style-type: none;
+      display: inline-block;
+
+      &:after {
+        content: ",";
+        margin-right: 5px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  a {
     font-size: 15px;
     font-weight: 600;
-    margin-bottom: 15px;
     color: #626262;
-
-    &:after {
-      content: ", "
-    }
-
-    &:last-child:after {
-      display: none;
-    }
 
     &:hover {
       text-decoration: none;
