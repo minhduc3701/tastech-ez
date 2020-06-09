@@ -8,9 +8,6 @@ import BlogHotNews from '../BlogHotNews'
 import { FacebookProvider, Page, Like } from 'react-facebook'
 
 const BlogSidebar = props => {
-
-  // 103365231056941
-
   return (
   <Wrapper>
     <BlogSearchBox {...props} />

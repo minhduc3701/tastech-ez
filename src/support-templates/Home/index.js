@@ -8,9 +8,9 @@ import { injectIntl } from 'react-intl'
 import { Wrapper } from './style'
 import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
-import BlogBannerTop from '../../components/BlogBannerTop'
-import BlogSidebar from '../../components/BlogSidebar'
-import BlogList from '../../components/BlogList'
+import SupportList from '../../components/SupportList'
+import SupportCategories from '../../components/SupportCategories'
+import SupportSearchBox from '../../components/SupportSearchBox'
 import BlogNoResult from '../../components/BlogNoResult'
 import _ from 'lodash'
 
@@ -19,32 +19,25 @@ const Blog = props => {
 
   return (
     <Wrapper>
+      <SEO title="Support" />
+
+      <SupportSearchBox langUri={props.langUri} />
+      <SupportCategories
+        langUri={props.langUri}
+        langKey={props.langKey}
+      />
+
     <Container>
-      <SEO title="Blog" />
-
-      <BlogBannerTop
-          langUri={props.langUri}
-          langKey={props.langKey}
-        />
-
-
-      <Row>
-        <Col md={8}>
+      <Row className="justify-content-center">
+        <Col lg={10}>
           {_.isEmpty(posts) ?
            <BlogNoResult />
            :
-          <BlogList 
+          <SupportList 
             posts={posts}
             langUri={props.langUri}
           />
         }
-        </Col>
-        <Col md={4}>
-          <BlogSidebar
-          langUri={props.langUri}
-          langKey={props.langKey}
-        />
-
         </Col>
       </Row>
     </Container>
@@ -58,13 +51,8 @@ export const query = graphql`
     allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}, _links: {about: {elemMatch: {href: {regex: $domain}}}}} ) {
       nodes {
           title
-          excerpt
           content
           slug
-          date(formatString: "MMMM DD, YYYY")
-          featured_media {
-            source_url
-          }
           categories {
             name
             slug

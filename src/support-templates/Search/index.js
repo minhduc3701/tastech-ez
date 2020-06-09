@@ -122,7 +122,7 @@ const Search = (props) => {
 export const query = graphql`
   query {
     allWordpressCategory(filter: {slug: {nin: ["en", "vi", "id", "th"]}}) {
-          nodes {
+            nodes {
               wordpress_id
               name
               slug

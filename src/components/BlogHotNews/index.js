@@ -13,8 +13,7 @@ return (
     query={graphql`
       query {
         allWordpressPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {slug: {eq: "hot"}}}} ) {
-          edges {
-            node {
+          nodes {
               slug
               title
               content
@@ -22,15 +21,14 @@ return (
                 source_url
               }
               polylang_current_lang
-            }
           }
         }
       }
       `}
 
       render={data => {
-        let posts = data.allWordpressPost.edges
-          .filter(({ node }) => _.get(node, 'polylang_current_lang') === props.langKey )
+        let posts = data.allWordpressPost.nodes
+          .filter(node => _.get(node, 'polylang_current_lang') === props.langKey )
 
         if (_.isEmpty(posts)) {
           return <div></div>
@@ -43,7 +41,7 @@ return (
           <div className="widget-content">
             {posts
               .slice(0, 5)
-              .map(({node}) => (
+              .map(node => (
               <Post key={node.slug}>
                 {!_.isEmpty(_.get(node, 'featured_media.source_url')) &&
                   <Thumbnail>

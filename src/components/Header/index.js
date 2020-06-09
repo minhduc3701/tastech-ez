@@ -770,12 +770,14 @@ class Header extends Component {
                     </ul>
                   </li>
                   <li>
-                    <a href={formatMessage({
-                      id: 'link.support'
-                    })} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      activeClassName="active"
+                      className={_.includes(_.get(this.props, 'url'), '/support/') ? 'active' : ''}
+                      to={`${this.props.langUri}/support`}
+                    >
                       <Icon className="menu-icon" icon={outlineAnnouncement} />
                       <FormattedMessage id={`${scope}.support`} />
-                    </a>
+                    </Link>
                   </li>
                 </MainNav>
                 <SelectLanguage langs={this.props.langs} />

@@ -80,7 +80,24 @@ module.exports = {
               '**/tags',
               '**/categories',
               '**/media',
-              '**/searchResults',
+              '**/users'
+            ],
+            useACF: false
+        }
+    },
+    {
+        resolve: `gatsby-source-wordpress`,
+        options: {
+            // Specify the URL of the WordPress source
+            baseUrl: `https://support.ezbiztrip.com`,
+            protocol: `http`,
+            hostingWPCOM: false,
+            includedRoutes: [
+              '**/posts',
+              '**/pages',
+              '**/tags',
+              '**/categories',
+              '**/media',
               '**/users'
             ],
             useACF: false

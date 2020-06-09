@@ -14,7 +14,7 @@ const BlogList = props => {
         <Row>
       { posts
         .slice(0, Math.min(posts.length, page * perPage))
-        .map(({ node }, index) => (
+        .map((node, index) => (
           <Col sm={6} key={index}>
           <BlogArticle
             post={node}

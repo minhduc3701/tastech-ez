@@ -52,22 +52,20 @@ return (
     query={graphql`
       query {
         allWordpressPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {slug: {eq: "top"}}}} ) {
-          edges {
-            node {
+          nodes {
               slug
               featured_media {
                 source_url
               }
               polylang_current_lang
-            }
           }
         }
       }
       `}
 
       render={data => {
-        let posts = data.allWordpressPost.edges
-          .filter(({ node }) => _.get(node, 'polylang_current_lang') === props.langKey && !_.isEmpty(node.featured_media) )
+        let posts = data.allWordpressPost.nodes
+          .filter(node => _.get(node, 'polylang_current_lang') === props.langKey && !_.isEmpty(node.featured_media) )
 
         if (_.isEmpty(posts)) {
           return <div></div>
@@ -78,7 +76,7 @@ return (
            <Slider {...sliderSettings}>
             {posts
               .slice(0, 5)
-              .map(({node}) => (
+              .map(node => (
               <div key={node.slug}>
                 <PostLink
                   style={{backgroundImage: `url(${_.get(node, 'featured_media.source_url')})`}}

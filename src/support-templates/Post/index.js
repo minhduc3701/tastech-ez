@@ -26,7 +26,7 @@ const extractContent = str => {
   let div = document.createElement('div')
   div.innerHTML = str
   return div.textContent || div.innerText
-}
+};
 
 const Post = props => {
   let currentPost = props.data.wordpressPost
@@ -39,7 +39,7 @@ const Post = props => {
     navigate(`${props.langUri}/blog`)
   }
 
-  let relatedPosts = props.data.allWordpressPost.nodes
+  let relatedPost = props.data.allWordpressPost.nodes
     .filter(node => {
       if (node.polylang_current_lang !== currentPost.polylang_current_lang || node.slug === currentPost.slug) {
         return false
@@ -69,9 +69,7 @@ const Post = props => {
         image={_.get(currentPost, 'featured_media.source_url')}
       />
 
-      {_.get(currentPost, 'featured_media.source_url') &&
-        <FeatureImage src={currentPost.featured_media.source_url}></FeatureImage>
-      }
+      SUPPORT PAGE
 
       {(typeof window !== 'undefined') &&
         <BackButton
@@ -141,13 +139,13 @@ const Post = props => {
       </Row>
       </CurrentPost>
 
-      {!_.isEmpty(relatedPosts) && (
+      {!_.isEmpty(relatedPost) && (
       <RelatedPosts>
         <SectionTitle>
           <FormattedMessage id="blog.relatedPosts" />
         </SectionTitle>
         <Row>
-          { relatedPosts.map((node, index) => (
+          { relatedPost.map((node, index) => (
               <Col sm={4} key={index}>
               <BlogArticle
                 post={node}

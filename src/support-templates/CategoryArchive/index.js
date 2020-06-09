@@ -9,8 +9,7 @@ import { Wrapper, PageTitle } from './style'
 import { Container } from '../../styles'
 
 import { Row, Col } from 'reactstrap'
-import BlogSidebar from  '../../components/BlogSidebar'
-import BlogList from '../../components/BlogList'
+import SupportList from '../../components/SupportList'
 
 const CategoryArchive = props => {
 
@@ -22,7 +21,7 @@ const CategoryArchive = props => {
       return <div></div>
     }
      
-    navigate(`${props.langUri}/blog`)
+    navigate(`${props.langUri}/support`)
    }
 
   return (
@@ -35,22 +34,13 @@ const CategoryArchive = props => {
       />
 
     <Container>
-      <Row>
-        <Col md={8}>
-
-        <PageTitle>{_.get(props, 'data.wordpressCategory.name')}</PageTitle>
-
-          <BlogList 
+      <Row className="justify-content-center">
+        <Col lg={10}>
+          <PageTitle>{_.get(props, 'data.wordpressCategory.name')}</PageTitle>
+          <SupportList 
             posts={posts}
             langUri={props.langUri}
           />
-        </Col>
-        <Col md={4}>
-          <BlogSidebar
-          langUri={props.langUri}
-          langKey={props.langKey}
-          currentCategorySlug={_.get(props, 'data.wordpressCategory.slug')}
-        />
         </Col>
       </Row>
     </Container>
@@ -64,13 +54,8 @@ export const query = graphql`
     allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
       nodes {
           title
-          excerpt
           content
           slug
-          date(formatString: "MMMM DD, YYYY")
-          featured_media {
-            source_url
-          }
           categories {
             name
             slug
