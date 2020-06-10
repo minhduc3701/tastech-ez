@@ -10,18 +10,23 @@ import { Container } from '../../styles'
 
 import { Row, Col } from 'reactstrap'
 import SupportList from '../../components/SupportList'
+import SupportCategories from '../../components/SupportCategories'
+import SupportSearchBox from '../../components/SupportSearchBox'
 
 const CategoryArchive = props => {
 
   let posts = _.get(props.data, 'allWordpressPost.nodes', [])
-  let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.slug')
+  let currentCategoryLang = [
+    _.get(props, 'data.wordpressCategory.parent_element.slug'),
+    _.get(props, 'data.wordpressCategory.parent_element.parent_element.slug')
+    ]
 
-   if (props.langKey !== currentCategoryLang) {
+   if (!_.includes(currentCategoryLang, props.langKey)) {
     if (typeof window === 'undefined') {
       return <div></div>
     }
      
-    navigate(`${props.langUri}/support`)
+     navigate(`${props.langUri}/support`)
    }
 
   return (
@@ -32,11 +37,17 @@ const CategoryArchive = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-
+    
+    <SupportSearchBox langUri={props.langUri} />
+    <SupportCategories
+      langUri={props.langUri}
+      langKey={props.langKey}
+      currentCategorySlug={_.get(props, 'data.wordpressCategory.slug')}
+      currentParentCategory={_.get(props, 'data.wordpressCategory.parent_element')}
+    />
     <Container>
       <Row className="justify-content-center">
         <Col lg={10}>
-          <PageTitle>{_.get(props, 'data.wordpressCategory.name')}</PageTitle>
           <SupportList 
             posts={posts}
             langUri={props.langUri}
@@ -60,15 +71,18 @@ export const query = graphql`
             name
             slug
           }
-          polylang_current_lang
       }
     }
 
     wordpressCategory(slug: {eq: $slug}) {
       slug
-      name
       parent_element {
         slug
+        name
+        description
+        parent_element {
+          slug
+        }
       }
     }
   

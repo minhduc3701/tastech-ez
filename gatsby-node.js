@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPosts = await graphql(`
     {
-      allWordpressPost(filter: {_links: {about: {elemMatch: {href: {regex: "/blog.ezbiztrip.com/" }}}}}) {
+      allWordpressPost(filter: {link: {regex: "/blog.ezbiztrip.com/"}} ) {
         nodes {
             slug
         }
@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogCategories = await graphql(`
     {
-      allWordpressCategory(filter: {count: {gt: 0}, _links: {about: {elemMatch: {href: {regex: "/blog.ezbiztrip.com/" }}}}}) {
+      allWordpressCategory(filter: {count: {gt: 0}, link: {regex: "/blog.ezbiztrip.com/"}} ) {
         nodes {
             count
             slug
@@ -99,30 +99,30 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-  const blogTags = await graphql(`
-    {
-      allWordpressTag(filter: {count: {gt: 0}, _links: {about: {elemMatch: {href: {regex: "/blog.ezbiztrip.com/" }}}}}) {
-        nodes {
-            count
-            slug
-        }
-      }
-    }
-  `)
-
-  _.get(blogTags, 'data.allWordpressTag.nodes', []).forEach(node => {
-      langs.forEach(lang => {
-        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
-
-        createPage({
-          path: `${langUri}blog/tag/${node.slug}`,
-          component: path.resolve(`./src/blog-templates/TagArchive/index.js`),
-          context: {
-            slug: node.slug
-          },
-        })
-      })
-    })
+   const blogTags = await graphql(`
+     {
+       allWordpressTag(filter: {count: {gt: 0}} ) {
+         nodes {
+             count
+             slug
+         }
+       }
+     }
+   `)
+ 
+   _.get(blogTags, 'data.allWordpressTag.nodes', []).forEach(node => {
+       langs.forEach(lang => {
+         let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+ 
+         createPage({
+           path: `${langUri}blog/tag/${node.slug}`,
+           component: path.resolve(`./src/blog-templates/TagArchive/index.js`),
+           context: {
+             slug: node.slug
+           },
+         })
+       })
+     })
 
 
     langs.forEach(lang => {
@@ -149,7 +149,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const supportPosts = await graphql(`
     {
-      allWordpressPost(filter: {_links: {about: {elemMatch: {href: {regex: "/support.ezbiztrip.com/" }}}}}) {
+      allWordpressPost(filter: {link: {regex: "/support.ezbiztrip.com/"}} ) {
         nodes {
             slug
         }
@@ -172,29 +172,58 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
+   const supportParentCategories = await graphql(`
+     {
+       allWordpressCategory(filter: {link: {regex: "/support.ezbiztrip.com/"}} ) {
+         nodes {
+             slug
+         }
+       }
+     }
+   `)
+
+   _.get(supportParentCategories, 'data.allWordpressCategory.nodes', []).forEach(node => {
+    langs.forEach(lang => {
+      let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+      
+      createPage({
+        path: `${langUri}support/category/${node.slug}`,
+        component: path.resolve(`./src/support-templates/CategoryArchive/index.js`),
+        context: {
+          slug: node.slug
+        },
+      })
+    })
+  })
+
   const supportCategories = await graphql(`
     {
-      allWordpressCategory(filter: {_links: {about: {elemMatch: {href: {regex: "/support.ezbiztrip.com/" }}}}}) {
-        nodes {
-            slug
+      allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
+      nodes {
+        slug
+        parent_element {
+          slug
         }
       }
     }
+    }
   `)
 
-  _.get(supportCategories, 'data.allWordpressCategory.nodes', []).forEach(node => {
+   _.get(supportCategories, 'data.allWordpressCategory.nodes', []).forEach(node => {
       langs.forEach(lang => {
         let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+ 
+         createPage({
+           path: `${langUri}support/category/${node.parent_element.slug}/${node.slug}`,
+           component: path.resolve(`./src/support-templates/CategoryArchive/index.js`),
+           context: {
+             slug: node.slug
+           },
+         })         
+ 
+       })
+     })
 
-        createPage({
-          path: `${langUri}support/category/${node.slug}`,
-          component: path.resolve(`./src/support-templates/CategoryArchive/index.js`),
-          context: {
-            slug: node.slug
-          },
-        })
-      })
-    })
 
     langs.forEach(lang => {
       let langUri = lang === defaultLangKey ? '' : `/${lang}/`

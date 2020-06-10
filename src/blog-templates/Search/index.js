@@ -12,7 +12,6 @@ import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
 import BlogSidebar from  '../../components/BlogSidebar'
 import BlogList from '../../components/BlogList'
-import BlogNoResult from '../../components/BlogNoResult'
 
 import { PlaceholderLoadingNews } from '../../components/PlaceholderLoading'
 
@@ -98,9 +97,7 @@ const Search = (props) => {
           </Row>
         )}
         
-        {!loading && _.isEmpty(posts) && <BlogNoResult />}
-
-      { posts &&
+      { !loading &&
            <BlogList 
              posts={posts}
              langUri={props.langUri}

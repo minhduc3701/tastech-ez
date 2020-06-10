@@ -98,9 +98,7 @@ const Search = (props) => {
           </Row>
         )}
         
-        {!loading && _.isEmpty(posts) && <BlogNoResult />}
-
-      { posts &&
+      { !loading &&
            <BlogList 
              posts={posts}
              langUri={props.langUri}

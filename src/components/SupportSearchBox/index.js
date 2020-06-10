@@ -23,6 +23,8 @@ const SupportSearchBox = props => {
     }
   }
 
+  return <div></div>
+
 return (
   <div>
     <Form

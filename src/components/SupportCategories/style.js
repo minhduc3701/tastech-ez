@@ -14,7 +14,7 @@ export const GuideText = styled.p`
   margin-bottom: 40px;
 `
 
-export const MainCategories = styled.div`
+export const ParentCategories = styled.div`
   ul {
     padding: 0;
     margin: 0;
@@ -23,13 +23,13 @@ export const MainCategories = styled.div`
 
     li {
       list-style-type: none;
-      flex: 0 0 20%;
+      width: 20%;
       padding: 10px;
     }
   }
 `
 
-export const MainCategory = styled(Link)`
+export const ParentCategory = styled(Link)`
   display: block;
   text-align: center;
   order: ${props => props.order};
@@ -69,10 +69,74 @@ export const MainCategory = styled(Link)`
   }
 `
 
-export const CurrentCategory = styled.div`
-  
+export const CurrentParentCategory = styled.div`
+  text-align: center;
+  margin-top: 80px;
+
+  .title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #171e45;
+    margin-bottom: 25px;
+  }
+
+  .description {
+    font-size: 15px;
+    color: #626262;
+
+    code, svg {
+      display: none;
+    }
+  }
 `
 
-export const SubCategories = styled.div`
-  
+export const Categories = styled.div`
+  margin-top: 80px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+`
+
+export const Category = styled(Link)`
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 12px;
+
+  .title {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    transition: all .3s ease-in-out;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .title {
+      color: #f4b400;
+    }
+  }
+
+  &.active {
+    border-bottom-color: #f4b400;
+
+    .title {
+      color: #f4b400;
+    }
+  }
 `

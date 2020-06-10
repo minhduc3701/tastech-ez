@@ -18,15 +18,7 @@ import BlogArticle from '../../components/BlogArticle'
 import BlogReadingTime from '../../components/BlogReadingTime'
 import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
-
-const extractContent = str => {
-  if (typeof document === 'undefined') {
-      return str
-    }
-  let div = document.createElement('div')
-  div.innerHTML = str
-  return div.textContent || div.innerText
-};
+import { parseString } from '../../modules/extractContent'
 
 const Post = props => {
   let currentPost = props.data.wordpressPost
@@ -62,7 +54,7 @@ const Post = props => {
   return (
     <Wrapper>
       <SEO
-        title={extractContent(currentPost.title)}
+        title={parseString(currentPost.title)}
         description={""}
         lang={props.langKey}
         uri={props.uri}

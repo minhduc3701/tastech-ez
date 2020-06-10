@@ -11,7 +11,6 @@ import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
 import BlogSidebar from  '../../components/BlogSidebar'
 import BlogList from '../../components/BlogList'
-import BlogNoResult from '../../components/BlogNoResult'
 
 const TagArchive = props => {
 
@@ -33,14 +32,10 @@ const TagArchive = props => {
 
         <PageTitle>{_.get(props, 'data.wordpressTag.name')}</PageTitle>
 
-        {_.isEmpty(posts) ?
-          <BlogNoResult />
-          :
           <BlogList 
             posts={posts}
             langUri={props.langUri}
           />
-        }
         </Col>
         <Col md={4}>
           <BlogSidebar

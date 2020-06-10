@@ -4,28 +4,14 @@ import { StaticQuery, graphql } from "gatsby"
 import { Wrapper, Category, Background } from './style'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
-
-const findImage = str => {
-  if (!str || typeof document === 'undefined') {
-      return null
-    }
-  let div = document.createElement('div')
-  div.innerHTML = str
-  let firstImage = div.getElementsByTagName('img')[0]
-
-  if (!firstImage) {
-    return null
-  }
-  
-  return firstImage.outerHTML
-}
+import { findImg } from '../../modules/extractContent'
 
 const BlogCategories = props => {
 return (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressCategory(filter: {slug: {nin: ["en", "vi", "id", "th"]}, count: {gt: 0}, _links: {about: {elemMatch: {href: {regex: "/blog.ezbiztrip.com/" }}}}}) {
+        allWordpressCategory(filter: {slug: {nin: ["en", "vi", "id", "th"]}, count: {gt: 0}, link: {regex: "/blog.ezbiztrip.com/"}} ) {
           nodes {
               count
               name
@@ -58,7 +44,7 @@ return (
                    to={`${props.langUri}/blog/category/${node.slug}`}
                    className="image-hover"
                  >
-                   <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: findImage(_.get(node, 'description')) }} />
+                   <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: findImg(_.get(node, 'description')) }} />
       
                    <span dangerouslySetInnerHTML={{ __html: node.name }} />
 

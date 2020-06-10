@@ -11,10 +11,8 @@ import { Row, Col } from 'reactstrap'
 import BlogBannerTop from '../../components/BlogBannerTop'
 import BlogSidebar from '../../components/BlogSidebar'
 import BlogList from '../../components/BlogList'
-import BlogNoResult from '../../components/BlogNoResult'
-import _ from 'lodash'
 
-const Blog = props => {
+const BlogHome = props => {
   let posts = props.data.allWordpressPost.nodes
 
   return (
@@ -30,14 +28,10 @@ const Blog = props => {
 
       <Row>
         <Col md={8}>
-          {_.isEmpty(posts) ?
-           <BlogNoResult />
-           :
           <BlogList 
             posts={posts}
             langUri={props.langUri}
           />
-        }
         </Col>
         <Col md={4}>
           <BlogSidebar
@@ -55,7 +49,7 @@ const Blog = props => {
 
 export const query = graphql`
   query($lang: String!, $domain: String!) {
-    allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}, _links: {about: {elemMatch: {href: {regex: $domain}}}}} ) {
+    allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}, link: {regex: $domain}} ) {
       nodes {
           title
           excerpt
@@ -75,4 +69,4 @@ export const query = graphql`
   }
   `
 
-export default layoutWithLangKey(injectIntl(Blog))
+export default layoutWithLangKey(injectIntl(BlogHome))

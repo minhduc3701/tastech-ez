@@ -4,49 +4,24 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import {
   Wrapper,
   GuideText,
-  MainCategories,
-  MainCategory
+  ParentCategories,
+  ParentCategory,
+  CurrentParentCategory,
+  Categories,
+  Category
 } from './style'
 import { Container } from '../../styles'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
-
-const findImage = str => {
-  if (!str || typeof document === 'undefined') {
-      return null
-    }
-  let div = document.createElement('div')
-  div.innerHTML = str
-  let firstImage = div.getElementsByTagName('svg')[0]
-  
-  if (!firstImage) {
-    return null
-  }
-
-  return firstImage.outerHTML
-}
-
-const findOrder = str => {
-  if (!str || typeof document === 'undefined') {
-      return null
-    }
-  let div = document.createElement('div')
-  div.innerHTML = str
-  let order = div.getElementsByTagName('code')[0]
-  
-  if (!order) {
-    return 0
-  }
-
-  return order.getAttribute('data-order')
-}
+import { findOrder, findSvg } from '../../modules/extractContent'
+import { Row, Col } from 'reactstrap'
 
 const SupportCategories = props => {
 return (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {slug: {in: ["en", "vi", "id", "th"]}}, _links: {about: {elemMatch: {href: {regex: "/support.ezbiztrip.com/" }}}}}) {
+        allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
           nodes {
               count
               name
@@ -54,6 +29,11 @@ return (
               description
               parent_element {
                 slug
+                name
+                description
+                parent_element {
+                  slug
+                }
               }
           }
         }
@@ -62,32 +42,59 @@ return (
 
       render={data => {
         let categories = data.allWordpressCategory.nodes
-           .filter(node => _.get(node, 'parent_element.slug') === props.langKey)
+            .filter(node => _.includes([_.get(node, 'parent_element.slug'), _.get(node, 'parent_element.parent_element.slug')], props.langKey) )
 
-        if (_.isEmpty(categories)) {
-          return <div></div>
-        }
+
+        let parentCategories = _.uniqWith(categories.map(cat => cat.parent_element), _.isEqual)
+
+        let filteredCategories = categories.filter(cat => cat.parent_element.slug === _.get(props, 'currentParentCategory.slug'))
 
         return (
          <Wrapper>
           <Container>
            <GuideText><FormattedMessage id="support.exploreByCategory" /></GuideText>
           
-          <MainCategories>
+          <ParentCategories>
             <ul>
-           {!_.isEmpty(categories) && categories.map(node => (
-              <li key={node.slug} style={{order: findOrder(_.get(node, 'description'))}}>
-                 <MainCategory
-                   to={`${props.langUri}/support/category/${node.slug}`}
-                   active={node.slug === _.get(props, 'currentCategorySlug')}
+           {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
+              <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
+                 <ParentCategory
+                   to={`${props.langUri}/support/category/${cat.slug}`}
+                   className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
-                  <div className="icon" dangerouslySetInnerHTML={{ __html: findImage(_.get(node, 'description')) }} />
-                  <h3 className="title" dangerouslySetInnerHTML={{ __html: node.name }} />
-                 </MainCategory>
+                  <div className="icon" dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} />
+                  <h3 className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
+                 </ParentCategory>
                  </li>
                  ))}
             </ul>
-           </MainCategories>
+           </ParentCategories>
+
+          {_.get(props, 'currentParentCategory') && (
+            <CurrentParentCategory>
+              <Row className="justify-content-center">
+                <Col lg={6} md={8}>
+                  <h2 className="title" dangerouslySetInnerHTML={{ __html: _.get(props, 'currentParentCategory.name')}} />
+                  <div className="description" dangerouslySetInnerHTML={{ __html: _.get(props, 'currentParentCategory.description')}} />
+                </Col>
+              </Row>
+            </CurrentParentCategory>
+          )}
+
+          <Categories>
+            <ul>
+              {!_.isEmpty(filteredCategories) && filteredCategories.map(cat => (
+                <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
+                  <Category
+                     to={`${props.langUri}/support/category/${cat.parent_element.slug}/${cat.slug}`}
+                     className={cat.slug === _.get(props, 'currentCategorySlug') ? 'active' : ''}
+                   >
+                    <span className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
+                   </Category>
+                </li>
+                ))}
+            </ul>
+          </Categories>
 
            </Container>
          </Wrapper>
