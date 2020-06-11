@@ -13,6 +13,7 @@ import baselineKeyboardArrowRight from '@iconify/icons-ic/baseline-keyboard-arro
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import BlogSharing from '../../components/BlogSharing'
+import SupportSearchBox from '../../components/SupportSearchBox'
 import SEO from "../../components/seo"
 import { parseString } from '../../modules/extractContent'
 
@@ -37,7 +38,8 @@ const Post = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-
+      
+      <SupportSearchBox langUri={props.langUri} />
     <Container>
       <CurrentPost>
       <Row>

@@ -1,4 +1,36 @@
 import styled from 'styled-components'
+import bg from '../../images/support-page/bg.jpg'
+
+export const Wrapper = styled.div`
+  text-align: center;
+  background-image: src(${bg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0 60px;
+`
+
+export const Title = styled.h2`
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+`
+
+export const TextContact = styled.p`
+  font-size: 15px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`
 
 export const Form = styled.form`
   display: block;
@@ -6,15 +38,15 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
-  border-radius: 10px;
+  border-radius: 28px;
   background-color: #f5f5f5;
   border: none;
   outline: none !important;
   width: 100%;
-  height: 50px;
-  font-size: 14px;
+  height: 55px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 0 65px 0 25px;
+  padding: 0 75px 0 35px;
 
   &::-webkit-input-placeholder {
     color: #626262;
@@ -29,8 +61,8 @@ export const Input = styled.input`
 
 
 export const Button = styled.button`
-  font-size: 24px;
-  padding: 0 20px;
+  font-size: 19px;
+  padding: 0 24px;
   height: 100%;
   display: flex;
   align-items: center;
