@@ -20,7 +20,6 @@ exports.onCreatePage = ({page, actions}) => {
   }
 }
 
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions;
 
@@ -172,7 +171,7 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-  const supportCategories = await graphql(`
+  const supportCategoriesRes = await graphql(`
     {
       allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
       nodes {
@@ -184,12 +183,14 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     }
   `)
-
-   _.get(supportCategories, 'data.allWordpressCategory.nodes', []).forEach(node => {
+  
+  let supportCategories = _.get(supportCategoriesRes, 'data.allWordpressCategory.nodes', [])
+  
+  supportCategories.forEach(node => {
       langs.forEach(lang => {
         let langUri = lang === defaultLangKey ? '' : `/${lang}/`
- 
-         createPage({
+
+        createPage({
            path: `${langUri}support/category/${node.parent_element.slug}/${node.slug}`,
            component: path.resolve(`./src/support-templates/CategoryArchive/index.js`),
            context: {
@@ -199,6 +200,22 @@ exports.createPages = async ({ graphql, actions }) => {
  
        })
      })
+
+   let parentCategories = _.uniqBy(supportCategories.map(cat => cat.parent_element), 'slug')
+
+   parentCategories.forEach(node => {
+      langs.forEach(lang => {
+        let langUri = lang === defaultLangKey ? '' : `/${lang}/`
+
+        createPage({
+           path: `${langUri}support/category/${node.slug}`,
+           component: path.resolve(`./src/support-templates/CategoryRedirect/index.js`),
+           context: {
+             slug: node.slug
+           },
+         })
+      })
+    })
 
 
     langs.forEach(lang => {

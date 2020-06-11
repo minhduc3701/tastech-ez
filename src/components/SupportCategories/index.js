@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 import {
   Wrapper,
@@ -50,14 +50,14 @@ return (
           categories.map(cat => {
             return {
               ...cat.parent_element,
-              children_element: [... categories.filter(f => f.parent_element.slug === cat.parent_element.slug).map(m => _.pick(m, ['name', 'slug', 'description']))]
+              children_element: [...categories.filter(f => f.parent_element.slug === cat.parent_element.slug).map(m => _.pick(m, ['name', 'slug', 'description']))]
             }
           }),
           'slug'
         ).map(p => {
           let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
           return {
-            ... _.pick(p, ['name', 'slug', 'description']),
+            ..._.pick(p, ['name', 'slug', 'description']),
             redirect_slug: redirect.slug
           }
         })

@@ -7,14 +7,11 @@ import { injectIntl, FormattedMessage } from 'react-intl'
 
 import { Wrapper, CurrentPost, PostTitle, PostHeader, PostContent, PostFooter, Breadcrumb } from './style'
 import { Icon } from '@iconify/react'
-import baselineAccessTime from '@iconify/icons-ic/baseline-access-time'
 import bxHomeSmile from '@iconify/icons-bx/bx-home-smile'
 import baselineKeyboardArrowRight from '@iconify/icons-ic/baseline-keyboard-arrow-right'
 
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
-import BlogArticle from '../../components/BlogArticle'
-import BlogReadingTime from '../../components/BlogReadingTime'
 import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
 import { parseString } from '../../modules/extractContent'
@@ -54,7 +51,7 @@ const Post = props => {
 
                   <Icon icon={baselineKeyboardArrowRight} />
 
-                  <Link to={`${props.langUri}/support/category/${currentCategory.parent_element.slug}/${currentCategory.slug}`}>
+                  <Link to={`${props.langUri}/support/category/${currentCategory.parent_element.slug}`}>
                     {currentCategory.parent_element.name}
                   </Link>
 

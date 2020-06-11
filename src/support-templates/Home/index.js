@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql, navigate } from "gatsby"
-import SEO from "../../components/seo"
 import {layoutWithLangKey} from "../../components/layout"
-
+import LoadingPage from '../../components/Common/LoadingPage'
 import { injectIntl } from 'react-intl'
 
 import { Wrapper } from './style'
@@ -40,7 +39,7 @@ const SupportHome = props => {
     
    navigate(`${props.langUri}/support/category/${firstParentCategory.slug}/${firstCategory.slug}`)
 
-  return <div></div>
+  return <LoadingPage height="100vh" />
 }
 
 

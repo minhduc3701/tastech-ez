@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Row, Col } from 'reactstrap'
 import SupportArticle from '../../components/SupportArticle'
 import BlogNoResult from '../../components/BlogNoResult'
 import _ from 'lodash'

@@ -5,7 +5,7 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl } from 'react-intl'
 import _ from 'lodash'
-import { Wrapper, PageTitle } from './style'
+import { Wrapper } from './style'
 import { Container } from '../../styles'
 
 import { Row, Col } from 'reactstrap'
@@ -16,12 +16,9 @@ import SupportSearchBox from '../../components/SupportSearchBox'
 const CategoryArchive = props => {
 
   let posts = _.get(props.data, 'allWordpressPost.nodes', [])
-  let currentCategoryLang = [
-    _.get(props, 'data.wordpressCategory.parent_element.slug'),
-    _.get(props, 'data.wordpressCategory.parent_element.parent_element.slug')
-    ]
+  let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.parent_element.slug')
 
-   if (!_.includes(currentCategoryLang, props.langKey)) {
+   if (currentCategoryLang !== props.langKey) {
     if (typeof window === 'undefined') {
       return <div></div>
     }
