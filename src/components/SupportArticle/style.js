@@ -1,107 +1,75 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Wrapper = styled.article`
-  margin-bottom: 50px;
+  border-bottom: 1px solid #e4e4e4;
 `
 
-export const Thumbnail = styled.div`
-  margin-bottom: 22px;
-`
-
-export const Categories = styled.div`
-  margin-bottom: 10px;
-  
-  ul {
-    padding: 0;
-    margin: 0;
-
-    li {
-      position: relative;
-      list-style-type: none;
-      display: inline-block;
-
-      &:after {
-        content: ",";
-        margin-right: 5px;
-      }
-
-      &:last-child:after {
-        display: none;
-      }
-    }
-  }
-
-  a {
-    font-size: 15px;
-    font-weight: 600;
-    color: #626262;
-
-    &:hover {
-      text-decoration: none;
-      color: #f4b400;
-    }
-  }
+export const Header = styled.div.attrs({className: 'header'})`
+  padding: 25px 0;
+  display: flex;
 `
 
 export const Title = styled.h3`
-  margin-bottom: 15px;
-  line-height: 1;
+  margin: 0;
+  flex: 1;
+  font-size: 19px;
+  font-weight: 600;
+  color: #323232;
+  padding-top: 4px;
+  transition: all .3s ease-in-out;
 
-  a {
-    font-size: 20px;
-    font-weight: 600;
-    color: #000;
-    line-height: 1.4;
-
-    &:hover {
-      text-decoration: none;
-      color: #f4b400;
-    }
+  .header:hover &, &.active {
+    color: #f4b400;
   }
 `
 
-export const Excerpt = styled.div`
-  p {
-    font-size: 15px;
-    color: #626262;
-    line-height: 1.53;
-    display: block;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+export const Toggler = styled.div`
+  display: inline-flex;
+  flex: 0 0 30px;
+  align-items: flex-start;
+  margin-right: 35px;
+  font-size: 30px;
+  color: #f4b400;
 `
 
-export const Meta = styled.div`
+export const LinkDetail = styled(Link)`
+  display: inline-flex;
+  flex: 0 0 32px;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: solid 1px #e4e4e4;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 24px;
   color: #626262;
-  font-size: 14px;
+  transition: all .3s ease-in-out;
 
-  svg {
-    font-size: 24px;
-    margin-right: 12px;
-    position: relative;
-    top: -2px;
+  &:hover {
+    background-color: #e4e4e4;
+    color: #000;
+  }
+`
+
+
+export const Content = styled.div`
+  font-size: 15px;
+  color: #323232;
+  line-height: 1.67;
+  padding-left: 65px;
+  padding-bottom: 20px;
+
+  .wp-block-image, figure {
+    margin: 2rem auto;
+
+    .aligncenter {
+      text-align: center;
+    }
   }
 
-  > span {
-    position: relative;
-
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 2px;
-      height: 2px;
-      background-color: #626262;
-      border-radius: 50%;
-      margin: 0 7px;
-      position: relative;
-      top: -3px;
-    }
-
-    &:last-child:after {
-      display: none;
-    }
+  p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
+    margin-top: 1.5em;
   }
 `

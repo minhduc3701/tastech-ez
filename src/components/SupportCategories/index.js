@@ -17,6 +17,7 @@ import { findOrder, findSvg } from '../../modules/extractContent'
 import { Row, Col } from 'reactstrap'
 
 const SupportCategories = props => {
+
 return (
   <StaticQuery
     query={graphql`
@@ -42,10 +43,24 @@ return (
 
       render={data => {
         let categories = data.allWordpressCategory.nodes
-            .filter(node => _.includes([_.get(node, 'parent_element.slug'), _.get(node, 'parent_element.parent_element.slug')], props.langKey) )
+          .filter(node => _.includes([_.get(node, 'parent_element.slug'), _.get(node, 'parent_element.parent_element.slug')], props.langKey) )
 
 
-        let parentCategories = _.uniqWith(categories.map(cat => cat.parent_element), _.isEqual)
+        let parentCategories = _.uniqBy(
+          categories.map(cat => {
+            return {
+              ...cat.parent_element,
+              children_element: [... categories.filter(f => f.parent_element.slug === cat.parent_element.slug).map(m => _.pick(m, ['name', 'slug', 'description']))]
+            }
+          }),
+          'slug'
+        ).map(p => {
+          let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
+          return {
+            ... _.pick(p, ['name', 'slug', 'description']),
+            redirect_slug: redirect.slug
+          }
+        })
 
         let filteredCategories = categories.filter(cat => cat.parent_element.slug === _.get(props, 'currentParentCategory.slug'))
 
@@ -59,7 +74,7 @@ return (
            {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
               <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
                  <ParentCategory
-                   to={`${props.langUri}/support/category/${cat.slug}`}
+                   to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
                   <div className="icon" dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} />

@@ -37,6 +37,7 @@ export const ParentCategory = styled(Link)`
   border: solid 1px #d0cdcd;
   background: #fff;
   padding: 17px 10px 22px;
+  height: 100%;
   
   * {
       transition: all .3s ease-in-out;
@@ -95,16 +96,13 @@ export const Categories = styled.div`
 
   ul {
     padding: 0;
-    margin: 0;
+    margin: 0 -20px;
+    display: flex;
 
     li {
       list-style-type: none;
       display: inline-block;
-      margin-right: 40px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+      padding: 0 20px;
     }
   }
 `

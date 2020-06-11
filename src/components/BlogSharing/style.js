@@ -51,13 +51,14 @@ export const Wrapper = styled.div`
 
   @media screen and (max-width: 991px) {
     flex-direction: row;
+    align-items: center;
     margin-bottom: 0;
     position: relative;
     top: auto;
 
     button {
       margin-bottom: 0;
-      margin-right: 20px;
+      margin-right: 12px;
     }
   }
 `
@@ -89,4 +90,26 @@ export const CopyNotify = styled.div`
   transform: translate(-50%, 100%);
   display: inline-block;
   font-size: 10px;
+`
+
+export const BackButton = styled.span`
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #626262;
+  position: relative;
+  left: -5px;
+  margin: -5px 0 35px;
+
+  @media screen and (max-width: 991px) {
+    left: auto;
+    margin: 0 20px 0 0;
+  }
 `

@@ -8,18 +8,19 @@ import { injectIntl } from 'react-intl'
 import { Wrapper } from './style'
 import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
-import SupportList from '../../components/SupportList'
-import SupportCategories from '../../components/SupportCategories'
-import SupportSearchBox from '../../components/SupportSearchBox'
 import BlogNoResult from '../../components/BlogNoResult'
 import _ from 'lodash'
 import { findOrder } from '../../modules/extractContent'
 
 const SupportHome = props => {
   let categories = props.data.allWordpressCategory.nodes
-  let firstCategory = categories.filter(node => _.isEqual(findOrder(node.parent_element.description), '1'))[0]
+  let firstParentCategory = _.get(
+        categories.find(node => _.isEqual(findOrder(node.parent_element.description), '1')),
+        'parent_element'
+      )
+  let firstCategory = !_.isEmpty(firstParentCategory) && categories.find(node => (node.parent_element.slug === firstParentCategory.slug) && _.isEqual(findOrder(node.description), '1'))
 
-  if (!_.get(firstCategory, 'parent_element.slug') || !_.get(firstCategory, 'slug')) {
+  if (_.isEmpty(firstParentCategory) || _.isEmpty(firstCategory)) {
     return (
       <Wrapper>
         <Container>
@@ -37,7 +38,7 @@ const SupportHome = props => {
     return <div></div>
   }
     
-  navigate(`${props.langUri}/support/category/${_.get(firstCategory, 'parent_element.slug')}/${_.get(firstCategory, 'slug')}`)
+   navigate(`${props.langUri}/support/category/${firstParentCategory.slug}/${firstCategory.slug}`)
 
   return <div></div>
 }
@@ -48,6 +49,7 @@ export const query = graphql`
     allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {eq: $lang}}}, link: {regex: $domain}} ) {
       nodes {
         slug
+        description
         parent_element {
           slug
           description

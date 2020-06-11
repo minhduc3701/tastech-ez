@@ -18,7 +18,7 @@ export const MainStyle = css`
     transition: all 0.3s ease-in-out;
   }
 
-  img {
+  img, iframe {
     max-width: 100%;
   }
 `

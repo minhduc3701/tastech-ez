@@ -172,30 +172,6 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-   const supportParentCategories = await graphql(`
-     {
-       allWordpressCategory(filter: {link: {regex: "/support.ezbiztrip.com/"}} ) {
-         nodes {
-             slug
-         }
-       }
-     }
-   `)
-
-   _.get(supportParentCategories, 'data.allWordpressCategory.nodes', []).forEach(node => {
-    langs.forEach(lang => {
-      let langUri = lang === defaultLangKey ? '' : `/${lang}/`
-      
-      createPage({
-        path: `${langUri}support/category/${node.slug}`,
-        component: path.resolve(`./src/support-templates/CategoryArchive/index.js`),
-        context: {
-          slug: node.slug
-        },
-      })
-    })
-  })
-
   const supportCategories = await graphql(`
     {
       allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
@@ -219,7 +195,7 @@ exports.createPages = async ({ graphql, actions }) => {
            context: {
              slug: node.slug
            },
-         })         
+         })
  
        })
      })

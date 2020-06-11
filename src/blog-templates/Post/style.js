@@ -114,6 +114,11 @@ export const Categories = styled.div`
     font-size: 15px;
     font-weight: 600;
     color: #626262;
+    display: inline-block;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
 
     &:hover {
       text-decoration: none;
