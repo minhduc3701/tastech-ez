@@ -53,13 +53,13 @@ const Post = props => {
 
                   <Icon icon={baselineKeyboardArrowRight} />
 
-                  <Link to={`${props.langUri}/support/category/${currentCategory.parent_element.slug}`}>
-                    {currentCategory.parent_element.name}
+                  <Link to={`${props.langUri}/support/category/${_.get(currentCategory, 'parent_element.slug')}`}>
+                    {_.get(currentCategory, 'parent_element.name')}
                   </Link>
 
                   <Icon icon={baselineKeyboardArrowRight} />
 
-                  <Link to={`${props.langUri}/support/category/${currentCategory.parent_element.slug}/${currentCategory.slug}`}>
+                  <Link to={`${props.langUri}/support/category/${_.get(currentCategory, 'parent_element.slug')}/${currentCategory.slug}`}>
                     {currentCategory.name}
                   </Link>
                 </Breadcrumb>
