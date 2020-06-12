@@ -33,7 +33,7 @@ const Post = props => {
   return (
     <Wrapper>
       <SEO
-        title={parseString(currentPost.title)}
+        title={parseString(_.get(currentPost, 'title'))}
         description={""}
         lang={props.langKey}
         uri={props.uri}
@@ -59,19 +59,19 @@ const Post = props => {
 
                   <Icon icon={baselineKeyboardArrowRight} />
 
-                  <Link to={`${props.langUri}/support/category/${_.get(currentCategory, 'parent_element.slug')}/${currentCategory.slug}`}>
-                    {currentCategory.name}
+                  <Link to={`${props.langUri}/support/category/${_.get(currentCategory, 'parent_element.slug')}/${_.get(currentCategory, 'slug')}`}>
+                    {_.get(currentCategory, 'name')}
                   </Link>
                 </Breadcrumb>
 
               </PostHeader>
-              <PostTitle dangerouslySetInnerHTML={{ __html: currentPost.title }} />
-              <PostContent dangerouslySetInnerHTML={{ __html: currentPost.content }} />
+              <PostTitle dangerouslySetInnerHTML={{ __html: _.get(currentPost, 'title') }} />
+              <PostContent dangerouslySetInnerHTML={{ __html: _.get(currentPost, 'content') }} />
 
               <PostFooter>
                 <p className="info">
                   <strong><FormattedMessage id="blog.editor" /></strong>
-                  {currentPost.author.name}
+                  {_.get(currentPost, 'author.name')}
                 </p>
               </PostFooter>
           </Col>
@@ -79,7 +79,7 @@ const Post = props => {
         <Col lg={{size: 1, order: 1}}>
           <BlogSharing
             url={props.location.href}
-            title={currentPost.title}
+            title={_.get(currentPost, 'title')}
             showBackButton
           />
         </Col>
