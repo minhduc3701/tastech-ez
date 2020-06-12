@@ -19,12 +19,33 @@ export const ParentCategories = styled.div`
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0 -10px;
 
     li {
       list-style-type: none;
       width: 20%;
       padding: 10px;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    ul {
+      li {
+        width: 33.33%
+      }
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    ul {
+      margin: 0 -5px;
+
+      li {
+        width: 100%;
+        padding: 5px;
+      }
     }
   }
 `
@@ -36,7 +57,7 @@ export const ParentCategory = styled(Link)`
   border-radius: 20px;
   border: solid 1px #d0cdcd;
   background: #fff;
-  padding: 17px 10px 22px;
+  padding: 15px 10px 20px;
   height: 100%;
   
   * {
@@ -44,8 +65,12 @@ export const ParentCategory = styled(Link)`
     }
 
   .icon {
-    font-size: 36px;
     margin-bottom: 10px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .title {
@@ -53,6 +78,7 @@ export const ParentCategory = styled(Link)`
     font-weight: 600;
     color: #222;
     margin-bottom: 0;
+    line-height: 1.5;
   }
 
   &:hover, &.active {
@@ -66,6 +92,28 @@ export const ParentCategory = styled(Link)`
 
     .title {
       color: #f4b400;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    .icon {
+      flex: 0 0 30px;
+      margin-right: 16px;
+      margin-bottom: 0;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .title {
+      font-size: 16px;
     }
   }
 `
