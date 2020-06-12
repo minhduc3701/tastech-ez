@@ -20,7 +20,7 @@ import { parseString } from '../../modules/extractContent'
 const Post = props => {
   let currentPost = props.data.wordpressPost
 
-  let currentCategory = currentPost.categories.find(cat => !_.includes(["en", "vi", "id", "th"], cat.parent_element.slug))
+  let currentCategory = currentPost.categories.find(cat => !_.includes(["en", "vi", "id", "th"], _.get(cat, 'parent_element.slug')))
 
   if (props.langKey !== currentPost.polylang_current_lang) {
     if (typeof window === 'undefined') {

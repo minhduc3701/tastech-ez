@@ -135,4 +135,8 @@ export const News = styled(Loading)`
 
 export const Question = styled(Loading)`
   padding: 35px 65px;
+
+  @media screen and (max-width: 991px) {
+    padding: 30px;
+  }
 `
