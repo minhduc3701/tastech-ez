@@ -28,7 +28,7 @@ return (
   <Wrapper>
   <Container>
     <Row className="justify-content-center">
-    <Col lg={8} xs={10}>
+    <Col lg={8} sm={10} xs={11}>
     <Title><FormattedMessage id="support.search.heading" /></Title>
     <Form
     onSubmit={handleSubmit}

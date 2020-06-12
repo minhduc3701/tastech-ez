@@ -80,6 +80,7 @@ const Post = props => {
           <BlogSharing
             url={props.location.href}
             title={currentPost.title}
+            showBackButton
           />
         </Col>
       </Row>

@@ -16,7 +16,7 @@ import baselineArrowBack from '@iconify/icons-ic/baseline-arrow-back'
 
 import { FormattedMessage } from 'react-intl'
 
-const BlogSharing = ({ url, title }) => {
+const BlogSharing = ({ url, title, showBackButton }) => {
   const [copyNotify, setCopyNotify] = useState(false)
 
   const handleCopy = () => {
@@ -26,7 +26,7 @@ const BlogSharing = ({ url, title }) => {
 
   return (
     <Wrapper>
-      {(typeof window !== 'undefined') &&
+      {showBackButton && (typeof window !== 'undefined') &&
         <BackButton
           onClick={() => window.history.back()}
         >

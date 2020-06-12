@@ -30,7 +30,7 @@ const SupportArticle = props => {
           }
         </Toggler>
         <Title className={isOpen ? 'active' : ''} dangerouslySetInnerHTML={{ __html: post.title }} />
-        <LinkDetail onClick={e => e.stopPropagation()} to={`${props.langUri}/support/${post.slug}`} title={`${props.langUri}/support/${post.slug}`}>
+        <LinkDetail onClick={e => e.stopPropagation()} to={`${props.langUri}/support/${post.slug}`} >
           <Icon icon={baselineKeyboardArrowRight} />
         </LinkDetail>
       </Header>

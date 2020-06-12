@@ -5,20 +5,20 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl, FormattedMessage } from 'react-intl'
 import _ from 'lodash'
-import moment from 'moment'
-import { Wrapper, PageTitle } from './style'
+import { Wrapper, PageTitle, Question } from './style'
 import { Container } from '../../styles'
 
 import { Row, Col } from 'reactstrap'
-import BlogSidebar from  '../../components/BlogSidebar'
-import BlogList from '../../components/BlogList'
 import BlogNoResult from '../../components/BlogNoResult'
+import SupportSearchBox from '../../components/SupportSearchBox'
 
-import { PlaceholderLoadingNews } from '../../components/PlaceholderLoading'
+import { PlaceholderLoadingQuestion } from '../../components/PlaceholderLoading'
 
 import api from '../../modules/api'
 import { connect } from "react-redux"
 
+import { Icon } from '@iconify/react'
+import baselineKeyboardArrowRight from '@iconify/icons-ic/baseline-keyboard-arrow-right'
 
 const Search = (props) => {
   const [loading, setLoading] = useState(false)
@@ -28,7 +28,7 @@ const Search = (props) => {
 
   const fetchData = async str => {
     setLoading(true)
-    const res = await api.searchBlogPosts(str)
+    const res = await api.searchSupportPosts(str)
     setResults(res.data)
     setLoading(false)
   }
@@ -47,22 +47,19 @@ const Search = (props) => {
 
   if (!loading && !_.isEmpty(results)) {
     posts = results
-      .filter(result => result.polylang_current_lang === props.langKey)
+      .filter(result => result.polylang_current_lang === props.langKey && !_.isEmpty(parseCategories(result.categories)))
       .map(result => {
         return {
             title: result.title.rendered,
             excerpt: result.excerpt.rendered,
-            content: result.content.rendered,
             slug: result.slug,
-            date: moment(result.date).format("MMMM DD, YYYY"),
-            featured_media: {
-               source_url: result.jetpack_featured_media_url
-             },
             categories: parseCategories(result.categories),
             polylang_current_lang: result.polylang_current_lang
         }
       })
   }
+
+  console.log(posts)
 
 
   return (
@@ -73,9 +70,11 @@ const Search = (props) => {
         lang={props.langKey}
         uri={props.uri}
       />
+
+      <SupportSearchBox langUri={props.langUri} />
     <Container>
-      <Row>
-        <Col md={8}>
+      <Row className="justify-content-center">
+        <Col lg={10}>
 
         <PageTitle>
           <FormattedMessage id="blog.searchResults" />
@@ -88,28 +87,28 @@ const Search = (props) => {
         </PageTitle>
 
         {loading && (
-          <Row>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-            <Col md={6}><PlaceholderLoadingNews /></Col>
-          </Row>
+          <div>
+            <PlaceholderLoadingQuestion />
+            <PlaceholderLoadingQuestion />
+            <PlaceholderLoadingQuestion />
+          </div>
         )}
         
-      { !loading &&
-           <BlogList 
-             posts={posts}
-             langUri={props.langUri}
-           />
+        { !loading && _.isEmpty(posts) &&
+           <BlogNoResult />
         }
-        </Col>
-        <Col md={4}>
-          <BlogSidebar
-          langUri={props.langUri}
-          langKey={props.langKey}
-        />
+
+        { !loading && !_.isEmpty(posts) && posts.map(post => (
+          <Question to={`${props.langUri}/support/${post.slug}`}>
+            <h3 className="title" dangerouslySetInnerHTML={{ __html: post.title }} />
+            <div className="categories">
+              <span>{_.get(post, 'categories[0].parent_element.name')}</span>
+              <Icon icon={baselineKeyboardArrowRight} />
+              <span className="current">{_.get(post, 'categories[0].name')}</span>
+            </div>
+            <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+          </Question>
+        ))}
         </Col>
       </Row>
     </Container>
@@ -119,18 +118,18 @@ const Search = (props) => {
 
 export const query = graphql`
   query {
-    allWordpressCategory(filter: {slug: {nin: ["en", "vi", "id", "th"]}}) {
-            nodes {
-              wordpress_id
+        allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
+          nodes {
               name
               slug
+              wordpress_id
               parent_element {
                 slug
+                name
               }
           }
         }
-  
-  }
+      }
   `
 const mapStateToProps = state => {
   return {

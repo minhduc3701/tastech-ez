@@ -24,7 +24,6 @@ return (
       query {
         allWordpressCategory(filter: {slug: {regex: "/^(?!uncategorized).*$/"}, parent_element: {parent_element: {slug: {regex: "/^(?!'').*$/"}}}, link: {regex: "/support.ezbiztrip.com/"}}) {
           nodes {
-              count
               name
               slug
               description

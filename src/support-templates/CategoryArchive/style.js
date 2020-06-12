@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  padding: 150px 0;
+  padding-bottom: 150px;
 `
 
 export const PageTitle = styled.h1`

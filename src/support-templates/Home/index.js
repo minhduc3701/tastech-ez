@@ -37,7 +37,7 @@ const SupportHome = props => {
     return <div></div>
   }
     
-   navigate(`${props.langUri}/support/category/${firstParentCategory.slug}/${firstCategory.slug}`)
+  navigate(`${props.langUri}/support/category/${firstParentCategory.slug}/${firstCategory.slug}`)
 
   return <LoadingPage height="100vh" />
 }

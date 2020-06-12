@@ -8,6 +8,7 @@ export const Wrapper = styled.article`
 export const Header = styled.div.attrs({className: 'header'})`
   padding: 25px 0;
   display: flex;
+  cursor: default;
 `
 
 export const Title = styled.h3`

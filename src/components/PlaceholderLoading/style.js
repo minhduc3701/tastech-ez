@@ -57,6 +57,10 @@ const Loading = styled.div`
     width: calc(100% + 30px);
   }
 
+  .w-10 {
+    width: 10%;
+  }
+
   .w-20 {
     width: 20%;
   }
@@ -127,4 +131,8 @@ export const News = styled(Loading)`
     margin-bottom: 10px;
     padding-bottom: 71.43%;
   }
+`
+
+export const Question = styled(Loading)`
+  padding: 35px 65px;
 `

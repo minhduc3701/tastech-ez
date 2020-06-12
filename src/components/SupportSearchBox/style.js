@@ -3,7 +3,7 @@ import bg from '../../images/support-page/bg.jpg'
 
 export const Wrapper = styled.div`
   text-align: center;
-  background-image: src(${bg});
+  background-image: url(${bg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

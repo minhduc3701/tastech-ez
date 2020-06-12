@@ -98,11 +98,27 @@ export const Categories = styled.div`
     padding: 0;
     margin: 0 -20px;
     display: flex;
+    overflow: auto;
+
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     li {
       list-style-type: none;
       display: inline-block;
       padding: 0 20px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    ul {
+      margin: 0 -10px;
+
+      li {
+        padding: 0 10px;
+      }
     }
   }
 `
@@ -111,6 +127,7 @@ export const Category = styled(Link)`
   display: inline-block;
   border-bottom: 2px solid transparent;
   padding-bottom: 12px;
+  white-space: nowrap;
 
   .title {
     display: inline-block;

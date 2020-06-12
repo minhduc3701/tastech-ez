@@ -2,10 +2,13 @@ import axios from 'axios'
 
 export const DOMAIN = process.env.GATSBY_API
 const BLOG_SITE = 'https://blog.ezbiztrip.com/wp-json/wp/v2'
+const SUPPORT_SITE = 'https://support.ezbiztrip.com/wp-json/wp/v2'
 
 const endpoints = {
   requests: `${DOMAIN}/requests`,
-  blog: BLOG_SITE
+  blog: BLOG_SITE,
+  support: SUPPORT_SITE
+
 }
 
 export default {
@@ -25,6 +28,13 @@ export default {
     return axios({
       method: 'get',
       url: `${endpoints.blog}/posts/?search=${keyword}&orderby=date&order=desc&_fields=slug,title,excerpt,content,polylang_current_lang,jetpack_featured_media_url,date,categories&per_page=200`
+    })
+  },
+
+  searchSupportPosts(keyword) {
+    return axios({
+      method: 'get',
+      url: `${endpoints.support}/posts/?search=${keyword}&orderby=date&order=desc&_fields=slug,title,excerpt,content,polylang_current_lang,categories&per_page=200`
     })
   },
 }
