@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Wrapper, CopyButton, CopyNotify } from './style'
+import { Wrapper, CopyButton, CopyNotify, BackButton } from './style'
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -12,9 +12,11 @@ import {
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Icon } from '@iconify/react'
 import baselineShare from '@iconify/icons-ic/baseline-share'
+import baselineArrowBack from '@iconify/icons-ic/baseline-arrow-back'
+
 import { FormattedMessage } from 'react-intl'
 
-const BlogSharing = ({ url, title }) => {
+const BlogSharing = ({ url, title, showBackButton }) => {
   const [copyNotify, setCopyNotify] = useState(false)
 
   const handleCopy = () => {
@@ -24,6 +26,14 @@ const BlogSharing = ({ url, title }) => {
 
   return (
     <Wrapper>
+      {showBackButton && (typeof window !== 'undefined') &&
+        <BackButton
+          onClick={() => window.history.back()}
+        >
+        <Icon icon={baselineArrowBack} />
+      </BackButton>
+    }
+
       <FacebookShareButton url={url} title={title}>
         <FacebookIcon round size={38}/>
       </FacebookShareButton>

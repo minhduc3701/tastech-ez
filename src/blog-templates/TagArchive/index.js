@@ -11,12 +11,11 @@ import { Container } from '../../styles'
 import { Row, Col } from 'reactstrap'
 import BlogSidebar from  '../../components/BlogSidebar'
 import BlogList from '../../components/BlogList'
-import BlogNoResult from '../../components/BlogNoResult'
 
 const TagArchive = props => {
 
-  let posts = _.get(props.data, 'allWordpressPost.edges', [])
-    .filter(({node}) => node.polylang_current_lang === props.langKey)
+  let posts = _.get(props.data, 'allWordpressPost.nodes', [])
+    .filter(node => node.polylang_current_lang === props.langKey)
 
   return (
     <Wrapper>
@@ -33,14 +32,10 @@ const TagArchive = props => {
 
         <PageTitle>{_.get(props, 'data.wordpressTag.name')}</PageTitle>
 
-        {_.isEmpty(posts) ?
-          <BlogNoResult />
-          :
           <BlogList 
             posts={posts}
             langUri={props.langUri}
           />
-        }
         </Col>
         <Col md={4}>
           <BlogSidebar
@@ -58,8 +53,7 @@ const TagArchive = props => {
 export const query = graphql`
   query($slug: String!) {
     allWordpressPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {slug: {eq: $slug}}}}) {
-      edges {
-        node {
+      nodes {
           title
           excerpt
           content
@@ -73,7 +67,6 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-        }
       }
     }
 

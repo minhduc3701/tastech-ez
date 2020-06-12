@@ -15,7 +15,6 @@ import baselineMoreVert from '@iconify/icons-ic/baseline-more-vert'
 import bxHomeAlt from '@iconify/icons-bx/bx-home-alt'
 import baselinePostAdd from '@iconify/icons-ic/baseline-post-add'
 import baselineCreditCard from '@iconify/icons-ic/baseline-credit-card'
-import baselinePictureInPicture from '@iconify/icons-ic/baseline-picture-in-picture'
 import outlineAnnouncement from '@iconify/icons-ic/outline-announcement'
 import bxChevronDown from '@iconify/icons-bx/bx-chevron-down'
 import outlineNewReleases from '@iconify/icons-ic/outline-new-releases';
@@ -656,7 +655,6 @@ class Header extends Component {
 
     let { menuOpen, } = this.state
 
-    const { formatMessage } = this.props.intl
 
     return (
       <>
@@ -668,7 +666,7 @@ class Header extends Component {
               
               <FormattedMessage id={`${scope}.newSimplify`} />
             </p>
-            <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank">
+            <a href={`${this.props.langUri}remote-work-expense-management`} target="_blank" rel="noopener noreferrer">
               
               <FormattedMessage id={`${scope}.remoteSolution`} />
               </a>
@@ -770,12 +768,14 @@ class Header extends Component {
                     </ul>
                   </li>
                   <li>
-                    <a href={formatMessage({
-                      id: 'link.support'
-                    })} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      activeClassName="active"
+                      className={_.includes(_.get(this.props, 'url'), '/support/') ? 'active' : ''}
+                      to={`${this.props.langUri}/support`}
+                    >
                       <Icon className="menu-icon" icon={outlineAnnouncement} />
                       <FormattedMessage id={`${scope}.support`} />
-                    </a>
+                    </Link>
                   </li>
                 </MainNav>
                 <SelectLanguage langs={this.props.langs} />

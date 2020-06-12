@@ -27,13 +27,13 @@ const BlogArticle = props => {
       }
 
       {
-              !_.isEmpty(post.categories) &&
-          <Categories>
-            <ul>
-            {post.categories
-              .map(cat => <li><Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link></li>)}
-            </ul>
-          </Categories>
+          !_.isEmpty(post.categories) &&
+           <Categories>
+             <ul>
+             {post.categories
+               .map(cat => <li><Link key={cat.slug} to={`${props.langUri}/blog/category/${cat.slug}`}>{cat.name}</Link></li>)}
+             </ul>
+           </Categories>
       }
       <Title>
         <Link to={`${props.langUri}/blog/${post.slug}`} dangerouslySetInnerHTML={{ __html: post.title }} />

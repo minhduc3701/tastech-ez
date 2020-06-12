@@ -5,24 +5,25 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl } from 'react-intl'
 import _ from 'lodash'
-import { Wrapper, PageTitle } from './style'
+import { Wrapper } from './style'
 import { Container } from '../../styles'
 
 import { Row, Col } from 'reactstrap'
-import BlogSidebar from  '../../components/BlogSidebar'
-import BlogList from '../../components/BlogList'
+import SupportList from '../../components/SupportList'
+import SupportCategories from '../../components/SupportCategories'
+import SupportSearchBox from '../../components/SupportSearchBox'
 
 const CategoryArchive = props => {
 
   let posts = _.get(props.data, 'allWordpressPost.nodes', [])
-  let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.slug')
+  let currentCategoryLang = _.get(props, 'data.wordpressCategory.parent_element.parent_element.slug')
 
-   if (props.langKey !== currentCategoryLang) {
+   if (currentCategoryLang !== props.langKey) {
     if (typeof window === 'undefined') {
       return <div></div>
     }
      
-    navigate(`${props.langUri}/blog`)
+     navigate(`${props.langUri}/support`)
    }
 
   return (
@@ -33,24 +34,21 @@ const CategoryArchive = props => {
         lang={props.langKey}
         uri={props.uri}
       />
-
+    
+    <SupportSearchBox langUri={props.langUri} />
+    <SupportCategories
+      langUri={props.langUri}
+      langKey={props.langKey}
+      currentCategorySlug={_.get(props, 'data.wordpressCategory.slug')}
+      currentParentCategory={_.get(props, 'data.wordpressCategory.parent_element')}
+    />
     <Container>
-      <Row>
-        <Col md={8}>
-
-        <PageTitle>{_.get(props, 'data.wordpressCategory.name')}</PageTitle>
-
-          <BlogList 
+      <Row className="justify-content-center">
+        <Col lg={10}>
+          <SupportList 
             posts={posts}
             langUri={props.langUri}
           />
-        </Col>
-        <Col md={4}>
-          <BlogSidebar
-          langUri={props.langUri}
-          langKey={props.langKey}
-          currentCategorySlug={_.get(props, 'data.wordpressCategory.slug')}
-        />
         </Col>
       </Row>
     </Container>
@@ -64,26 +62,24 @@ export const query = graphql`
     allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
       nodes {
           title
-          excerpt
           content
           slug
-          date(formatString: "MMMM DD, YYYY")
-          featured_media {
-            source_url
-          }
           categories {
             name
             slug
           }
-          polylang_current_lang
       }
     }
 
     wordpressCategory(slug: {eq: $slug}) {
       slug
-      name
       parent_element {
         slug
+        name
+        description
+        parent_element {
+          slug
+        }
       }
     }
   

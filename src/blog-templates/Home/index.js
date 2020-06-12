@@ -12,9 +12,8 @@ import BlogBannerTop from '../../components/BlogBannerTop'
 import BlogSidebar from '../../components/BlogSidebar'
 import BlogList from '../../components/BlogList'
 
-
-const Blog = props => {
-  let posts = props.data.allWordpressPost.edges
+const BlogHome = props => {
+  let posts = props.data.allWordpressPost.nodes
 
   return (
     <Wrapper>
@@ -49,10 +48,9 @@ const Blog = props => {
 
 
 export const query = graphql`
-  query($lang: String!) {
-    allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}}) {
-      edges {
-        node {
+  query($lang: String!, $domain: String!) {
+    allWordpressPost(sort: {fields: date, order: DESC}, filter: {polylang_current_lang: {eq: $lang}, link: {regex: $domain}} ) {
+      nodes {
           title
           excerpt
           content
@@ -66,10 +64,9 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-        }
       }
     }
   }
   `
 
-export default layoutWithLangKey(injectIntl(Blog))
+export default layoutWithLangKey(injectIntl(BlogHome))

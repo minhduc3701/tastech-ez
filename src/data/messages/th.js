@@ -430,5 +430,10 @@ module.exports = {
   "blog.searchPlaceholder": "Search",
   "blog.searchResults": "Search Results for",
   "blog.copied": "Copied",
-  "blog.homeBlog": "Blog"
+  "blog.homeBlog": "Blog",
+  "support.exploreByCategory": "Explore by Category",
+  "support.search.heading": "Hello, How can we help?",
+  "support.search.placeholder": "Search question",
+  "support.search.contact": "Contact us any time:",
+  "support.homeSupport": "Support"
 }

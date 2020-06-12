@@ -18,15 +18,7 @@ import BlogArticle from '../../components/BlogArticle'
 import BlogReadingTime from '../../components/BlogReadingTime'
 import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
-
-const extractContent = str => {
-  if (typeof document === 'undefined') {
-      return str
-    }
-  let span = document.createElement('span')
-  span.innerHTML = str
-  return span.textContent || span.innerText
-};
+import { parseString } from '../../modules/extractContent'
 
 const Post = props => {
   let currentPost = props.data.wordpressPost
@@ -39,8 +31,8 @@ const Post = props => {
     navigate(`${props.langUri}/blog`)
   }
 
-  let relatedPost = props.data.allWordpressPost.edges
-    .filter(({node}) => {
+  let relatedPosts = props.data.allWordpressPost.nodes
+    .filter(node => {
       if (node.polylang_current_lang !== currentPost.polylang_current_lang || node.slug === currentPost.slug) {
         return false
       }
@@ -62,7 +54,7 @@ const Post = props => {
   return (
     <Wrapper>
       <SEO
-        title={extractContent(currentPost.title)}
+        title={parseString(currentPost.title)}
         description={""}
         lang={props.langKey}
         uri={props.uri}
@@ -141,13 +133,13 @@ const Post = props => {
       </Row>
       </CurrentPost>
 
-      {!_.isEmpty(relatedPost) && (
+      {!_.isEmpty(relatedPosts) && (
       <RelatedPosts>
         <SectionTitle>
           <FormattedMessage id="blog.relatedPosts" />
         </SectionTitle>
         <Row>
-          { relatedPost.map(({ node }, index) => (
+          { relatedPosts.map((node, index) => (
               <Col sm={4} key={index}>
               <BlogArticle
                 post={node}
@@ -189,8 +181,7 @@ export const query = graphql`
     }
 
     allWordpressPost(sort: {fields: date, order: DESC}) {
-      edges {
-        node {
+      nodes {
           title
           excerpt
           slug
@@ -203,7 +194,6 @@ export const query = graphql`
             slug
           }
           polylang_current_lang
-        }
       }
     }
 
