@@ -57,7 +57,8 @@ return (
           let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
           return {
             ..._.pick(p, ['name', 'slug', 'description']),
-            redirect_slug: redirect.slug
+            redirect_slug: redirect.slug,
+            icon: findSvg(_.get(p, 'description'))
           }
         })
 
@@ -76,7 +77,7 @@ return (
                    to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
-                  <div className="icon" dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} />
+                  <div className="icon" dangerouslySetInnerHTML={{ __html: cat.icon }} />
                   <h3 className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
                  </ParentCategory>
                  </li>

@@ -29,6 +29,7 @@ return (
         let categories = data.allWordpressCategory.nodes
           .filter(node => _.get(node, 'parent_element.slug') === props.langKey)
           .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
+          .map(node => ({...node, icon: findImg(_.get(node, 'description')) }) )
 
         if (_.isEmpty(categories)) {
           return <div></div>
@@ -46,7 +47,7 @@ return (
                    to={`${props.langUri}/blog/category/${node.slug}`}
                    className="image-hover"
                  >
-                   <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: findImg(_.get(node, 'description')) }} />
+                   <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: node.icon }} />
       
                    <span dangerouslySetInnerHTML={{ __html: node.name }} />
 
