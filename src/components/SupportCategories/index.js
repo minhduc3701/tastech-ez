@@ -55,10 +55,11 @@ return (
           'slug'
         ).map(p => {
           let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
+          let icon = findSvg(_.get(p, 'description'))
           return {
             ..._.pick(p, ['name', 'slug', 'description']),
             redirect_slug: redirect.slug,
-            icon: findSvg(_.get(p, 'description'))
+            icon
           }
         })
         .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )

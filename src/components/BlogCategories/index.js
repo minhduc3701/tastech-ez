@@ -28,7 +28,13 @@ return (
       render={data => {
         let categories = data.allWordpressCategory.nodes
           .filter(node => _.get(node, 'parent_element.slug') === props.langKey)
-          .map(node => ({...node, icon: findImg(_.get(node, 'description')) }) )
+          .map(node => {
+            let icon = findImg(_.get(node, 'description'))
+            return {
+              ...node,
+              icon
+            }
+          })
           .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
           
 
