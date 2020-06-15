@@ -1,10 +1,10 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import { Wrapper, Category, Background } from './style'
+import { Wrapper, Categories, Category, Background } from './style'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
-import { findImg } from '../../modules/extractContent'
+import { findImg, findOrder } from '../../modules/extractContent'
 
 const BlogCategories = props => {
 return (
@@ -28,6 +28,7 @@ return (
       render={data => {
         let categories = data.allWordpressCategory.nodes
           .filter(node => _.get(node, 'parent_element.slug') === props.langKey)
+          .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
 
         if (_.isEmpty(categories)) {
           return <div></div>
@@ -38,7 +39,8 @@ return (
            <h3 className="widget-title"><FormattedMessage id="blog.categories" /></h3>
           
           <div className="widget-content">
-           {!_.isEmpty(categories) && categories.map(node => (
+            <Categories>
+           {categories.map(node => (
                  <Category
                    key={node.slug}
                    to={`${props.langUri}/blog/category/${node.slug}`}
@@ -51,6 +53,7 @@ return (
 
                  </Category>
                  ))}
+           </Categories>
            </div>
          </Wrapper>
         )
