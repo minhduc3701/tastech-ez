@@ -4,6 +4,9 @@ import { Link } from 'gatsby'
 export const Wrapper = styled.div`
 
 `
+export const Categories = styled.div`
+
+`
 
 export const Category = styled(Link)`
   display: block;
