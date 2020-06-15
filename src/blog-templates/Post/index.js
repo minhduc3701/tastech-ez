@@ -20,6 +20,11 @@ import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
 import { parseString } from '../../modules/extractContent'
 
+import moment from 'moment'
+import 'moment/locale/vi'
+import 'moment/locale/th'
+import 'moment/locale/id'
+
 const Post = props => {
   let currentPost = props.data.wordpressPost
 
@@ -101,7 +106,7 @@ const Post = props => {
                 <Meta>
                   <span>
                     <Icon icon={baselineAccessTime} />
-                    {currentPost.date}
+                    {moment(currentPost.date).locale(props.langKey).format('LL')}
                   </span>
                   <BlogReadingTime post={currentPost} />
                 </Meta>

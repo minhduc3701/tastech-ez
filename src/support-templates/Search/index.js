@@ -59,9 +59,6 @@ const Search = (props) => {
       })
   }
 
-  console.log(posts)
-
-
   return (
     <Wrapper>
       <SEO

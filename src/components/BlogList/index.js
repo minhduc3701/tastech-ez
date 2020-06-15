@@ -25,6 +25,7 @@ const BlogList = props => {
           <BlogArticle
             post={node}
             langUri={props.langUri}
+            langKey={props.langKey}
           />
           </Col>
       )

@@ -55,12 +55,14 @@ return (
           'slug'
         ).map(p => {
           let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
+          let icon = findSvg(_.get(p, 'description'))
           return {
             ..._.pick(p, ['name', 'slug', 'description']),
             redirect_slug: redirect.slug,
-            icon: findSvg(_.get(p, 'description'))
+            icon
           }
         })
+        .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
 
         let filteredCategories = categories.filter(cat => cat.parent_element.slug === _.get(props, 'currentParentCategory.slug'))
 
@@ -72,7 +74,7 @@ return (
           <ParentCategories>
             <ul>
            {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
-              <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
+              <li key={cat.slug}>
                  <ParentCategory
                    to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}#s1`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}

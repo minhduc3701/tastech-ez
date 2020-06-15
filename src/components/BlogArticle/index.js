@@ -1,6 +1,10 @@
 import React from "react"
 import { Link } from 'gatsby'
 import _ from 'lodash'
+import moment from 'moment'
+import 'moment/locale/vi'
+import 'moment/locale/th'
+import 'moment/locale/id'
 
 import { Wrapper, Thumbnail, Categories, Title, Excerpt, Meta } from './style'
 import { Icon } from '@iconify/react'
@@ -43,7 +47,7 @@ const BlogArticle = props => {
       <Meta>
         <span>
           <Icon icon={baselineAccessTime} />
-          {post.date}
+          {moment(post.date).locale(props.langKey).format('LL')}
         </span>
         <BlogReadingTime post={post} />
       </Meta>

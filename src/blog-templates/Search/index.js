@@ -101,6 +101,7 @@ const Search = (props) => {
            <BlogList 
              posts={posts}
              langUri={props.langUri}
+             langKey={props.langKey}
            />
         }
         </Col>
