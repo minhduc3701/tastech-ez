@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'gatsby'
 import _ from 'lodash'
-import moment from 'moment'
+import * as moment from 'moment/moment'
 import 'moment/locale/vi'
 import 'moment/locale/th'
 import 'moment/locale/id'

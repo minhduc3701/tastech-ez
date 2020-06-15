@@ -20,7 +20,7 @@ import BlogSharing from '../../components/BlogSharing'
 import SEO from "../../components/seo"
 import { parseString } from '../../modules/extractContent'
 
-import moment from 'moment'
+import * as moment from 'moment/moment'
 import 'moment/locale/vi'
 import 'moment/locale/th'
 import 'moment/locale/id'

@@ -5,7 +5,11 @@ import {layoutWithLangKey} from "../../components/layout"
 
 import { injectIntl, FormattedMessage } from 'react-intl'
 import _ from 'lodash'
-import moment from 'moment'
+import * as moment from 'moment/moment'
+import 'moment/locale/vi'
+import 'moment/locale/th'
+import 'moment/locale/id'
+
 import { Wrapper, PageTitle } from './style'
 import { Container } from '../../styles'
 
@@ -53,7 +57,7 @@ const Search = (props) => {
             excerpt: result.excerpt.rendered,
             content: result.content.rendered,
             slug: result.slug,
-            date: moment(result.date).format("MMMM DD, YYYY"),
+            date: moment(result.date).locale(props.langKey).format('LL'),
             featured_media: {
                source_url: result.jetpack_featured_media_url
              },
