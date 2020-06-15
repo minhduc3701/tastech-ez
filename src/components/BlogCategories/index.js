@@ -28,8 +28,9 @@ return (
       render={data => {
         let categories = data.allWordpressCategory.nodes
           .filter(node => _.get(node, 'parent_element.slug') === props.langKey)
-          .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
           .map(node => ({...node, icon: findImg(_.get(node, 'description')) }) )
+          .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
+          
 
         if (_.isEmpty(categories)) {
           return <div></div>

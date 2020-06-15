@@ -43,6 +43,7 @@ const CategoryArchive = props => {
           <BlogList 
             posts={posts}
             langUri={props.langUri}
+            langKey={props.langKey}
           />
         </Col>
         <Col md={4}>
