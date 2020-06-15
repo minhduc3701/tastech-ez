@@ -65,7 +65,7 @@ return (
         let filteredCategories = categories.filter(cat => cat.parent_element.slug === _.get(props, 'currentParentCategory.slug'))
 
         return (
-         <Wrapper>
+         <Wrapper id="s1">
           <Container>
            <GuideText><FormattedMessage id="support.exploreByCategory" /></GuideText>
           
@@ -74,7 +74,7 @@ return (
            {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
               <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
                  <ParentCategory
-                   to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}`}
+                   to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}#s1`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
                   <div className="icon" dangerouslySetInnerHTML={{ __html: cat.icon }} />
@@ -86,7 +86,7 @@ return (
            </ParentCategories>
 
           {_.get(props, 'currentParentCategory') && (
-            <CurrentParentCategory>
+            <CurrentParentCategory id="s2">
               <Row className="justify-content-center">
                 <Col lg={6} md={8}>
                   <h2 className="title" dangerouslySetInnerHTML={{ __html: _.get(props, 'currentParentCategory.name')}} />
@@ -101,7 +101,7 @@ return (
               {!_.isEmpty(filteredCategories) && filteredCategories.map(cat => (
                 <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
                   <Category
-                     to={`${props.langUri}/support/category/${cat.parent_element.slug}/${cat.slug}`}
+                     to={`${props.langUri}/support/category/${cat.parent_element.slug}/${cat.slug}#s2`}
                      className={cat.slug === _.get(props, 'currentCategorySlug') ? 'active' : ''}
                    >
                     <span className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
