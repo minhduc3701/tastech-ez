@@ -38,6 +38,8 @@ return (
           .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
           
 
+        {console.log('------categories-----', categories)}
+
         if (_.isEmpty(categories)) {
           return <div></div>
         }
@@ -57,7 +59,8 @@ return (
                    <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: node.icon }} />
       
                    <span dangerouslySetInnerHTML={{ __html: node.name }} />
-
+                  <span> - Order: {findOrder(_.get(node, 'description'))}</span>
+                  <span> - Img: {findImg(_.get(node, 'description'))}</span>
 
                  </Category>
                  ))}

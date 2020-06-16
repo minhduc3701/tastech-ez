@@ -65,6 +65,7 @@ export const Background = styled.div`
   img {
     display: block;
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `
