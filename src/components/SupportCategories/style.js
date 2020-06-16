@@ -66,6 +66,10 @@ export const ParentCategory = styled(Link)`
 
   .icon {
     margin-bottom: 10px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     svg {
       width: 36px;

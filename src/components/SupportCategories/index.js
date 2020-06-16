@@ -63,7 +63,7 @@ return (
             icon
           }
         })
-        .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
+         // .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
 
         let filteredCategories = categories.filter(cat => cat.parent_element.slug === _.get(props, 'currentParentCategory.slug'))
 
@@ -75,7 +75,7 @@ return (
           <ParentCategories>
             <ul>
            {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
-              <li key={cat.slug} style={{order: findOrder(_.get(cat, 'descriptions'))}}>
+              <li key={cat.slug} style={{order: findOrder(_.get(cat, 'description'))}}>
                  <ParentCategory
                    to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}#s1`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
