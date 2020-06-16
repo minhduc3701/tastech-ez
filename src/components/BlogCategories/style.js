@@ -46,6 +46,10 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-image: ${props => `url(${props.src})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   * {
     display: none;

@@ -49,5 +49,5 @@ export const findImg = str => {
     return null
   }
   
-  return firstImage.outerHTML
+  return firstImage.getAttribute('src')
 }

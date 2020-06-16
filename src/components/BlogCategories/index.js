@@ -56,7 +56,10 @@ return (
                    to={`${props.langUri}/blog/category/${node.slug}`}
                    className="image-hover"
                  >
-                   <Background active={node.slug === _.get(props, 'currentCategorySlug')} dangerouslySetInnerHTML={{ __html: node.icon }} />
+                   <Background
+                    active={node.slug === _.get(props, 'currentCategorySlug')}
+                    src={findImg(_.get(node, 'description'))}
+                  />
       
                    <span dangerouslySetInnerHTML={{ __html: node.name }} />
                   <span> - Order: {findOrder(_.get(node, 'description'))}</span>
