@@ -53,7 +53,8 @@ return (
             }
           }),
           'slug'
-        ).map(p => {
+        )
+        .map(p => {
           let redirect = p.children_element.find(c => _.isEqual(findOrder(c.description), '1')) || _.first(p.children_element)
           let icon = findSvg(_.get(p, 'description'))
           return {
