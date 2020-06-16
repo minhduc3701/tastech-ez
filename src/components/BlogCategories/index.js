@@ -38,8 +38,6 @@ return (
           .sort((a, b) => (findOrder(_.get(a, 'description')) || 99) - findOrder(_.get(b, 'description')) )
           
 
-        {console.log('------categories-----', categories)}
-
         if (_.isEmpty(categories)) {
           return <div></div>
         }
@@ -56,14 +54,14 @@ return (
                    to={`${props.langUri}/blog/category/${node.slug}`}
                    className="image-hover"
                  >
+                  {node.icon &&
                    <Background
                     active={node.slug === _.get(props, 'currentCategorySlug')}
-                    src={findImg(_.get(node, 'description'))}
+                    src={node.icon}
                   />
+                }
       
                    <span dangerouslySetInnerHTML={{ __html: node.name }} />
-                  <span> - Order: {findOrder(_.get(node, 'description'))}</span>
-                  <span> - Img: {findImg(_.get(node, 'description'))}</span>
 
                  </Category>
                  ))}

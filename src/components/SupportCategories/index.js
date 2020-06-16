@@ -75,12 +75,12 @@ return (
           <ParentCategories>
             <ul>
            {!_.isEmpty(parentCategories) && parentCategories.map(cat => (
-              <li key={cat.slug}>
+              <li key={cat.slug} style={{order: findOrder(_.get(cat, 'descriptions'))}}>
                  <ParentCategory
                    to={`${props.langUri}/support/category/${cat.slug}/${cat.redirect_slug}#s1`}
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
-                  <div className="icon" dangerouslySetInnerHTML={{ __html: cat.icon }} />
+                  {cat.icon && <div className="icon" dangerouslySetInnerHTML={{ __html: cat.icon }} /> }
                   <h3 className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
                  </ParentCategory>
                  </li>
