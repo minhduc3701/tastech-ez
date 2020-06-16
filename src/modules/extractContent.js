@@ -28,13 +28,13 @@ export const findSvg = str => {
     }
   let div = document.createElement('div')
   div.innerHTML = str
-  let firstImage = div.getElementsByTagName('svg')[0]
+  let firstSvg = div.getElementsByTagName('svg')[0]
   
-  if (!firstImage) {
+  if (!firstSvg) {
     return null
   }
 
-  return firstImage.outerHTML
+  return firstSvg.outerHTML
 }
 
 export const findImg = str => {
