@@ -2,13 +2,16 @@ import React, {useEffect} from 'react';
 
 const FacebookEmbed = ({ langKey }) => {
    useEffect(() => {
+    if (typeof window !== 'undefined') {
      window.fbAsyncInit = function() {
       window.FB.init({
          xfbml            : true,
          version          : 'v7.0'
        })
      }
+    }
 
+    if (typeof document !== 'undefined') {
      (function(d, s, id) {
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) return;
@@ -16,6 +19,7 @@ const FacebookEmbed = ({ langKey }) => {
        js.src = 'https://connect.facebook.net/en_US/sdk.js';
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'))
+   }
 
    })
 
