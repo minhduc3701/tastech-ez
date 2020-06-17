@@ -76,7 +76,6 @@ module.exports = {
             hostingWPCOM: false,
             includedRoutes: [
               '**/posts',
-              '**/pages',
               '**/tags',
               '**/categories',
               '**/media',
@@ -94,7 +93,6 @@ module.exports = {
             hostingWPCOM: false,
             includedRoutes: [
               '**/posts',
-              '**/pages',
               '**/tags',
               '**/categories',
               '**/media',
@@ -114,6 +112,12 @@ module.exports = {
         },
         cleanupOnClient: true
       }
-    }
+    },
+     {
+        resolve: `gatsby-plugin-facebook-sdk`,
+       // options: {
+       //   appId: '103365231056941',
+       // },
+     },
   ]
 }

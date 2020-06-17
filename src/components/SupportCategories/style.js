@@ -57,7 +57,7 @@ export const ParentCategory = styled(Link)`
   border-radius: 20px;
   border: solid 1px #d0cdcd;
   background: #fff;
-  padding: 15px 10px 20px;
+  padding: 28px 10px 25px;
   height: 100%;
   
   * {
@@ -70,7 +70,11 @@ export const ParentCategory = styled(Link)`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
+    
+    div {
+      display: inline-block;
+    }
+    
     svg {
       width: 36px;
       height: 36px;
