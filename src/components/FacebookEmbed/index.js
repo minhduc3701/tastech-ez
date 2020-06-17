@@ -28,14 +28,14 @@ const FacebookEmbed = ({ langKey }) => {
 
     switch (langKey) {
       case 'vi': 
-        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztripvietnam/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztripvietnam/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ezbiztripvietnam/">Ezbiztrip Việt Nam</a></blockquote></div> 
+        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztripvietnam/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztripvietnam/" className="fb-xfbml-parse-ignore"></blockquote></div> 
         break;
       case 'id':
-        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztrip.id/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip.id/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ezbiztrip.id/">Ezbiztrip Indonesia</a></blockquote></div>
+        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztrip.id/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip.id/" className="fb-xfbml-parse-ignore"></blockquote></div>
         break;
       case 'en':
       default:
-        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztrip" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ezbiztrip">ezbiztrip.com</a></blockquote></div>
+        fb = <div className="fb-page" data-href="https://www.facebook.com/ezbiztrip" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ezbiztrip" className="fb-xfbml-parse-ignore"></blockquote></div>
     }
 
     return fb
