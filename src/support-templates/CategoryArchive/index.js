@@ -59,7 +59,7 @@ const CategoryArchive = props => {
 
 export const query = graphql`
   query($slug: String!) {
-    allWordpressPost(sort: {fields: date, order: DESC}, filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
+    allWordpressPost(sort: {fields: tags, order: ASC}, filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
       nodes {
           title
           content

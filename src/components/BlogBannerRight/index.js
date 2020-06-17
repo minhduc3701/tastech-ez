@@ -31,7 +31,7 @@ return (
           .filter(node => _.get(node, 'polylang_current_lang') === props.langKey && !_.isEmpty(node.featured_media))
         
         if (_.isEmpty(posts)) {
-          return <div></div>
+          return <></>
         }
 
         return (
