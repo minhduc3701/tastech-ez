@@ -13,7 +13,6 @@ import {
 import { Container } from '../../styles'
 import _ from 'lodash'
 import { FormattedMessage } from 'react-intl'
-import { findSvg } from '../../modules/extractContent'
 import { Row, Col } from 'reactstrap'
 
 const SupportCategories = props => {
@@ -84,7 +83,7 @@ return (
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
                   <div className="icon">
-                  {_.get(cat, 'description') && findSvg(_.get(cat, 'description')) ? <div dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} /> : <div></div>}
+                  {_.get(cat, 'description') && <div dangerouslySetInnerHTML={{ __html: _.get(cat, 'description') }} />}
                   </div>
                   <h3 className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
                  </ParentCategory>

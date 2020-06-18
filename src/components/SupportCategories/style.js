@@ -71,8 +71,14 @@ export const ParentCategory = styled(Link)`
     align-items: center;
     justify-content: center;
     
-    div {
+    > div {
       display: inline-block;
+      color: transparent;
+      font-size: 0;
+
+      >*:not(svg) {
+        display: none;
+      }
     }
     
     svg {
