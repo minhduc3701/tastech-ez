@@ -84,7 +84,7 @@ return (
                    className={cat.slug === _.get(props, 'currentParentCategory.slug') ? 'active' : ''}
                  >
                   <div className="icon">
-                  {findSvg(_.get(cat, 'description')) ? <div dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} /> : <div></div>}
+                  {_.get(cat, 'description') && findSvg(_.get(cat, 'description')) ? <div dangerouslySetInnerHTML={{ __html: findSvg(_.get(cat, 'description')) }} /> : <div></div>}
                   </div>
                   <h3 className="title" dangerouslySetInnerHTML={{ __html: cat.name }} />
                  </ParentCategory>
